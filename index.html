@@ -5,87 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outfit Imperial - Loja</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.css">
 
     <style>
         /* DESIGN GERAL */
-        body { font-family: 'Helvetica', 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #111; }
         
-        /* CABEÇALHO NOVO */
+        /* CABEÇALHO */
         header { 
             background-color: #000; 
-            padding: 30px 20px; 
+            padding: 30px 20px 10px; 
             text-align: center; 
             border-bottom: 4px solid #d4af37; 
         }
         
-        /* Estilo do Título Dourado */
         header h1 {
-            font-family: 'Cinzel', serif;
-            color: #d4af37;
-            font-size: 38px;
-            font-weight: 700;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-family: 'Cinzel', serif; color: #d4af37; font-size: 38px; font-weight: 700; margin: 0;
+            text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-
-        header p {
-            color: #ccc;
-            font-size: 12px;
-            margin-top: 5px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
+        header p { color: #ccc; font-size: 12px; margin-top: 5px; letter-spacing: 4px; text-transform: uppercase; }
         
+        /* BARRA DE SETORES */
+        .menu-setores { display: flex; justify-content: center; gap: 15px; margin-top: 25px; padding-bottom: 10px; }
+        .btn-setor {
+            background: transparent; border: 1px solid #d4af37; color: #d4af37; padding: 10px 25px;
+            font-family: 'Cinzel', serif; font-size: 14px; cursor: pointer; text-transform: uppercase; transition: all 0.3s; border-radius: 4px;
+        }
+        .btn-setor:hover { background: rgba(212, 175, 55, 0.2); }
+        .btn-setor.ativo { background: #d4af37; color: #000; font-weight: bold; box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+
         /* VITRINE */
         .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 30px 10px; max-width: 1200px; margin: 0 auto; }
-        
-        /* CARTÃO DO PRODUTO */
+        .setor-loja { display: none; width: 100%; }
+        .setor-loja.ativo { display: flex; flex-wrap: wrap; justify-content: center; }
+
+        /* CARTÃO DO PRODUTO (VITRINE) */
         .produto { 
-            background: white; 
-            margin: 15px; 
-            padding: 20px; 
-            border-radius: 15px; 
-            width: 280px; 
-            text-align: center; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            background: white; margin: 15px; padding: 20px; border-radius: 12px; width: 260px; text-align: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s ease; position: relative;
         }
+        .produto:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         
-        .produto:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+        .capa-produto { cursor: pointer; overflow: hidden; border-radius: 8px; margin-bottom: 15px; display: block; position: relative; }
+        .capa-produto img { width: 100%; height: 260px; object-fit: cover; transition: transform 0.5s; }
+        .produto:hover .capa-produto img { transform: scale(1.05); }
         
-        /* Ajuste da imagem principal para ser clicável */
-        .capa-produto img { 
-            width: 100%; 
-            height: 280px; 
-            object-fit: cover; 
-            border-radius: 10px; 
-            cursor: pointer;
-            margin-bottom: 15px;
+        /* Texto "Ver Detalhes" que aparece na foto */
+        .ver-detalhes-hover {
+            position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7); color: white;
+            padding: 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: 0; transition: opacity 0.3s;
         }
-        
-        h3 { color: #111; margin: 10px 0; font-size: 18px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .preco { font-size: 24px; color: #2ecc71; font-weight: 800; margin: 5px 0 20px; }
-        
-        /* ÁREA DOS BOTÕES */
-        .area-botoes { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-        
-        .botao-zap { 
-            display: flex; alignItems: center; justify-content: center;
-            background-color: #25d366; color: white; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 14px; transition: background 0.2s; border: none; cursor: pointer;
+        .produto:hover .ver-detalhes-hover { opacity: 1; }
+
+        .produto h3 { color: #111; margin: 10px 0; font-size: 16px; text-transform: uppercase; font-weight: 600; }
+        .produto .preco { font-size: 20px; color: #333; font-weight: 700; margin: 5px 0 15px; }
+
+        /* --- JANELA MODAL (O SEGREDO DO ESTILO NIKE) --- */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8); z-index: 999; justify-content: center; align-items: center; padding: 20px;
         }
-        .botao-zap:hover { background-color: #1ebc57; }
-        .botao-zap.vendedor2 { background-color: #128c7e; }
-        .botao-zap.vendedor2:hover { background-color: #0d6e63; }
+        .modal-overlay.aberto { display: flex; }
+
+        .modal-content {
+            background: white; width: 100%; max-width: 900px; max-height: 90vh; overflow-y: auto;
+            border-radius: 20px; display: flex; flex-wrap: wrap; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        /* Botão fechar X */
+        .btn-fechar {
+            position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #333; z-index: 10; font-weight: bold;
+        }
+
+        /* Lado Esquerdo (Foto) */
+        .modal-foto { flex: 1; min-width: 300px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; }
+        .modal-foto img { width: 100%; height: 100%; object-fit: cover; max-height: 500px; }
+
+        /* Lado Direito (Informações) */
+        .modal-info { flex: 1; min-width: 300px; padding: 40px; text-align: left; display: flex; flex-direction: column; }
+
+        .modal-info h2 { font-family: 'Cinzel', serif; font-size: 28px; margin: 0 0 10px; color: #000; }
+        .modal-info .modal-preco { font-size: 24px; font-weight: 600; color: #111; margin-bottom: 20px; }
+        
+        /* Descrição Estilizada */
+        .modal-descricao { font-size: 15px; color: #666; line-height: 1.6; margin-bottom: 25px; border-top: 1px solid #eee; padding-top: 20px; }
+        .modal-descricao strong { color: #000; }
+
+        /* Seleção de Tamanhos */
+        .area-tamanhos { margin-bottom: 30px; }
+        .titulo-opcao { font-size: 14px; font-weight: 600; margin-bottom: 10px; display: block; }
+        .grade-tamanhos { display: flex; gap: 10px; }
+        .tamanho-btn {
+            width: 45px; height: 45px; border: 1px solid #ddd; background: white; border-radius: 4px;
+            display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: all 0.2s;
+        }
+        .tamanho-btn:hover { border-color: #000; color: #000; }
+        
+        /* Botões de Compra no Modal */
+        .modal-botoes { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+        .botao-modal {
+            background: #000; color: white; text-align: center; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.2s;
+        }
+        .botao-modal:hover { background: #333; transform: scale(1.02); }
+        .botao-modal.vendedor2 { background: #fff; color: #000; border: 2px solid #000; }
+        .botao-modal.vendedor2:hover { background: #f0f0f0; }
+
+        /* Esconder a div de dados brutos */
+        .dados-produto-oculto { display: none; }
 
         footer { text-align: center; padding: 20px; color: #666; font-size: 12px; margin-top: 40px; }
+
+        /* Responsivo (Celular) */
+        @media (max-width: 700px) {
+            .modal-content { flex-direction: column; }
+            .modal-foto img { max-height: 300px; }
+            .modal-info { padding: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -93,37 +130,67 @@
     <header>
         <h1>Outfit Imperial</h1>
         <p>Roupas & Sneakers</p>
+        <div class="menu-setores">
+            <button class="btn-setor ativo" onclick="mudarSetor('roupas')">Roupas</button>
+            <button class="btn-setor" onclick="mudarSetor('sneakers')">Sneakers</button>
+        </div>
     </header>
 
     <div class="container">
 
-        <div class="produto">
+        <div id="setor-roupas" class="setor-loja ativo">
             
-            <div class="galeria">
-                <a href="camisaZara.jpeg" class="capa-produto" title="Jaqueta Zara - Frente">
+            <div class="produto" onclick="abrirModal('produto1')">
+                <div class="capa-produto">
                     <img src="camisaZara.jpeg" alt="Jaqueta Zara">
-                </a>
-
-                <div style="display:none;">
-                    <a href="camisaZara (2).jpeg" title="Foto Extra 1">
-                        <img src="camisaZara (2).jpeg" alt="Foto Extra 1">
-                    </a>
-                    <a href="camisaZara (3).jpeg" title="Foto Extra 2">
-                        <img src="camisaZara (3).jpeg" alt="Foto Extra 2">
-                    </a>
+                    <div class="ver-detalhes-hover">Clique para ver detalhes</div>
                 </div>
-            </div>
-            
-            <h3>Jaqueta Zara</h3>
-            <p class="preco">R$ 122,90</p>
-            
-            <div class="area-botoes">
-                <a href="https://wa.me/5511994655832?text=Olá, tenho interesse na Jaqueta Zara." class="botao-zap" target="_blank">
-                    <span>👤 Falar com Vendedor 1</span>
-                </a>
-                <a href="https://wa.me/5511917686011?text=Olá, tenho interesse na Jaqueta Zara." class="botao-zap vendedor2" target="_blank">
-                    <span>👤 Falar com Vendedor 2</span>
-                </a>
+                <h3>Jaqueta Zara</h3>
+                <p class="preco">R$ 122,90</p>
+                
+                <div id="produto1" class="dados-produto-oculto">
+                    <span class="d-img">camisaZara.jpeg</span>
+                    <span class="d-titulo">Jaqueta Zara - Coleção 2024</span>
+                    <span class="d-preco">R$ 122,90</span>
+                    
+                    <div class="d-descricao">
+                        <p><strong>Material Premium:</strong> Confeccionada em tecido tecnológico corta-vento de alta durabilidade.</p>
+                        <p>Ideal para dias frios e composição de looks casuais. Possui acabamento reforçado e zíper de metal.</p>
+                        <p>• Modelagem Slim Fit<br>• Tecido Impermeável<br>• Disponível em várias cores</p>
+                    </div>
+
+                    <div class="d-tamanhos">
+                        <div class="tamanho-btn">P</div>
+                        <div class="tamanho-btn">M</div>
+                        <div class="tamanho-btn">G</div>
+                        <div class="tamanho-btn">GG</div>
+                    </div>
+                </div>
+                </div>
+
+        </div> 
+        <div id="setor-sneakers" class="setor-loja">
+            <div class="produto" onclick="abrirModal('sneaker1')">
+                <div class="capa-produto">
+                    <img src="camisaZara.jpeg" alt="Sneaker Exemplo"> </div>
+                <h3>Nike Dunk Low</h3>
+                <p class="preco">R$ 599,90</p>
+
+                <div id="sneaker1" class="dados-produto-oculto">
+                    <span class="d-img">camisaZara.jpeg</span>
+                    <span class="d-titulo">Nike Dunk Low Retro</span>
+                    <span class="d-preco">R$ 599,90</span>
+                    <div class="d-descricao">
+                        <p><strong>Ícone do Basquete:</strong> Criado para as quadras, mas levado para as ruas.</p>
+                        <p>O ícone do basquete dos anos 80 retorna com detalhes clássicos e um estilo retrô.</p>
+                    </div>
+                    <div class="d-tamanhos">
+                        <div class="tamanho-btn">39</div>
+                        <div class="tamanho-btn">40</div>
+                        <div class="tamanho-btn">41</div>
+                        <div class="tamanho-btn">42</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -133,9 +200,87 @@
         <p>© 2024 Outfit Imperial - Todos os direitos reservados</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.js"></script>
+    <div id="janela-modal" class="modal-overlay" onclick="fecharModal(event)">
+        <div class="modal-content">
+            <span class="btn-fechar" onclick="fecharModal(event)">×</span>
+            
+            <div class="modal-foto">
+                <img id="m-img" src="" alt="Produto">
+            </div>
+
+            <div class="modal-info">
+                <h2 id="m-titulo">Nome do Produto</h2>
+                <div id="m-preco" class="modal-preco">R$ 00,00</div>
+                
+                <div class="area-tamanhos">
+                    <span class="titulo-opcao">Selecionar Tamanho:</span>
+                    <div id="m-tamanhos" class="grade-tamanhos">
+                        </div>
+                </div>
+
+                <div id="m-descricao" class="modal-descricao">
+                    </div>
+
+                <div class="modal-botoes">
+                    <a href="#" id="btn-zap1" class="botao-modal" target="_blank">Comprar com Vendedor 1</a>
+                    <a href="#" id="btn-zap2" class="botao-modal vendedor2" target="_blank">Comprar com Vendedor 2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        var lightbox = new SimpleLightbox('.galeria a', { /* opções */ });
+        // --- FUNÇÃO PARA ABRIR O MODAL ---
+        function abrirModal(idProduto) {
+            // Pega os dados escondidos no HTML do produto
+            var dados = document.getElementById(idProduto);
+            
+            // Pega os elementos da Janela Modal
+            var modalImg = document.getElementById('m-img');
+            var modalTitulo = document.getElementById('m-titulo');
+            var modalPreco = document.getElementById('m-preco');
+            var modalDesc = document.getElementById('m-descricao');
+            var modalTamanhos = document.getElementById('m-tamanhos');
+            var btnZap1 = document.getElementById('btn-zap1');
+            var btnZap2 = document.getElementById('btn-zap2');
+
+            // Preenche o Modal com os dados
+            modalImg.src = dados.querySelector('.d-img').innerText;
+            modalTitulo.innerText = dados.querySelector('.d-titulo').innerText;
+            modalPreco.innerText = dados.querySelector('.d-preco').innerText;
+            modalDesc.innerHTML = dados.querySelector('.d-descricao').innerHTML;
+            modalTamanhos.innerHTML = dados.querySelector('.d-tamanhos').innerHTML;
+
+            // Configura os Links do WhatsApp com o nome do produto atual
+            var textoZap = "Olá, tenho interesse em: " + dados.querySelector('.d-titulo').innerText;
+            btnZap1.href = "https://wa.me/5511994655832?text=" + encodeURIComponent(textoZap);
+            btnZap2.href = "https://wa.me/5511917686011?text=" + encodeURIComponent(textoZap);
+
+            // Mostra a janela
+            document.getElementById('janela-modal').classList.add('aberto');
+            document.body.style.overflow = 'hidden'; // Trava a rolagem do site fundo
+        }
+
+        // --- FUNÇÃO PARA FECHAR O MODAL ---
+        function fecharModal(event) {
+            // Fecha se clicar no X ou fora da caixa branca
+            if (event.target.classList.contains('modal-overlay') || event.target.classList.contains('btn-fechar')) {
+                document.getElementById('janela-modal').classList.remove('aberto');
+                document.body.style.overflow = 'auto'; // Destrava a rolagem
+            }
+        }
+
+        // --- NAVEGAÇÃO ENTRE SETORES ---
+        function mudarSetor(nomeSetor) {
+            document.getElementById('setor-roupas').classList.remove('ativo');
+            document.getElementById('setor-sneakers').classList.remove('ativo');
+            
+            var botoes = document.querySelectorAll('.btn-setor');
+            botoes.forEach(btn => btn.classList.remove('ativo'));
+
+            document.getElementById('setor-' + nomeSetor).classList.add('ativo');
+            event.currentTarget.classList.add('ativo');
+        }
     </script>
 
 </body>
