@@ -5,15 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outfit Imperial - Loja</title>
     
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.css">
 
     <style>
         /* DESIGN GERAL */
         body { font-family: 'Helvetica', 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; }
         
-        /* CABEÇALHO */
-        header { background-color: #000; color: white; padding: 20px; text-align: center; border-bottom: 4px solid #d4af37; }
-        .logo { max-width: 180px; height: auto; display: block; margin: 0 auto; }
+        /* CABEÇALHO NOVO */
+        header { 
+            background-color: #000; 
+            padding: 30px 20px; 
+            text-align: center; 
+            border-bottom: 4px solid #d4af37; 
+        }
+        
+        /* Estilo do Título Dourado */
+        header h1 {
+            font-family: 'Cinzel', serif; /* Fonte estilo Imperial */
+            color: #d4af37; /* Cor Dourada */
+            font-size: 38px;
+            font-weight: 700; /* Negrito */
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px; /* Espaçamento entre letras */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra leve */
+        }
+
+        header p {
+            color: #ccc;
+            font-size: 12px;
+            margin-top: 5px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
         
         /* VITRINE */
         .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 30px 10px; max-width: 1200px; margin: 0 auto; }
@@ -41,7 +67,7 @@
             height: 280px; 
             object-fit: cover; 
             border-radius: 10px; 
-            cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
+            cursor: pointer;
         }
         .aviso-clique { font-size: 12px; color: #888; margin-top: -10px; margin-bottom: 15px; display: block;}
         
@@ -65,7 +91,8 @@
 <body>
 
     <header>
-        <img src="image_1.png" alt="Outfit Imperial" class="logo">
+        <h1>Outfit Imperial</h1>
+        <p>Roupas & Sneakers</p>
     </header>
 
     <div class="container">
@@ -73,3 +100,44 @@
         <div class="produto">
             
             <div class="galeria">
+                <a href="camisaZara.jpeg" class="capa-produto" title="Jaqueta Zara - Frente">
+                    <img src="camisaZara.jpeg" alt="Jaqueta Zara">
+                </a>
+                <span class="aviso-clique">(Clique na foto para ver detalhes)</span>
+
+                <div style="display:none;">
+                    <a href="jaqueta-foto2.jpg" title="Detalhe do Tecido">
+                        <img src="jaqueta-foto2.jpg" alt="Detalhe">
+                    </a>
+                    <a href="jaqueta-foto3.jpg" title="Costas">
+                        <img src="jaqueta-foto3.jpg" alt="Costas">
+                    </a>
+                </div>
+            </div>
+            
+            <h3>Jaqueta Zara</h3>
+            <p class="preco">R$ 122,90</p>
+            
+            <div class="area-botoes">
+                <a href="https://wa.me/5511994655832?text=Olá, tenho interesse na Jaqueta Zara." class="botao-zap" target="_blank">
+                    <span>👤 Falar com Vendedor 1</span>
+                </a>
+                <a href="https://wa.me/5511917686011?text=Olá, tenho interesse na Jaqueta Zara." class="botao-zap vendedor2" target="_blank">
+                    <span>👤 Falar com Vendedor 2</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2024 Outfit Imperial - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.js"></script>
+    <script>
+        var lightbox = new SimpleLightbox('.galeria a', { /* opções */ });
+    </script>
+
+</body>
+</html>
