@@ -5,7 +5,7 @@ const produtos = [
     {
         id: "jaqueta-zara", // ID único (não use espaços)
         nome: "Jaqueta Zara - Coleção 2024",
-        preco: "R$ 122,90",
+        preco: "R$ 260,00",
         categoria: "roupas", // 'roupas' ou 'sneakers'
         imgCapa: "camisaZara.jpeg",
         imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
@@ -21,7 +21,7 @@ const produtos = [
     {
         id: "nike-dunk",
         nome: "Nike Dunk Low Retro",
-        preco: "R$ 599,90",
+        preco: "R$ 250,90",
         categoria: "sneakers",
         imgCapa: "camisaZara.jpeg", // Troque pela foto do tenis
         imagens: ["camisaZara.jpeg"], // Adicione mais fotos se tiver
