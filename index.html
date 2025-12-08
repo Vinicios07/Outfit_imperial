@@ -11,29 +11,41 @@
         /* --- DESIGN GERAL --- */
         body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #111; }
         
-        /* CABEÇALHO COM PADRÃO DE FUNDO */
+        /* CABEÇALHO */
         header { 
             background-color: #000; 
-            /* Padrão de fundo sutil para não ficar vazio */
             background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
             padding: 40px 20px 25px; 
             text-align: center; 
             border-bottom: 4px solid #d4af37;
         }
-        .header-logo-center { display: block; margin: 0 auto 20px; }
-        .header-logo-center img { 
-            width: 220px; /* Aumentei o tamanho da logo */
-            height: auto; 
-            display: block; 
-            margin: 0 auto; 
+
+        /* TÍTULOS DE TEXTO PADRÃO */
+        header h1 {
+            font-family: 'Cinzel', serif; 
+            color: #d4af37; 
+            font-size: 42px; /* Tamanho bom para destaque */
+            font-weight: 700; 
+            margin: 0 0 5px 0;
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header p { 
+            color: #ccc; 
+            font-size: 14px; 
+            margin: 0 0 25px 0; /* Espaço abaixo do subtítulo */
+            letter-spacing: 4px; 
+            text-transform: uppercase; 
+            font-weight: 300;
         }
         
-        /* NOVA SEÇÃO DE INSTAGRAMS */
+        /* INSTAGRAMS */
         .instagram-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; /* Espaço entre os perfis */
+            gap: 20px;
             margin-bottom: 25px;
         }
         .instagram-link {
@@ -47,25 +59,20 @@
             text-decoration: none;
             transition: color 0.3s;
         }
-        .instagram-link:hover {
-            color: #fff; /* Muda para branco ao passar o mouse */
-        }
+        .instagram-link:hover { color: #fff; }
         .instagram-icon-svg { width: 18px; height: 18px; fill: currentColor; }
 
-        .search-box { margin: 20px auto 10px; max-width: 400px; position: relative; display: flex; }
+        /* BARRA DE PESQUISA */
+        .search-box { margin: 10px auto 0; max-width: 400px; position: relative; display: flex; }
         .search-input { width: 100%; padding: 12px 40px 12px 20px; border-radius: 30px; border: 2px solid #333; background: #1a1a1a; color: white; font-size: 14px; outline: none; transition: 0.3s; }
         .search-input:focus { border-color: #d4af37; background: #000; }
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 18px; pointer-events: none; }
         
-        .menu-setores { display: flex; justify-content: center; gap: 15px; margin-top: 25px; padding-bottom: 5px; }
-        .btn-setor { background: transparent; border: 1px solid #d4af37; color: #d4af37; padding: 10px 25px; font-family: 'Cinzel', serif; font-size: 14px; cursor: pointer; text-transform: uppercase; transition: all 0.3s; border-radius: 4px; }
-        .btn-setor:hover { background: rgba(212, 175, 55, 0.2); }
-        .btn-setor.ativo { background: #d4af37; color: #000; font-weight: bold; box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
-
-        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 30px 10px; max-width: 1200px; margin: 0 auto; min-height: 400px; }
-        .setor-loja { display: none; width: 100%; flex-wrap: wrap; justify-content: center; }
-        .setor-loja.ativo { display: flex; }
-        .setor-loja.buscando { display: flex; }
+        /* VITRINE */
+        .container { display: flex; flex-direction: column; align-items: center; padding: 30px 10px; max-width: 1200px; margin: 0 auto; min-height: 400px; }
+        
+        /* Agora os setores aparecem sempre (display: flex) */
+        .setor-loja { display: flex; width: 100%; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
 
         .produto { background: white; margin: 15px; padding: 20px; border-radius: 12px; width: 260px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s ease; position: relative; cursor: pointer; }
         .produto:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
@@ -109,8 +116,8 @@
 
         @media (max-width: 850px) {
             header { padding-top: 30px; }
-            .header-logo-center img { width: 180px; }
-            .instagram-container { flex-direction: column; gap: 10px; } /* Perfis um embaixo do outro no celular */
+            header h1 { font-size: 32px; } /* Título menor no celular */
+            .instagram-container { flex-direction: column; gap: 10px; }
             .modal-content { flex-direction: column; height: auto; max-height: 95vh; }
             .modal-galeria-container { flex-direction: column-reverse; padding: 15px; gap: 10px; flex: none; }
             .modal-thumbnails { flex-direction: row; width: 100%; justify-content: center; }
@@ -123,11 +130,8 @@
 <body>
 
     <header>
-        <div class="header-logo-center">
-            <a href="#" onclick="location.reload(); return false;">
-                <img src="logo-oficial.jpeg" alt="Outfit Imperial Logo">
-            </a>
-        </div>
+        <h1>Outfit Imperial</h1>
+        <p>Roupas & Sneakers</p>
         
         <div class="instagram-container">
             <a href="https://instagram.com/outfit_imperial" target="_blank" class="instagram-link">
@@ -152,16 +156,12 @@
             <input type="text" id="campo-pesquisa" class="search-input" placeholder="Busque por modelo, cor..." onkeyup="pesquisarProdutos()">
             <span class="search-icon">🔍</span>
         </div>
-        <div class="menu-setores">
-            <button class="btn-setor ativo" id="btn-roupas" onclick="mudarSetor('roupas')">Roupas</button>
-            <button class="btn-setor" id="btn-sneakers" onclick="mudarSetor('sneakers')">Sneakers</button>
-        </div>
-    </header>
+        </header>
 
     <div class="container">
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
 
-        <div id="setor-roupas" class="setor-loja ativo"></div> 
+        <div id="setor-roupas" class="setor-loja"></div> 
         <div id="setor-sneakers" class="setor-loja"></div>
     </div>
 
@@ -193,7 +193,6 @@
     <script src="produtos.js"></script>
 
     <script>
-        // Quando o site carrega, ele chama essa função para criar as roupas
         document.addEventListener("DOMContentLoaded", () => {
             carregarProdutosNaTela();
         });
@@ -202,13 +201,10 @@
             const containerRoupas = document.getElementById('setor-roupas');
             const containerSneakers = document.getElementById('setor-sneakers');
             
-            // Limpa antes de começar
             containerRoupas.innerHTML = "";
             containerSneakers.innerHTML = "";
 
-            // Loop por cada produto do arquivo produtos.js
             produtos.forEach(prod => {
-                // Cria o HTML do cartão
                 const htmlProduto = `
                     <div class="produto" onclick="abrirModal('${prod.id}')">
                         <div class="capa-produto">
@@ -220,7 +216,6 @@
                     </div>
                 `;
 
-                // Coloca na caixa certa
                 if(prod.categoria === 'roupas') {
                     containerRoupas.innerHTML += htmlProduto;
                 } else {
@@ -229,18 +224,15 @@
             });
         }
 
-        // --- SISTEMA DO MODAL (ATUALIZADO PARA LER DO JS) ---
+        // --- SISTEMA DO MODAL ---
         function abrirModal(idProduto) {
-            // Acha o produto na lista pelo ID
             const prod = produtos.find(p => p.id === idProduto);
-            if (!prod) return; // Se não achar, para.
+            if (!prod) return;
 
-            // Preenche os dados
             document.getElementById('m-titulo').innerText = prod.nome;
             document.getElementById('m-preco').innerText = prod.preco;
             document.getElementById('m-descricao').innerHTML = prod.descricao;
             
-            // Gera os botões de tamanho
             const divTamanhos = document.getElementById('m-tamanhos');
             divTamanhos.innerHTML = "";
             prod.tamanhos.forEach(tam => {
@@ -249,15 +241,12 @@
                 divTamanhos.innerHTML += `<div class="${classe}">${tam}</div>`;
             });
 
-            // Galeria de Fotos
             const containerThumbs = document.getElementById('m-thumbnails');
             const imgPrincipal = document.getElementById('m-img-principal');
             containerThumbs.innerHTML = "";
             
-            // Coloca a primeira foto grande
             imgPrincipal.src = prod.imagens[0];
 
-            // Gera as miniaturas
             prod.imagens.forEach((imgSrc, index) => {
                 const thumb = document.createElement('img');
                 thumb.src = imgSrc;
@@ -272,12 +261,10 @@
                 containerThumbs.appendChild(thumb);
             });
 
-            // Links do Zap
             const textoZap = "Olá, tenho interesse em: " + prod.nome;
             document.getElementById('btn-zap1').href = "https://wa.me/5511994655832?text=" + encodeURIComponent(textoZap);
             document.getElementById('btn-zap2').href = "https://wa.me/5511917686011?text=" + encodeURIComponent(textoZap);
 
-            // Abre
             document.getElementById('janela-modal').classList.add('aberto');
             document.body.style.overflow = 'hidden';
         }
@@ -289,23 +276,18 @@
             }
         }
 
-        // --- PESQUISA ---
+        // --- PESQUISA ATUALIZADA (Sem setores ocultos) ---
         function pesquisarProdutos() {
             const termo = document.getElementById('campo-pesquisa').value.toLowerCase();
-            const setores = document.querySelectorAll('.setor-loja');
             const produtosDom = document.querySelectorAll('.produto');
             const msgErro = document.getElementById('msg-sem-resultado');
             let encontrou = false;
 
             if (termo === "") {
-                setores.forEach(s => s.classList.remove('buscando'));
-                mudarSetor('roupas');
                 msgErro.style.display = 'none';
                 produtosDom.forEach(p => p.style.display = 'block');
                 return;
             }
-
-            setores.forEach(s => { s.style.display = 'flex'; s.classList.add('buscando'); });
 
             produtosDom.forEach(prod => {
                 const titulo = prod.querySelector('h3').innerText.toLowerCase();
@@ -317,26 +299,6 @@
                 }
             });
             msgErro.style.display = encontrou ? 'none' : 'block';
-        }
-
-        function mudarSetor(nomeSetor) {
-            document.getElementById('campo-pesquisa').value = "";
-            document.getElementById('msg-sem-resultado').style.display = 'none';
-            document.querySelectorAll('.produto').forEach(p => p.style.display = 'block');
-            
-            document.getElementById('setor-roupas').style.display = 'none';
-            document.getElementById('setor-sneakers').style.display = 'none';
-            document.getElementById('setor-roupas').classList.remove('ativo');
-            document.getElementById('setor-sneakers').classList.remove('ativo');
-            document.querySelectorAll('.btn-setor').forEach(btn => btn.classList.remove('ativo'));
-
-            if(nomeSetor === 'roupas') {
-                document.getElementById('setor-roupas').style.display = 'flex';
-                document.getElementById('btn-roupas').classList.add('ativo');
-            } else {
-                document.getElementById('setor-sneakers').style.display = 'flex';
-                document.getElementById('btn-sneakers').classList.add('ativo');
-            }
         }
     </script>
 
