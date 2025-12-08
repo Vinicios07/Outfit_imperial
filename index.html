@@ -6,58 +6,70 @@
     <title>Outfit Imperial - Loja</title>
     <style>
         /* DESIGN GERAL */
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        body { font-family: 'Helvetica', 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; }
         
         /* CABEÇALHO */
-        header { background-color: #000; color: white; padding: 20px; text-align: center; }
+        header { background-color: #000; color: white; padding: 20px; text-align: center; border-bottom: 4px solid #d4af37; }
         .logo { max-width: 180px; height: auto; display: block; margin: 0 auto; }
         
         /* VITRINE */
-        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 30px 10px; max-width: 1200px; margin: 0 auto; }
         
         /* CARTÃO DO PRODUTO */
         .produto { 
             background: white; 
             margin: 15px; 
             padding: 20px; 
-            border-radius: 12px; 
+            border-radius: 15px; 
             width: 280px; 
             text-align: center; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
-            transition: transform 0.2s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .produto:hover { transform: translateY(-5px); } /* Leve subida ao passar o mouse */
+        
+        .produto:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
         
         .produto img { 
-            max-width: 100%; 
-            height: 250px; /* Altura fixa para alinhar tudo */
-            object-fit: cover; /* Corta a imagem pra caber certinho */
-            border-radius: 8px; 
-            margin-bottom: 10px;
+            width: 100%; 
+            height: 280px; /* Altura fixa para alinhar as fotos */
+            object-fit: cover; /* Garante que a foto preencha o espaço sem esticar */
+            border-radius: 10px; 
+            margin-bottom: 15px;
         }
         
-        h3 { color: #222; margin: 10px 0; font-size: 18px; }
-        .preco { font-size: 24px; color: #000; font-weight: bold; margin: 5px 0 15px; }
+        h3 { color: #111; margin: 10px 0; font-size: 18px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .preco { font-size: 24px; color: #2ecc71; font-weight: 800; margin: 5px 0 20px; }
         
         /* ÁREA DOS BOTÕES */
-        .area-botoes { display: flex; flex-direction: column; gap: 10px; }
+        .area-botoes { display: flex; flex-direction: column; gap: 10px; width: 100%; }
         
         .botao-zap { 
-            display: block; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: #25d366; 
             color: white; 
-            padding: 10px 15px; 
+            padding: 12px; 
             text-decoration: none; 
-            border-radius: 6px; 
+            border-radius: 8px; 
             font-weight: bold; 
             font-size: 14px;
-            transition: background 0.3s;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
         }
-        .botao-zap:hover { background-color: #128c7e; }
         
-        /* Botão secundário com cor levemente diferente para diferenciar */
-        .botao-zap.secundario { background-color: #1da851; }
-        .botao-zap.secundario:hover { background-color: #147a3b; }
+        .botao-zap:hover { background-color: #1ebc57; }
+        
+        /* Estilo levemente diferente para o botão 2 */
+        .botao-zap.vendedor2 { background-color: #128c7e; }
+        .botao-zap.vendedor2:hover { background-color: #0d6e63; }
+
+        /* Rodapé simples */
+        footer { text-align: center; padding: 20px; color: #666; font-size: 12px; margin-top: 40px; }
 
     </style>
 </head>
@@ -71,40 +83,42 @@
 
         <div class="produto">
             <img src="camisaZara.jpeg" alt="Jaqueta Zara">
+            
             <h3>Jaqueta Zara</h3>
             <p class="preco">R$ 122,90</p>
             
-            <p style="font-size: 14px; color: #666; margin-bottom: 10px;">Escolha um atendente:</p>
-
             <div class="area-botoes">
-                <a href="https://wa.me/5511994655832?text=Olá, tenho interesse na Jaqueta Zara." class="botao-zap" target="_blank">
-                    📱 Chamar Vendedor 1
+                <a href="https://wa.me/5511994655832?text=Olá, tenho interesse na Jaqueta Zara, poderia me atender?" class="botao-zap" target="_blank">
+                    <span>👤 Falar com Vendedor 1</span>
                 </a>
 
-                <a href="https://wa.me/5511917686011?text=Olá, tenho interesse na Jaqueta Zara." class="botao-zap secundario" target="_blank">
-                    📱 Chamar Vendedor 2
+                <a href="https://wa.me/5511917686011?text=Olá, tenho interesse na Jaqueta Zara, poderia me atender?" class="botao-zap vendedor2" target="_blank">
+                    <span>👤 Falar com Vendedor 2</span>
                 </a>
             </div>
         </div>
 
         <div class="produto">
             <img src="camisaZara.jpeg" alt="Jaqueta Zara">
-            <h3>Outra Peça (Exemplo)</h3>
-            <p class="preco">R$ 89,90</p>
             
-            <p style="font-size: 14px; color: #666; margin-bottom: 10px;">Escolha um atendente:</p>
-
+            <h3>Jaqueta Zara (Cópia)</h3>
+            <p class="preco">R$ 122,90</p>
+            
             <div class="area-botoes">
-                <a href="https://wa.me/5511994655832?text=Olá, tenho interesse nessa outra peça." class="botao-zap" target="_blank">
-                    📱 Conversar com Alexandre Silva
+                <a href="https://wa.me/5511994655832?text=Olá, vi o produto no site e tenho interesse." class="botao-zap" target="_blank">
+                    <span>👤 Falar com Vendedor 1</span>
                 </a>
-                <a href="https://wa.me/5511917686011?text=Olá, tenho interesse nessa outra peça." class="botao-zap secundario" target="_blank">
-                    📱 Conversar com Talles Trindade
+                <a href="https://wa.me/5511917686011?text=Olá, vi o produto no site e tenho interesse." class="botao-zap vendedor2" target="_blank">
+                    <span>👤 Falar com Vendedor 2</span>
                 </a>
             </div>
         </div>
 
     </div>
+
+    <footer>
+        <p>© 2024 Outfit Imperial - Todos os direitos reservados</p>
+    </footer>
 
 </body>
 </html>
