@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outfit Imperial - Loja</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.css">
+
     <style>
         /* DESIGN GERAL */
         body { font-family: 'Helvetica', 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; }
@@ -32,13 +35,15 @@
         
         .produto:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
         
-        .produto img { 
+        /* Ajuste da imagem principal para ser clicável */
+        .capa-produto img { 
             width: 100%; 
-            height: 280px; /* Altura fixa para alinhar as fotos */
-            object-fit: cover; /* Garante que a foto preencha o espaço sem esticar */
+            height: 280px; 
+            object-fit: cover; 
             border-radius: 10px; 
-            margin-bottom: 15px;
+            cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
         }
+        .aviso-clique { font-size: 12px; color: #888; margin-top: -10px; margin-bottom: 15px; display: block;}
         
         h3 { color: #111; margin: 10px 0; font-size: 18px; text-transform: uppercase; letter-spacing: 0.5px; }
         .preco { font-size: 24px; color: #2ecc71; font-weight: 800; margin: 5px 0 20px; }
@@ -47,30 +52,14 @@
         .area-botoes { display: flex; flex-direction: column; gap: 10px; width: 100%; }
         
         .botao-zap { 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #25d366; 
-            color: white; 
-            padding: 12px; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            font-size: 14px;
-            transition: background 0.2s;
-            border: none;
-            cursor: pointer;
+            display: flex; alignItems: center; justify-content: center;
+            background-color: #25d366; color: white; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 14px; transition: background 0.2s; border: none; cursor: pointer;
         }
-        
         .botao-zap:hover { background-color: #1ebc57; }
-        
-        /* Estilo levemente diferente para o botão 2 */
         .botao-zap.vendedor2 { background-color: #128c7e; }
         .botao-zap.vendedor2:hover { background-color: #0d6e63; }
 
-        /* Rodapé simples */
         footer { text-align: center; padding: 20px; color: #666; font-size: 12px; margin-top: 40px; }
-
     </style>
 </head>
 <body>
@@ -82,43 +71,5 @@
     <div class="container">
 
         <div class="produto">
-            <img src="camisaZara.jpeg" alt="Jaqueta Zara">
             
-            <h3>Jaqueta Zara</h3>
-            <p class="preco">R$ 122,90</p>
-            
-            <div class="area-botoes">
-                <a href="https://wa.me/5511994655832?text=Olá, tenho interesse na Jaqueta Zara, poderia me atender?" class="botao-zap" target="_blank">
-                    <span>👤 Falar com Vendedor 1</span>
-                </a>
-
-                <a href="https://wa.me/5511917686011?text=Olá, tenho interesse na Jaqueta Zara, poderia me atender?" class="botao-zap vendedor2" target="_blank">
-                    <span>👤 Falar com Vendedor 2</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="produto">
-            <img src="camisaZara.jpeg" alt="Jaqueta Zara">
-            
-            <h3>Jaqueta Zara (Cópia)</h3>
-            <p class="preco">R$ 122,90</p>
-            
-            <div class="area-botoes">
-                <a href="https://wa.me/5511994655832?text=Olá, vi o produto no site e tenho interesse." class="botao-zap" target="_blank">
-                    <span>👤 Falar com Vendedor 1</span>
-                </a>
-                <a href="https://wa.me/5511917686011?text=Olá, vi o produto no site e tenho interesse." class="botao-zap vendedor2" target="_blank">
-                    <span>👤 Falar com Vendedor 2</span>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>© 2024 Outfit Imperial - Todos os direitos reservados</p>
-    </footer>
-
-</body>
-</html>
+            <div class="galeria">
