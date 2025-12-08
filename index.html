@@ -1,24 +1,110 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Imperial - Loja</title>
+    <style>
+        /* DESIGN GERAL */
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        
+        /* CABEÇALHO */
+        header { background-color: #000; color: white; padding: 20px; text-align: center; }
+        .logo { max-width: 180px; height: auto; display: block; margin: 0 auto; }
+        
+        /* VITRINE */
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        
+        /* CARTÃO DO PRODUTO */
+        .produto { 
+            background: white; 
+            margin: 15px; 
+            padding: 20px; 
+            border-radius: 12px; 
+            width: 280px; 
+            text-align: center; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+            transition: transform 0.2s;
+        }
+        .produto:hover { transform: translateY(-5px); } /* Leve subida ao passar o mouse */
+        
+        .produto img { 
+            max-width: 100%; 
+            height: 250px; /* Altura fixa para alinhar tudo */
+            object-fit: cover; /* Corta a imagem pra caber certinho */
+            border-radius: 8px; 
+            margin-bottom: 10px;
+        }
+        
+        h3 { color: #222; margin: 10px 0; font-size: 18px; }
+        .preco { font-size: 24px; color: #000; font-weight: bold; margin: 5px 0 15px; }
+        
+        /* ÁREA DOS BOTÕES */
+        .area-botoes { display: flex; flex-direction: column; gap: 10px; }
+        
+        .botao-zap { 
+            display: block; 
+            background-color: #25d366; 
+            color: white; 
+            padding: 10px 15px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .botao-zap:hover { background-color: #128c7e; }
+        
+        /* Botão secundário com cor levemente diferente para diferenciar */
+        .botao-zap.secundario { background-color: #1da851; }
+        .botao-zap.secundario:hover { background-color: #147a3b; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="image_1.png" alt="Outfit Imperial" class="logo">
+    </header>
+
+    <div class="container">
 
         <div class="produto">
-            <img src="camisa1.jpg" alt="Camisa Estampa Leão">
+            <img src="camisaZara.jpeg" alt="Jaqueta Zara">
+            <h3>Jaqueta Zara</h3>
+            <p class="preco">R$ 122,90</p>
             
-            <h3>Camisa Streetwear Leão</h3>
-            
+            <p style="font-size: 14px; color: #666; margin-bottom: 10px;">Escolha um atendente:</p>
+
+            <div class="area-botoes">
+                <a href="https://wa.me/5511994655832?text=Olá, tenho interesse na Jaqueta Zara." class="botao-zap" target="_blank">
+                    📱 Chamar Vendedor 1
+                </a>
+
+                <a href="https://wa.me/5511917686011?text=Olá, tenho interesse na Jaqueta Zara." class="botao-zap secundario" target="_blank">
+                    📱 Chamar Vendedor 2
+                </a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <img src="camisaZara.jpeg" alt="Jaqueta Zara">
+            <h3>Outra Peça (Exemplo)</h3>
             <p class="preco">R$ 89,90</p>
             
-            <a href="https://wa.me/5511999999999?text=Olá, tenho interesse na Camisa Leão de R$89,90" class="botao-comprar" target="_blank">
-                Comprar
-            </a>
+            <p style="font-size: 14px; color: #666; margin-bottom: 10px;">Escolha um atendente:</p>
+
+            <div class="area-botoes">
+                <a href="https://wa.me/5511994655832?text=Olá, tenho interesse nessa outra peça." class="botao-zap" target="_blank">
+                    📱 Conversar com Alexandre Silva
+                </a>
+                <a href="https://wa.me/5511917686011?text=Olá, tenho interesse nessa outra peça." class="botao-zap secundario" target="_blank">
+                    📱 Conversar com Talles Trindade
+                </a>
+            </div>
         </div>
 
-        <div class="produto">
-            <img src="camisa2.jpg" alt="Camisa Oversized Branca">
-            <h3>Camisa Oversized Branca</h3>
-            <p class="preco">R$ 99,90</p>
-            <a href="https://wa.me/5511999999999?text=Olá, tenho interesse na Camisa Oversized de R$99,90" class="botao-comprar" target="_blank">
-                Comprar
-            </a>
-        </div>
+    </div>
 
-        </div>
+</body>
+</html>
