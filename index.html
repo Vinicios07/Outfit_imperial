@@ -11,33 +11,44 @@
         /* --- DESIGN GERAL --- */
         body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #111; }
         
-        /* CABEÇALHO */
+        /* CABEÇALHO (Novo Layout) */
         header { 
             background-color: #000; 
-            padding: 30px 20px 15px; 
+            padding: 40px 20px 20px; /* Mais espaço no topo */
             text-align: center; 
             border-bottom: 4px solid #d4af37;
-            position: relative; 
         }
 
-        /* LOGO */
-        .logo-container {
-            position: absolute;
-            top: 15px;
-            left: 20px;
+        /* LOGO CENTRALIZADA */
+        .header-logo-center {
+            display: block;
+            margin: 0 auto 20px; /* Centraliza e dá espaço embaixo */
         }
-        .logo-img {
-            width: 100px; /* Tamanho da logo */
+        .header-logo-center img {
+            width: 180px; /* Logo maior para destaque */
             height: auto;
             display: block;
-            border-radius: 5px; /* Leve arredondamento se quiser */
+            margin: 0 auto;
         }
 
-        header h1 {
-            font-family: 'Cinzel', serif; color: #d4af37; font-size: 38px; font-weight: 700; margin: 0;
-            text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        /* INSTAGRAM HEADER */
+        .instagram-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            color: #d4af37; /* Cor Dourada */
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            font-family: 'Inter', sans-serif;
         }
-        header p { color: #ccc; font-size: 12px; margin-top: 5px; letter-spacing: 4px; text-transform: uppercase; }
+        .instagram-icon-svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor; /* Usa a cor do texto (dourado) */
+        }
 
         /* BARRA DE PESQUISA */
         .search-box {
@@ -53,7 +64,7 @@
         }
         
         /* BARRA DE SETORES */
-        .menu-setores { display: flex; justify-content: center; gap: 15px; margin-top: 20px; padding-bottom: 5px; }
+        .menu-setores { display: flex; justify-content: center; gap: 15px; margin-top: 25px; padding-bottom: 5px; }
         .btn-setor {
             background: transparent; border: 1px solid #d4af37; color: #d4af37; padding: 10px 25px;
             font-family: 'Cinzel', serif; font-size: 14px; cursor: pointer; text-transform: uppercase; transition: all 0.3s; border-radius: 4px;
@@ -147,13 +158,9 @@
 
         /* Responsivo (Celular) */
         @media (max-width: 850px) {
-            header { padding-top: 20px; }
-            .logo-container {
-                position: relative; 
-                top: auto; left: auto;
-                margin: 0 auto 15px; 
-                display: flex; justify-content: center;
-            }
+            header { padding-top: 30px; }
+            .header-logo-center img { width: 150px; } /* Logo um pouco menor no celular */
+            
             .modal-content { flex-direction: column; height: auto; max-height: 95vh; }
             .modal-galeria-container { flex-direction: column-reverse; padding: 15px; gap: 10px; flex: none; }
             .modal-thumbnails { flex-direction: row; width: 100%; justify-content: center; }
@@ -166,14 +173,16 @@
 <body>
 
     <header>
-        <div class="logo-container">
+        <div class="header-logo-center">
             <a href="#" onclick="location.reload(); return false;">
-                <img src="logo-oficial.jpeg" alt="Outfit Imperial Logo" class="logo-img">
+                <img src="logo-oficial.jpeg" alt="Outfit Imperial Logo">
             </a>
         </div>
 
-        <h1>Outfit Imperial</h1>
-        <p>Roupas & Sneakers</p>
+        <div class="instagram-header">
+            <svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            <span>@outfit_imperial</span>
+        </div>
         
         <div class="search-box">
             <input type="text" id="campo-pesquisa" class="search-input" placeholder="Busque por modelo, cor..." onkeyup="pesquisarProdutos()">
