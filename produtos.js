@@ -60,15 +60,13 @@ const produtos = [
         esgotados: []
     },
 
-    // --- DRY FIT (ATUALIZADO COM 5 FOTOS) ---
+    // --- DRY FIT ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
         preco: "R$ 89,90", 
         categoria: "dryfit",
-        // A foto '1' será a capa que aparece na vitrine
         imgCapa: "nike-dryfit-azul1.jpeg",
-        // Aqui listamos todas as 5 fotos para a galeria
         imagens: [
             "nike-dryfit-azul1.jpeg", 
             "nike-dryfit-azul2.jpeg", 
@@ -80,6 +78,26 @@ const produtos = [
             <p><strong>Alta Performance:</strong> Tecido tecnológico que afasta o suor da pele.</p>
             <p>Ideal para treinos, academia e prática de esportes.</p>
             <p>Leveza e liberdade de movimento.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
+    {
+        id: "nike-dryfit-outline-preta",
+        nome: "Camiseta Nike Dry Fit Outline - Preta",
+        preco: "R$ 99,90", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-preta1.jpeg",
+        // AGORA TEM 3 FOTOS AQUI:
+        imagens: [
+            "nike-dryfit-preta1.jpeg", 
+            "nike-dryfit-preta2.jpeg", 
+            "nike-dryfit-preta3.jpeg"
+        ], 
+        descricao: `
+            <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline) e logo vazado.</p>
+            <p>Tecnologia Dry Fit avançada para máximo conforto térmico.</p>
+            <p>Ajuste perfeito ao corpo, ideal para quem busca estilo no treino.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
