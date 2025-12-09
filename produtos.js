@@ -1,6 +1,6 @@
 // LISTA DE PRODUTOS
 const produtos = [
-    // --- PRODUTO NOVO 1: JAQUETA DE CIMA (Gola Alta) ---
+    // --- CORTA VENTOS ---
     {
         id: "jaqueta-couro-gola",
         nome: "Jaqueta Zara - Gola Alta Premium",
@@ -11,13 +11,10 @@ const produtos = [
         descricao: `
             <p><strong>Design Sofisticado:</strong> Jaqueta de couro sintético com gola alta estruturada.</p>
             <p>Modelagem reta e limpa, perfeita para um visual mais sério e elegante.</p>
-            <p>Fechamento frontal com zíper oculto e bolsos laterais discretos.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-
-    // --- PRODUTO NOVO 2: JAQUETA DE BAIXO (Bomber) ---
     {
         id: "jaqueta-bomber-couro",
         nome: "Jaqueta Bomber Zara - Efeito Couro",
@@ -28,13 +25,10 @@ const produtos = [
         descricao: `
             <p><strong>Estilo Urbano:</strong> Modelagem Bomber clássica com punhos elásticos.</p>
             <p>Confeccionada em material sintético com efeito couro de alta qualidade.</p>
-            <p>Ideal para compor looks despojados com conforto.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-
-    // --- PRODUTOS ANTIGOS (Para encher a vitrine) ---
     {
         id: "jaqueta-zara-tech",
         nome: "Jaqueta Zara - Corta Vento Tech",
@@ -49,6 +43,25 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: ["P", "GG"]
     },
+
+    // --- OVERSIZED (NOVA SEÇÃO) ---
+    {
+        id: "palm-angels-wings",
+        nome: "Camiseta Oversized Palm Angels - Wings",
+        preco: "R$ 189,90",
+        categoria: "oversized", // ATENÇÃO: Essa categoria joga o produto na nova seção
+        imgCapa: "palm-angels-oversized.jpeg",
+        imagens: ["palm-angels-oversized.jpeg"], 
+        descricao: `
+            <p><strong>Streetwear de Luxo:</strong> Camiseta Oversized com a icônica estampa de asas.</p>
+            <p>Disponível nas cores Off-White, Preto e Cinza.</p>
+            <p>Malha pesada de alta gramatura e caimento perfeito.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
+
+    // --- SNEAKERS ---
     {
         id: "nike-dunk",
         nome: "Nike Dunk Low Retro",
