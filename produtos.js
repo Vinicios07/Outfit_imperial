@@ -1,13 +1,14 @@
 // LISTA DE PRODUTOS
 const produtos = [
-    // --- NOVO PRODUTO: JAQUETA BOMBER (A destacada) ---
+    // --- NOVO PRODUTO: JAQUETA BOMBER ---
     {
         id: "jaqueta-bomber-couro",
         nome: "Jaqueta Bomber Zara - Efeito Couro",
-        preco: "R$ 260,00",
-        categoria: "corta-vento", // Isso coloca ela na primeira seção
-        imgCapa: "jaqueta-bomber.jpg",
-        imagens: ["jaqueta-bomber.jpg"], // Se tiver foto das costas, adicione aqui
+        preco: "R$ 329,90",
+        categoria: "corta-vento", 
+        // IMPORTANTE: O nome do arquivo aqui deve ser igual ao que você subiu (.jpeg)
+        imgCapa: "jaqueta-bomber.jpeg", 
+        imagens: ["jaqueta-bomber.jpeg"], 
         descricao: `
             <p><strong>Estilo Urbano:</strong> Modelagem Bomber clássica com punhos elásticos.</p>
             <p>Confeccionada em material sintético com efeito couro de alta qualidade.</p>
@@ -37,7 +38,7 @@ const produtos = [
         nome: "Nike Dunk Low Retro",
         preco: "R$ 599,90",
         categoria: "sneakers",
-        imgCapa: "camisaZara.jpeg", // Lembre de trocar pela foto do tênis depois
+        imgCapa: "camisaZara.jpeg", 
         imagens: ["camisaZara.jpeg"],
         descricao: `
             <p><strong>Ícone do Basquete:</strong> Criado para as quadras, mas levado para as ruas.</p>
