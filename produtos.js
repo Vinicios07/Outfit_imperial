@@ -4,7 +4,7 @@ const produtos = [
     {
         id: "jaqueta-bomber-couro",
         nome: "Jaqueta Bomber Zara - Efeito Couro",
-        preco: "R$ 329,90",
+        preco: "R$ 260,00",
         categoria: "corta-vento", // Isso coloca ela na primeira seção
         imgCapa: "jaqueta-bomber.jpg",
         imagens: ["jaqueta-bomber.jpg"], // Se tiver foto das costas, adicione aqui
