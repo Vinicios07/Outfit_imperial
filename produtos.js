@@ -53,7 +53,13 @@ const produtos = [
         preco: "R$ 89,90", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-azul1.jpeg",
-        imagens: ["nike-dryfit-azul1.jpeg"], 
+        imagens: [
+            "nike-dryfit-azul1.jpeg", 
+            "nike-dryfit-azul2.jpeg", 
+            "nike-dryfit-azul3.jpeg", 
+            "nike-dryfit-azul4.jpeg", 
+            "nike-dryfit-azul5.jpeg"
+        ], 
         descricao: `
             <p><strong>Alta Performance:</strong> Tecido tecnológico que afasta o suor da pele.</p>
             <p>Ideal para treinos, academia e prática de esportes.</p>
@@ -68,7 +74,7 @@ const produtos = [
         preco: "R$ 99,90", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-preta1.jpeg",
-        imagens: ["nike-dryfit-preta1.jpeg"], 
+        imagens: ["nike-dryfit-preta1.jpeg", "nike-dryfit-preta2.jpeg", "nike-dryfit-preta3.jpeg"], 
         descricao: `
             <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline) e logo vazado.</p>
             <p>Tecnologia Dry Fit avançada para máximo conforto térmico.</p>
@@ -83,26 +89,17 @@ const produtos = [
         preco: "R$ 99,90", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-branca1.jpeg",
-        imagens: ["nike-dryfit-branca1.jpeg"], 
+        imagens: [
+            "nike-dryfit-branca1.jpeg",
+            "nike-dryfit-branca2.jpeg",
+            "nike-dryfit-branca3.jpeg",
+            "nike-dryfit-branca4.jpeg",
+            "nike-dryfit-branca5.jpeg"
+        ], 
         descricao: `
-            <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta.</p>
+            <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta (Outline).</p>
             <p>Tecnologia de absorção de suor para manter o corpo seco.</p>
             <p>Design moderno que valoriza o shape.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "nike-dryfit-noturna",
-        nome: "Camiseta Nike Dry Fit - Preta Noturna",
-        preco: "R$ 89,90", 
-        categoria: "dryfit",
-        imgCapa: "nike-dryfit-noturna1.jpeg",
-        imagens: ["nike-dryfit-noturna1.jpeg"], 
-        descricao: `
-            <p><strong>Clássico Essencial:</strong> Camiseta lisa em tom escuro (Preta Noturna).</p>
-            <p>Swoosh Nike em destaque no peito.</p>
-            <p>Tecido respirável ideal para qualquer atividade física.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -130,7 +127,14 @@ const produtos = [
         preco: "R$ 79,90", 
         categoria: "bermudas", 
         imgCapa: "nike-bermuda-azul1.jpeg",
-        imagens: ["nike-bermuda-azul1.jpeg"],
+        imagens: [
+            "nike-bermuda-azul1.jpeg",
+            "nike-bermuda-azul2.jpeg",
+            "nike-bermuda-azul3.jpeg",
+            "nike-bermuda-azul4.jpeg",
+            "nike-bermuda-azul5.jpeg",
+            "nike-bermuda-azul6.jpeg"
+        ],
         descricao: `
             <p><strong>Conforto e Mobilidade:</strong> Bermuda em tecido Dry Fit leve e respirável.</p>
             <p>Ideal para treinos intensos, futebol e corrida.</p>
@@ -216,36 +220,6 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
-    {
-        id: "bermuda-jogador-escura",
-        nome: "Bermuda Jogador - Lavagem Escura Paint",
-        preco: "R$ 119,90", 
-        categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-escura.jpeg", 
-        imagens: ["bermuda-jogador-escura.jpeg"], 
-        descricao: `
-            <p><strong>Visual Moderno:</strong> Bermuda jeans com lavagem escura e respingos de tinta.</p>
-            <p>Acabamento destroyed com rasgos e barra desfiada.</p>
-            <p>Modelagem jogador para um look urbano e despojado.</p>
-        `,
-        tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: [] 
-    },
-    {
-        id: "bermuda-jogador-corda-azul",
-        nome: "Bermuda Jogador Premium - Corda Azul",
-        preco: "R$ 129,90", 
-        categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-corda-azul.jpeg", 
-        imagens: ["bermuda-jogador-corda-azul.jpeg"], 
-        descricao: `
-            <p><strong>Destaque Urbano:</strong> Bermuda escura com cordão azul vibrante.</p>
-            <p>Acabamento destroyed e modelagem confortável.</p>
-        `,
-        tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: [] 
-    },
-    // NOVO PRODUTO: DEGRADÊ AMARELO
     {
         id: "bermuda-jogador-degrade-amarelo",
         nome: "Bermuda Jogador - Degradê Cordão Amarelo",
