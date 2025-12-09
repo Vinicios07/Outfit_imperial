@@ -204,18 +204,18 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
-    // NOVO PRODUTO: BERMUDA ESCURA (PRETA AZULADA)
+    // NOVO PRODUTO: BERMUDA CINZA ESCURA
     {
-        id: "bermuda-jogador-escura",
-        nome: "Bermuda Jogador Jeans - Lavagem Escura Paint",
+        id: "bermuda-jogador-cinza-escura",
+        nome: "Bermuda Jogador Jeans - Lavagem Cinza Escura",
         preco: "R$ 119,90", 
         categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-escura.jpeg",
-        imagens: ["bermuda-jogador-escura.jpeg"], 
+        imgCapa: "bermuda-jogador-cinza-escura.jpeg",
+        imagens: ["bermuda-jogador-cinza-escura.jpeg"], 
         descricao: `
-            <p><strong>Estilo Moderno:</strong> Bermuda jeans com lavagem escura (Preta Azulada).</p>
-            <p>Detalhes em respingos de tinta (Paint) e acabamento destroyed.</p>
-            <p>Barra desfiada e modelagem confortável.</p>
+            <p><strong>Visual Moderno:</strong> Bermuda jeans com lavagem cinza escura estonada.</p>
+            <p>Acabamento destroyed com rasgos e barra desfiada.</p>
+            <p>Modelagem jogador para um look urbano e despojado.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
