@@ -67,7 +67,7 @@ const produtos = [
             <p>Leveza e liberdade de movimento.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
+        esgotados: []
     },
     {
         id: "nike-dryfit-outline-preta",
@@ -82,7 +82,7 @@ const produtos = [
             <p>Ajuste perfeito ao corpo.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
+        esgotados: []
     },
     {
         id: "nike-dryfit-outline-branca",
@@ -103,7 +103,7 @@ const produtos = [
             <p>Design moderno que valoriza o shape.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
+        esgotados: []
     },
     {
         id: "nike-dryfit-noturna",
@@ -118,7 +118,23 @@ const produtos = [
             <p>Tecido respirável ideal para qualquer atividade física.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
+        esgotados: []
+    },
+    // NOVO PRODUTO: AZUL PRATEADA
+    {
+        id: "nike-dryfit-azul-prateado",
+        nome: "Camiseta Nike Dry Fit - Azul Prateado",
+        preco: "R$ 99,90", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-azul-prateado1.jpeg",
+        imagens: ["nike-dryfit-azul-prateado1.jpeg"], 
+        descricao: `
+            <p><strong>Detalhes Premium:</strong> Camiseta em tom azul com costuras em destaque prateado.</p>
+            <p>Logo Nike vazado (Outline) grande no peito.</p>
+            <p>Tecnologia de alta performance para seus treinos.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
     },
 
     // --- BERMUDAS DRY FIT ---
@@ -142,7 +158,7 @@ const produtos = [
             <p>Cós elástico com cordão para ajuste perfeito.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
+        esgotados: []
     },
 
     // --- BERMUDAS JOGADOR ---
@@ -206,28 +222,14 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
-    // NOVO PRODUTO: BRANCA ACINZENTADA
-    {
-        id: "bermuda-jogador-branca-acinzentada",
-        nome: "Bermuda Jogador Jeans - Lavagem Branca Acinzentada",
-        preco: "R$ 119,90", 
-        categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-branca-acinzentada.jpeg",
-        imagens: ["bermuda-jogador-branca-acinzentada.jpeg"], 
-        descricao: `
-            <p><strong>Estilo Único:</strong> Bermuda jeans em tom off-white com lavagem acinzentada suave.</p>
-            <p>Detalhes destroyed e manchas de tinta sutis.</p>
-            <p>A combinação perfeita entre o claro e o urbano.</p>
-        `,
-        tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
-    },
-    // PRODUTO DA NIKE JOGADOR
+    // (BERMUDA CINZA ESCURA REMOVIDA)
+    
+    // --- NOVO PRODUTO: BERMUDA NIKE JOGADOR PRETA (Tactel/Microfibra) ---
     {
         id: "bermuda-nike-jogador-preta",
         nome: "Bermuda Nike Jogador - Preta",
         preco: "R$ 89,90", 
-        categoria: "bermudas-jogador", 
+        categoria: "bermudas-jogador", // Colocada na categoria Jogador
         imgCapa: "bermuda-nike-jogador.jpeg",
         imagens: ["bermuda-nike-jogador.jpeg"], 
         descricao: `
