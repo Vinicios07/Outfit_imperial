@@ -46,7 +46,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- DRY FIT ---
+    // --- DRY FIT (CAMISETAS) ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
