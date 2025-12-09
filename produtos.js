@@ -29,20 +29,7 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    {
-        id: "jaqueta-zara-tech",
-        nome: "Jaqueta Zara - Corta Vento Tech",
-        preco: "R$ 122,90",
-        categoria: "corta-vento",
-        imgCapa: "camisaZara.jpeg",
-        imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
-        descricao: `
-            <p><strong>Material Premium:</strong> Confeccionada em tecido tecnológico corta-vento.</p>
-            <p>Ideal para dias frios. Modelagem Slim Fit.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: ["P", "GG"]
-    },
+    // (JAQUETA BRANCA ANTIGA REMOVIDA)
 
     // --- OVERSIZED ---
     {
@@ -57,7 +44,7 @@ const produtos = [
             <p>Malha pesada de alta gramatura e caimento perfeito.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: []
+        esgotados: [] 
     },
 
     // --- DRY FIT ---
@@ -219,21 +206,7 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
-    {
-        id: "bermuda-jogador-cinza-escura",
-        nome: "Bermuda Jogador Jeans - Lavagem Cinza Escura",
-        preco: "R$ 119,90", 
-        categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-cinza-escura.jpeg",
-        imagens: ["bermuda-jogador-cinza-escura.jpeg"], 
-        descricao: `
-            <p><strong>Visual Moderno:</strong> Bermuda jeans com lavagem cinza escura estonada.</p>
-            <p>Acabamento destroyed com rasgos e barra desfiada.</p>
-            <p>Modelagem jogador para um look urbano e despojado.</p>
-        `,
-        tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
-    },
+    // (BERMUDA CINZA ESCURA REMOVIDA)
     
     // --- NOVO PRODUTO: BERMUDA NIKE JOGADOR PRETA (Tactel/Microfibra) ---
     {
