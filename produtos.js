@@ -146,7 +146,7 @@ const produtos = [
     // --- BERMUDAS JOGADOR ---
     {
         id: "bermuda-jeans-jogador",
-        nome: "Bermuda Jeans Jogador - Distressed",
+        nome: "Bermuda Jeans Jogador - Azul Distressed",
         preco: "R$ 119,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jeans-jogador.jpeg",
@@ -154,23 +154,38 @@ const produtos = [
         descricao: `
             <p><strong>Estilo Streetwear:</strong> Bermuda jeans com modelagem 'Jogador' (Jorts).</p>
             <p>Acabamento destroyed (rasgado) e barra desfiada.</p>
-            <p>Disponível em lavagem clara e escura.</p>
+            <p>Lavagem clássica azul.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
-    // NOVO PRODUTO: BERMUDA PRETA
     {
         id: "bermuda-jogador-preta",
         nome: "Bermuda Jogador Premium - Preta",
-        preco: "R$ 129,90", // Preço sugerido
+        preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-preta.jpeg",
         imagens: ["bermuda-jogador-preta.jpeg"], 
         descricao: `
             <p><strong>Atitude e Estilo:</strong> Bermuda preta com detalhes destroyed e cordão vermelho de destaque.</p>
             <p>Bolsos com bordado exclusivo 'XO' e costuras reforçadas.</p>
-            <p>Modelagem confortável e moderna para compor looks ousados.</p>
+            <p>Modelagem confortável e moderna.</p>
+        `,
+        tamanhos: ["38", "40", "42", "44", "46"],
+        esgotados: []
+    },
+    // NOVO PRODUTO: BERMUDA CINZA
+    {
+        id: "bermuda-jogador-cinza",
+        nome: "Bermuda Jogador Jeans - Lavagem Cinza",
+        preco: "R$ 119,90", 
+        categoria: "bermudas-jogador",
+        imgCapa: "bermuda-jogador-cinza.jpeg",
+        imagens: ["bermuda-jogador-cinza.jpeg"], 
+        descricao: `
+            <p><strong>Visual Grunge:</strong> Bermuda jeans com lavagem cinza estonada (Acid Wash).</p>
+            <p>Rasgos estratégicos e modelagem ampla estilo jogador.</p>
+            <p>Peça chave para quem curte um visual diferenciado.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
