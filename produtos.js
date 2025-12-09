@@ -1,33 +1,46 @@
 // LISTA DE PRODUTOS
-// Para adicionar um novo, basta copiar um bloco {...} e colar embaixo, mudando os dados.
-
 const produtos = [
+    // --- NOVO PRODUTO: JAQUETA BOMBER (A destacada) ---
     {
-        id: "jaqueta-zara", // ID único (não use espaços)
-        nome: "Jaqueta Zara - Coleção 2024",
-        preco: "R$ 260,00",
-        categoria: "roupas", // 'roupas' ou 'sneakers'
+        id: "jaqueta-bomber-couro",
+        nome: "Jaqueta Bomber Zara - Efeito Couro",
+        preco: "R$ 329,90",
+        categoria: "corta-vento", // Isso coloca ela na primeira seção
+        imgCapa: "jaqueta-bomber.jpg",
+        imagens: ["jaqueta-bomber.jpg"], // Se tiver foto das costas, adicione aqui
+        descricao: `
+            <p><strong>Estilo Urbano:</strong> Modelagem Bomber clássica com punhos elásticos.</p>
+            <p>Confeccionada em material sintético com efeito couro de alta qualidade.</p>
+            <p>Fechamento frontal com zíper e acabamento premium.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+
+    // --- PRODUTOS ANTERIORES ---
+    {
+        id: "jaqueta-zara-tech",
+        nome: "Jaqueta Zara - Corta Vento Tech",
+        preco: "R$ 122,90",
+        categoria: "corta-vento",
         imgCapa: "camisaZara.jpeg",
         imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
         descricao: `
             <p><strong>Material Premium:</strong> Confeccionada em tecido tecnológico corta-vento.</p>
             <p>Ideal para dias frios. Modelagem Slim Fit.</p>
-            <p>Peça exclusiva com acabamento reforçado.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] // Lista dos tamanhos que devem aparecer riscados
+        esgotados: ["P", "GG"]
     },
-    
     {
         id: "nike-dunk",
         nome: "Nike Dunk Low Retro",
-        preco: "R$ 250,90",
+        preco: "R$ 599,90",
         categoria: "sneakers",
-        imgCapa: "camisaZara.jpeg", // Troque pela foto do tenis
-        imagens: ["camisaZara.jpeg"], // Adicione mais fotos se tiver
+        imgCapa: "camisaZara.jpeg", // Lembre de trocar pela foto do tênis depois
+        imagens: ["camisaZara.jpeg"],
         descricao: `
             <p><strong>Ícone do Basquete:</strong> Criado para as quadras, mas levado para as ruas.</p>
-            <p>O ícone do basquete dos anos 80 retorna com detalhes clássicos.</p>
         `,
         tamanhos: ["39", "40", "41", "42"],
         esgotados: ["41"]
