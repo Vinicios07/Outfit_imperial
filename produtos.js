@@ -29,7 +29,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // (JAQUETA BRANCA ANTIGA REMOVIDA)
 
     // --- OVERSIZED ---
     {
@@ -67,7 +66,7 @@ const produtos = [
             <p>Leveza e liberdade de movimento.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "nike-dryfit-outline-preta",
@@ -82,7 +81,7 @@ const produtos = [
             <p>Ajuste perfeito ao corpo.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "nike-dryfit-outline-branca",
@@ -103,7 +102,7 @@ const produtos = [
             <p>Design moderno que valoriza o shape.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "nike-dryfit-noturna",
@@ -118,9 +117,8 @@ const produtos = [
             <p>Tecido respirável ideal para qualquer atividade física.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: []
+        esgotados: [] 
     },
-    // NOVO PRODUTO: AZUL PRATEADA
     {
         id: "nike-dryfit-azul-prateado",
         nome: "Camiseta Nike Dry Fit - Azul Prateado",
@@ -134,7 +132,7 @@ const produtos = [
             <p>Tecnologia de alta performance para seus treinos.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: []
+        esgotados: [] 
     },
 
     // --- BERMUDAS DRY FIT ---
@@ -158,7 +156,7 @@ const produtos = [
             <p>Cós elástico com cordão para ajuste perfeito.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: []
+        esgotados: [] 
     },
 
     // --- BERMUDAS JOGADOR ---
@@ -192,17 +190,19 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
+    // NOVO PRODUTO: DEGRADÊ (Substitui a cinza clara anterior se quiser, ou adiciona)
+    // Vou adicionar como nova opção
     {
-        id: "bermuda-jogador-cinza",
-        nome: "Bermuda Jogador Jeans - Lavagem Cinza",
-        preco: "R$ 119,90", 
+        id: "bermuda-jogador-degrade",
+        nome: "Bermuda Jogador - Degradê Black/Grey",
+        preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-cinza.jpeg",
-        imagens: ["bermuda-jogador-cinza.jpeg"], 
+        imgCapa: "bermuda-jogador-degrade.jpeg",
+        imagens: ["bermuda-jogador-degrade.jpeg"], 
         descricao: `
-            <p><strong>Visual Grunge:</strong> Bermuda jeans com lavagem cinza estonada (Acid Wash).</p>
-            <p>Rasgos estratégicos e modelagem ampla estilo jogador.</p>
-            <p>Peça chave para quem curte um visual diferenciado.</p>
+            <p><strong>Efeito Exclusivo:</strong> Bermuda com lavagem degradê, indo do preto na cintura ao cinza na barra.</p>
+            <p>Detalhes destroyed e cordão amarelo neon para máximo destaque.</p>
+            <p>Peça diferenciada para quem tem personalidade.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
@@ -222,14 +222,26 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
-    // (BERMUDA CINZA ESCURA REMOVIDA)
-    
-    // --- NOVO PRODUTO: BERMUDA NIKE JOGADOR PRETA (Tactel/Microfibra) ---
+    {
+        id: "bermuda-jogador-branca-acinzentada",
+        nome: "Bermuda Jogador Jeans - Lavagem Branca Acinzentada",
+        preco: "R$ 119,90", 
+        categoria: "bermudas-jogador",
+        imgCapa: "bermuda-jogador-branca-acinzentada.jpeg",
+        imagens: ["bermuda-jogador-branca-acinzentada.jpeg"], 
+        descricao: `
+            <p><strong>Estilo Único:</strong> Bermuda jeans em tom off-white com lavagem acinzentada suave.</p>
+            <p>Detalhes destroyed e manchas de tinta sutis.</p>
+            <p>A combinação perfeita entre o claro e o urbano.</p>
+        `,
+        tamanhos: ["38", "40", "42", "44", "46"],
+        esgotados: []
+    },
     {
         id: "bermuda-nike-jogador-preta",
         nome: "Bermuda Nike Jogador - Preta",
         preco: "R$ 89,90", 
-        categoria: "bermudas-jogador", // Colocada na categoria Jogador
+        categoria: "bermudas-jogador", 
         imgCapa: "bermuda-nike-jogador.jpeg",
         imagens: ["bermuda-nike-jogador.jpeg"], 
         descricao: `
