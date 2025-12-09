@@ -57,6 +57,7 @@ const produtos = [
         descricao: `
             <p><strong>Alta Performance:</strong> Tecido tecnológico que afasta o suor da pele.</p>
             <p>Ideal para treinos, academia e prática de esportes.</p>
+            <p>Leveza e liberdade de movimento.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -69,7 +70,9 @@ const produtos = [
         imgCapa: "nike-dryfit-preta1.jpeg",
         imagens: ["nike-dryfit-preta1.jpeg"], 
         descricao: `
-            <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline).</p>
+            <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline) e logo vazado.</p>
+            <p>Tecnologia Dry Fit avançada para máximo conforto térmico.</p>
+            <p>Ajuste perfeito ao corpo.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -83,6 +86,8 @@ const produtos = [
         imagens: ["nike-dryfit-branca1.jpeg"], 
         descricao: `
             <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta.</p>
+            <p>Tecnologia de absorção de suor para manter o corpo seco.</p>
+            <p>Design moderno que valoriza o shape.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -95,7 +100,9 @@ const produtos = [
         imgCapa: "nike-dryfit-noturna1.jpeg",
         imagens: ["nike-dryfit-noturna1.jpeg"], 
         descricao: `
-            <p><strong>Clássico Essencial:</strong> Camiseta lisa em tom escuro.</p>
+            <p><strong>Clássico Essencial:</strong> Camiseta lisa em tom escuro (Preta Noturna).</p>
+            <p>Swoosh Nike em destaque no peito.</p>
+            <p>Tecido respirável ideal para qualquer atividade física.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -109,6 +116,8 @@ const produtos = [
         imagens: ["jogador-prateado.jpeg"], 
         descricao: `
             <p><strong>Detalhes Premium:</strong> Camiseta em tom azul com costuras em destaque prateado.</p>
+            <p>Logo Nike vazado (Outline) grande no peito.</p>
+            <p>Tecnologia de alta performance para seus treinos.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -123,7 +132,9 @@ const produtos = [
         imgCapa: "nike-bermuda-azul1.jpeg",
         imagens: ["nike-bermuda-azul1.jpeg"],
         descricao: `
-            <p><strong>Conforto e Mobilidade:</strong> Bermuda em tecido Dry Fit leve.</p>
+            <p><strong>Conforto e Mobilidade:</strong> Bermuda em tecido Dry Fit leve e respirável.</p>
+            <p>Ideal para treinos intensos, futebol e corrida.</p>
+            <p>Cós elástico com cordão para ajuste perfeito.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -138,10 +149,12 @@ const produtos = [
         imgCapa: "bermuda-jeans-jogador.jpeg",
         imagens: ["bermuda-jeans-jogador.jpeg"], 
         descricao: `
-            <p><strong>Estilo Streetwear:</strong> Bermuda jeans com modelagem 'Jogador'.</p>
+            <p><strong>Estilo Streetwear:</strong> Bermuda jeans com modelagem 'Jogador' (Jorts).</p>
+            <p>Acabamento destroyed (rasgado) e barra desfiada.</p>
+            <p>Lavagem clássica azul.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "bermuda-jogador-preta",
@@ -151,10 +164,12 @@ const produtos = [
         imgCapa: "bermuda-jogador-preta.jpeg",
         imagens: ["bermuda-jogador-preta.jpeg"], 
         descricao: `
-            <p><strong>Atitude:</strong> Bermuda preta com cordão vermelho de destaque.</p>
+            <p><strong>Atitude e Estilo:</strong> Bermuda preta com detalhes destroyed e cordão vermelho de destaque.</p>
+            <p>Bolsos com bordado exclusivo 'XO' e costuras reforçadas.</p>
+            <p>Modelagem confortável e moderna.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "bermuda-jogador-cinza",
@@ -164,10 +179,12 @@ const produtos = [
         imgCapa: "bermuda-jogador-cinza.jpeg",
         imagens: ["bermuda-jogador-cinza.jpeg"], 
         descricao: `
-            <p><strong>Visual Grunge:</strong> Bermuda jeans com lavagem cinza estonada.</p>
+            <p><strong>Visual Grunge:</strong> Bermuda jeans com lavagem cinza estonada (Acid Wash).</p>
+            <p>Rasgos estratégicos e modelagem ampla estilo jogador.</p>
+            <p>Peça chave para quem curte um visual diferenciado.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "bermuda-jogador-branca",
@@ -177,10 +194,12 @@ const produtos = [
         imgCapa: "bermuda-jogador-branca.jpeg",
         imagens: ["bermuda-jogador-branca.jpeg"], 
         descricao: `
-            <p><strong>Clean:</strong> Bermuda jeans branca com respingos de tinta preta.</p>
+            <p><strong>Clean e Arrojado:</strong> Bermuda jeans branca com respingos de tinta preta.</p>
+            <p>Acabamento da barra desfiado e modelagem confortável.</p>
+            <p>Ideal para compor looks leves e estilosos.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "bermuda-jogador-branca-acinzentada",
@@ -190,10 +209,12 @@ const produtos = [
         imgCapa: "bermuda-jogador-branca-acinzentada.jpeg",
         imagens: ["bermuda-jogador-branca-acinzentada.jpeg"], 
         descricao: `
-            <p><strong>Estilo Único:</strong> Tom off-white com lavagem acinzentada.</p>
+            <p><strong>Estilo Único:</strong> Bermuda jeans em tom off-white com lavagem acinzentada suave.</p>
+            <p>Detalhes destroyed e manchas de tinta sutis.</p>
+            <p>A combinação perfeita entre o claro e o urbano.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "bermuda-jogador-escura",
@@ -204,9 +225,11 @@ const produtos = [
         imagens: ["bermuda-jogador-escura.jpeg"], 
         descricao: `
             <p><strong>Visual Moderno:</strong> Bermuda jeans com lavagem escura e respingos de tinta.</p>
+            <p>Acabamento destroyed com rasgos e barra desfiada.</p>
+            <p>Modelagem jogador para um look urbano e despojado.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "bermuda-jogador-corda-azul",
@@ -217,11 +240,27 @@ const produtos = [
         imagens: ["bermuda-jogador-corda-azul.jpeg"], 
         descricao: `
             <p><strong>Destaque Urbano:</strong> Bermuda escura com cordão azul vibrante.</p>
+            <p>Acabamento destroyed e modelagem confortável.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
+        esgotados: [] 
     },
-    // NOVO PRODUTO: BERMUDA BOTÕES AZUIS
+    // NOVO PRODUTO: DEGRADÊ AMARELO
+    {
+        id: "bermuda-jogador-degrade-amarelo",
+        nome: "Bermuda Jogador - Degradê Cordão Amarelo",
+        preco: "R$ 129,90", 
+        categoria: "bermudas-jogador",
+        imgCapa: "bermuda-jogador-degrade-amarelo.jpeg", 
+        imagens: ["bermuda-jogador-degrade-amarelo.jpeg"], 
+        descricao: `
+            <p><strong>Destaque Neon:</strong> Bermuda com efeito degradê (preto/cinza) e cordão amarelo.</p>
+            <p>Botão amarelo personalizado e detalhes destroyed.</p>
+            <p>Para quem gosta de um visual marcante.</p>
+        `,
+        tamanhos: ["38", "40", "42", "44", "46"],
+        esgotados: [] 
+    },
     {
         id: "bermuda-jogador-botoes-azuis",
         nome: "Bermuda Jogador Jeans - Botões Azuis",
@@ -234,7 +273,7 @@ const produtos = [
             <p>Acabamento destroyed e lavagem estonada.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: []
+        esgotados: [] 
     },
     {
         id: "bermuda-nike-jogador-preta",
@@ -244,10 +283,12 @@ const produtos = [
         imgCapa: "bermuda-nike-jogador.jpeg",
         imagens: ["bermuda-nike-jogador.jpeg"], 
         descricao: `
-            <p><strong>Leveza:</strong> Bermuda preta lisa com logo Nike bordado.</p>
+            <p><strong>Leveza e Estilo:</strong> Bermuda preta lisa com logo Nike bordado.</p>
+            <p>Tecido tactel/microfibra de secagem rápida.</p>
+            <p>Ideal para uso casual, praia ou futebol.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: []
+        esgotados: [] 
     },
 
     // --- SNEAKERS ---
