@@ -15,7 +15,7 @@ const produtos = [
             <p>Peça exclusiva com acabamento reforçado.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: ["P", "GG"] // Lista dos tamanhos que devem aparecer riscados
+        esgotados: [] // Lista dos tamanhos que devem aparecer riscados
     },
     
     {
