@@ -60,7 +60,7 @@ const produtos = [
         esgotados: []
     },
 
-    // --- DRY FIT (AGORA SÃO 3 PRODUTOS) ---
+    // --- DRY FIT ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
@@ -88,11 +88,7 @@ const produtos = [
         preco: "R$ 99,90", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-preta1.jpeg",
-        imagens: [
-            "nike-dryfit-preta1.jpeg", 
-            "nike-dryfit-preta2.jpeg", 
-            "nike-dryfit-preta3.jpeg"
-        ], 
+        imagens: ["nike-dryfit-preta1.jpeg", "nike-dryfit-preta2.jpeg", "nike-dryfit-preta3.jpeg"], 
         descricao: `
             <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline) e logo vazado.</p>
             <p>Tecnologia Dry Fit avançada para máximo conforto térmico.</p>
@@ -101,7 +97,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
     },
-    // NOVO PRODUTO BRANCO:
     {
         id: "nike-dryfit-outline-branca",
         nome: "Camiseta Nike Dry Fit Outline - Branca",
@@ -119,6 +114,30 @@ const produtos = [
             <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta (Outline).</p>
             <p>Tecnologia de absorção de suor para manter o corpo seco.</p>
             <p>Design moderno que valoriza o shape.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
+
+    // --- BERMUDAS DRY FIT (NOVA SEÇÃO) ---
+    {
+        id: "bermuda-nike-azul",
+        nome: "Bermuda Nike Dry Fit - Azul Marinho",
+        preco: "R$ 79,90", // Preço sugerido
+        categoria: "bermudas", // Categoria nova
+        imgCapa: "nike-bermuda-azul1.jpeg",
+        imagens: [
+            "nike-bermuda-azul1.jpeg",
+            "nike-bermuda-azul2.jpeg",
+            "nike-bermuda-azul3.jpeg",
+            "nike-bermuda-azul4.jpeg",
+            "nike-bermuda-azul5.jpeg",
+            "nike-bermuda-azul6.jpeg"
+        ],
+        descricao: `
+            <p><strong>Conforto e Mobilidade:</strong> Bermuda em tecido Dry Fit leve e respirável.</p>
+            <p>Ideal para treinos intensos, futebol e corrida.</p>
+            <p>Cós elástico com cordão para ajuste perfeito.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
