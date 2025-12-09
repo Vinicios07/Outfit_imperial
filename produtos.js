@@ -143,12 +143,12 @@ const produtos = [
         esgotados: []
     },
 
-    // --- BERMUDAS JOGADOR (NOVA SEÇÃO) ---
+    // --- BERMUDAS JOGADOR ---
     {
         id: "bermuda-jeans-jogador",
         nome: "Bermuda Jeans Jogador - Distressed",
         preco: "R$ 119,90", 
-        categoria: "bermudas-jogador", // CATEGORIA NOVA
+        categoria: "bermudas-jogador",
         imgCapa: "bermuda-jeans-jogador.jpeg",
         imagens: ["bermuda-jeans-jogador.jpeg"], 
         descricao: `
@@ -156,7 +156,22 @@ const produtos = [
             <p>Acabamento destroyed (rasgado) e barra desfiada.</p>
             <p>Disponível em lavagem clara e escura.</p>
         `,
-        // Para bermudas jeans, geralmente usamos numeração
+        tamanhos: ["38", "40", "42", "44", "46"],
+        esgotados: []
+    },
+    // NOVO PRODUTO: BERMUDA PRETA
+    {
+        id: "bermuda-jogador-preta",
+        nome: "Bermuda Jogador Premium - Preta",
+        preco: "R$ 129,90", // Preço sugerido
+        categoria: "bermudas-jogador",
+        imgCapa: "bermuda-jogador-preta.jpeg",
+        imagens: ["bermuda-jogador-preta.jpeg"], 
+        descricao: `
+            <p><strong>Atitude e Estilo:</strong> Bermuda preta com detalhes destroyed e cordão vermelho de destaque.</p>
+            <p>Bolsos com bordado exclusivo 'XO' e costuras reforçadas.</p>
+            <p>Modelagem confortável e moderna para compor looks ousados.</p>
+        `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
