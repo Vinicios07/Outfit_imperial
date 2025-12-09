@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outfit Imperial - Loja</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* --- DESIGN GERAL --- */
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #111; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #111; }
         
         /* CABEÇALHO */
         header { 
             background-color: #000; 
             background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-            padding: 40px 20px 25px; 
+            padding: 40px 20px 30px; 
             text-align: center; 
             border-bottom: 4px solid #d4af37;
         }
 
-        /* TÍTULOS DE TEXTO */
+        /* TÍTULOS */
         header h1 {
             font-family: 'Cinzel', serif; 
             color: #d4af37; 
@@ -63,55 +63,123 @@
         .instagram-icon-svg { width: 18px; height: 18px; fill: currentColor; }
 
         /* BARRA DE PESQUISA */
-        .search-box { margin: 10px auto 0; max-width: 400px; position: relative; display: flex; }
-        .search-input { width: 100%; padding: 12px 40px 12px 20px; border-radius: 30px; border: 2px solid #333; background: #1a1a1a; color: white; font-size: 14px; outline: none; transition: 0.3s; }
+        .search-box { margin: 10px auto 0; max-width: 500px; position: relative; display: flex; }
+        .search-input { width: 100%; padding: 14px 45px 14px 25px; border-radius: 50px; border: 1px solid #333; background: #1a1a1a; color: white; font-size: 15px; outline: none; transition: 0.3s; }
         .search-input:focus { border-color: #d4af37; background: #000; }
-        .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 18px; pointer-events: none; }
+        .search-icon { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 18px; pointer-events: none; }
         
-        /* VITRINE */
-        .container { display: flex; flex-direction: column; align-items: center; padding: 30px 10px; max-width: 1200px; margin: 0 auto; min-height: 400px; }
+        /* --- VITRINE ESTILO NIKE (GRADE UNIFICADA) --- */
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            min-height: 500px;
+        }
         
-        /* Setores sempre visíveis */
-        .setor-loja { display: flex; width: 100%; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
+        /* A Grade que coloca tudo lado a lado */
+        .grade-produtos { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; /* Centraliza se tiver poucos */
+            gap: 20px; /* Espaço entre os produtos */
+            width: 100%;
+        }
 
-        .produto { background: white; margin: 15px; padding: 20px; border-radius: 12px; width: 260px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s ease; position: relative; cursor: pointer; }
-        .produto:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .capa-produto { overflow: hidden; border-radius: 8px; margin-bottom: 15px; display: block; position: relative; }
-        .capa-produto img { width: 100%; height: 260px; object-fit: cover; transition: transform 0.5s; }
-        .produto:hover .capa-produto img { transform: scale(1.05); }
-        .ver-detalhes-hover { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: 0; transition: opacity 0.3s; }
-        .produto:hover .ver-detalhes-hover { opacity: 1; }
-        .produto h3 { color: #111; margin: 10px 0; font-size: 16px; text-transform: uppercase; font-weight: 600; }
-        .produto .preco { font-size: 20px; color: #333; font-weight: 700; margin: 5px 0 15px; }
+        /* CARTÃO DO PRODUTO (CLEAN) */
+        .produto { 
+            background: #fff; 
+            width: 300px; /* Largura fixa para alinhar */
+            border: 1px solid #f0f0f0; /* Borda bem sutil */
+            border-radius: 8px; 
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: left; /* Alinhamento estilo Nike */
+            padding-bottom: 15px;
+        }
+        
+        /* Efeito de "levantar" ao passar o mouse */
+        .produto:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            border-color: #e5e5e5;
+        }
+        
+        .capa-produto { 
+            overflow: hidden; 
+            border-top-left-radius: 8px; 
+            border-top-right-radius: 8px; 
+            background-color: #f6f6f6; /* Fundo cinza claro para a foto */
+            position: relative;
+            height: 300px; /* Foto quadrada/retangular fixa */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .capa-produto img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease; 
+        }
+        
+        .produto:hover .capa-produto img { transform: scale(1.05); } /* Zoom suave */
 
-        /* MODAL */
+        /* Informações do Produto */
+        .info-produto { padding: 15px 15px 5px; }
+        
+        .produto h3 { 
+            color: #111; 
+            margin: 0 0 5px; 
+            font-size: 16px; 
+            font-weight: 600; 
+            text-transform: capitalize; /* Primeira letra maiúscula */
+            line-height: 1.4;
+        }
+        
+        .produto .categoria-tag {
+            color: #757575;
+            font-size: 13px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .produto .preco { 
+            font-size: 18px; 
+            color: #111; 
+            font-weight: 700; 
+            margin: 0; 
+        }
+
+        /* MODAL (JANELA) */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 999; justify-content: center; align-items: center; padding: 20px; }
         .modal-overlay.aberto { display: flex; }
-        .modal-content { background: white; width: 100%; max-width: 1000px; height: 90vh; max-height: 700px; border-radius: 12px; display: flex; overflow: hidden; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
+        .modal-content { background: white; width: 100%; max-width: 1000px; height: 90vh; max-height: 700px; border-radius: 4px; display: flex; overflow: hidden; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
         .btn-fechar { position: absolute; top: 15px; right: 20px; font-size: 32px; cursor: pointer; color: #111; z-index: 20; }
         
-        .modal-galeria-container { flex: 1.5; display: flex; background: #f4f4f4; padding: 20px; gap: 20px; }
+        .modal-galeria-container { flex: 1.5; display: flex; background: #f6f6f6; padding: 20px; gap: 20px; }
         .modal-thumbnails { display: flex; flex-direction: column; gap: 10px; width: 70px; }
-        .thumb-img { width: 70px; height: 70px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; opacity: 0.7; }
+        .thumb-img { width: 70px; height: 70px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 1px solid transparent; opacity: 0.6; transition: all 0.2s; }
         .thumb-img:hover { opacity: 1; }
         .thumb-img.ativo { border-color: #000; opacity: 1; }
         .modal-foto-principal { flex: 1; display: flex; align-items: center; justify-content: center; }
-        .modal-foto-principal img { width: 100%; height: 100%; max-height: 600px; object-fit: cover; border-radius: 8px; mix-blend-mode: multiply; }
+        .modal-foto-principal img { width: 100%; height: 100%; max-height: 600px; object-fit: cover; mix-blend-mode: multiply; }
         
         .modal-info { flex: 1; padding: 40px; text-align: left; display: flex; flex-direction: column; overflow-y: auto; }
-        .modal-info h2 { font-family: 'Cinzel', serif; font-size: 28px; margin: 0 0 10px; color: #000; }
-        .modal-info .modal-preco { font-size: 26px; font-weight: 700; color: #111; margin-bottom: 25px; }
+        .modal-info h2 { font-family: 'Inter', sans-serif; font-size: 24px; margin: 0 0 10px; color: #000; font-weight: 700; text-transform: uppercase; }
+        .modal-info .modal-preco { font-size: 22px; font-weight: 600; color: #111; margin-bottom: 25px; }
         .titulo-opcao { font-size: 14px; font-weight: 600; margin-bottom: 12px; display: block; }
         .grade-tamanhos { display: flex; gap: 10px; margin-bottom: 30px; }
-        .tamanho-btn { width: 45px; height: 45px; border: 1px solid #ddd; background: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: all 0.2s; }
+        .tamanho-btn { width: 45px; height: 45px; border: 1px solid #e5e5e5; background: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: all 0.2s; }
         .tamanho-btn:hover { border-color: #000; color: #000; }
-        .tamanho-btn.esgotado { background-color: #f5f5f5; color: #ccc; border-color: #eee; cursor: not-allowed; text-decoration: line-through; }
+        .tamanho-btn.esgotado { background-color: #f9f9f9; color: #ccc; border-color: #eee; cursor: not-allowed; text-decoration: line-through; }
         .modal-descricao { font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 30px; border-top: 1px solid #eee; padding-top: 25px; }
         .modal-botoes { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
-        .botao-modal { background: #000; color: white; text-align: center; padding: 16px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.2s; }
+        .botao-modal { background: #000; color: white; text-align: center; padding: 18px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.2s; font-size: 16px; }
         .botao-modal:hover { background: #333; transform: scale(1.01); }
-        .botao-modal.vendedor2 { background: #fff; color: #000; border: 2px solid #000; }
-        .botao-modal.vendedor2:hover { background: #f0f0f0; }
+        .botao-modal.vendedor2 { background: #fff; color: #000; border: 1px solid #ccc; }
+        .botao-modal.vendedor2:hover { border-color: #000; }
         #msg-sem-resultado { width: 100%; text-align: center; color: #666; font-style: italic; display: none; margin-top: 50px; }
 
         @media (max-width: 850px) {
@@ -124,6 +192,8 @@
             .thumb-img { width: 60px; height: 60px; }
             .modal-foto-principal img { max-height: 350px; }
             .modal-info { padding: 25px; flex: none; }
+            .produto { width: 46%; min-width: 150px; } /* 2 por linha no celular */
+            .capa-produto { height: 200px; }
         }
     </style>
 </head>
@@ -161,8 +231,7 @@
     <div class="container">
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
 
-        <div id="setor-roupas" class="setor-loja"></div> 
-        <div id="setor-sneakers" class="setor-loja"></div>
+        <div id="grade-produtos" class="grade-produtos"></div> 
     </div>
 
     <footer><p>© 2024 Outfit Imperial - Todos os direitos reservados</p></footer>
@@ -198,29 +267,26 @@
         });
 
         function carregarProdutosNaTela() {
-            const containerRoupas = document.getElementById('setor-roupas');
-            const containerSneakers = document.getElementById('setor-sneakers');
-            
-            containerRoupas.innerHTML = "";
-            containerSneakers.innerHTML = "";
+            const container = document.getElementById('grade-produtos');
+            container.innerHTML = ""; // Limpa antes de começar
 
+            // Pega TODOS os produtos do arquivo e joga na mesma grade
             produtos.forEach(prod => {
+                const categoriaNome = prod.categoria === 'roupas' ? 'Roupa' : 'Sneaker';
+                
                 const htmlProduto = `
                     <div class="produto" onclick="abrirModal('${prod.id}')">
                         <div class="capa-produto">
                             <img src="${prod.imgCapa}" alt="${prod.nome}">
-                            <div class="ver-detalhes-hover">Clique para ver detalhes</div>
                         </div>
-                        <h3>${prod.nome}</h3>
-                        <p class="preco">${prod.preco}</p>
+                        <div class="info-produto">
+                            <span class="categoria-tag">${categoriaNome}</span>
+                            <h3>${prod.nome}</h3>
+                            <p class="preco">${prod.preco}</p>
+                        </div>
                     </div>
                 `;
-
-                if(prod.categoria === 'roupas') {
-                    containerRoupas.innerHTML += htmlProduto;
-                } else {
-                    containerSneakers.innerHTML += htmlProduto;
-                }
+                container.innerHTML += htmlProduto;
             });
         }
 
@@ -276,7 +342,7 @@
             }
         }
 
-        // --- PESQUISA ATUALIZADA (Sem setores ocultos) ---
+        // --- PESQUISA ATUALIZADA ---
         function pesquisarProdutos() {
             const termo = document.getElementById('campo-pesquisa').value.toLowerCase();
             const produtosDom = document.querySelectorAll('.produto');
