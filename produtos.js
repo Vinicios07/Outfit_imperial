@@ -46,7 +46,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- LINHA DRY FIT (APENAS CAMISETAS) ---
+    // --- DRY FIT ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
@@ -114,7 +114,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- BERMUDAS DRY FIT (TACTEL) ---
+    // --- BERMUDAS DRY FIT ---
     {
         id: "bermuda-nike-azul",
         nome: "Bermuda Nike Dry Fit - Azul Marinho",
@@ -129,7 +129,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- BERMUDAS JOGADOR (JEANS / PREMIUM) ---
+    // --- BERMUDAS JOGADOR ---
     {
         id: "bermuda-jeans-jogador",
         nome: "Bermuda Jeans Jogador - Azul Distressed",
@@ -164,7 +164,7 @@ const produtos = [
         imgCapa: "bermuda-jogador-cinza.jpeg",
         imagens: ["bermuda-jogador-cinza.jpeg"], 
         descricao: `
-            <p><strong>Visual Grunge:</strong> Lavagem cinza estonada.</p>
+            <p><strong>Visual Grunge:</strong> Bermuda jeans com lavagem cinza estonada.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
@@ -199,8 +199,8 @@ const produtos = [
         id: "bermuda-jogador-escura",
         nome: "Bermuda Jogador - Lavagem Escura Paint",
         preco: "R$ 119,90", 
-        categoria: "bermudas-jogador", // CATEGORIA CORRIGIDA
-        imgCapa: "bermuda-jogador-escura.jpeg", // CONFIRA SE A FOTO TEM ESSE NOME
+        categoria: "bermudas-jogador",
+        imgCapa: "bermuda-jogador-escura.jpeg", 
         imagens: ["bermuda-jogador-escura.jpeg"], 
         descricao: `
             <p><strong>Visual Moderno:</strong> Bermuda jeans com lavagem escura e respingos de tinta.</p>
@@ -212,11 +212,26 @@ const produtos = [
         id: "bermuda-jogador-corda-azul",
         nome: "Bermuda Jogador Premium - Corda Azul",
         preco: "R$ 129,90", 
-        categoria: "bermudas-jogador", // CATEGORIA CORRIGIDA
-        imgCapa: "bermuda-jogador-corda-azul.jpeg", // CONFIRA SE A FOTO TEM ESSE NOME
+        categoria: "bermudas-jogador",
+        imgCapa: "bermuda-jogador-corda-azul.jpeg", 
         imagens: ["bermuda-jogador-corda-azul.jpeg"], 
         descricao: `
             <p><strong>Destaque Urbano:</strong> Bermuda escura com cordão azul vibrante.</p>
+        `,
+        tamanhos: ["38", "40", "42", "44", "46"],
+        esgotados: []
+    },
+    // NOVO PRODUTO: BERMUDA BOTÕES AZUIS
+    {
+        id: "bermuda-jogador-botoes-azuis",
+        nome: "Bermuda Jogador Jeans - Botões Azuis",
+        preco: "R$ 129,90", 
+        categoria: "bermudas-jogador",
+        imgCapa: "bermuda-jogador-botoes-azuis.jpeg", 
+        imagens: ["bermuda-jogador-botoes-azuis.jpeg"], 
+        descricao: `
+            <p><strong>Detalhes Exclusivos:</strong> Bermuda jeans cinza escura com botões e rebites em azul claro.</p>
+            <p>Acabamento destroyed e lavagem estonada.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
