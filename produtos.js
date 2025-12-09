@@ -119,12 +119,12 @@ const produtos = [
         esgotados: []
     },
 
-    // --- BERMUDAS DRY FIT (NOVA SEÇÃO) ---
+    // --- BERMUDAS DRY FIT ---
     {
         id: "bermuda-nike-azul",
         nome: "Bermuda Nike Dry Fit - Azul Marinho",
-        preco: "R$ 79,90", // Preço sugerido
-        categoria: "bermudas", // Categoria nova
+        preco: "R$ 79,90", 
+        categoria: "bermudas", 
         imgCapa: "nike-bermuda-azul1.jpeg",
         imagens: [
             "nike-bermuda-azul1.jpeg",
@@ -140,6 +140,24 @@ const produtos = [
             <p>Cós elástico com cordão para ajuste perfeito.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
+
+    // --- BERMUDAS JOGADOR (NOVA SEÇÃO) ---
+    {
+        id: "bermuda-jeans-jogador",
+        nome: "Bermuda Jeans Jogador - Distressed",
+        preco: "R$ 119,90", 
+        categoria: "bermudas-jogador", // CATEGORIA NOVA
+        imgCapa: "bermuda-jeans-jogador.jpeg",
+        imagens: ["bermuda-jeans-jogador.jpeg"], 
+        descricao: `
+            <p><strong>Estilo Streetwear:</strong> Bermuda jeans com modelagem 'Jogador' (Jorts).</p>
+            <p>Acabamento destroyed (rasgado) e barra desfiada.</p>
+            <p>Disponível em lavagem clara e escura.</p>
+        `,
+        // Para bermudas jeans, geralmente usamos numeração
+        tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
 
