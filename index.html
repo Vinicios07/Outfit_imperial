@@ -20,11 +20,11 @@
             border-bottom: 4px solid #d4af37;
         }
 
-        /* TÍTULOS DE TEXTO PADRÃO */
+        /* TÍTULOS DE TEXTO */
         header h1 {
             font-family: 'Cinzel', serif; 
             color: #d4af37; 
-            font-size: 42px; /* Tamanho bom para destaque */
+            font-size: 42px; 
             font-weight: 700; 
             margin: 0 0 5px 0;
             text-transform: uppercase; 
@@ -34,7 +34,7 @@
         header p { 
             color: #ccc; 
             font-size: 14px; 
-            margin: 0 0 25px 0; /* Espaço abaixo do subtítulo */
+            margin: 0 0 25px 0; 
             letter-spacing: 4px; 
             text-transform: uppercase; 
             font-weight: 300;
@@ -71,7 +71,7 @@
         /* VITRINE */
         .container { display: flex; flex-direction: column; align-items: center; padding: 30px 10px; max-width: 1200px; margin: 0 auto; min-height: 400px; }
         
-        /* Agora os setores aparecem sempre (display: flex) */
+        /* Setores sempre visíveis */
         .setor-loja { display: flex; width: 100%; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
 
         .produto { background: white; margin: 15px; padding: 20px; border-radius: 12px; width: 260px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s ease; position: relative; cursor: pointer; }
@@ -116,7 +116,7 @@
 
         @media (max-width: 850px) {
             header { padding-top: 30px; }
-            header h1 { font-size: 32px; } /* Título menor no celular */
+            header h1 { font-size: 32px; }
             .instagram-container { flex-direction: column; gap: 10px; }
             .modal-content { flex-direction: column; height: auto; max-height: 95vh; }
             .modal-galeria-container { flex-direction: column-reverse; padding: 15px; gap: 10px; flex: none; }
@@ -156,7 +156,7 @@
             <input type="text" id="campo-pesquisa" class="search-input" placeholder="Busque por modelo, cor..." onkeyup="pesquisarProdutos()">
             <span class="search-icon">🔍</span>
         </div>
-        </header>
+    </header>
 
     <div class="container">
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
@@ -261,7 +261,7 @@
                 containerThumbs.appendChild(thumb);
             });
 
-            const textoZap = "Olá, tenho interesse em: " + prod.nome;
+            const textoZap = `Olá, tenho interesse no produto (Cód: ${prod.id}): ${prod.nome}`;
             document.getElementById('btn-zap1').href = "https://wa.me/5511994655832?text=" + encodeURIComponent(textoZap);
             document.getElementById('btn-zap2').href = "https://wa.me/5511917686011?text=" + encodeURIComponent(textoZap);
 
