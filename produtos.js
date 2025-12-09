@@ -174,7 +174,6 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
-    // NOVO PRODUTO: BERMUDA CINZA
     {
         id: "bermuda-jogador-cinza",
         nome: "Bermuda Jogador Jeans - Lavagem Cinza",
@@ -186,6 +185,22 @@ const produtos = [
             <p><strong>Visual Grunge:</strong> Bermuda jeans com lavagem cinza estonada (Acid Wash).</p>
             <p>Rasgos estratégicos e modelagem ampla estilo jogador.</p>
             <p>Peça chave para quem curte um visual diferenciado.</p>
+        `,
+        tamanhos: ["38", "40", "42", "44", "46"],
+        esgotados: []
+    },
+    // NOVO PRODUTO: BERMUDA BRANCA
+    {
+        id: "bermuda-jogador-branca",
+        nome: "Bermuda Jogador Jeans - Lavagem Branca",
+        preco: "R$ 119,90", 
+        categoria: "bermudas-jogador",
+        imgCapa: "bermuda-jogador-branca.jpeg",
+        imagens: ["bermuda-jogador-branca.jpeg"], 
+        descricao: `
+            <p><strong>Clean e Arrojado:</strong> Bermuda jeans branca com respingos de tinta preta.</p>
+            <p>Acabamento da barra desfiado e modelagem confortável.</p>
+            <p>Ideal para compor looks leves e estilosos.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
