@@ -1,6 +1,6 @@
 // LISTA DE PRODUTOS
 const produtos = [
-    // --- CORTA VENTOS ---
+    // --- COLEÇÃO DE INVERNO (JAQUETAS) ---
     {
         id: "jaqueta-couro-gola",
         nome: "Jaqueta Zara - Gola Alta Premium",
@@ -44,18 +44,34 @@ const produtos = [
         esgotados: ["P", "GG"]
     },
 
-    // --- OVERSIZED (NOVA SEÇÃO) ---
+    // --- OVERSIZED ---
     {
         id: "palm-angels-wings",
         nome: "Camiseta Oversized Palm Angels - Wings",
         preco: "R$ 189,90",
-        categoria: "oversized", // ATENÇÃO: Essa categoria joga o produto na nova seção
+        categoria: "oversized",
         imgCapa: "palm-angels-oversized.jpeg",
         imagens: ["palm-angels-oversized.jpeg"], 
         descricao: `
             <p><strong>Streetwear de Luxo:</strong> Camiseta Oversized com a icônica estampa de asas.</p>
-            <p>Disponível nas cores Off-White, Preto e Cinza.</p>
             <p>Malha pesada de alta gramatura e caimento perfeito.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
+
+    // --- DRY FIT (NOVO) ---
+    {
+        id: "nike-dryfit-azul",
+        nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
+        preco: "R$ 89,90", // Coloquei um preço base, pode ajustar
+        categoria: "dryfit", // ATENÇÃO: Categoria nova
+        imgCapa: "nike-dryfit-azul.jpeg",
+        imagens: ["nike-dryfit-azul.jpeg"], 
+        descricao: `
+            <p><strong>Alta Performance:</strong> Tecido tecnológico que afasta o suor da pele.</p>
+            <p>Ideal para treinos, academia e prática de esportes.</p>
+            <p>Leveza e liberdade de movimento.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
