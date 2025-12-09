@@ -189,7 +189,6 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
-    // NOVO PRODUTO: BERMUDA BRANCA
     {
         id: "bermuda-jogador-branca",
         nome: "Bermuda Jogador Jeans - Lavagem Branca",
@@ -201,6 +200,22 @@ const produtos = [
             <p><strong>Clean e Arrojado:</strong> Bermuda jeans branca com respingos de tinta preta.</p>
             <p>Acabamento da barra desfiado e modelagem confortável.</p>
             <p>Ideal para compor looks leves e estilosos.</p>
+        `,
+        tamanhos: ["38", "40", "42", "44", "46"],
+        esgotados: []
+    },
+    // NOVO PRODUTO: BERMUDA ESCURA (PRETA AZULADA)
+    {
+        id: "bermuda-jogador-escura",
+        nome: "Bermuda Jogador Jeans - Lavagem Escura Paint",
+        preco: "R$ 119,90", 
+        categoria: "bermudas-jogador",
+        imgCapa: "bermuda-jogador-escura.jpeg",
+        imagens: ["bermuda-jogador-escura.jpeg"], 
+        descricao: `
+            <p><strong>Estilo Moderno:</strong> Bermuda jeans com lavagem escura (Preta Azulada).</p>
+            <p>Detalhes em respingos de tinta (Paint) e acabamento destroyed.</p>
+            <p>Barra desfiada e modelagem confortável.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
