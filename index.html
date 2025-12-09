@@ -116,11 +116,14 @@
     <div class="container">
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
 
-        <h2 class="secao-titulo">Coleção Corta Vento</h2>
+        <h2 class="secao-titulo">Coleção de Inverno</h2>
         <div id="grade-corta-vento" class="grade-produtos"></div>
 
         <h2 class="secao-titulo">Camisetas Oversized</h2>
         <div id="grade-oversized" class="grade-produtos"></div>
+
+        <h2 class="secao-titulo">Linha Dry Fit</h2>
+        <div id="grade-dryfit" class="grade-produtos"></div>
 
         <h2 class="secao-titulo">Sneakers Exclusivos</h2>
         <div id="grade-sneakers" class="grade-produtos"></div>
@@ -160,11 +163,13 @@
 
         function carregarProdutosNaTela() {
             const containerCortaVento = document.getElementById('grade-corta-vento');
-            const containerOversized = document.getElementById('grade-oversized'); // NOVO
+            const containerOversized = document.getElementById('grade-oversized');
+            const containerDryFit = document.getElementById('grade-dryfit'); // NOVO
             const containerSneakers = document.getElementById('grade-sneakers');
             
             containerCortaVento.innerHTML = "";
             containerOversized.innerHTML = "";
+            containerDryFit.innerHTML = "";
             containerSneakers.innerHTML = "";
 
             produtos.forEach(prod => {
@@ -181,11 +186,12 @@
                     </div>
                 `;
 
-                // ORGANIZA CADA UM NA SUA PRATELEIRA
                 if(prod.categoria === 'roupas' || prod.categoria === 'corta-vento') {
                     containerCortaVento.innerHTML += htmlProduto;
-                } else if (prod.categoria === 'oversized') { // NOVO FILTRO
+                } else if (prod.categoria === 'oversized') {
                     containerOversized.innerHTML += htmlProduto;
+                } else if (prod.categoria === 'dryfit') { // NOVA CATEGORIA
+                    containerDryFit.innerHTML += htmlProduto;
                 } else if (prod.categoria === 'sneakers') {
                     containerSneakers.innerHTML += htmlProduto;
                 }
