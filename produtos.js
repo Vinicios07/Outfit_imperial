@@ -118,6 +118,21 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
     },
+    {
+        id: "nike-dryfit-noturna",
+        nome: "Camiseta Nike Dry Fit - Preta Noturna",
+        preco: "R$ 89,90", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-noturna1.jpeg",
+        imagens: ["nike-dryfit-noturna1.jpeg"], 
+        descricao: `
+            <p><strong>Clássico Essencial:</strong> Camiseta lisa em tom escuro (Preta Noturna).</p>
+            <p>Swoosh Nike em destaque no peito.</p>
+            <p>Tecido respirável ideal para qualquer atividade física.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
 
     // --- BERMUDAS DRY FIT ---
     {
@@ -204,7 +219,6 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: []
     },
-    // NOVO PRODUTO: BERMUDA CINZA ESCURA
     {
         id: "bermuda-jogador-cinza-escura",
         nome: "Bermuda Jogador Jeans - Lavagem Cinza Escura",
@@ -218,6 +232,23 @@ const produtos = [
             <p>Modelagem jogador para um look urbano e despojado.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
+        esgotados: []
+    },
+    
+    // --- NOVO PRODUTO: BERMUDA NIKE JOGADOR PRETA (Tactel/Microfibra) ---
+    {
+        id: "bermuda-nike-jogador-preta",
+        nome: "Bermuda Nike Jogador - Preta",
+        preco: "R$ 89,90", 
+        categoria: "bermudas-jogador", // Colocada na categoria Jogador
+        imgCapa: "bermuda-nike-jogador.jpeg",
+        imagens: ["bermuda-nike-jogador.jpeg"], 
+        descricao: `
+            <p><strong>Leveza e Estilo:</strong> Bermuda preta lisa com logo Nike bordado.</p>
+            <p>Tecido tactel/microfibra de secagem rápida.</p>
+            <p>Ideal para uso casual, praia ou futebol.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
     },
 
