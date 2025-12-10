@@ -62,6 +62,21 @@ const produtos = [
         esgotados: [] 
     },
     {
+        id: "oversized-jordan-box",
+        nome: "Camiseta Jordan - Bege Box Logo",
+        preco: "R$ 139,90", 
+        categoria: "oversized",
+        imgCapa: "jordan-bege-box.jpeg",
+        imagens: ["jordan-bege-box.jpeg", "jordan-bege-box2.jpeg"], 
+        descricao: `
+            <p><strong>Estilo Clássico:</strong> Camiseta em tom bege areia com logo Jordan Box vermelho centralizado.</p>
+            <p>Etiqueta interna exclusiva e acabamento de alta qualidade.</p>
+            <p>Perfeita para compor um visual streetwear limpo e sofisticado.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
         id: "oversized-nike-preta",
         nome: "Camiseta Oversized Nike - Preta Logo",
         preco: "R$ 139,90", 
@@ -72,6 +87,22 @@ const produtos = [
             <p><strong>Estilo e Conforto:</strong> Camiseta Oversized preta com logo artístico centralizado.</p>
             <p>Tecido premium de toque macio e caimento amplo.</p>
             <p>Peça chave para um look streetwear moderno.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    // ✅ NOVO PRODUTO: OVERSIZED NIKE LOGO COLORIDO (2 FOTOS)
+    {
+        id: "oversized-nike-colorida",
+        nome: "Camiseta Oversized Nike - Logo Colorido",
+        preco: "R$ 139,90", 
+        categoria: "oversized",
+        imgCapa: "oversized-nike-colorida.jpeg",
+        imagens: ["oversized-nike-colorida.jpeg", "oversized-nike-colorida2.jpeg"], 
+        descricao: `
+            <p><strong>Detalhe Exclusivo:</strong> Camiseta preta com logo Nike estilizado e colorido no peito.</p>
+            <p>Malha macia com caimento oversized perfeito.</p>
+            <p>Uma peça diferenciada para destacar seu visual.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -117,22 +148,6 @@ const produtos = [
             <p><strong>Minimalista e Moderna:</strong> Camiseta oversized em tom azul gelo (Ice Blue).</p>
             <p>Estampa minimalista no peito e corte quadrado.</p>
             <p>Malha premium com caimento estruturado.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    // ✅ NOVO PRODUTO: JORDAN BEGE BOX LOGO
-    {
-        id: "oversized-jordan-box",
-        nome: "Camiseta Jordan - Bege Box Logo",
-        preco: "R$ 139,90", 
-        categoria: "oversized",
-        imgCapa: "jordan-bege-box.jpeg",
-        imagens: ["jordan-bege-box.jpeg", "jordan-bege-box2.jpeg"], 
-        descricao: `
-            <p><strong>Estilo Clássico:</strong> Camiseta em tom bege areia com logo Jordan Box vermelho centralizado.</p>
-            <p>Etiqueta interna exclusiva e acabamento de alta qualidade.</p>
-            <p>Perfeita para compor um visual streetwear limpo e sofisticado.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
