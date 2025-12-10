@@ -76,7 +76,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // ✅ NOVO PRODUTO: ADIDAS 3 CORES
     {
         id: "oversized-adidas-trio",
         nome: "Camiseta Oversized Adidas - Graffiti",
@@ -88,6 +87,22 @@ const produtos = [
             <p><strong>Arte Urbana:</strong> Estampa exclusiva estilo graffiti nas costas (tênis Adidas).</p>
             <p>Disponível em 3 cores: <strong>Verde Militar, Preto e Marrom Terracota</strong>.</p>
             <p>Modelagem ampla e confortável.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    // ✅ PRODUTO ATUALIZADO (4 CORES):
+    {
+        id: "oversized-supreme-knitting",
+        nome: "Camiseta Oversized Supreme - Knitting",
+        preco: "R$ 139,90", 
+        categoria: "oversized",
+        imgCapa: "oversized-supreme-trio.jpeg",
+        imagens: ["oversized-supreme-trio.jpeg"], 
+        descricao: `
+            <p><strong>Ícone Streetwear:</strong> Estampa clássica da Supreme "Knitting" (tricotando dinheiro).</p>
+            <p>Disponível em 4 cores: <strong>Preto, Branco, Cinza e Amarelo</strong>.</p>
+            <p>Caimento oversized autêntico e malha de alta qualidade.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
