@@ -46,17 +46,25 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- DRY FIT (AGORA SÓ TEM AS 4 CERTAS) ---
+    // --- DRY FIT (CAMISETAS) ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
         preco: "R$ 89,90", 
         categoria: "dryfit",
-        imgCapa: "nike-dryfit-azul1.jpeg",
-        imagens: ["nike-dryfit-azul1.jpeg", "nike-dryfit-azul2.jpeg", "nike-dryfit-azul3.jpeg", "nike-dryfit-azul4.jpeg", "nike-dryfit-azul5.jpeg"], 
+        // NOME DA IMAGEM ATUALIZADO AQUI:
+        imgCapa: "camiseta-nike-dryfit-azul-rei.jpeg",
+        imagens: [
+            "camiseta-nike-dryfit-azul-rei.jpeg", 
+            "nike-dryfit-azul2.jpeg", 
+            "nike-dryfit-azul3.jpeg", 
+            "nike-dryfit-azul4.jpeg", 
+            "nike-dryfit-azul5.jpeg"
+        ], 
         descricao: `
             <p><strong>Alta Performance:</strong> Tecido tecnológico que afasta o suor da pele.</p>
             <p>Ideal para treinos, academia e prática de esportes.</p>
+            <p>Leveza e liberdade de movimento.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -69,7 +77,7 @@ const produtos = [
         imgCapa: "nike-dryfit-preta1.jpeg",
         imagens: ["nike-dryfit-preta1.jpeg", "nike-dryfit-preta2.jpeg", "nike-dryfit-preta3.jpeg"], 
         descricao: `
-            <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline).</p>
+            <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline) e logo vazado.</p>
             <p>Tecnologia Dry Fit avançada para máximo conforto térmico.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
@@ -81,10 +89,15 @@ const produtos = [
         preco: "R$ 99,90", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-branca1.jpeg",
-        imagens: ["nike-dryfit-branca1.jpeg", "nike-dryfit-branca2.jpeg", "nike-dryfit-branca3.jpeg", "nike-dryfit-branca4.jpeg", "nike-dryfit-branca5.jpeg"], 
+        imagens: [
+            "nike-dryfit-branca1.jpeg",
+            "nike-dryfit-branca2.jpeg",
+            "nike-dryfit-branca3.jpeg",
+            "nike-dryfit-branca4.jpeg",
+            "nike-dryfit-branca5.jpeg"
+        ], 
         descricao: `
-            <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta.</p>
-            <p>Tecnologia de absorção de suor para manter o corpo seco.</p>
+            <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta (Outline).</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -98,7 +111,6 @@ const produtos = [
         imagens: ["jogador-prateado.jpeg"], 
         descricao: `
             <p><strong>Detalhes Premium:</strong> Camiseta em tom azul com costuras em destaque prateado.</p>
-            <p>Logo Nike vazado (Outline) grande no peito.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -111,10 +123,16 @@ const produtos = [
         preco: "R$ 79,90", 
         categoria: "bermudas", 
         imgCapa: "nike-bermuda-azul1.jpeg",
-        imagens: ["nike-bermuda-azul1.jpeg", "nike-bermuda-azul2.jpeg", "nike-bermuda-azul3.jpeg", "nike-bermuda-azul4.jpeg", "nike-bermuda-azul5.jpeg", "nike-bermuda-azul6.jpeg"],
+        imagens: [
+            "nike-bermuda-azul1.jpeg",
+            "nike-bermuda-azul2.jpeg",
+            "nike-bermuda-azul3.jpeg",
+            "nike-bermuda-azul4.jpeg",
+            "nike-bermuda-azul5.jpeg",
+            "nike-bermuda-azul6.jpeg"
+        ],
         descricao: `
             <p><strong>Conforto e Mobilidade:</strong> Bermuda em tecido Dry Fit leve e respirável.</p>
-            <p>Ideal para treinos intensos, futebol e corrida.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -130,7 +148,6 @@ const produtos = [
         imagens: ["bermuda-jeans-jogador.jpeg"], 
         descricao: `
             <p><strong>Estilo Streetwear:</strong> Bermuda jeans com modelagem 'Jogador' (Jorts).</p>
-            <p>Lavagem clássica azul com acabamento destroyed.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
@@ -144,7 +161,6 @@ const produtos = [
         imagens: ["bermuda-jogador-preta.jpeg"], 
         descricao: `
             <p><strong>Atitude:</strong> Bermuda preta com cordão vermelho de destaque.</p>
-            <p>Bolsos com bordado exclusivo 'XO'.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
@@ -218,7 +234,8 @@ const produtos = [
         id: "bermuda-jogador-corda-azul",
         nome: "Bermuda Jogador Premium - Corda Azul",
         preco: "R$ 129,90", 
-        categoria: "bermudas-jogador", // AQUI ESTÁ A CORREÇÃO DA CATEGORIA
+        categoria: "bermudas-jogador", 
+        // A IMAGEM QUE VOCÊ QUERIA SUBIR PARA ESSA BERMUDA FOI MANTIDA AQUI:
         imgCapa: "bermuda-jogador-corda-azul.jpeg", 
         imagens: ["bermuda-jogador-corda-azul.jpeg"], 
         descricao: `
