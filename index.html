@@ -44,7 +44,41 @@
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 16px; pointer-events: none; }
 
         /* --- MENU LATERAL (SIDEBAR) --- */
-        .menu-btn { position: absolute; top: 30px; left: 20px; font-size: 28px; cursor: pointer; color: #d4af37; background: none; border: none; z-index: 1100; }
+        /* BOTÃO MENU MINIMALISTA (NOVO ESTILO) */
+        .menu-btn {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            z-index: 1100;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            
+            /* Define o tamanho da área do ícone */
+            width: 30px; 
+            height: 20px;
+            
+            /* Usa flexbox para distribuir as linhas */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* As linhas do menu */
+        .menu-btn span {
+            display: block;
+            width: 100%;
+            height: 2px; /* Espessura da linha (mais fina para ser minimalista) */
+            background-color: #d4af37; /* Cor dourada */
+            transition: all 0.3s ease;
+        }
+
+        /* Efeito sutil ao passar o mouse (opcional, dá um toque premium) */
+        .menu-btn:hover span:nth-child(1) { transform: translateY(-1px); }
+        .menu-btn:hover span:nth-child(3) { transform: translateY(1px); }
+
+
         .sidebar { height: 100%; width: 280px; position: fixed; z-index: 1200; top: 0; left: -280px; background-color: #fff; overflow-x: hidden; transition: 0.4s; box-shadow: 4px 0 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; }
         .sidebar-header { background: #000; color: #d4af37; padding: 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Cinzel', serif; }
         .sidebar .closebtn { background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; }
@@ -74,11 +108,11 @@
         .produto h3 { color: #222; margin: 0 0 8px; font-size: 15px; font-weight: 600; line-height: 1.4; text-transform: capitalize; }
         .produto .preco { font-size: 18px; color: #000; font-weight: 700; margin: 0; }
 
-        /* --- RODAPÉ (NOVO) --- */
+        /* --- RODAPÉ --- */
         footer {
             background-color: #000;
             color: #fff;
-            margin-top: auto; /* Empurra para o final */
+            margin-top: auto;
             border-top: 4px solid #d4af37;
         }
         .footer-banner {
@@ -139,7 +173,7 @@
         .botao-modal.vendedor2 { background: #fff; color: #000; border: 2px solid #eee; }
         .botao-modal.vendedor2:hover { border-color: #000; }
 
-        /* NOVA ÁREA: VOCÊ PODE GOSTAR TAMBÉM */
+        /* ÁREA: VOCÊ PODE GOSTAR TAMBÉM */
         .secao-relacionados { margin-top: auto; border-top: 2px solid #f0f0f0; padding-top: 25px; }
         .titulo-relacionados { font-size: 14px; font-weight: 700; color: #000; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
         .grade-relacionados { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
@@ -190,8 +224,11 @@
 
     <header>
         <button class="menu-btn" onclick="toggleMenu()">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
+        
         <h1>Outfit Imperial</h1>
         <p>Roupas & Sneakers</p>
         <div class="instagram-header">
