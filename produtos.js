@@ -153,7 +153,6 @@ const produtos = [
     },
 
     // --- DRY FIT ---
-    // ✅ NOVO (UNIFICADO):
     {
         id: "nike-dryfit-cores-variadas",
         nome: "Camiseta Nike Dry Fit Outline - Cores Variadas",
@@ -170,7 +169,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // ✅ INDIVIDUAL (MANTIDO):
     {
         id: "nike-dryfit-costura-branca",
         nome: "Camiseta Nike Dry Fit - Preta Outline",
@@ -182,6 +180,22 @@ const produtos = [
             <p><strong>Visual Esportivo:</strong> Camiseta preta com detalhes de costura exposta em branco (outline).</p>
             <p>Logo Nike centralizado no peito. Tecido Dry Fit leve e respirável.</p>
             <p>Ideal para treinos com estilo.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    // ✅ NOVO PRODUTO: BRANCA SWOOSH
+    {
+        id: "nike-dryfit-branca-swoosh",
+        nome: "Camiseta Nike Dry Fit - Branca Big Swoosh",
+        preco: "R$ 99,90", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-branca-swoosh.jpeg",
+        imagens: ["nike-dryfit-branca-swoosh.jpeg"], 
+        descricao: `
+            <p><strong>Estilo Moderno:</strong> Camiseta branca com costuras pretas aparentes (Outline).</p>
+            <p>Destaque para o logo Big Swoosh vazado no peito.</p>
+            <p>Tecido Dry Fit de alta qualidade e modelagem ajustada.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -389,7 +403,7 @@ const produtos = [
         nome: "Bermuda Jogador Premium - Corda Azul",
         preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-corda-azul.jpeg", 
+        imgCapa: "bermuda-jogador-corda-azul.jpeg",
         imagens: ["bermuda-jogador-corda-azul.jpeg"], 
         descricao: `
             <p><strong>Destaque Urbano:</strong> Bermuda escura com cordão azul vibrante.</p>
