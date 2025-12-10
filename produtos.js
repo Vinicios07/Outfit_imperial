@@ -61,7 +61,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // ✅ NOVO PRODUTO ADICIONADO AQUI:
     {
         id: "oversized-nike-preta",
         nome: "Camiseta Oversized Nike - Preta Logo",
@@ -73,6 +72,22 @@ const produtos = [
             <p><strong>Estilo e Conforto:</strong> Camiseta Oversized preta com logo artístico centralizado.</p>
             <p>Tecido premium de toque macio e caimento amplo.</p>
             <p>Peça chave para um look streetwear moderno.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    // ✅ NOVO PRODUTO: ADIDAS 3 CORES
+    {
+        id: "oversized-adidas-trio",
+        nome: "Camiseta Oversized Adidas - Graffiti",
+        preco: "R$ 139,90", 
+        categoria: "oversized",
+        imgCapa: "oversized-adidas-trio.jpeg",
+        imagens: ["oversized-adidas-trio.jpeg"], 
+        descricao: `
+            <p><strong>Arte Urbana:</strong> Estampa exclusiva estilo graffiti nas costas (tênis Adidas).</p>
+            <p>Disponível em 3 cores: <strong>Verde Militar, Preto e Marrom Terracota</strong>.</p>
+            <p>Modelagem ampla e confortável.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
