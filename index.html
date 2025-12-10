@@ -10,7 +10,7 @@
     <style>
         /* --- RESET E GERAL --- */
         * { box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #111; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #111; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
         
         /* --- CABEÇALHO --- */
         header { 
@@ -23,15 +23,16 @@
             z-index: 1000;
         }
 
-        /* Título e Subtítulo */
         header h1 {
             font-family: 'Cinzel', serif; color: #d4af37; font-size: 38px; font-weight: 700; margin: 0 0 5px 0;
             text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         header p { color: #ccc; font-size: 12px; margin: 0 0 20px 0; letter-spacing: 4px; text-transform: uppercase; font-weight: 300; }
         
-        /* Ícones Sociais */
-        .instagram-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px; }
+        /* Ícone Social do Topo (Só a Loja) */
+        .instagram-header { display: flex; justify-content: center; margin-bottom: 20px; }
+        
+        /* Estilo dos Links do Instagram (Geral) */
         .instagram-link { display: flex; align-items: center; gap: 6px; color: #d4af37; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.3s; }
         .instagram-link:hover { color: #fff; }
         .instagram-icon-svg { width: 16px; height: 16px; fill: currentColor; }
@@ -43,73 +44,70 @@
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 16px; pointer-events: none; }
 
         /* --- MENU LATERAL (SIDEBAR) --- */
-        .menu-btn {
-            position: absolute; top: 30px; left: 20px; font-size: 28px; cursor: pointer; color: #d4af37; background: none; border: none; z-index: 1100;
-        }
-        .sidebar {
-            height: 100%; width: 280px; position: fixed; z-index: 1200; top: 0; left: -280px;
-            background-color: #fff; overflow-x: hidden; transition: 0.4s; box-shadow: 4px 0 15px rgba(0,0,0,0.3); display: flex; flex-direction: column;
-        }
+        .menu-btn { position: absolute; top: 30px; left: 20px; font-size: 28px; cursor: pointer; color: #d4af37; background: none; border: none; z-index: 1100; }
+        .sidebar { height: 100%; width: 280px; position: fixed; z-index: 1200; top: 0; left: -280px; background-color: #fff; overflow-x: hidden; transition: 0.4s; box-shadow: 4px 0 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; }
         .sidebar-header { background: #000; color: #d4af37; padding: 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Cinzel', serif; }
         .sidebar .closebtn { background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; }
-        
         .menu-item { padding: 15px 20px; text-decoration: none; font-size: 15px; color: #333; border-bottom: 1px solid #eee; display: block; font-weight: 500; transition: 0.2s; }
         .menu-item:hover { background: #f5f5f5; padding-left: 25px; color: #000; }
         .menu-subitem { padding: 12px 20px 12px 40px; font-size: 14px; color: #666; text-decoration: none; display: block; border-bottom: 1px solid #eee; }
         .menu-subitem:hover { color: #000; background: #fafafa; }
-        
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1150; cursor: pointer; }
 
-        /* --- BANNER LARGURA TOTAL --- */
-        .banner-full-width {
-            display: block;
-            width: 100%;
-            height: auto;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            line-height: 0; 
-        }
-        .banner-full-width img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        /* --- BANNER --- */
+        .banner-full-width { display: block; width: 100%; height: auto; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.2); line-height: 0; }
+        .banner-full-width img { width: 100%; height: auto; display: block; }
 
-        /* --- CONTAINER PRINCIPAL (PRODUTOS) --- */
-        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 800px; }
-
-        /* Títulos das Seções */
-        .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 0 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; }
-
-        /* Grade de Produtos */
+        /* --- VITRINE --- */
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 600px; flex: 1; }
+        .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; }
         .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 60px; }
 
-        /* --- CARD DO PRODUTO --- */
-        .produto { 
-            background: #fff; border: 1px solid #eee; border-radius: 8px; cursor: pointer; 
-            transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; 
-            display: flex; flex-direction: column;
-        }
+        .produto { background: #fff; border: 1px solid #eee; border-radius: 8px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; display: flex; flex-direction: column; }
         .produto:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #ddd; }
-        
-        .capa-produto { 
-            background-color: #f4f4f4; height: 320px; width: 100%; position: relative; 
-            display: flex; align-items: center; justify-content: center; overflow: hidden;
-        }
+        .capa-produto { background-color: #f4f4f4; height: 320px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         .capa-produto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .produto:hover .capa-produto img { transform: scale(1.08); }
-
-        .ver-detalhes-hover {
-            position: absolute; bottom: 0; left: 0; width: 100%; 
-            background: rgba(0, 0, 0, 0.8); color: #fff; padding: 10px 0; 
-            text-align: center; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
-            opacity: 0; transition: opacity 0.3s; pointer-events: none;
-        }
+        .ver-detalhes-hover { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.8); color: #fff; padding: 10px 0; text-align: center; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         .produto:hover .ver-detalhes-hover { opacity: 1; }
-
         .info-produto { padding: 15px; text-align: left; }
         .produto h3 { color: #222; margin: 0 0 8px; font-size: 15px; font-weight: 600; line-height: 1.4; text-transform: capitalize; }
         .produto .preco { font-size: 18px; color: #000; font-weight: 700; margin: 0; }
+
+        /* --- RODAPÉ (NOVO) --- */
+        footer {
+            background-color: #000;
+            color: #fff;
+            margin-top: auto; /* Empurra para o final */
+            border-top: 4px solid #d4af37;
+        }
+        .footer-banner {
+            padding: 30px 20px;
+            text-align: center;
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+        }
+        .footer-banner h3 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            margin: 0 0 20px 0;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .footer-instagrams {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .copyright {
+            background-color: #111;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #222;
+        }
 
         /* --- MODAL --- */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
@@ -157,7 +155,6 @@
         @media (max-width: 1100px) { .grade-produtos { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 850px) {
             header h1 { font-size: 30px; }
-            .instagram-container { flex-direction: column; gap: 10px; }
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .capa-produto { height: 240px; }
             .modal-content { flex-direction: column; height: auto; max-height: 95vh; }
@@ -166,6 +163,7 @@
             .modal-info { padding: 20px; flex: none; }
             .grade-relacionados { gap: 10px; }
             .card-relacionado img { height: 80px; }
+            .footer-instagrams { flex-direction: column; align-items: center; gap: 15px; }
         }
     </style>
 </head>
@@ -196,11 +194,8 @@
         </button>
         <h1>Outfit Imperial</h1>
         <p>Roupas & Sneakers</p>
-        <div class="instagram-container">
+        <div class="instagram-header">
             <a href="https://instagram.com/outfit_imperial" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@outfit_imperial</span></a>
-            <a href="https://instagram.com/vvnasciment" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@vvnasciment</span></a>
-            <a href="https://instagram.com/trindadessss" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@trindadessss</span></a>
-            <a href="https://instagram.com/alexaandre_silva" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@alexaandre_silva</span></a>
         </div>
         
         <div class="search-box">
@@ -242,7 +237,19 @@
         </div>
     </div>
 
-    <footer><p>© 2024 Outfit Imperial - Todos os direitos reservados</p></footer>
+    <footer>
+        <div class="footer-banner">
+            <h3>Siga-nos no Instagram</h3>
+            <div class="footer-instagrams">
+                <a href="https://instagram.com/vvnasciment" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@vvnasciment</span></a>
+                <a href="https://instagram.com/trindadessss" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@trindadessss</span></a>
+                <a href="https://instagram.com/alexaandre_silva" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@alexaandre_silva</span></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 Outfit Imperial - Todos os direitos reservados</p>
+        </div>
+    </footer>
 
     <div id="janela-modal" class="modal-overlay" onclick="fecharModal(event)">
         <div class="modal-content">
@@ -323,7 +330,7 @@
             }
         }
 
-        // --- CARREGAR PRODUTOS ---
+        // --- CARREGAR PRODUTOS NA TELA ---
         function carregarProdutosNaTela() {
             const containers = {
                 'corta-vento': document.getElementById('grade-corta-vento'),
