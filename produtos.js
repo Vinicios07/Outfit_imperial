@@ -106,7 +106,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // ✅ NOVO PRODUTO: OVERSIZED ICE BLUE
     {
         id: "oversized-ice-blue",
         nome: "Camiseta Oversized - Ice Blue Graphic",
@@ -118,6 +117,22 @@ const produtos = [
             <p><strong>Minimalista e Moderna:</strong> Camiseta oversized em tom azul gelo (Ice Blue).</p>
             <p>Estampa minimalista no peito e corte quadrado.</p>
             <p>Malha premium com caimento estruturado.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    // ✅ NOVO PRODUTO: JORDAN BEGE BOX LOGO
+    {
+        id: "oversized-jordan-box",
+        nome: "Camiseta Jordan - Bege Box Logo",
+        preco: "R$ 139,90", 
+        categoria: "oversized",
+        imgCapa: "jordan-bege-box.jpeg",
+        imagens: ["jordan-bege-box.jpeg", "jordan-bege-box2.jpeg"], 
+        descricao: `
+            <p><strong>Estilo Clássico:</strong> Camiseta em tom bege areia com logo Jordan Box vermelho centralizado.</p>
+            <p>Etiqueta interna exclusiva e acabamento de alta qualidade.</p>
+            <p>Perfeita para compor um visual streetwear limpo e sofisticado.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
