@@ -2,6 +2,20 @@
 const produtos = [
     // --- COLEÇÃO DE INVERNO (JAQUETAS) ---
     {
+        id: "jaqueta-couro-gola",
+        nome: "Jaqueta Zara - Gola Alta Premium",
+        preco: "R$ 329,90",
+        categoria: "corta-vento", 
+        imgCapa: "jaqueta-top.jpeg", 
+        imagens: ["jaqueta-top.jpeg"], 
+        descricao: `
+            <p><strong>Design Sofisticado:</strong> Jaqueta de couro sintético com gola alta estruturada.</p>
+            <p>Modelagem reta e limpa, perfeita para um visual mais sério e elegante.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
         id: "jaqueta-bomber-couro",
         nome: "Jaqueta Bomber Zara - Efeito Couro",
         preco: "R$ 329,90",
@@ -14,21 +28,6 @@ const produtos = [
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
-    },
-    {
-        id: "jaqueta-zara-tech",
-        nome: "Jaqueta Zara - Corta Vento Tech",
-        preco: "R$ 122,90",
-        categoria: "corta-vento",
-        imgCapa: "camisaZara.jpeg",
-        imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
-        descricao: `
-            <p><strong>Material Premium:</strong> Confeccionada em tecido tecnológico corta-vento.</p>
-            <p>Ideal para dias frios. Modelagem Slim Fit.</p>
-            <p>Acabamento impecável e cor branca versátil.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: ["P", "GG"]
     },
 
     // --- OVERSIZED ---
@@ -47,7 +46,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- DRY FIT (CAMISETAS) ---
+    // --- DRY FIT (APENAS AS 3 CORRETAS) ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
@@ -94,7 +93,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- BERMUDAS DRY FIT (TACTEL) ---
+    // --- BERMUDAS DRY FIT ---
     {
         id: "bermuda-nike-azul",
         nome: "Bermuda Nike Dry Fit - Azul Marinho",
@@ -111,7 +110,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- BERMUDAS JOGADOR (JEANS / PREMIUM) ---
+    // --- BERMUDAS JOGADOR ---
     {
         id: "bermuda-jeans-jogador",
         nome: "Bermuda Jeans Jogador - Azul Distressed",
@@ -212,6 +211,21 @@ const produtos = [
         descricao: `
             <p><strong>Detalhes Exclusivos:</strong> Bermuda jeans cinza escura com botões e rebites em azul claro.</p>
             <p>Acabamento destroyed e lavagem estonada.</p>
+        `,
+        tamanhos: ["38", "40", "42", "44", "46"],
+        esgotados: [] 
+    },
+    // ✅ AQUI ESTÁ ELA DE VOLTA:
+    {
+        id: "bermuda-jogador-corda-azul",
+        nome: "Bermuda Jogador Premium - Corda Azul",
+        preco: "R$ 129,90", 
+        categoria: "bermudas-jogador", 
+        imgCapa: "bermuda-jogador-corda-azul.jpeg", 
+        imagens: ["bermuda-jogador-corda-azul.jpeg"], 
+        descricao: `
+            <p><strong>Destaque Urbano:</strong> Bermuda escura com cordão azul vibrante.</p>
+            <p>Acabamento destroyed e modelagem confortável.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
