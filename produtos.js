@@ -47,7 +47,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- DRY FIT ---
+    // --- LINHA DRY FIT (CAMISETAS E KITS) ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
@@ -93,7 +93,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // NOVO KIT ADICIONADO AQUI:
     {
         id: "kit-nike-dryfit-preto-branco",
         nome: "Kit Nike Dry Fit - Preto e Branco",
@@ -105,6 +104,22 @@ const produtos = [
             <p><strong>Conjunto Completo:</strong> Kit de camiseta e bermuda em Dry Fit.</p>
             <p>Design clássico preto com faixas brancas nos ombros e laterais.</p>
             <p>Ideal para futebol e treinos de alta performance.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    // ✅ NOVO KIT AZUL ADICIONADO AQUI (NA LINHA DRY FIT):
+    {
+        id: "kit-nike-dryfit-azul",
+        nome: "Kit Nike Dry Fit - Azul Marinho",
+        preco: "R$ 119,90", 
+        categoria: "dryfit",
+        imgCapa: "kit-nike-dryfit-azul.jpeg",
+        imagens: ["kit-nike-dryfit-azul.jpeg"], 
+        descricao: `
+            <p><strong>Conjunto Completo:</strong> Kit de camiseta e bermuda na cor Azul Marinho.</p>
+            <p>Detalhes em faixa branca lateral e tecido respirável de alta qualidade.</p>
+            <p>Perfeito para quem busca estilo e conforto no esporte.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
