@@ -1,6 +1,6 @@
 // LISTA DE PRODUTOS
 const produtos = [
-    // --- COLEÇÃO DE INVERNO (JAQUETAS) ---
+    // --- COLEÇÃO DE INVERNO (JAQUETAS) --- (RESTAURADO)
     {
         id: "jaqueta-zara-tech",
         nome: "Jaqueta Zara - Corta Vento Tech",
@@ -169,7 +169,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // ✅ NOVO PRODUTO (SWOOSH CENTRAL):
     {
         id: "nike-dryfit-swoosh-cores",
         nome: "Camiseta Nike Dry Fit Swoosh - Cores",
@@ -404,7 +403,7 @@ const produtos = [
         nome: "Bermuda Jogador Jeans - Botões Azuis",
         preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-botoes-azuis.jpeg", 
+        imgCapa: "bermuda-jogador-botoes-azuis.jpeg",
         imagens: ["bermuda-jogador-botoes-azuis.jpeg"], 
         descricao: `
             <p><strong>Detalhes Exclusivos:</strong> Bermuda jeans cinza escura com botões e rebites em azul claro.</p>
