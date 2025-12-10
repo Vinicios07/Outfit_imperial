@@ -19,7 +19,8 @@
             padding: 20px; 
             text-align: center; 
             border-bottom: 4px solid #d4af37;
-            position: relative; 
+            position: relative;
+            z-index: 1000; /* Garante que fique acima do banner se necessário */
         }
 
         /* Título e Subtítulo */
@@ -59,25 +60,36 @@
         
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1150; cursor: pointer; }
 
-        /* --- CONTAINER PRINCIPAL --- */
-        .container { max-width: 1400px; margin: 0 auto; padding: 20px; min-height: 800px; }
+        /* --- BANNER LARGURA TOTAL --- */
+        .banner-full-width {
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            /* Removido border-radius e margem superior para ficar colado no header */
+        }
+        .banner-full-width img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover; /* Garante que cubra bem a área */
+        }
 
-        /* Banner Quem Somos */
-        .banner-quem-somos { display: block; width: 100%; margin-bottom: 40px; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s; }
-        .banner-quem-somos:hover { transform: scale(1.01); }
-        .banner-quem-somos img { width: 100%; display: block; height: auto; }
+        /* --- CONTAINER PRINCIPAL (PRODUTOS) --- */
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 20px; min-height: 800px; }
 
         /* Títulos das Seções */
-        .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 30px 0 20px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; }
+        .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 0 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; }
 
         /* Grade de Produtos */
-        .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 50px; }
+        .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 60px; }
 
-        /* --- CARD DO PRODUTO (CORRIGIDO) --- */
+        /* --- CARD DO PRODUTO --- */
         .produto { 
             background: #fff; border: 1px solid #eee; border-radius: 8px; cursor: pointer; 
             transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; 
-            display: flex; flex-direction: column; /* Garante estrutura vertical */
+            display: flex; flex-direction: column;
         }
         .produto:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #ddd; }
         
@@ -88,12 +100,11 @@
         .capa-produto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .produto:hover .capa-produto img { transform: scale(1.08); }
 
-        /* O famoso "Ver Detalhes" corrigido */
         .ver-detalhes-hover {
             position: absolute; bottom: 0; left: 0; width: 100%; 
             background: rgba(0, 0, 0, 0.8); color: #fff; padding: 10px 0; 
             text-align: center; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
-            opacity: 0; transition: opacity 0.3s; pointer-events: none; /* Não interfere no clique */
+            opacity: 0; transition: opacity 0.3s; pointer-events: none;
         }
         .produto:hover .ver-detalhes-hover { opacity: 1; }
 
@@ -101,7 +112,7 @@
         .produto h3 { color: #222; margin: 0 0 8px; font-size: 15px; font-weight: 600; line-height: 1.4; text-transform: capitalize; }
         .produto .preco { font-size: 18px; color: #000; font-weight: 700; margin: 0; }
 
-        /* --- MODAL (CORRIGIDO) --- */
+        /* --- MODAL --- */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
         .modal-overlay.aberto { display: flex; }
         .modal-content { background: white; width: 100%; max-width: 950px; height: 90vh; max-height: 700px; border-radius: 6px; display: flex; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
@@ -124,17 +135,11 @@
         .titulo-opcao { display: block; font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #555; }
         .grade-tamanhos { display: flex; gap: 10px; flex-wrap: wrap; }
         
-        /* Botões de Tamanho Interativos */
-        .tamanho-btn { 
-            width: 45px; height: 45px; border: 1px solid #ddd; background: #fff; border-radius: 4px; 
-            display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; 
-            cursor: pointer; transition: all 0.2s; color: #333;
-        }
+        .tamanho-btn { width: 45px; height: 45px; border: 1px solid #ddd; background: #fff; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; color: #333; }
         .tamanho-btn:hover { border-color: #000; color: #000; background: #f0f0f0; }
         .tamanho-btn.esgotado { background: #f5f5f5; color: #ccc; border-color: #eee; cursor: not-allowed; text-decoration: line-through; }
 
         .modal-descricao { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 30px; border-top: 1px solid #eee; padding-top: 20px; }
-        
         .modal-botoes { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
         .botao-modal { display: block; background: #000; color: white; text-align: center; padding: 16px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; font-size: 16px; }
         .botao-modal:hover { background: #333; }
@@ -150,7 +155,6 @@
             header h1 { font-size: 30px; }
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .capa-produto { height: 240px; }
-            
             .modal-content { flex-direction: column; height: auto; max-height: 95vh; }
             .modal-galeria-container { padding: 15px; flex: none; }
             .modal-foto-principal img { max-height: 300px; }
@@ -203,12 +207,12 @@
         </div>
     </header>
 
+    <a href="quem-somos.html" class="banner-full-width" id="banner-home">
+        <img src="banner-quem-somos.png" alt="Quem Somos Nós - Outfit Imperial">
+    </a>
+
     <div class="container">
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
-
-        <a href="quem-somos.html" class="banner-quem-somos" id="banner-home">
-            <img src="banner-quem-somos.png" alt="Quem Somos Nós - Outfit Imperial">
-        </a>
 
         <div id="box-inverno">
             <h2 class="secao-titulo">Coleção de Inverno</h2>
