@@ -9,7 +9,7 @@
 
     <style>
         /* --- DESIGN GERAL --- */
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #111; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #111; overflow-x: hidden; }
         
         /* CABEÇALHO */
         header { 
@@ -18,6 +18,85 @@
             padding: 40px 20px 30px; 
             text-align: center; 
             border-bottom: 4px solid #d4af37;
+            position: relative; /* Para posicionar o menu */
+        }
+
+        /* BOTÃO DO MENU (3 RISCOS) */
+        .menu-btn {
+            position: absolute;
+            top: 40px;
+            left: 25px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #d4af37;
+            z-index: 1100;
+            background: none;
+            border: none;
+            transition: transform 0.3s;
+        }
+        .menu-btn:hover { transform: scale(1.1); color: #fff; }
+
+        /* MENU LATERAL (SIDEBAR) */
+        .sidebar {
+            height: 100%;
+            width: 280px;
+            position: fixed;
+            z-index: 1200;
+            top: 0;
+            left: -280px; /* Escondido inicialmente */
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.4s;
+            padding-top: 60px;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.7);
+            border-right: 2px solid #d4af37;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #ccc;
+            display: block;
+            transition: 0.3s;
+            font-weight: 500;
+            border-bottom: 1px solid #222;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sidebar a:hover {
+            color: #000;
+            background-color: #d4af37;
+            font-weight: 700;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 36px;
+            margin-left: 50px;
+            color: #fff;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        /* OVERLAY ESCURO (Fundo quando menu abre) */
+        .overlay-menu {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1150;
+            cursor: pointer;
+            transition: opacity 0.4s;
         }
 
         header h1 {
@@ -39,7 +118,7 @@
         .search-icon { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 18px; pointer-events: none; }
         
         /* VITRINE */
-        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; min-height: 600px; }
         
         .secao-titulo {
             font-family: 'Cinzel', serif;
@@ -93,7 +172,7 @@
         .produto:hover .ver-detalhes-hover { opacity: 1; }
 
         /* MODAL */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 999; justify-content: center; align-items: center; padding: 20px; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 1300; justify-content: center; align-items: center; padding: 20px; }
         .modal-overlay.aberto { display: flex; }
         .modal-content { background: white; width: 100%; max-width: 1000px; height: 90vh; max-height: 700px; border-radius: 4px; display: flex; overflow: hidden; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
         .btn-fechar { position: absolute; top: 15px; right: 20px; font-size: 32px; cursor: pointer; color: #111; z-index: 20; }
@@ -122,6 +201,9 @@
         .botao-modal.vendedor2:hover { border-color: #000; }
         #msg-sem-resultado { width: 100%; text-align: center; color: #666; font-style: italic; display: none; margin-top: 50px; }
 
+        /* Classes para esconder/mostrar seções */
+        .secao-escondida { display: none !important; }
+
         @media (max-width: 1100px) {
             .grade-produtos { grid-template-columns: repeat(3, 1fr); }
         }
@@ -129,6 +211,7 @@
             header { padding-top: 30px; }
             header h1 { font-size: 32px; }
             .instagram-container { flex-direction: column; gap: 10px; }
+            .menu-btn { top: 30px; left: 15px; }
             
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .capa-produto { height: 200px; }
@@ -144,7 +227,22 @@
 </head>
 <body>
 
+    <div id="overlay-menu" class="overlay-menu" onclick="toggleMenu()"></div>
+
+    <div id="sidebar-menu" class="sidebar">
+        <button class="closebtn" onclick="toggleMenu()">×</button>
+        <a href="#" onclick="filtrarLoja('todos'); toggleMenu()">Ver Tudo</a>
+        <a href="#" onclick="filtrarLoja('inverno'); toggleMenu()">Coleção Inverno</a>
+        <a href="#" onclick="filtrarLoja('oversized'); toggleMenu()">Camisetas Oversized</a>
+        <a href="#" onclick="filtrarLoja('dryfit'); toggleMenu()">Linha Dry Fit</a>
+        <a href="#" onclick="filtrarLoja('bermudas-todas'); toggleMenu()">Bermudas (Todas)</a>
+        <a href="#" onclick="filtrarLoja('bermudas-jogador'); toggleMenu()">- Bermudas Jogador</a>
+        <a href="#" onclick="filtrarLoja('bermudas-dryfit'); toggleMenu()">- Bermudas Dry Fit</a>
+    </div>
+
     <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
         <h1>Outfit Imperial</h1>
         <p>Roupas & Sneakers</p>
         
@@ -164,22 +262,31 @@
     <div class="container">
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
 
-        <h2 class="secao-titulo">Coleção de Inverno</h2>
-        <div id="grade-corta-vento" class="grade-produtos"></div>
-
-        <h2 class="secao-titulo">Camisetas Oversized</h2>
-        <div id="grade-oversized" class="grade-produtos"></div>
-
-        <h2 class="secao-titulo">Linha Dry Fit</h2>
-        <div id="grade-dryfit" class="grade-produtos"></div>
-
-        <h2 class="secao-titulo">Bermudas Dry Fit</h2>
-        <div id="grade-bermudas" class="grade-produtos"></div>
-
-        <h2 class="secao-titulo">Bermudas Jogador</h2>
-        <div id="grade-bermudas-jogador" class="grade-produtos"></div>
-
+        <div id="box-inverno">
+            <h2 class="secao-titulo">Coleção de Inverno</h2>
+            <div id="grade-corta-vento" class="grade-produtos"></div>
         </div>
+
+        <div id="box-oversized">
+            <h2 class="secao-titulo">Camisetas Oversized</h2>
+            <div id="grade-oversized" class="grade-produtos"></div>
+        </div>
+
+        <div id="box-dryfit">
+            <h2 class="secao-titulo">Linha Dry Fit</h2>
+            <div id="grade-dryfit" class="grade-produtos"></div>
+        </div>
+
+        <div id="box-bermudas-dryfit">
+            <h2 class="secao-titulo">Bermudas Dry Fit</h2>
+            <div id="grade-bermudas" class="grade-produtos"></div>
+        </div>
+
+        <div id="box-bermudas-jogador">
+            <h2 class="secao-titulo">Bermudas Jogador</h2>
+            <div id="grade-bermudas-jogador" class="grade-produtos"></div>
+        </div>
+    </div>
 
     <footer><p>© 2024 Outfit Imperial - Todos os direitos reservados</p></footer>
 
@@ -212,6 +319,50 @@
         document.addEventListener("DOMContentLoaded", () => {
             carregarProdutosNaTela();
         });
+
+        // --- FUNÇÃO DO MENU HAMBURGUER ---
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar-menu');
+            const overlay = document.getElementById('overlay-menu');
+            
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-280px';
+                overlay.style.display = 'none';
+            } else {
+                sidebar.style.left = '0px';
+                overlay.style.display = 'block';
+            }
+        }
+
+        // --- FUNÇÃO DE FILTRO POR CATEGORIA ---
+        function filtrarLoja(categoria) {
+            // IDs das caixas (Containers que tem Titulo + Grade)
+            const boxInverno = document.getElementById('box-inverno');
+            const boxOversized = document.getElementById('box-oversized');
+            const boxDryfit = document.getElementById('box-dryfit');
+            const boxBermudasDry = document.getElementById('box-bermudas-dryfit');
+            const boxBermudasJogador = document.getElementById('box-bermudas-jogador');
+
+            // Primeiro, esconde tudo
+            const todasAsCaixas = [boxInverno, boxOversized, boxDryfit, boxBermudasDry, boxBermudasJogador];
+            
+            if (categoria === 'todos') {
+                todasAsCaixas.forEach(box => box.classList.remove('secao-escondida'));
+            } else {
+                todasAsCaixas.forEach(box => box.classList.add('secao-escondida'));
+
+                // Agora mostra só o escolhido
+                if (categoria === 'inverno') boxInverno.classList.remove('secao-escondida');
+                if (categoria === 'oversized') boxOversized.classList.remove('secao-escondida');
+                if (categoria === 'dryfit') boxDryfit.classList.remove('secao-escondida');
+                if (categoria === 'bermudas-todas') {
+                    boxBermudasDry.classList.remove('secao-escondida');
+                    boxBermudasJogador.classList.remove('secao-escondida');
+                }
+                if (categoria === 'bermudas-jogador') boxBermudasJogador.classList.remove('secao-escondida');
+                if (categoria === 'bermudas-dryfit') boxBermudasDry.classList.remove('secao-escondida');
+            }
+        }
 
         function carregarProdutosNaTela() {
             const containerCortaVento = document.getElementById('grade-corta-vento');
