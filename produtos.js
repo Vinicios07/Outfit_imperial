@@ -4,7 +4,7 @@ const produtos = [
     {
         id: "jaqueta-zara-tech",
         nome: "Jaqueta Zara - Corta Vento Tech",
-        preco: "R$ 260,00",
+        preco: "R$ 122,90",
         categoria: "inverno",
         imgCapa: "camisaZara.jpeg",
         imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
@@ -19,7 +19,7 @@ const produtos = [
     {
         id: "jaqueta-bomber-couro",
         nome: "Jaqueta Bomber Zara - Efeito Couro",
-        preco: "R$ 260,00",
+        preco: "R$ 329,90",
         categoria: "inverno", 
         imgCapa: "jaqueta-bomber.jpeg", 
         imagens: ["jaqueta-bomber.jpeg"], 
@@ -31,11 +31,11 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- OVERSIZED ---
+    // --- CAMISETAS OVERSIZED ---
     {
         id: "palm-angels-wings",
         nome: "Camiseta Oversized Palm Angels - Wings",
-        preco: "R$ 85,00",
+        preco: "R$ 189,90",
         categoria: "oversized",
         imgCapa: "palm-angels-oversized.jpeg",
         imagens: ["palm-angels-oversized.jpeg"], 
@@ -49,7 +49,7 @@ const produtos = [
     {
         id: "oversized-jordan-bege",
         nome: "Camiseta Oversized Jordan - Bege",
-        preco: "R$ 85,00", 
+        preco: "R$ 139,90", 
         categoria: "oversized",
         imgCapa: "oversized-jordan-bege.jpeg",
         imagens: ["oversized-jordan-bege.jpeg", "oversized-jordan-bege2.jpeg"], 
@@ -64,7 +64,7 @@ const produtos = [
     {
         id: "oversized-jordan-box",
         nome: "Camiseta Jordan - Bege Box Logo",
-        preco: "R$ 85,00", 
+        preco: "R$ 139,90", 
         categoria: "oversized",
         imgCapa: "jordan-bege-box.jpeg",
         imagens: ["jordan-bege-box.jpeg", "jordan-bege-box2.jpeg"], 
@@ -79,7 +79,7 @@ const produtos = [
     {
         id: "oversized-nike-preta",
         nome: "Camiseta Oversized Nike - Preta Logo",
-        preco: "R$ 85,00", 
+        preco: "R$ 139,90", 
         categoria: "oversized",
         imgCapa: "oversized-nike-preta.jpeg",
         imagens: ["oversized-nike-preta.jpeg", "oversized-nike-preta2.jpeg"], 
@@ -94,7 +94,7 @@ const produtos = [
     {
         id: "oversized-nike-colorida",
         nome: "Camiseta Oversized Nike - Logo Colorido",
-        preco: "R$ 85,00", 
+        preco: "R$ 139,90", 
         categoria: "oversized",
         imgCapa: "oversized-nike-colorida.jpeg",
         imagens: ["oversized-nike-colorida.jpeg", "oversized-nike-colorida2.jpeg"], 
@@ -109,7 +109,7 @@ const produtos = [
     {
         id: "oversized-adidas-trio",
         nome: "Camiseta Oversized Adidas - Graffiti",
-        preco: "R$ 85,00", 
+        preco: "R$ 139,90", 
         categoria: "oversized",
         imgCapa: "oversized-adidas-trio.jpeg",
         imagens: ["oversized-adidas-trio.jpeg"], 
@@ -124,7 +124,7 @@ const produtos = [
     {
         id: "oversized-supreme-knitting",
         nome: "Camiseta Oversized Supreme - Knitting",
-        preco: "R$ 85,00", 
+        preco: "R$ 139,90", 
         categoria: "oversized",
         imgCapa: "oversized-supreme-trio.jpeg",
         imagens: ["oversized-supreme-trio.jpeg"], 
@@ -139,7 +139,7 @@ const produtos = [
     {
         id: "oversized-ice-blue",
         nome: "Camiseta Oversized - Ice Blue Graphic",
-        preco: "R$ 85,00", 
+        preco: "R$ 139,90", 
         categoria: "oversized",
         imgCapa: "oversized-ice-blue.jpeg",
         imagens: ["oversized-ice-blue.jpeg"], 
@@ -152,7 +152,82 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- DRY FIT ---
+    // --- LINHA DRY FIT (TODAS A R$ 75,00) ---
+    
+    // -- NOVIDADES: LINHA NOCTA --
+    {
+        id: "nocta-dryfit-cores",
+        nome: "Camiseta Nocta Dry Fit - Cores Variadas",
+        preco: "R$ 75,00", 
+        categoria: "dryfit",
+        imgCapa: "dryfit-nocta-cores.jpeg",
+        imagens: ["dryfit-nocta-cores.jpeg"], 
+        descricao: `
+            <p><strong>Linha Exclusiva NOCTA:</strong> Design agressivo com costuras aparentes (Outline) e logo em destaque.</p>
+            <p>Disponível em diversas cores: Azul Bebê, Vermelho, Cinza, Bege, Preto e Branco.</p>
+            <p>Modelagem esportiva de alta performance.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "nocta-dryfit-preta",
+        nome: "Camiseta Nocta Dry Fit - Preta",
+        preco: "R$ 75,00", 
+        categoria: "dryfit",
+        imgCapa: "dryfit-nocta-preta.jpeg",
+        imagens: ["dryfit-nocta-preta.jpeg"], 
+        descricao: `
+            <p><strong>Estilo Street Sport:</strong> Camiseta preta com detalhes de costura branca e logo NOCTA no peito.</p>
+            <p>Tecido tecnológico que une conforto e estilo urbano.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "nocta-dryfit-branca",
+        nome: "Camiseta Nocta Dry Fit - Branca",
+        preco: "R$ 75,00", 
+        categoria: "dryfit",
+        imgCapa: "dryfit-nocta-branca.jpeg",
+        imagens: ["dryfit-nocta-branca.jpeg"], 
+        descricao: `
+            <p><strong>Clean e Impactante:</strong> Camiseta branca com costuras pretas contrastantes.</p>
+            <p>Logo NOCTA centralizado. Perfeita para quem busca um visual diferenciado no treino ou no rolê.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "nocta-dryfit-vermelha",
+        nome: "Camiseta Nocta Dry Fit - Vermelha",
+        preco: "R$ 75,00", 
+        categoria: "dryfit",
+        imgCapa: "dryfit-nocta-vermelha.jpeg",
+        imagens: ["dryfit-nocta-vermelha.jpeg"], 
+        descricao: `
+            <p><strong>Presença Marcante:</strong> Camiseta vermelha intensa com detalhes em branco.</p>
+            <p>Ajuste perfeito ao corpo e tecido de secagem rápida.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "nocta-dryfit-azul",
+        nome: "Camiseta Nocta Dry Fit - Azul Bebê",
+        preco: "R$ 75,00", 
+        categoria: "dryfit",
+        imgCapa: "dryfit-nocta-azul.jpeg",
+        imagens: ["dryfit-nocta-azul.jpeg"], 
+        descricao: `
+            <p><strong>Tom Exclusivo:</strong> Camiseta em tom azul claro (baby blue) com costuras pretas.</p>
+            <p>Uma peça rara e muito estilosa para compor seu outfit.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+
+    // -- MODELOS ANTERIORES (PREÇO ATUALIZADO) --
     {
         id: "nike-dryfit-cores-variadas",
         nome: "Camiseta Nike Dry Fit Outline - Cores Variadas",
@@ -164,7 +239,6 @@ const produtos = [
             <p><strong>Coleção Completa:</strong> Camisetas Nike Dry Fit com costura Outline.</p>
             <p>Disponível em várias cores: <strong>Azul Marinho, Vermelho, Cinza Chumbo e Preto</strong>.</p>
             <p>Escolha a sua cor favorita ao falar com o vendedor.</p>
-            <p>Tecnologia Dry Fit para máxima respiração.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -179,7 +253,6 @@ const produtos = [
         descricao: `
             <p><strong>Clássico Moderno:</strong> Camiseta Dry Fit com o logo Swoosh Nike centralizado.</p>
             <p>Cores disponíveis: <strong>Azul, Vermelho, Preto, Branco, Cinza e Caqui</strong>.</p>
-            <p>Caimento leve e confortável para o dia a dia ou treino.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -192,9 +265,8 @@ const produtos = [
         imgCapa: "nike-dryfit-costura-branca.jpeg",
         imagens: ["nike-dryfit-costura-branca.jpeg"], 
         descricao: `
-            <p><strong>Visual Esportivo:</strong> Camiseta preta com detalhes de costura exposta em branco (outline).</p>
-            <p>Logo Nike centralizado no peito. Tecido Dry Fit leve e respirável.</p>
-            <p>Ideal para treinos com estilo.</p>
+            <p><strong>Visual Esportivo:</strong> Camiseta preta com detalhes de costura exposta em branco.</p>
+            <p>Logo Nike centralizado no peito.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -207,84 +279,8 @@ const produtos = [
         imgCapa: "nike-dryfit-branca-swoosh.jpeg",
         imagens: ["nike-dryfit-branca-swoosh.jpeg"], 
         descricao: `
-            <p><strong>Estilo Moderno:</strong> Camiseta branca com costuras pretas aparentes (Outline).</p>
+            <p><strong>Estilo Moderno:</strong> Camiseta branca com costuras pretas aparentes.</p>
             <p>Destaque para o logo Big Swoosh vazado no peito.</p>
-            <p>Tecido Dry Fit de alta qualidade e modelagem ajustada.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "nike-dryfit-azul-antiga",
-        nome: "Camiseta Nike Dry Fit Performance - Azul Royal",
-        preco: "R$ 75,00", 
-        categoria: "dryfit",
-        imgCapa: "camiseta-nike-dryfit-azul-rei.jpeg",
-        imagens: ["camiseta-nike-dryfit-azul-rei.jpeg"], 
-        descricao: `
-            <p><strong>Alta Performance:</strong> Tecido tecnológico que afasta o suor da pele.</p>
-            <p>Ideal para treinos, academia e prática de esportes.</p>
-            <p>Leveza e liberdade de movimento.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "nike-dryfit-outline-preta-classica",
-        nome: "Camiseta Nike Dry Fit Outline - Preta Clássica",
-        preco: "R$ 75,00", 
-        categoria: "dryfit",
-        imgCapa: "nike-dryfit-preta1.jpeg",
-        imagens: ["nike-dryfit-preta1.jpeg", "nike-dryfit-preta2.jpeg", "nike-dryfit-preta3.jpeg"], 
-        descricao: `
-            <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline) e logo vazado.</p>
-            <p>Tecnologia Dry Fit avançada para máximo conforto térmico.</p>
-            <p>Ajuste perfeito ao corpo.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "nike-dryfit-outline-branca",
-        nome: "Camiseta Nike Dry Fit Outline - Branca",
-        preco: "R$ 75,00", 
-        categoria: "dryfit",
-        imgCapa: "nike-dryfit-branca1.jpeg",
-        imagens: ["nike-dryfit-branca1.jpeg", "nike-dryfit-branca2.jpeg", "nike-dryfit-branca3.jpeg", "nike-dryfit-branca4.jpeg", "nike-dryfit-branca5.jpeg"], 
-        descricao: `
-            <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta.</p>
-            <p>Tecnologia de absorção de suor para manter o corpo seco.</p>
-            <p>Design moderno que valoriza o shape.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "kit-nike-dryfit-preto-branco",
-        nome: "Kit Nike Dry Fit - Preto e Branco",
-        preco: "R$ 75,00", 
-        categoria: "dryfit",
-        imgCapa: "kit-nike-dryfit-preto-branco.jpeg",
-        imagens: ["kit-nike-dryfit-preto-branco.jpeg"], 
-        descricao: `
-            <p><strong>Conjunto Completo:</strong> Kit de camiseta e bermuda em Dry Fit.</p>
-            <p>Design clássico preto com faixas brancas nos ombros e laterais.</p>
-            <p>Ideal para futebol e treinos de alta performance.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "kit-nike-dryfit-azul",
-        nome: "Kit Nike Dry Fit - Azul Marinho",
-        preco: "R$ 120,00", 
-        categoria: "dryfit",
-        imgCapa: "kit-nike-dryfit-azul.jpeg",
-        imagens: ["kit-nike-dryfit-azul.jpeg"], 
-        descricao: `
-            <p><strong>Conjunto Completo:</strong> Kit de camiseta e bermuda na cor Azul Marinho.</p>
-            <p>Detalhes em faixa branca lateral e tecido respirável de alta qualidade.</p>
-            <p>Perfeito para quem busca estilo e conforto no esporte.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -345,12 +341,83 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
+    {
+        id: "nike-dryfit-azul-antiga",
+        nome: "Camiseta Nike Dry Fit Performance - Azul Royal",
+        preco: "R$ 75,00", 
+        categoria: "dryfit",
+        imgCapa: "camiseta-nike-dryfit-azul-rei.jpeg",
+        imagens: ["camiseta-nike-dryfit-azul-rei.jpeg"], 
+        descricao: `
+            <p><strong>Alta Performance:</strong> Tecido tecnológico que afasta o suor da pele.</p>
+            <p>Ideal para treinos, academia e prática de esportes.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "nike-dryfit-outline-preta-classica",
+        nome: "Camiseta Nike Dry Fit Outline - Preta Clássica",
+        preco: "R$ 75,00", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-preta1.jpeg",
+        imagens: ["nike-dryfit-preta1.jpeg", "nike-dryfit-preta2.jpeg", "nike-dryfit-preta3.jpeg"], 
+        descricao: `
+            <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline) e logo vazado.</p>
+            <p>Tecnologia Dry Fit avançada.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "nike-dryfit-outline-branca",
+        nome: "Camiseta Nike Dry Fit Outline - Branca",
+        preco: "R$ 75,00", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-branca1.jpeg",
+        imagens: ["nike-dryfit-branca1.jpeg", "nike-dryfit-branca2.jpeg", "nike-dryfit-branca3.jpeg", "nike-dryfit-branca4.jpeg", "nike-dryfit-branca5.jpeg"], 
+        descricao: `
+            <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta.</p>
+            <p>Design moderno que valoriza o shape.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    // KITS (PREÇO MANTIDO POIS SÃO CONJUNTOS)
+    {
+        id: "kit-nike-dryfit-preto-branco",
+        nome: "Kit Nike Dry Fit - Preto e Branco",
+        preco: "R$ 119,90", 
+        categoria: "dryfit",
+        imgCapa: "kit-nike-dryfit-preto-branco.jpeg",
+        imagens: ["kit-nike-dryfit-preto-branco.jpeg"], 
+        descricao: `
+            <p><strong>Conjunto Completo:</strong> Kit de camiseta e bermuda em Dry Fit.</p>
+            <p>Design clássico preto com faixas brancas nos ombros e laterais.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "kit-nike-dryfit-azul",
+        nome: "Kit Nike Dry Fit - Azul Marinho",
+        preco: "R$ 119,90", 
+        categoria: "dryfit",
+        imgCapa: "kit-nike-dryfit-azul.jpeg",
+        imagens: ["kit-nike-dryfit-azul.jpeg"], 
+        descricao: `
+            <p><strong>Conjunto Completo:</strong> Kit de camiseta e bermuda na cor Azul Marinho.</p>
+            <p>Detalhes em faixa branca lateral.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
 
     // --- BERMUDAS DRY FIT (TACTEL) ---
     {
         id: "bermuda-nike-azul",
         nome: "Bermuda Nike Dry Fit - Azul Marinho",
-        preco: "R$ 45,00", 
+        preco: "R$ 79,90", 
         categoria: "bermudas", 
         imgCapa: "nike-bermuda-azul1.jpeg",
         imagens: ["nike-bermuda-azul1.jpeg", "nike-bermuda-azul2.jpeg", "nike-bermuda-azul3.jpeg", "nike-bermuda-azul4.jpeg", "nike-bermuda-azul5.jpeg", "nike-bermuda-azul6.jpeg"],
@@ -367,7 +434,7 @@ const produtos = [
     {
         id: "bermuda-jeans-jogador",
         nome: "Bermuda Jeans Jogador - Azul Distressed",
-        preco: "R$ 80,00", 
+        preco: "R$ 119,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jeans-jogador.jpeg",
         imagens: ["bermuda-jeans-jogador.jpeg"], 
@@ -376,13 +443,13 @@ const produtos = [
             <p>Acabamento destroyed (rasgado) e barra desfiada.</p>
             <p>Lavagem clássica azul.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "48"],
+        tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-preta",
         nome: "Bermuda Jogador Premium - Preta (Corda Vermelha)",
-        preco: "R$ 80,00", 
+        preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-preta.jpeg",
         imagens: ["bermuda-jogador-preta.jpeg"], 
@@ -391,13 +458,13 @@ const produtos = [
             <p>Bolsos com bordado exclusivo 'XO' e costuras reforçadas.</p>
             <p>Modelagem confortável e moderna.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "48"],
+        tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-cinza",
         nome: "Bermuda Jogador Jeans - Lavagem Cinza",
-        preco: "R$ 80,00", 
+        preco: "R$ 119,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-cinza.jpeg",
         imagens: ["bermuda-jogador-cinza.jpeg"], 
@@ -406,13 +473,13 @@ const produtos = [
             <p>Rasgos estratégicos e modelagem ampla estilo jogador.</p>
             <p>Peça chave para quem curte um visual diferenciado.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "48"],
+        tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-branca",
         nome: "Bermuda Jogador Jeans - Lavagem Branca",
-        preco: "R$ 80,00", 
+        preco: "R$ 119,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-branca.jpeg",
         imagens: ["bermuda-jogador-branca.jpeg"], 
@@ -421,13 +488,13 @@ const produtos = [
             <p>Acabamento da barra desfiado e modelagem confortável.</p>
             <p>Ideal para compor looks leves e estilosos.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "48"],
+        tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-branca-acinzentada",
         nome: "Bermuda Jogador - Branca Acinzentada",
-        preco: "R$ 80,00", 
+        preco: "R$ 119,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-branca-acinzentada.jpeg",
         imagens: ["bermuda-jogador-branca-acinzentada.jpeg"], 
@@ -436,13 +503,13 @@ const produtos = [
             <p>Detalhes destroyed e manchas de tinta sutis.</p>
             <p>A combinação perfeita entre o claro e o urbano.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "48"],
+        tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-degrade-amarelo",
         nome: "Bermuda Jogador - Degradê Cordão Amarelo",
-        preco: "R$ 80,00", 
+        preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-degrade-amarelo.jpeg", 
         imagens: ["bermuda-jogador-degrade-amarelo.jpeg"], 
@@ -451,13 +518,13 @@ const produtos = [
             <p>Botão amarelo personalizado e detalhes destroyed.</p>
             <p>Para quem gosta de um visual marcante.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "48"],
+        tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-botoes-azuis",
         nome: "Bermuda Jogador Jeans - Botões Azuis",
-        preco: "R$ 80,00", 
+        preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-botoes-azuis.jpeg", 
         imagens: ["bermuda-jogador-botoes-azuis.jpeg"], 
@@ -465,13 +532,13 @@ const produtos = [
             <p><strong>Detalhes Exclusivos:</strong> Bermuda jeans cinza escura com botões e rebites em azul claro.</p>
             <p>Acabamento destroyed e lavagem estonada.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "48"],
+        tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-corda-azul",
         nome: "Bermuda Jogador Premium - Corda Azul",
-        preco: "R$ 80,00", 
+        preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-corda-azul.jpeg",
         imagens: ["bermuda-jogador-corda-azul.jpeg"], 
@@ -479,13 +546,13 @@ const produtos = [
             <p><strong>Destaque Urbano:</strong> Bermuda escura com cordão azul vibrante.</p>
             <p>Acabamento destroyed e modelagem confortável.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "48"],
+        tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
     {
         id: "bermuda-nike-jogador-preta",
         nome: "Bermuda Nike Jogador - Preta",
-        preco: "R$ 80,00", 
+        preco: "R$ 89,90", 
         categoria: "bermudas-jogador", 
         imgCapa: "bermuda-nike-jogador.jpeg",
         imagens: ["bermuda-nike-jogador.jpeg"], 
@@ -498,11 +565,11 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- NOVA CATEGORIA: CALÇAS JOGADOR ---
+    // --- CALÇAS JOGADOR ---
     {
         id: "calca-jogador-cinza-respingos",
         nome: "Calça Jeans Jogador - Cinza Respingos",
-        preco: "R$ 170,00", 
+        preco: "R$ 139,90", 
         categoria: "calcas-jogador",
         imgCapa: "calca-jogador-cinza.jpeg",
         imagens: ["calca-jogador-cinza.jpeg"], 
@@ -517,7 +584,7 @@ const produtos = [
     {
         id: "calca-jogador-branca-rasgada",
         nome: "Calça Jeans Jogador - Branca Destroyed",
-        preco: "R$ 170,00", 
+        preco: "R$ 139,90", 
         categoria: "calcas-jogador",
         imgCapa: "calca-jogador-branca.jpeg",
         imagens: ["calca-jogador-branca.jpeg"], 
