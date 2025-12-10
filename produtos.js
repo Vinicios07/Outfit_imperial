@@ -5,7 +5,7 @@ const produtos = [
         id: "jaqueta-zara-tech",
         nome: "Jaqueta Zara - Corta Vento Tech",
         preco: "R$ 122,90",
-        categoria: "corta-vento",
+        categoria: "inverno",
         imgCapa: "camisaZara.jpeg",
         imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
         descricao: `
@@ -20,7 +20,7 @@ const produtos = [
         id: "jaqueta-bomber-couro",
         nome: "Jaqueta Bomber Zara - Efeito Couro",
         preco: "R$ 329,90",
-        categoria: "corta-vento", 
+        categoria: "inverno", 
         imgCapa: "jaqueta-bomber.jpeg", 
         imagens: ["jaqueta-bomber.jpeg"], 
         descricao: `
@@ -153,9 +153,54 @@ const produtos = [
     },
 
     // --- DRY FIT ---
+    // (ADICIONADOS OS NOVOS MODELOS ABAIXO)
+    
+    {
+        id: "nike-dryfit-outline-azul",
+        nome: "Camiseta Nike Dry Fit Outline - Azul Marinho",
+        preco: "R$ 99,90", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-cores.jpeg",
+        imagens: ["nike-dryfit-cores.jpeg"], 
+        descricao: `
+            <p><strong>Estilo e Performance:</strong> Camiseta em tom Azul Marinho com costuras aparentes (Outline).</p>
+            <p>Tecnologia Dry Fit para máxima respiração.</p>
+            <p>Design moderno que valoriza o corpo.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "nike-dryfit-outline-vermelha",
+        nome: "Camiseta Nike Dry Fit Outline - Vermelha",
+        preco: "R$ 99,90", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-cores.jpeg",
+        imagens: ["nike-dryfit-cores.jpeg"], 
+        descricao: `
+            <p><strong>Destaque-se:</strong> Camiseta Vermelha vibrante com detalhes de costura branca.</p>
+            <p>Tecido leve, ideal para atividades físicas intensas ou uso casual esportivo.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "nike-dryfit-outline-cinza",
+        nome: "Camiseta Nike Dry Fit Outline - Cinza Chumbo",
+        preco: "R$ 99,90", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-cores.jpeg",
+        imagens: ["nike-dryfit-cores.jpeg"], 
+        descricao: `
+            <p><strong>Sóbria e Elegante:</strong> Camiseta Cinza Chumbo com o clássico design Outline.</p>
+            <p>Versatilidade total para combinar com qualquer bermuda ou calça.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
     {
         id: "nike-dryfit-costura-branca",
-        nome: "Camiseta Nike Dry Fit - Costura Branca",
+        nome: "Camiseta Nike Dry Fit - Preta Outline",
         preco: "R$ 99,90", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-costura-branca.jpeg",
@@ -169,8 +214,8 @@ const produtos = [
         esgotados: [] 
     },
     {
-        id: "nike-dryfit-azul",
-        nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
+        id: "nike-dryfit-azul-antiga",
+        nome: "Camiseta Nike Dry Fit Performance - Azul Royal",
         preco: "R$ 89,90", 
         categoria: "dryfit",
         imgCapa: "camiseta-nike-dryfit-azul-rei.jpeg",
@@ -184,8 +229,8 @@ const produtos = [
         esgotados: [] 
     },
     {
-        id: "nike-dryfit-outline-preta",
-        nome: "Camiseta Nike Dry Fit Outline - Preta",
+        id: "nike-dryfit-outline-preta-classica",
+        nome: "Camiseta Nike Dry Fit Outline - Preta Clássica",
         preco: "R$ 99,90", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-preta1.jpeg",
