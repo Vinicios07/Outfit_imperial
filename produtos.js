@@ -91,7 +91,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // ✅ NOVO PRODUTO: OVERSIZED NIKE LOGO COLORIDO (2 FOTOS)
     {
         id: "oversized-nike-colorida",
         nome: "Camiseta Oversized Nike - Logo Colorido",
@@ -154,6 +153,21 @@ const produtos = [
     },
 
     // --- DRY FIT ---
+    {
+        id: "nike-dryfit-costura-branca",
+        nome: "Camiseta Nike Dry Fit - Costura Branca",
+        preco: "R$ 99,90", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-costura-branca.jpeg",
+        imagens: ["nike-dryfit-costura-branca.jpeg"], 
+        descricao: `
+            <p><strong>Visual Esportivo:</strong> Camiseta preta com detalhes de costura exposta em branco (outline).</p>
+            <p>Logo Nike centralizado no peito. Tecido Dry Fit leve e respirável.</p>
+            <p>Ideal para treinos com estilo.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
