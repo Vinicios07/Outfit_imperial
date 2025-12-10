@@ -46,7 +46,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- DRY FIT (CAMISETAS) ---
+    // --- DRY FIT ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
@@ -215,7 +215,6 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
-    // PRODUTO NOVO ADICIONADO AQUI:
     {
         id: "bermuda-jogador-corda-azul",
         nome: "Bermuda Jogador Premium - Corda Azul",
@@ -244,20 +243,5 @@ const produtos = [
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
-    },
-
-    // --- SNEAKERS ---
-    {
-        id: "nike-dunk",
-        nome: "Nike Dunk Low Retro",
-        preco: "R$ 599,90",
-        categoria: "sneakers",
-        imgCapa: "camisaZara.jpeg", 
-        imagens: ["camisaZara.jpeg"],
-        descricao: `
-            <p><strong>Ícone do Basquete:</strong> Criado para as quadras, mas levado para as ruas.</p>
-        `,
-        tamanhos: ["39", "40", "41", "42"],
-        esgotados: ["41"]
     }
 ];
