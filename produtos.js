@@ -46,6 +46,22 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
+    // NOVO PRODUTO: JORDAN OVERSIZED
+    {
+        id: "oversized-jordan-bege",
+        nome: "Camiseta Oversized Jordan - Bege",
+        preco: "R$ 139,90", 
+        categoria: "oversized",
+        imgCapa: "oversized-jordan-bege.jpeg",
+        imagens: ["oversized-jordan-bege.jpeg", "oversized-jordan-bege2.jpeg"], 
+        descricao: `
+            <p><strong>Streetwear Premium:</strong> Camiseta Oversized Jordan na cor bege/areia.</p>
+            <p>Logo quadrado centralizado em destaque e etiqueta na gola.</p>
+            <p>Malha encorpada de alta qualidade.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
 
     // --- LINHA DRY FIT (CAMISETAS E KITS) ---
     {
@@ -108,7 +124,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // ✅ NOVO KIT AZUL ADICIONADO AQUI (NA LINHA DRY FIT):
     {
         id: "kit-nike-dryfit-azul",
         nome: "Kit Nike Dry Fit - Azul Marinho",
