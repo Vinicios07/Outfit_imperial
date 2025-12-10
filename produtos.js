@@ -91,7 +91,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // ✅ PRODUTO ATUALIZADO (4 CORES):
     {
         id: "oversized-supreme-knitting",
         nome: "Camiseta Oversized Supreme - Knitting",
@@ -103,6 +102,22 @@ const produtos = [
             <p><strong>Ícone Streetwear:</strong> Estampa clássica da Supreme "Knitting" (tricotando dinheiro).</p>
             <p>Disponível em 4 cores: <strong>Preto, Branco, Cinza e Amarelo</strong>.</p>
             <p>Caimento oversized autêntico e malha de alta qualidade.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    // ✅ NOVO PRODUTO: OVERSIZED ICE BLUE
+    {
+        id: "oversized-ice-blue",
+        nome: "Camiseta Oversized - Ice Blue Graphic",
+        preco: "R$ 139,90", 
+        categoria: "oversized",
+        imgCapa: "oversized-ice-blue.jpeg",
+        imagens: ["oversized-ice-blue.jpeg"], 
+        descricao: `
+            <p><strong>Minimalista e Moderna:</strong> Camiseta oversized em tom azul gelo (Ice Blue).</p>
+            <p>Estampa minimalista no peito e corte quadrado.</p>
+            <p>Malha premium com caimento estruturado.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
