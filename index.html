@@ -10,20 +10,7 @@
     <style>
         /* --- RESET E GERAL --- */
         * { box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            /* MUDANÇA AQUI: Fundo Cinza Gelo com Textura */
-            background-color: #e6e6e6; 
-            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-            color: #111; 
-            overflow-x: hidden; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
-        }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #e6e6e6; background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); color: #111; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
         
         /* --- CABEÇALHO --- */
         header { 
@@ -34,7 +21,7 @@
             border-bottom: 4px solid #d4af37;
             position: relative;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra para separar do fundo */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         header h1 {
@@ -88,21 +75,15 @@
         
         .secao-titulo { 
             font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; 
-            /* Sombra no texto para destacar do fundo cinza */
             text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
         }
         
         .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 60px; }
 
-        /* PRODUTO - MUDANÇA PARA DESTACAR NO FUNDO CINZA */
         .produto { 
-            background: #fff; /* Fundo branco puro */
-            border: none; /* Remove borda cinza */
-            border-radius: 8px; cursor: pointer; 
-            transition: transform 0.3s, box-shadow 0.3s; 
-            position: relative; overflow: hidden; 
-            display: flex; flex-direction: column;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra suave */
+            background: #fff; border: none; border-radius: 8px; cursor: pointer; 
+            transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; 
+            display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
         }
         .produto:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
         
@@ -199,7 +180,7 @@
         <a href="#" onclick="filtrarLoja('bermudas-todas'); toggleMenu()" class="menu-item">Bermudas (Todas)</a>
         <a href="#" onclick="filtrarLoja('bermudas-jogador'); toggleMenu()" class="menu-subitem">• Bermudas Jogador</a>
         <a href="#" onclick="filtrarLoja('bermudas-dryfit'); toggleMenu()" class="menu-subitem">• Bermudas Dry Fit</a>
-        
+
         <div class="menu-group-title">Institucional</div>
         <a href="quem-somos.html" class="menu-item">Quem Somos Nós</a>
     </div>
@@ -231,7 +212,7 @@
 
         <div id="box-inverno">
             <h2 class="secao-titulo">Coleção de Inverno</h2>
-            <div id="grade-corta-vento" class="grade-produtos"></div>
+            <div id="grade-inverno" class="grade-produtos"></div>
         </div>
 
         <div id="box-oversized">
@@ -259,8 +240,7 @@
         <div class="footer-banner">
             <h3>Siga-nos no Instagram</h3>
             <div class="footer-instagrams">
-                <a href="https://instagram.com/vvnasciment" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@vvnasciment</span></a>
-                <a href="https://instagram.com/trindadessss" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@trindadessss</span></a>
+                <a href="https://instagram.com/vvnasciment" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@trindadessss</span></a>
                 <a href="https://instagram.com/alexaandre_silva" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@alexaandre_silva</span></a>
             </div>
         </div>
@@ -333,9 +313,11 @@
                 boxes.forEach(box => box.classList.remove('secao-escondida'));
                 if(banner) banner.style.display = 'block';
             } else {
+                // Esconde tudo e o banner
                 boxes.forEach(box => box.classList.add('secao-escondida'));
                 if(banner) banner.style.display = 'none';
 
+                // Mostra o selecionado
                 if (categoria === 'inverno') boxes[0].classList.remove('secao-escondida');
                 if (categoria === 'oversized') boxes[1].classList.remove('secao-escondida');
                 if (categoria === 'dryfit') boxes[2].classList.remove('secao-escondida');
@@ -350,8 +332,9 @@
 
         // --- CARREGAR PRODUTOS NA TELA ---
         function carregarProdutosNaTela() {
+            // Limpa as grades
             const containers = {
-                'corta-vento': document.getElementById('grade-corta-vento'),
+                'inverno': document.getElementById('grade-inverno'), // CORRIGIDO PARA 'inverno'
                 'oversized': document.getElementById('grade-oversized'),
                 'dryfit': document.getElementById('grade-dryfit'),
                 'bermudas': document.getElementById('grade-bermudas'),
@@ -374,7 +357,8 @@
                     </div>
                 `;
 
-                if (prod.categoria === 'corta-vento') containers['corta-vento'].innerHTML += html;
+                // Distribui nas categorias corretas
+                if (prod.categoria === 'inverno') containers['inverno'].innerHTML += html; // CORRIGIDO
                 else if (prod.categoria === 'oversized') containers['oversized'].innerHTML += html;
                 else if (prod.categoria === 'dryfit') containers['dryfit'].innerHTML += html;
                 else if (prod.categoria === 'bermudas') containers['bermudas'].innerHTML += html;
@@ -382,7 +366,7 @@
             });
         }
 
-        // --- ABRIR MODAL COM RELACIONADOS ---
+        // --- ABRIR MODAL ---
         function abrirModal(idProduto) {
             const prod = produtos.find(p => p.id === idProduto);
             if (!prod) return;
@@ -404,12 +388,15 @@
             const containerThumbs = document.getElementById('m-thumbnails');
             const imgPrincipal = document.getElementById('m-img-principal');
             containerThumbs.innerHTML = "";
+            
+            // Define a primeira imagem
             imgPrincipal.src = prod.imagens[0];
 
             prod.imagens.forEach((imgSrc, index) => {
                 const thumb = document.createElement('img');
                 thumb.src = imgSrc;
                 thumb.className = index === 0 ? 'thumb-img ativo' : 'thumb-img';
+                
                 thumb.onclick = () => {
                     imgPrincipal.src = imgSrc;
                     document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('ativo'));
