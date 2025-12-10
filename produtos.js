@@ -1,20 +1,7 @@
 // LISTA DE PRODUTOS
 const produtos = [
     // --- COLEÇÃO DE INVERNO (JAQUETAS) ---
-    {
-        id: "jaqueta-couro-gola",
-        nome: "Jaqueta Zara - Gola Alta Premium",
-        preco: "R$ 329,90",
-        categoria: "corta-vento", 
-        imgCapa: "jaqueta-top.jpeg", 
-        imagens: ["jaqueta-top.jpeg"], 
-        descricao: `
-            <p><strong>Design Sofisticado:</strong> Jaqueta de couro sintético com gola alta estruturada.</p>
-            <p>Modelagem reta e limpa, perfeita para um visual mais sério e elegante.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
+    // (JAQUETA GOLA ALTA REMOVIDA)
     {
         id: "jaqueta-bomber-couro",
         nome: "Jaqueta Bomber Zara - Efeito Couro",
@@ -46,7 +33,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- DRY FIT ---
+    // --- DRY FIT (CAMISETAS) ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
@@ -85,7 +72,7 @@ const produtos = [
         imgCapa: "nike-dryfit-branca1.jpeg",
         imagens: ["nike-dryfit-branca1.jpeg", "nike-dryfit-branca2.jpeg", "nike-dryfit-branca3.jpeg", "nike-dryfit-branca4.jpeg", "nike-dryfit-branca5.jpeg"], 
         descricao: `
-            <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta (Outline).</p>
+            <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta.</p>
             <p>Tecnologia de absorção de suor para manter o corpo seco.</p>
             <p>Design moderno que valoriza o shape.</p>
         `,
