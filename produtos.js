@@ -153,51 +153,24 @@ const produtos = [
     },
 
     // --- DRY FIT ---
-    // (ADICIONADOS OS NOVOS MODELOS ABAIXO)
-    
+    // ✅ NOVO (UNIFICADO):
     {
-        id: "nike-dryfit-outline-azul",
-        nome: "Camiseta Nike Dry Fit Outline - Azul Marinho",
+        id: "nike-dryfit-cores-variadas",
+        nome: "Camiseta Nike Dry Fit Outline - Cores Variadas",
         preco: "R$ 99,90", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-cores.jpeg",
         imagens: ["nike-dryfit-cores.jpeg"], 
         descricao: `
-            <p><strong>Estilo e Performance:</strong> Camiseta em tom Azul Marinho com costuras aparentes (Outline).</p>
+            <p><strong>Coleção Completa:</strong> Camisetas Nike Dry Fit com costura Outline.</p>
+            <p>Disponível em várias cores: <strong>Azul Marinho, Vermelho, Cinza Chumbo e Preto</strong>.</p>
+            <p>Escolha a sua cor favorita ao falar com o vendedor.</p>
             <p>Tecnologia Dry Fit para máxima respiração.</p>
-            <p>Design moderno que valoriza o corpo.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    {
-        id: "nike-dryfit-outline-vermelha",
-        nome: "Camiseta Nike Dry Fit Outline - Vermelha",
-        preco: "R$ 99,90", 
-        categoria: "dryfit",
-        imgCapa: "nike-dryfit-cores.jpeg",
-        imagens: ["nike-dryfit-cores.jpeg"], 
-        descricao: `
-            <p><strong>Destaque-se:</strong> Camiseta Vermelha vibrante com detalhes de costura branca.</p>
-            <p>Tecido leve, ideal para atividades físicas intensas ou uso casual esportivo.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "nike-dryfit-outline-cinza",
-        nome: "Camiseta Nike Dry Fit Outline - Cinza Chumbo",
-        preco: "R$ 99,90", 
-        categoria: "dryfit",
-        imgCapa: "nike-dryfit-cores.jpeg",
-        imagens: ["nike-dryfit-cores.jpeg"], 
-        descricao: `
-            <p><strong>Sóbria e Elegante:</strong> Camiseta Cinza Chumbo com o clássico design Outline.</p>
-            <p>Versatilidade total para combinar com qualquer bermuda ou calça.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
+    // ✅ INDIVIDUAL (MANTIDO):
     {
         id: "nike-dryfit-costura-branca",
         nome: "Camiseta Nike Dry Fit - Preta Outline",
