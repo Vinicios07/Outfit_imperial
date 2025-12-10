@@ -46,7 +46,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // NOVO PRODUTO: JORDAN OVERSIZED
     {
         id: "oversized-jordan-bege",
         nome: "Camiseta Oversized Jordan - Bege",
@@ -62,8 +61,24 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
+    // ✅ NOVO PRODUTO ADICIONADO AQUI:
+    {
+        id: "oversized-nike-preta",
+        nome: "Camiseta Oversized Nike - Preta Logo",
+        preco: "R$ 139,90", 
+        categoria: "oversized",
+        imgCapa: "oversized-nike-preta.jpeg",
+        imagens: ["oversized-nike-preta.jpeg", "oversized-nike-preta2.jpeg"], 
+        descricao: `
+            <p><strong>Estilo e Conforto:</strong> Camiseta Oversized preta com logo artístico centralizado.</p>
+            <p>Tecido premium de toque macio e caimento amplo.</p>
+            <p>Peça chave para um look streetwear moderno.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
 
-    // --- LINHA DRY FIT (CAMISETAS E KITS) ---
+    // --- DRY FIT ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
