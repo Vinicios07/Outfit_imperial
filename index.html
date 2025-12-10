@@ -60,34 +60,33 @@
         
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1150; cursor: pointer; }
 
-        /* --- BANNER LARGURA TOTAL --- */
+        /* --- BANNER LARGURA TOTAL (CORRIGIDO PARA NÃO CORTAR) --- */
         .banner-full-width {
             display: block;
             width: 100%;
-            height: auto;
-            max-height: 500px; /* Limite de altura para não ocupar a tela toda */
+            height: auto; /* Altura automática */
+            /* max-height removido */
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            /* Sem margens para colar nas laterais */
+            line-height: 0; /* Remove espaço extra abaixo da imagem */
         }
         .banner-full-width img {
             width: 100%;
-            height: 100%;
+            height: auto; /* Altura proporcional à largura */
             display: block;
-            object-fit: cover; /* Cobre a área sem distorcer */
-            object-position: center;
+            /* object-fit e position removidos para não cortar */
         }
 
         /* --- CONTAINER PRINCIPAL (PRODUTOS) --- */
-        .container { max-width: 1400px; margin: 0 auto; padding: 20px 20px 60px; min-height: 800px; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 800px; }
 
         /* Títulos das Seções */
-        .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; }
+        .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 0 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; }
 
         /* Grade de Produtos */
-        .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 50px; }
+        .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 60px; }
 
-        /* --- CARD DO PRODUTO (CORRIGIDO) --- */
+        /* --- CARD DO PRODUTO --- */
         .produto { 
             background: #fff; border: 1px solid #eee; border-radius: 8px; cursor: pointer; 
             transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; 
