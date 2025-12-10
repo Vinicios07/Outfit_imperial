@@ -1,19 +1,21 @@
 // LISTA DE PRODUTOS
 const produtos = [
     // --- COLEÇÃO DE INVERNO (JAQUETAS) ---
+    // AQUI ESTÁ A JAQUETA BRANCA QUE VOCÊ PEDIU:
     {
-        id: "jaqueta-couro-gola",
-        nome: "Jaqueta Zara - Gola Alta Premium",
-        preco: "R$ 329,90",
-        categoria: "corta-vento", 
-        imgCapa: "jaqueta-top.jpeg", 
-        imagens: ["jaqueta-top.jpeg"], 
+        id: "jaqueta-zara-tech",
+        nome: "Jaqueta Zara - Corta Vento Tech",
+        preco: "R$ 122,90",
+        categoria: "corta-vento",
+        imgCapa: "camisaZara.jpeg",
+        imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
         descricao: `
-            <p><strong>Design Sofisticado:</strong> Jaqueta de couro sintético com gola alta estruturada.</p>
-            <p>Modelagem reta e limpa, perfeita para um visual mais sério e elegante.</p>
+            <p><strong>Material Premium:</strong> Confeccionada em tecido tecnológico corta-vento.</p>
+            <p>Ideal para dias frios. Modelagem Slim Fit.</p>
+            <p>Acabamento impecável e cor branca versátil.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
+        esgotados: ["P", "GG"]
     },
     {
         id: "jaqueta-bomber-couro",
@@ -46,7 +48,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- DRY FIT (APENAS AS 3 CORRETAS) ---
+    // --- DRY FIT (SÓ AS 3 CORRETAS) ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
@@ -93,7 +95,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- BERMUDAS DRY FIT ---
+    // --- BERMUDAS DRY FIT (TACTEL) ---
     {
         id: "bermuda-nike-azul",
         nome: "Bermuda Nike Dry Fit - Azul Marinho",
@@ -110,7 +112,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- BERMUDAS JOGADOR ---
+    // --- BERMUDAS JOGADOR (JEANS / PREMIUM) ---
     {
         id: "bermuda-jeans-jogador",
         nome: "Bermuda Jeans Jogador - Azul Distressed",
@@ -215,12 +217,11 @@ const produtos = [
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
     },
-    // ✅ AQUI ESTÁ ELA DE VOLTA:
     {
         id: "bermuda-jogador-corda-azul",
         nome: "Bermuda Jogador Premium - Corda Azul",
         preco: "R$ 129,90", 
-        categoria: "bermudas-jogador", 
+        categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-corda-azul.jpeg", 
         imagens: ["bermuda-jogador-corda-azul.jpeg"], 
         descricao: `
