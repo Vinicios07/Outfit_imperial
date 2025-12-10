@@ -1,6 +1,6 @@
 // LISTA DE PRODUTOS
 const produtos = [
-    // --- COLEÇÃO DE INVERNO (JAQUETAS) --- (RESTAURADO)
+    // --- COLEÇÃO DE INVERNO (JAQUETAS) ---
     {
         id: "jaqueta-zara-tech",
         nome: "Jaqueta Zara - Corta Vento Tech",
@@ -153,6 +153,70 @@ const produtos = [
     },
 
     // --- DRY FIT ---
+    
+    // NOVOS PRODUTOS INDIVIDUAIS
+    {
+        id: "dryfit-swoosh-vermelha",
+        nome: "Camiseta Nike Dry Fit Classic - Vermelha",
+        preco: "R$ 89,90", 
+        categoria: "dryfit",
+        imgCapa: "dryfit-swoosh-vermelha.jpeg",
+        imagens: ["dryfit-swoosh-vermelha.jpeg"], 
+        descricao: `
+            <p><strong>Energia e Performance:</strong> Camiseta vermelha vibrante com o clássico Swoosh da Nike.</p>
+            <p>Tecnologia que mantém o corpo seco durante o treino.</p>
+            <p>Ajuste confortável para qualquer esporte.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "dryfit-swoosh-cinza",
+        nome: "Camiseta Nike Dry Fit Classic - Cinza",
+        preco: "R$ 89,90", 
+        categoria: "dryfit",
+        imgCapa: "dryfit-swoosh-cinza.jpeg",
+        imagens: ["dryfit-swoosh-cinza.jpeg"], 
+        descricao: `
+            <p><strong>Básico Essencial:</strong> Camiseta cinza chumbo, perfeita para combinar com tudo.</p>
+            <p>Tecido leve e respirável de secagem rápida.</p>
+            <p>Ideal para academia e corrida.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "dryfit-swoosh-preta",
+        nome: "Camiseta Nike Dry Fit Classic - Preta",
+        preco: "R$ 89,90", 
+        categoria: "dryfit",
+        imgCapa: "dryfit-swoosh-preta.jpeg",
+        imagens: ["dryfit-swoosh-preta.jpeg"], 
+        descricao: `
+            <p><strong>O Clássico:</strong> Camiseta preta com logo branco. A peça que todo homem precisa.</p>
+            <p>Tecido Dry Fit original para máximo desempenho.</p>
+            <p>Conforto térmico e estilo discreto.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
+        id: "dryfit-swoosh-branca",
+        nome: "Camiseta Nike Dry Fit Classic - Branca",
+        preco: "R$ 89,90", 
+        categoria: "dryfit",
+        imgCapa: "dryfit-swoosh-branca.jpeg",
+        imagens: ["dryfit-swoosh-branca.jpeg"], 
+        descricao: `
+            <p><strong>Clean e Leve:</strong> Camiseta branca para um visual limpo e fresco.</p>
+            <p>Tecido de alta tecnologia que evita o suor.</p>
+            <p>Perfeita para dias quentes e treinos intensos.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+
+    // (OUTROS MODELOS ANTERIORES)
     {
         id: "nike-dryfit-cores-variadas",
         nome: "Camiseta Nike Dry Fit Outline - Cores Variadas",
@@ -164,22 +228,6 @@ const produtos = [
             <p><strong>Coleção Completa:</strong> Camisetas Nike Dry Fit com costura Outline.</p>
             <p>Disponível em várias cores: <strong>Azul Marinho, Vermelho, Cinza Chumbo e Preto</strong>.</p>
             <p>Escolha a sua cor favorita ao falar com o vendedor.</p>
-            <p>Tecnologia Dry Fit para máxima respiração.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "nike-dryfit-swoosh-cores",
-        nome: "Camiseta Nike Dry Fit Swoosh - Cores",
-        preco: "R$ 99,90", 
-        categoria: "dryfit",
-        imgCapa: "nike-dryfit-cores-swoosh.jpeg",
-        imagens: ["nike-dryfit-cores-swoosh.jpeg"], 
-        descricao: `
-            <p><strong>Clássico Moderno:</strong> Camiseta Dry Fit com o logo Swoosh Nike centralizado.</p>
-            <p>Cores disponíveis: <strong>Azul, Vermelho, Preto, Branco, Cinza e Caqui</strong>.</p>
-            <p>Caimento leve e confortável para o dia a dia ou treino.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -193,14 +241,13 @@ const produtos = [
         imagens: ["nike-dryfit-costura-branca.jpeg"], 
         descricao: `
             <p><strong>Visual Esportivo:</strong> Camiseta preta com detalhes de costura exposta em branco (outline).</p>
-            <p>Logo Nike centralizado no peito. Tecido Dry Fit leve e respirável.</p>
-            <p>Ideal para treinos com estilo.</p>
+            <p>Logo Nike centralizado no peito.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
     {
-        id: "nike-dryfit-branca-swoosh",
+        id: "nike-dryfit-branca-swoosh-outline",
         nome: "Camiseta Nike Dry Fit - Branca Big Swoosh",
         preco: "R$ 99,90", 
         categoria: "dryfit",
@@ -209,52 +256,6 @@ const produtos = [
         descricao: `
             <p><strong>Estilo Moderno:</strong> Camiseta branca com costuras pretas aparentes (Outline).</p>
             <p>Destaque para o logo Big Swoosh vazado no peito.</p>
-            <p>Tecido Dry Fit de alta qualidade e modelagem ajustada.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "nike-dryfit-azul-antiga",
-        nome: "Camiseta Nike Dry Fit Performance - Azul Royal",
-        preco: "R$ 89,90", 
-        categoria: "dryfit",
-        imgCapa: "camiseta-nike-dryfit-azul-rei.jpeg",
-        imagens: ["camiseta-nike-dryfit-azul-rei.jpeg"], 
-        descricao: `
-            <p><strong>Alta Performance:</strong> Tecido tecnológico que afasta o suor da pele.</p>
-            <p>Ideal para treinos, academia e prática de esportes.</p>
-            <p>Leveza e liberdade de movimento.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "nike-dryfit-outline-preta-classica",
-        nome: "Camiseta Nike Dry Fit Outline - Preta Clássica",
-        preco: "R$ 99,90", 
-        categoria: "dryfit",
-        imgCapa: "nike-dryfit-preta1.jpeg",
-        imagens: ["nike-dryfit-preta1.jpeg", "nike-dryfit-preta2.jpeg", "nike-dryfit-preta3.jpeg"], 
-        descricao: `
-            <p><strong>Design Exclusivo:</strong> Modelo com costura aparente em branco (Outline) e logo vazado.</p>
-            <p>Tecnologia Dry Fit avançada para máximo conforto térmico.</p>
-            <p>Ajuste perfeito ao corpo.</p>
-        `,
-        tamanhos: ["P", "M", "G", "GG"],
-        esgotados: [] 
-    },
-    {
-        id: "nike-dryfit-outline-branca",
-        nome: "Camiseta Nike Dry Fit Outline - Branca",
-        preco: "R$ 99,90", 
-        categoria: "dryfit",
-        imgCapa: "nike-dryfit-branca1.jpeg",
-        imagens: ["nike-dryfit-branca1.jpeg", "nike-dryfit-branca2.jpeg", "nike-dryfit-branca3.jpeg", "nike-dryfit-branca4.jpeg", "nike-dryfit-branca5.jpeg"], 
-        descricao: `
-            <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta.</p>
-            <p>Tecnologia de absorção de suor para manter o corpo seco.</p>
-            <p>Design moderno que valoriza o shape.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -268,8 +269,7 @@ const produtos = [
         imagens: ["kit-nike-dryfit-preto-branco.jpeg"], 
         descricao: `
             <p><strong>Conjunto Completo:</strong> Kit de camiseta e bermuda em Dry Fit.</p>
-            <p>Design clássico preto com faixas brancas nos ombros e laterais.</p>
-            <p>Ideal para futebol e treinos de alta performance.</p>
+            <p>Design clássico preto com faixas brancas.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -283,8 +283,7 @@ const produtos = [
         imagens: ["kit-nike-dryfit-azul.jpeg"], 
         descricao: `
             <p><strong>Conjunto Completo:</strong> Kit de camiseta e bermuda na cor Azul Marinho.</p>
-            <p>Detalhes em faixa branca lateral e tecido respirável de alta qualidade.</p>
-            <p>Perfeito para quem busca estilo e conforto no esporte.</p>
+            <p>Detalhes em faixa branca lateral.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
@@ -403,7 +402,7 @@ const produtos = [
         nome: "Bermuda Jogador Jeans - Botões Azuis",
         preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-botoes-azuis.jpeg",
+        imgCapa: "bermuda-jogador-botoes-azuis.jpeg", 
         imagens: ["bermuda-jogador-botoes-azuis.jpeg"], 
         descricao: `
             <p><strong>Detalhes Exclusivos:</strong> Bermuda jeans cinza escura com botões e rebites em azul claro.</p>
