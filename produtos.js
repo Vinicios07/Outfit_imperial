@@ -169,6 +169,22 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
+    // ✅ NOVO PRODUTO (SWOOSH CENTRAL):
+    {
+        id: "nike-dryfit-swoosh-cores",
+        nome: "Camiseta Nike Dry Fit Swoosh - Cores",
+        preco: "R$ 99,90", 
+        categoria: "dryfit",
+        imgCapa: "nike-dryfit-cores-swoosh.jpeg",
+        imagens: ["nike-dryfit-cores-swoosh.jpeg"], 
+        descricao: `
+            <p><strong>Clássico Moderno:</strong> Camiseta Dry Fit com o logo Swoosh Nike centralizado.</p>
+            <p>Cores disponíveis: <strong>Azul, Vermelho, Preto, Branco, Cinza e Caqui</strong>.</p>
+            <p>Caimento leve e confortável para o dia a dia ou treino.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
     {
         id: "nike-dryfit-costura-branca",
         nome: "Camiseta Nike Dry Fit - Preta Outline",
@@ -184,7 +200,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-    // ✅ NOVO PRODUTO: BRANCA SWOOSH
     {
         id: "nike-dryfit-branca-swoosh",
         nome: "Camiseta Nike Dry Fit - Branca Big Swoosh",
@@ -403,7 +418,7 @@ const produtos = [
         nome: "Bermuda Jogador Premium - Corda Azul",
         preco: "R$ 129,90", 
         categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-corda-azul.jpeg",
+        imgCapa: "bermuda-jogador-corda-azul.jpeg", 
         imagens: ["bermuda-jogador-corda-azul.jpeg"], 
         descricao: `
             <p><strong>Destaque Urbano:</strong> Bermuda escura com cordão azul vibrante.</p>
