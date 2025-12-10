@@ -29,10 +29,8 @@
         }
         header p { color: #ccc; font-size: 12px; margin: 0 0 20px 0; letter-spacing: 4px; text-transform: uppercase; font-weight: 300; }
         
-        /* Ícone Social do Topo (Só a Loja) */
-        .instagram-header { display: flex; justify-content: center; margin-bottom: 20px; }
-        
-        /* Estilo dos Links do Instagram (Geral) */
+        /* Ícones Sociais */
+        .instagram-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px; }
         .instagram-link { display: flex; align-items: center; gap: 6px; color: #d4af37; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.3s; }
         .instagram-link:hover { color: #fff; }
         .instagram-icon-svg { width: 16px; height: 16px; fill: currentColor; }
@@ -43,57 +41,98 @@
         .search-input:focus { border-color: #d4af37; background: #000; }
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 16px; pointer-events: none; }
 
-        /* --- MENU LATERAL (SIDEBAR) --- */
-        /* BOTÃO MENU MINIMALISTA (NOVO ESTILO) */
+        /* --- MENU LATERAL (ESTILO PREMIUM DARK) --- */
         .menu-btn {
-            position: absolute;
-            top: 30px;
-            left: 20px;
-            z-index: 1100;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            
-            /* Define o tamanho da área do ícone */
-            width: 30px; 
-            height: 20px;
-            
-            /* Usa flexbox para distribuir as linhas */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            position: absolute; top: 30px; left: 20px; z-index: 1100; background: none; border: none; cursor: pointer; padding: 0; width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between;
         }
-
-        /* As linhas do menu */
-        .menu-btn span {
-            display: block;
-            width: 100%;
-            height: 2px; /* Espessura da linha (mais fina para ser minimalista) */
-            background-color: #d4af37; /* Cor dourada */
-            transition: all 0.3s ease;
-        }
-
-        /* Efeito sutil ao passar o mouse (opcional, dá um toque premium) */
+        .menu-btn span { display: block; width: 100%; height: 2px; background-color: #d4af37; transition: all 0.3s ease; }
         .menu-btn:hover span:nth-child(1) { transform: translateY(-1px); }
         .menu-btn:hover span:nth-child(3) { transform: translateY(1px); }
 
+        .sidebar {
+            height: 100%;
+            width: 300px;
+            position: fixed;
+            z-index: 1200;
+            top: 0;
+            left: -320px;
+            background-color: #0f0f0f; /* Fundo Preto Fosco */
+            overflow-x: hidden;
+            transition: 0.4s;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.8);
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #222;
+        }
 
-        .sidebar { height: 100%; width: 280px; position: fixed; z-index: 1200; top: 0; left: -280px; background-color: #fff; overflow-x: hidden; transition: 0.4s; box-shadow: 4px 0 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; }
-        .sidebar-header { background: #000; color: #d4af37; padding: 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Cinzel', serif; }
-        .sidebar .closebtn { background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; }
-        .menu-item { padding: 15px 20px; text-decoration: none; font-size: 15px; color: #333; border-bottom: 1px solid #eee; display: block; font-weight: 500; transition: 0.2s; }
-        .menu-item:hover { background: #f5f5f5; padding-left: 25px; color: #000; }
-        .menu-subitem { padding: 12px 20px 12px 40px; font-size: 14px; color: #666; text-decoration: none; display: block; border-bottom: 1px solid #eee; }
-        .menu-subitem:hover { color: #000; background: #fafafa; }
-        .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1150; cursor: pointer; }
+        .sidebar-header {
+            background-color: #000;
+            color: #d4af37;
+            padding: 25px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Cinzel', serif;
+            border-bottom: 1px solid #333;
+            letter-spacing: 2px;
+        }
+        .sidebar .closebtn { background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; transition: 0.3s; }
+        .sidebar .closebtn:hover { color: #d4af37; transform: rotate(90deg); }
+        
+        /* Títulos dos Grupos */
+        .menu-group-title {
+            padding: 20px 20px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #d4af37; /* Dourado */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+
+        /* Itens do Menu */
+        .menu-item {
+            padding: 16px 20px;
+            text-decoration: none;
+            font-size: 14px;
+            color: #eee; /* Branco gelo */
+            border-bottom: 1px solid #1a1a1a;
+            display: block;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding-left: 30px; /* Movimento para direita */
+            border-left: 3px solid #d4af37; /* Borda dourada na esquerda */
+        }
+
+        /* Subitens (Bermudas) */
+        .menu-subitem {
+            padding: 12px 20px 12px 40px;
+            font-size: 13px;
+            color: #888;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #1a1a1a;
+            transition: 0.3s;
+            background-color: #0a0a0a; /* Mais escuro que o normal */
+        }
+        .menu-subitem:hover { color: #d4af37; background: #111; }
+        
+        .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 1150; cursor: pointer; backdrop-filter: blur(3px); }
 
         /* --- BANNER --- */
         .banner-full-width { display: block; width: 100%; height: auto; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.2); line-height: 0; }
         .banner-full-width img { width: 100%; height: auto; display: block; }
 
         /* --- VITRINE --- */
-        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 600px; flex: 1; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 800px; flex: 1; }
         .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; }
         .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 60px; }
 
@@ -210,15 +249,19 @@
             <span>MENU</span>
             <button class="closebtn" onclick="toggleMenu()">×</button>
         </div>
+        
         <a href="#" onclick="filtrarLoja('todos'); toggleMenu()" class="menu-item">Início / Ver Tudo</a>
-        <div style="padding: 15px 20px 5px; font-size: 11px; font-weight: bold; color: #999; text-transform: uppercase;">Categorias</div>
+        
+        <div class="menu-group-title">Categorias</div>
+        
         <a href="#" onclick="filtrarLoja('inverno'); toggleMenu()" class="menu-item">Coleção de Inverno</a>
         <a href="#" onclick="filtrarLoja('oversized'); toggleMenu()" class="menu-item">Camisetas Oversized</a>
         <a href="#" onclick="filtrarLoja('dryfit'); toggleMenu()" class="menu-item">Linha Dry Fit</a>
         <a href="#" onclick="filtrarLoja('bermudas-todas'); toggleMenu()" class="menu-item">Bermudas (Todas)</a>
         <a href="#" onclick="filtrarLoja('bermudas-jogador'); toggleMenu()" class="menu-subitem">• Bermudas Jogador</a>
         <a href="#" onclick="filtrarLoja('bermudas-dryfit'); toggleMenu()" class="menu-subitem">• Bermudas Dry Fit</a>
-        <div style="padding: 15px 20px 5px; font-size: 11px; font-weight: bold; color: #999; text-transform: uppercase;">Institucional</div>
+
+        <div class="menu-group-title">Institucional</div>
         <a href="quem-somos.html" class="menu-item">Quem Somos Nós</a>
     </div>
 
@@ -329,7 +372,7 @@
             const sidebar = document.getElementById('sidebar-menu');
             const overlay = document.getElementById('overlay-menu');
             if (sidebar.style.left === '0px') {
-                sidebar.style.left = '-280px';
+                sidebar.style.left = '-320px';
                 overlay.style.display = 'none';
             } else {
                 sidebar.style.left = '0px';
