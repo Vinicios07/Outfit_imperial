@@ -30,17 +30,19 @@
         }
         header p { color: #ccc; font-size: 12px; margin: 0 0 20px 0; letter-spacing: 4px; text-transform: uppercase; font-weight: 300; }
         
+        /* Ícones Sociais */
         .instagram-header { display: flex; justify-content: center; margin-bottom: 20px; }
         .instagram-link { display: flex; align-items: center; gap: 6px; color: #d4af37; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.3s; }
         .instagram-link:hover { color: #fff; }
         .instagram-icon-svg { width: 16px; height: 16px; fill: currentColor; }
 
+        /* Barra de Pesquisa */
         .search-box { margin: 0 auto; max-width: 500px; position: relative; display: flex; }
         .search-input { width: 100%; padding: 12px 45px 12px 20px; border-radius: 50px; border: 1px solid #333; background: #1a1a1a; color: white; font-size: 14px; outline: none; }
         .search-input:focus { border-color: #d4af37; background: #000; }
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 16px; pointer-events: none; }
 
-        /* --- MENU LATERAL --- */
+        /* --- MENU LATERAL (PREMIUM DARK) --- */
         .menu-btn {
             position: absolute; top: 30px; left: 20px; z-index: 1100; background: none; border: none; cursor: pointer; padding: 0; width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between;
         }
@@ -61,6 +63,7 @@
         .menu-item:hover { background-color: #1a1a1a; color: #fff; padding-left: 30px; border-left: 3px solid #d4af37; }
         .menu-subitem { padding: 12px 20px 12px 40px; font-size: 13px; color: #888; text-decoration: none; display: block; border-bottom: 1px solid #1a1a1a; transition: 0.3s; background-color: #0a0a0a; }
         .menu-subitem:hover { color: #d4af37; background: #111; }
+        
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 1150; cursor: pointer; backdrop-filter: blur(3px); }
 
         /* --- BANNER --- */
@@ -69,11 +72,21 @@
 
         /* --- VITRINE --- */
         .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 800px; flex: 1; }
-        .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; text-shadow: 1px 1px 0px rgba(255,255,255,0.5); }
+        
+        .secao-titulo { 
+            font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; 
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+        }
+        
         .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 60px; }
 
-        .produto { background: #fff; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .produto { 
+            background: #fff; border: none; border-radius: 8px; cursor: pointer; 
+            transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; 
+            display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+        }
         .produto:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        
         .capa-produto { background-color: #f4f4f4; height: 320px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         .capa-produto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .produto:hover .capa-produto img { transform: scale(1.08); }
@@ -113,12 +126,14 @@
         .tamanho-btn:hover { border-color: #000; color: #000; background: #f0f0f0; }
         .tamanho-btn.esgotado { background: #f5f5f5; color: #ccc; border-color: #eee; cursor: not-allowed; text-decoration: line-through; }
         .modal-descricao { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+        
         .modal-botoes { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
         .botao-modal { display: block; background: #000; color: white; text-align: center; padding: 16px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; font-size: 16px; }
         .botao-modal:hover { background: #333; }
         .botao-modal.vendedor2 { background: #fff; color: #000; border: 2px solid #eee; }
         .botao-modal.vendedor2:hover { border-color: #000; }
 
+        /* ÁREA: VOCÊ PODE GOSTAR TAMBÉM */
         .secao-relacionados { margin-top: auto; border-top: 2px solid #f0f0f0; padding-top: 25px; }
         .titulo-relacionados { font-size: 14px; font-weight: 700; color: #000; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
         .grade-relacionados { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
@@ -298,7 +313,7 @@
                 document.getElementById('box-dryfit'),
                 document.getElementById('box-bermudas-dryfit'),
                 document.getElementById('box-bermudas-jogador'),
-                document.getElementById('box-calcas-jogador') // NOVA CAIXA
+                document.getElementById('box-calcas-jogador')
             ];
             const banner = document.getElementById('banner-home');
 
@@ -310,7 +325,6 @@
                 boxes.forEach(box => box.classList.add('secao-escondida'));
                 if(banner) banner.style.display = 'none';
 
-                // Mostra o selecionado
                 if (categoria === 'inverno') boxes[0].classList.remove('secao-escondida');
                 if (categoria === 'oversized') boxes[1].classList.remove('secao-escondida');
                 if (categoria === 'dryfit') boxes[2].classList.remove('secao-escondida');
@@ -320,20 +334,19 @@
                 }
                 if (categoria === 'bermudas-dryfit') boxes[3].classList.remove('secao-escondida');
                 if (categoria === 'bermudas-jogador') boxes[4].classList.remove('secao-escondida');
-                if (categoria === 'calcas-jogador') boxes[5].classList.remove('secao-escondida'); // NOVO
+                if (categoria === 'calcas-jogador') boxes[5].classList.remove('secao-escondida');
             }
         }
 
         // --- CARREGAR PRODUTOS NA TELA ---
         function carregarProdutosNaTela() {
-            // Limpa as grades
             const containers = {
                 'inverno': document.getElementById('grade-inverno'),
                 'oversized': document.getElementById('grade-oversized'),
                 'dryfit': document.getElementById('grade-dryfit'),
                 'bermudas': document.getElementById('grade-bermudas'),
                 'bermudas-jogador': document.getElementById('grade-bermudas-jogador'),
-                'calcas-jogador': document.getElementById('grade-calcas-jogador') // NOVA GRADE
+                'calcas-jogador': document.getElementById('grade-calcas-jogador')
             };
 
             for (let key in containers) containers[key].innerHTML = "";
@@ -358,7 +371,7 @@
                 else if (prod.categoria === 'dryfit') containers['dryfit'].innerHTML += html;
                 else if (prod.categoria === 'bermudas') containers['bermudas'].innerHTML += html;
                 else if (prod.categoria === 'bermudas-jogador') containers['bermudas-jogador'].innerHTML += html;
-                else if (prod.categoria === 'calcas-jogador') containers['calcas-jogador'].innerHTML += html; // NOVO
+                else if (prod.categoria === 'calcas-jogador') containers['calcas-jogador'].innerHTML += html;
             });
         }
 
@@ -384,15 +397,12 @@
             const containerThumbs = document.getElementById('m-thumbnails');
             const imgPrincipal = document.getElementById('m-img-principal');
             containerThumbs.innerHTML = "";
-            
-            // Define a primeira imagem
             imgPrincipal.src = prod.imagens[0];
 
             prod.imagens.forEach((imgSrc, index) => {
                 const thumb = document.createElement('img');
                 thumb.src = imgSrc;
                 thumb.className = index === 0 ? 'thumb-img ativo' : 'thumb-img';
-                
                 thumb.onclick = () => {
                     imgPrincipal.src = imgSrc;
                     document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('ativo'));
@@ -441,29 +451,67 @@
             }
         }
 
-        // --- PESQUISA ---
+        // --- PESQUISA (ATUALIZADA) ---
         function pesquisarProdutos() {
             const termo = document.getElementById('campo-pesquisa').value.toLowerCase();
-            const produtosDom = document.querySelectorAll('.produto');
             const msgErro = document.getElementById('msg-sem-resultado');
-            let encontrou = false;
+            // IDs de TODAS as caixas de categoria
+            const idsSecoes = [
+                'box-inverno',
+                'box-oversized',
+                'box-dryfit',
+                'box-bermudas-dryfit',
+                'box-bermudas-jogador',
+                'box-calcas-jogador'
+            ];
+            let encontrouGeral = false;
 
-            if (termo === "") {
-                msgErro.style.display = 'none';
-                produtosDom.forEach(p => p.style.display = 'flex');
-                return;
-            }
+            idsSecoes.forEach(id => {
+                const secao = document.getElementById(id);
+                if(!secao) return;
 
-            produtosDom.forEach(prod => {
-                const titulo = prod.querySelector('h3').innerText.toLowerCase();
-                if (titulo.includes(termo)) {
-                    prod.style.display = 'flex';
-                    encontrou = true;
+                const produtos = secao.querySelectorAll('.produto');
+                let encontrouNaSecao = false;
+
+                produtos.forEach(prod => {
+                    const titulo = prod.querySelector('h3').innerText.toLowerCase();
+                    const deveAparecer = termo === "" || titulo.includes(termo);
+
+                    if (deveAparecer) {
+                        prod.style.display = 'flex';
+                        encontrouNaSecao = true;
+                        encontrouGeral = true;
+                    } else {
+                        prod.style.display = 'none';
+                    }
+                });
+
+                // Se não tem busca, mostra a seção. Se tem busca, só mostra se tiver produto dentro.
+                if (termo === "") {
+                    secao.style.display = 'block';
+                    secao.classList.remove('secao-escondida');
                 } else {
-                    prod.style.display = 'none';
+                    if (encontrouNaSecao) {
+                        secao.style.display = 'block';
+                        secao.classList.remove('secao-escondida');
+                    } else {
+                        secao.style.display = 'none';
+                    }
                 }
             });
-            msgErro.style.display = encontrou ? 'none' : 'block';
+
+            // Esconde o Banner se estiver pesquisando
+            const banner = document.getElementById('banner-home');
+            if(banner) {
+                if(termo !== "") banner.style.display = 'none';
+                else banner.style.display = 'block';
+            }
+
+            if (termo !== "" && !encontrouGeral) {
+                msgErro.style.display = 'block';
+            } else {
+                msgErro.style.display = 'none';
+            }
         }
     </script>
 </body>
