@@ -10,7 +10,20 @@
     <style>
         /* --- RESET E GERAL --- */
         * { box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #111; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            /* MUDANÇA AQUI: Fundo Cinza Gelo com Textura */
+            background-color: #e6e6e6; 
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            color: #111; 
+            overflow-x: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
         
         /* --- CABEÇALHO --- */
         header { 
@@ -21,6 +34,7 @@
             border-bottom: 4px solid #d4af37;
             position: relative;
             z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra para separar do fundo */
         }
 
         header h1 {
@@ -30,7 +44,7 @@
         header p { color: #ccc; font-size: 12px; margin: 0 0 20px 0; letter-spacing: 4px; text-transform: uppercase; font-weight: 300; }
         
         /* Ícones Sociais */
-        .instagram-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px; }
+        .instagram-header { display: flex; justify-content: center; margin-bottom: 20px; }
         .instagram-link { display: flex; align-items: center; gap: 6px; color: #d4af37; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.3s; }
         .instagram-link:hover { color: #fff; }
         .instagram-icon-svg { width: 16px; height: 16px; fill: currentColor; }
@@ -41,7 +55,7 @@
         .search-input:focus { border-color: #d4af37; background: #000; }
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 16px; pointer-events: none; }
 
-        /* --- MENU LATERAL (ESTILO PREMIUM DARK) --- */
+        /* --- MENU LATERAL (PREMIUM DARK) --- */
         .menu-btn {
             position: absolute; top: 30px; left: 20px; z-index: 1100; background: none; border: none; cursor: pointer; padding: 0; width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between;
         }
@@ -50,79 +64,17 @@
         .menu-btn:hover span:nth-child(3) { transform: translateY(1px); }
 
         .sidebar {
-            height: 100%;
-            width: 300px;
-            position: fixed;
-            z-index: 1200;
-            top: 0;
-            left: -320px;
-            background-color: #0f0f0f; /* Fundo Preto Fosco */
-            overflow-x: hidden;
-            transition: 0.4s;
-            box-shadow: 4px 0 20px rgba(0,0,0,0.8);
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid #222;
+            height: 100%; width: 300px; position: fixed; z-index: 1200; top: 0; left: -320px;
+            background-color: #0f0f0f; overflow-x: hidden; transition: 0.4s; box-shadow: 4px 0 20px rgba(0,0,0,0.8); display: flex; flex-direction: column; border-right: 1px solid #222;
         }
-
-        .sidebar-header {
-            background-color: #000;
-            color: #d4af37;
-            padding: 25px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Cinzel', serif;
-            border-bottom: 1px solid #333;
-            letter-spacing: 2px;
-        }
+        .sidebar-header { background: #000; color: #d4af37; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Cinzel', serif; border-bottom: 1px solid #333; letter-spacing: 2px; }
         .sidebar .closebtn { background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; transition: 0.3s; }
         .sidebar .closebtn:hover { color: #d4af37; transform: rotate(90deg); }
         
-        /* Títulos dos Grupos */
-        .menu-group-title {
-            padding: 20px 20px 10px;
-            font-size: 11px;
-            font-weight: 700;
-            color: #d4af37; /* Dourado */
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.8;
-        }
-
-        /* Itens do Menu */
-        .menu-item {
-            padding: 16px 20px;
-            text-decoration: none;
-            font-size: 14px;
-            color: #eee; /* Branco gelo */
-            border-bottom: 1px solid #1a1a1a;
-            display: block;
-            font-weight: 400;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-        }
-
-        .menu-item:hover {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding-left: 30px; /* Movimento para direita */
-            border-left: 3px solid #d4af37; /* Borda dourada na esquerda */
-        }
-
-        /* Subitens (Bermudas) */
-        .menu-subitem {
-            padding: 12px 20px 12px 40px;
-            font-size: 13px;
-            color: #888;
-            text-decoration: none;
-            display: block;
-            border-bottom: 1px solid #1a1a1a;
-            transition: 0.3s;
-            background-color: #0a0a0a; /* Mais escuro que o normal */
-        }
+        .menu-group-title { padding: 20px 20px 10px; font-size: 11px; font-weight: 700; color: #d4af37; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; }
+        .menu-item { padding: 16px 20px; text-decoration: none; font-size: 14px; color: #eee; border-bottom: 1px solid #1a1a1a; display: block; font-weight: 400; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+        .menu-item:hover { background-color: #1a1a1a; color: #fff; padding-left: 30px; border-left: 3px solid #d4af37; }
+        .menu-subitem { padding: 12px 20px 12px 40px; font-size: 13px; color: #888; text-decoration: none; display: block; border-bottom: 1px solid #1a1a1a; transition: 0.3s; background-color: #0a0a0a; }
         .menu-subitem:hover { color: #d4af37; background: #111; }
         
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 1150; cursor: pointer; backdrop-filter: blur(3px); }
@@ -133,11 +85,27 @@
 
         /* --- VITRINE --- */
         .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 800px; flex: 1; }
-        .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; }
+        
+        .secao-titulo { 
+            font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; 
+            /* Sombra no texto para destacar do fundo cinza */
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+        }
+        
         .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 60px; }
 
-        .produto { background: #fff; border: 1px solid #eee; border-radius: 8px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; display: flex; flex-direction: column; }
-        .produto:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #ddd; }
+        /* PRODUTO - MUDANÇA PARA DESTACAR NO FUNDO CINZA */
+        .produto { 
+            background: #fff; /* Fundo branco puro */
+            border: none; /* Remove borda cinza */
+            border-radius: 8px; cursor: pointer; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+            position: relative; overflow: hidden; 
+            display: flex; flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra suave */
+        }
+        .produto:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        
         .capa-produto { background-color: #f4f4f4; height: 320px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         .capa-produto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .produto:hover .capa-produto img { transform: scale(1.08); }
@@ -148,39 +116,11 @@
         .produto .preco { font-size: 18px; color: #000; font-weight: 700; margin: 0; }
 
         /* --- RODAPÉ --- */
-        footer {
-            background-color: #000;
-            color: #fff;
-            margin-top: auto;
-            border-top: 4px solid #d4af37;
-        }
-        .footer-banner {
-            padding: 30px 20px;
-            text-align: center;
-            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-        }
-        .footer-banner h3 {
-            font-family: 'Cinzel', serif;
-            color: #d4af37;
-            margin: 0 0 20px 0;
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .footer-instagrams {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .copyright {
-            background-color: #111;
-            padding: 15px;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
-            border-top: 1px solid #222;
-        }
+        footer { background-color: #000; color: #fff; margin-top: auto; border-top: 4px solid #d4af37; }
+        .footer-banner { padding: 40px 20px; text-align: center; background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); }
+        .footer-banner h3 { font-family: 'Cinzel', serif; color: #d4af37; margin: 0 0 25px 0; font-size: 22px; text-transform: uppercase; letter-spacing: 2px; }
+        .footer-instagrams { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .copyright { background-color: #111; padding: 15px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #222; }
 
         /* --- MODAL --- */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
@@ -218,7 +158,7 @@
         .grade-relacionados { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
         .card-relacionado { cursor: pointer; transition: transform 0.2s; }
         .card-relacionado:hover { transform: translateY(-3px); }
-        .card-relacionado img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; margin-bottom: 5px; border: 1px solid #eee; }
+        .card-relacionado img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; margin-bottom: 5px; border: 1px solid #eee; background: #fff; }
         .card-relacionado h4 { font-size: 12px; margin: 0 0 3px; color: #333; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .card-relacionado p { font-size: 12px; color: #000; font-weight: 700; margin: 0; }
 
@@ -249,7 +189,6 @@
             <span>MENU</span>
             <button class="closebtn" onclick="toggleMenu()">×</button>
         </div>
-        
         <a href="#" onclick="filtrarLoja('todos'); toggleMenu()" class="menu-item">Início / Ver Tudo</a>
         
         <div class="menu-group-title">Categorias</div>
@@ -260,7 +199,7 @@
         <a href="#" onclick="filtrarLoja('bermudas-todas'); toggleMenu()" class="menu-item">Bermudas (Todas)</a>
         <a href="#" onclick="filtrarLoja('bermudas-jogador'); toggleMenu()" class="menu-subitem">• Bermudas Jogador</a>
         <a href="#" onclick="filtrarLoja('bermudas-dryfit'); toggleMenu()" class="menu-subitem">• Bermudas Dry Fit</a>
-
+        
         <div class="menu-group-title">Institucional</div>
         <a href="quem-somos.html" class="menu-item">Quem Somos Nós</a>
     </div>
@@ -271,7 +210,6 @@
             <span></span>
             <span></span>
         </button>
-        
         <h1>Outfit Imperial</h1>
         <p>Roupas & Sneakers</p>
         <div class="instagram-header">
