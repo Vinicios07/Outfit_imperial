@@ -1,7 +1,6 @@
 // LISTA DE PRODUTOS
 const produtos = [
     // --- COLEÇÃO DE INVERNO (JAQUETAS) ---
-    // (JAQUETA GOLA ALTA REMOVIDA)
     {
         id: "jaqueta-bomber-couro",
         nome: "Jaqueta Bomber Zara - Efeito Couro",
@@ -15,6 +14,21 @@ const produtos = [
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
+    },
+    {
+        id: "jaqueta-zara-tech",
+        nome: "Jaqueta Zara - Corta Vento Tech",
+        preco: "R$ 122,90",
+        categoria: "corta-vento",
+        imgCapa: "camisaZara.jpeg",
+        imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
+        descricao: `
+            <p><strong>Material Premium:</strong> Confeccionada em tecido tecnológico corta-vento.</p>
+            <p>Ideal para dias frios. Modelagem Slim Fit.</p>
+            <p>Acabamento impecável e cor branca versátil.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: ["P", "GG"]
     },
 
     // --- OVERSIZED ---
@@ -198,20 +212,6 @@ const produtos = [
         descricao: `
             <p><strong>Detalhes Exclusivos:</strong> Bermuda jeans cinza escura com botões e rebites em azul claro.</p>
             <p>Acabamento destroyed e lavagem estonada.</p>
-        `,
-        tamanhos: ["38", "40", "42", "44", "46"],
-        esgotados: [] 
-    },
-    {
-        id: "bermuda-jogador-corda-azul",
-        nome: "Bermuda Jogador Premium - Corda Azul",
-        preco: "R$ 129,90", 
-        categoria: "bermudas-jogador",
-        imgCapa: "bermuda-jogador-corda-azul.jpeg", 
-        imagens: ["bermuda-jogador-corda-azul.jpeg"], 
-        descricao: `
-            <p><strong>Destaque Urbano:</strong> Bermuda escura com cordão azul vibrante.</p>
-            <p>Acabamento destroyed e modelagem confortável.</p>
         `,
         tamanhos: ["38", "40", "42", "44", "46"],
         esgotados: [] 
