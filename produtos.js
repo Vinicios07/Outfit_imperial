@@ -1,7 +1,6 @@
 // LISTA DE PRODUTOS
 const produtos = [
     // --- COLEÇÃO DE INVERNO (JAQUETAS) ---
-    // AQUI ESTÁ A JAQUETA BRANCA QUE VOCÊ PEDIU:
     {
         id: "jaqueta-zara-tech",
         nome: "Jaqueta Zara - Corta Vento Tech",
@@ -48,7 +47,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- DRY FIT (SÓ AS 3 CORRETAS) ---
+    // --- DRY FIT ---
     {
         id: "nike-dryfit-azul",
         nome: "Camiseta Nike Dry Fit Performance - Azul Marinho",
@@ -90,6 +89,22 @@ const produtos = [
             <p><strong>Visual Clean:</strong> Camiseta branca com detalhes de costura preta.</p>
             <p>Tecnologia de absorção de suor para manter o corpo seco.</p>
             <p>Design moderno que valoriza o shape.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    // NOVO KIT ADICIONADO AQUI:
+    {
+        id: "kit-nike-dryfit-preto-branco",
+        nome: "Kit Nike Dry Fit - Preto e Branco",
+        preco: "R$ 119,90", 
+        categoria: "dryfit",
+        imgCapa: "kit-nike-dryfit-preto-branco.jpeg",
+        imagens: ["kit-nike-dryfit-preto-branco.jpeg"], 
+        descricao: `
+            <p><strong>Conjunto Completo:</strong> Kit de camiseta e bermuda em Dry Fit.</p>
+            <p>Design clássico preto com faixas brancas nos ombros e laterais.</p>
+            <p>Ideal para futebol e treinos de alta performance.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
