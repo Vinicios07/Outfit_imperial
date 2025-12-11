@@ -59,37 +59,35 @@
         .menu-subitem:hover { color: #d4af37; background: #111; }
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 1150; cursor: pointer; backdrop-filter: blur(3px); }
 
-        /* --- NOVO CARROSSEL DESLIZANTE --- */
+        /* --- CARROSSEL DESLIZANTE --- */
         .carousel-container {
             position: relative;
             width: 100%;
-            /* Define uma altura máxima para desktop para não ficar gigante */
             max-height: 600px; 
-            overflow: hidden; /* Esconde o que está fora da área visível */
+            overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .carousel-wrapper {
             display: flex;
-            transition: transform 0.6s ease-in-out; /* Animação de deslizar */
+            transition: transform 0.6s ease-in-out;
             width: 100%;
             height: 100%;
         }
         
         .carousel-slide {
-            min-width: 100%; /* Cada slide ocupa 100% da largura do container */
+            min-width: 100%;
             position: relative;
             height: 100%;
         }
         
-        /* Garante que as imagens tenham o mesmo tamanho e não distorçam */
         .carousel-slide img {
             width: 100%;
             height: 100%;
-            /* Altura fixa para desktop, no mobile ajusta auto */
             height: 600px; 
-            object-fit: cover; /* Corta a imagem se necessário para preencher sem distorcer */
+            object-fit: cover;
             display: block;
+            object-position: top center; /* Garante que o rosto não corte */
         }
 
         .slide-clickable { cursor: pointer; }
@@ -197,8 +195,8 @@
         /* Responsividade do Carrossel */
         @media (max-width: 850px) {
             .carousel-container, .carousel-slide img {
-                height: auto; /* Altura automática no mobile */
-                max-height: 400px; /* Limite menor para mobile */
+                height: auto; 
+                max-height: 400px;
             }
             /* ... restante do CSS mobile ... */
             header h1 { font-size: 30px; }
@@ -211,7 +209,7 @@
             .grade-relacionados { gap: 10px; }
             .card-relacionado img { height: 80px; }
             .footer-instagrams { flex-direction: column; align-items: center; gap: 15px; }
-            .banner-texto { font-size: 18px; bottom: 15%; width: 95%; padding: 5px; }
+            .banner-texto { font-size: 16px; bottom: 10%; width: 95%; padding: 5px; }
         }
     </style>
 </head>
@@ -266,6 +264,11 @@
             <div class="carousel-slide slide-clickable" onclick="filtrarLoja('oversized')">
                 <img src="banner-oversized.jpg" alt="Banner Oversized">
                 <div class="banner-texto">AS MELHORES OVERSIZEDS DO MERCADO</div>
+            </div>
+
+            <div class="carousel-slide slide-clickable" onclick="filtrarLoja('dryfit')">
+                <img src="banner-dryfit.jpg" alt="Banner Dry Fit">
+                <div class="banner-texto">PERFORMANCE E ESTILO NO SEU TREINO</div>
             </div>
         </div>
         
@@ -354,10 +357,10 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             carregarProdutosNaTela();
-            iniciarCarrossel(); // Inicia o novo carrossel
+            iniciarCarrossel(); 
         });
 
-        // --- LÓGICA DO NOVO CARROSSEL DESLIZANTE ---
+        // --- LÓGICA DO CARROSSEL DESLIZANTE ---
         let slideIndex = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const wrapper = document.getElementById('carouselWrapper');
@@ -369,25 +372,23 @@
             else if (index < 0) slideIndex = totalSlides - 1;
             else slideIndex = index;
 
-            // Move o wrapper horizontalmente
             const offset = -slideIndex * 100; 
             wrapper.style.transform = `translateX(${offset}%)`;
         }
 
         function mudarSlide(direcao) {
-            clearInterval(autoSlideInterval); // Para o automático se clicar
+            clearInterval(autoSlideInterval); 
             mostrarSlide(slideIndex + direcao);
-            iniciarCarrossel(); // Reinicia o automático
+            iniciarCarrossel(); 
         }
 
         function iniciarCarrossel() {
-            // Muda a cada 6 segundos (6000ms)
             autoSlideInterval = setInterval(() => {
                 mostrarSlide(slideIndex + 1);
             }, 6000);
         }
 
-        // --- OUTRAS FUNÇÕES (MENU, FILTRO, MODAL) ---
+        // --- OUTRAS FUNÇÕES ---
         function toggleMenu() {
             const sidebar = document.getElementById('sidebar-menu');
             const overlay = document.getElementById('overlay-menu');
