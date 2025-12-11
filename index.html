@@ -63,9 +63,10 @@
         .carousel-container {
             position: relative;
             width: 100%;
-            max-height: 600px; 
+            height: 500px; /* Altura fixa menor para desktop */
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: #000; /* Fundo preto para preencher espaços laterais */
         }
 
         .carousel-wrapper {
@@ -79,15 +80,17 @@
             min-width: 100%;
             position: relative;
             height: 100%;
+            display: flex;
+            justify-content: center; /* Centraliza a imagem se sobrar espaço */
+            align-items: center;
         }
         
         .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            height: 600px; 
-            object-fit: cover;
+            width: auto; /* Largura automática */
+            height: 100%; /* Altura total do container (500px) */
+            max-width: 100%; /* Não ultrapassa a largura da tela */
+            object-fit: contain; /* MOSTRA A IMAGEM INTEIRA SEM CORTAR */
             display: block;
-            object-position: top center; /* Garante que o rosto não corte */
         }
 
         .slide-clickable { cursor: pointer; }
@@ -113,19 +116,19 @@
         /* Texto sobre o banner */
         .banner-texto {
             position: absolute;
-            bottom: 20%;
+            bottom: 15%; /* Ajustado para a nova altura */
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
             text-align: center;
             font-family: 'Cinzel', serif;
             color: #fff;
-            font-size: 28px;
+            font-size: 24px; /* Um pouco menor para caber melhor */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.5); /* Fundo um pouco mais escuro para contraste */
             padding: 10px;
             border-radius: 4px;
             border-bottom: 2px solid #d4af37;
@@ -194,9 +197,12 @@
 
         /* Responsividade do Carrossel */
         @media (max-width: 850px) {
-            .carousel-container, .carousel-slide img {
-                height: auto; 
-                max-height: 400px;
+            .carousel-container {
+                height: 300px; /* Altura fixa menor para mobile */
+            }
+            .carousel-slide img {
+                height: 300px;
+                object-fit: contain; /* Garante que a imagem inteira apareça no mobile */
             }
             /* ... restante do CSS mobile ... */
             header h1 { font-size: 30px; }
@@ -209,7 +215,7 @@
             .grade-relacionados { gap: 10px; }
             .card-relacionado img { height: 80px; }
             .footer-instagrams { flex-direction: column; align-items: center; gap: 15px; }
-            .banner-texto { font-size: 16px; bottom: 10%; width: 95%; padding: 5px; }
+            .banner-texto { font-size: 15px; bottom: 10%; width: 95%; padding: 5px; }
         }
     </style>
 </head>
