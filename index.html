@@ -42,7 +42,7 @@
         .search-input:focus { border-color: #d4af37; background: #000; }
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 16px; pointer-events: none; }
 
-        /* --- MENU LATERAL (PREMIUM DARK) --- */
+        /* --- MENU LATERAL --- */
         .menu-btn { position: absolute; top: 30px; left: 20px; z-index: 1100; background: none; border: none; cursor: pointer; padding: 0; width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; }
         .menu-btn span { display: block; width: 100%; height: 2px; background-color: #d4af37; transition: all 0.3s ease; }
         .menu-btn:hover span:nth-child(1) { transform: translateY(-1px); }
@@ -59,11 +59,11 @@
         .menu-subitem:hover { color: #d4af37; background: #111; }
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 1150; cursor: pointer; backdrop-filter: blur(3px); }
 
-        /* --- CARROSSEL LARGURA TOTAL (FULL WIDTH) --- */
+        /* --- CARROSSEL --- */
         .carousel-container {
             position: relative;
-            width: 100%; /* Ocupa a largura total da tela */
-            height: 550px; /* Altura fixa controlada para Desktop */
+            width: 100%;
+            height: 550px; 
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             background-color: #000;
@@ -85,8 +85,8 @@
         .carousel-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Cobre todo o espaço (sem barras pretas) */
-            object-position: top center; /* Garante que o topo da imagem (rostos) apareça */
+            object-fit: cover; 
+            object-position: top center; 
             display: block;
         }
 
@@ -97,7 +97,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.2); /* Mais discreto */
+            background-color: rgba(0, 0, 0, 0.2); 
             color: #fff;
             border: none;
             font-size: 24px;
@@ -110,7 +110,7 @@
         .prev-btn { left: 0; }
         .next-btn { right: 0; }
 
-        /* Texto sobre o banner */
+        /* TEXTO INFERIOR (LEGENDA PRINCIPAL) */
         .banner-texto {
             position: absolute;
             bottom: 40px;
@@ -124,10 +124,29 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.9); /* Sombra forte para leitura */
+            text-shadow: 0 2px 10px rgba(0,0,0,0.9);
             padding: 10px;
-            /* Sem fundo box, apenas texto flutuante */
             pointer-events: none; 
+        }
+
+        /* NOVA TAG SUPERIOR DIREITA (NOME DA COLEÇÃO) */
+        .banner-tag {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.5); /* Borda fina elegante */
+            padding: 8px 15px;
+            background: rgba(0, 0, 0, 0.3); /* Fundo sutil */
+            backdrop-filter: blur(2px);
+            z-index: 5;
+            pointer-events: none;
         }
 
         /* --- VITRINE --- */
@@ -190,16 +209,10 @@
         .secao-escondida { display: none !important; }
         #msg-sem-resultado { text-align: center; margin-top: 50px; color: #777; display: none; font-style: italic; }
 
-        /* Responsividade do Carrossel */
+        /* Responsividade */
         @media (max-width: 850px) {
-            .carousel-container {
-                height: 450px; /* Mais alto no mobile para caber fotos verticais */
-            }
-            .carousel-slide img {
-                object-position: center top; /* Foca no topo da imagem vertical */
-            }
-            
-            /* ... restante do CSS mobile ... */
+            .carousel-container { height: 450px; }
+            .carousel-slide img { object-position: center top; }
             header h1 { font-size: 30px; }
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .capa-produto { height: 240px; }
@@ -211,6 +224,14 @@
             .card-relacionado img { height: 80px; }
             .footer-instagrams { flex-direction: column; align-items: center; gap: 15px; }
             .banner-texto { font-size: 18px; bottom: 30px; width: 90%; padding: 0; text-shadow: 0 2px 5px rgba(0,0,0,1); }
+            
+            /* Ajuste da TAG no celular */
+            .banner-tag {
+                top: 20px;
+                right: 20px;
+                font-size: 11px;
+                padding: 5px 10px;
+            }
         }
     </style>
 </head>
@@ -264,11 +285,13 @@
             
             <div class="carousel-slide slide-clickable" onclick="filtrarLoja('oversized')">
                 <img src="novo-banner.jpg" alt="Banner Oversized">
+                <div class="banner-tag">CAMISAS OVERSIZED</div>
                 <div class="banner-texto">AS MELHORES OVERSIZEDS DO MERCADO</div>
             </div>
 
             <div class="carousel-slide slide-clickable" onclick="filtrarLoja('dryfit')">
                 <img src="dryfit-novo.jpg" alt="Banner Dry Fit">
+                <div class="banner-tag">LINHA DRY FIT</div>
                 <div class="banner-texto">PERFORMANCE E ESTILO NO SEU TREINO</div>
             </div>
         </div>
