@@ -4,7 +4,7 @@ const produtos = [
     {
         id: "jaqueta-zara-tech",
         nome: "Jaqueta Zara - Corta Vento Tech",
-        preco: "R$ 122,90",
+        preco: "R$ 260,00",
         categoria: "inverno",
         imgCapa: "camisaZara.jpeg",
         imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
@@ -19,7 +19,7 @@ const produtos = [
     {
         id: "jaqueta-bomber-couro",
         nome: "Jaqueta Bomber Zara - Efeito Couro",
-        preco: "R$ 329,90",
+        preco: "R$ 260,00",
         categoria: "inverno", 
         imgCapa: "jaqueta-bomber.jpeg", 
         imagens: ["jaqueta-bomber.jpeg"], 
@@ -35,7 +35,7 @@ const produtos = [
     {
         id: "palm-angels-wings",
         nome: "Camiseta Oversized Palm Angels - Wings",
-        preco: "R$ 189,90",
+        preco: "R$ 85,00",
         categoria: "oversized",
         imgCapa: "palm-angels-oversized.jpeg",
         imagens: ["palm-angels-oversized.jpeg"], 
@@ -49,7 +49,7 @@ const produtos = [
     {
         id: "oversized-jordan-bege",
         nome: "Camiseta Oversized Jordan - Bege",
-        preco: "R$ 139,90", 
+        preco: "R$ 85,00", 
         categoria: "oversized",
         imgCapa: "oversized-jordan-bege.jpeg",
         imagens: ["oversized-jordan-bege.jpeg", "oversized-jordan-bege2.jpeg"], 
@@ -64,7 +64,7 @@ const produtos = [
     {
         id: "oversized-jordan-box",
         nome: "Camiseta Jordan - Bege Box Logo",
-        preco: "R$ 139,90", 
+        preco: "R$ 85,00", 
         categoria: "oversized",
         imgCapa: "jordan-bege-box.jpeg",
         imagens: ["jordan-bege-box.jpeg", "jordan-bege-box2.jpeg"], 
@@ -79,7 +79,7 @@ const produtos = [
     {
         id: "oversized-nike-preta",
         nome: "Camiseta Oversized Nike - Preta Logo",
-        preco: "R$ 139,90", 
+        preco: "R$ 85,00", 
         categoria: "oversized",
         imgCapa: "oversized-nike-preta.jpeg",
         imagens: ["oversized-nike-preta.jpeg", "oversized-nike-preta2.jpeg"], 
@@ -94,7 +94,7 @@ const produtos = [
     {
         id: "oversized-nike-colorida",
         nome: "Camiseta Oversized Nike - Logo Colorido",
-        preco: "R$ 139,90", 
+        preco: "R$ 85,00", 
         categoria: "oversized",
         imgCapa: "oversized-nike-colorida.jpeg",
         imagens: ["oversized-nike-colorida.jpeg", "oversized-nike-colorida2.jpeg"], 
@@ -109,7 +109,7 @@ const produtos = [
     {
         id: "oversized-adidas-trio",
         nome: "Camiseta Oversized Adidas - Graffiti",
-        preco: "R$ 139,90", 
+        preco: "R$ 85,00", 
         categoria: "oversized",
         imgCapa: "oversized-adidas-trio.jpeg",
         imagens: ["oversized-adidas-trio.jpeg"], 
@@ -124,7 +124,7 @@ const produtos = [
     {
         id: "oversized-supreme-knitting",
         nome: "Camiseta Oversized Supreme - Knitting",
-        preco: "R$ 139,90", 
+        preco: "R$ 85,00", 
         categoria: "oversized",
         imgCapa: "oversized-supreme-trio.jpeg",
         imagens: ["oversized-supreme-trio.jpeg"], 
@@ -139,7 +139,7 @@ const produtos = [
     {
         id: "oversized-ice-blue",
         nome: "Camiseta Oversized - Ice Blue Graphic",
-        preco: "R$ 139,90", 
+        preco: "R$ 85,00", 
         categoria: "oversized",
         imgCapa: "oversized-ice-blue.jpeg",
         imagens: ["oversized-ice-blue.jpeg"], 
@@ -387,7 +387,7 @@ const produtos = [
     {
         id: "kit-nike-dryfit-preto-branco",
         nome: "Kit Nike Dry Fit - Preto e Branco",
-        preco: "R$ 119,90", 
+        preco: "R$ 120,00", 
         categoria: "dryfit",
         imgCapa: "kit-nike-dryfit-preto-branco.jpeg",
         imagens: ["kit-nike-dryfit-preto-branco.jpeg"], 
@@ -401,7 +401,7 @@ const produtos = [
     {
         id: "kit-nike-dryfit-azul",
         nome: "Kit Nike Dry Fit - Azul Marinho",
-        preco: "R$ 119,90", 
+        preco: "R$ 120,00", 
         categoria: "dryfit",
         imgCapa: "kit-nike-dryfit-azul.jpeg",
         imagens: ["kit-nike-dryfit-azul.jpeg"], 
@@ -417,7 +417,7 @@ const produtos = [
     {
         id: "bermuda-nike-azul",
         nome: "Bermuda Nike Dry Fit - Azul Marinho",
-        preco: "R$ 79,90", 
+        preco: "R$ 45,00", 
         categoria: "bermudas", 
         imgCapa: "nike-bermuda-azul1.jpeg",
         imagens: ["nike-bermuda-azul1.jpeg", "nike-bermuda-azul2.jpeg", "nike-bermuda-azul3.jpeg", "nike-bermuda-azul4.jpeg", "nike-bermuda-azul5.jpeg", "nike-bermuda-azul6.jpeg"],
@@ -434,7 +434,7 @@ const produtos = [
     {
         id: "bermuda-jeans-jogador",
         nome: "Bermuda Jeans Jogador - Azul Distressed",
-        preco: "R$ 119,90", 
+        preco: "R$ 80,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jeans-jogador.jpeg",
         imagens: ["bermuda-jeans-jogador.jpeg"], 
@@ -443,13 +443,13 @@ const produtos = [
             <p>Acabamento destroyed (rasgado) e barra desfiada.</p>
             <p>Lavagem clássica azul.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-preta",
         nome: "Bermuda Jogador Premium - Preta (Corda Vermelha)",
-        preco: "R$ 129,90", 
+        preco: "R$ 80,0", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-preta.jpeg",
         imagens: ["bermuda-jogador-preta.jpeg"], 
@@ -458,13 +458,13 @@ const produtos = [
             <p>Bolsos com bordado exclusivo 'XO' e costuras reforçadas.</p>
             <p>Modelagem confortável e moderna.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-cinza",
         nome: "Bermuda Jogador Jeans - Lavagem Cinza",
-        preco: "R$ 119,90", 
+        preco: "R$ 80,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-cinza.jpeg",
         imagens: ["bermuda-jogador-cinza.jpeg"], 
@@ -473,13 +473,13 @@ const produtos = [
             <p>Rasgos estratégicos e modelagem ampla estilo jogador.</p>
             <p>Peça chave para quem curte um visual diferenciado.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-branca",
         nome: "Bermuda Jogador Jeans - Lavagem Branca",
-        preco: "R$ 119,90", 
+        preco: "R$ 80,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-branca.jpeg",
         imagens: ["bermuda-jogador-branca.jpeg"], 
@@ -488,13 +488,13 @@ const produtos = [
             <p>Acabamento da barra desfiado e modelagem confortável.</p>
             <p>Ideal para compor looks leves e estilosos.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-branca-acinzentada",
         nome: "Bermuda Jogador - Branca Acinzentada",
-        preco: "R$ 119,90", 
+        preco: "R$ 80,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-branca-acinzentada.jpeg",
         imagens: ["bermuda-jogador-branca-acinzentada.jpeg"], 
@@ -503,13 +503,13 @@ const produtos = [
             <p>Detalhes destroyed e manchas de tinta sutis.</p>
             <p>A combinação perfeita entre o claro e o urbano.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-degrade-amarelo",
         nome: "Bermuda Jogador - Degradê Cordão Amarelo",
-        preco: "R$ 129,90", 
+        preco: "R$ 80,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-degrade-amarelo.jpeg", 
         imagens: ["bermuda-jogador-degrade-amarelo.jpeg"], 
@@ -518,13 +518,13 @@ const produtos = [
             <p>Botão amarelo personalizado e detalhes destroyed.</p>
             <p>Para quem gosta de um visual marcante.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-botoes-azuis",
         nome: "Bermuda Jogador Jeans - Botões Azuis",
-        preco: "R$ 129,90", 
+        preco: "R$ 80,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-botoes-azuis.jpeg", 
         imagens: ["bermuda-jogador-botoes-azuis.jpeg"], 
@@ -532,13 +532,13 @@ const produtos = [
             <p><strong>Detalhes Exclusivos:</strong> Bermuda jeans cinza escura com botões e rebites em azul claro.</p>
             <p>Acabamento destroyed e lavagem estonada.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
     {
         id: "bermuda-jogador-corda-azul",
         nome: "Bermuda Jogador Premium - Corda Azul",
-        preco: "R$ 129,90", 
+        preco: "R$ 80,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-corda-azul.jpeg",
         imagens: ["bermuda-jogador-corda-azul.jpeg"], 
@@ -546,13 +546,13 @@ const produtos = [
             <p><strong>Destaque Urbano:</strong> Bermuda escura com cordão azul vibrante.</p>
             <p>Acabamento destroyed e modelagem confortável.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
     {
         id: "bermuda-nike-jogador-preta",
         nome: "Bermuda Nike Jogador - Preta",
-        preco: "R$ 89,90", 
+        preco: "R$ 80,00", 
         categoria: "bermudas-jogador", 
         imgCapa: "bermuda-nike-jogador.jpeg",
         imagens: ["bermuda-nike-jogador.jpeg"], 
@@ -561,7 +561,7 @@ const produtos = [
             <p>Tecido tactel/microfibra de secagem rápida.</p>
             <p>Ideal para uso casual, praia ou futebol.</p>
         `,
-        tamanhos: ["P", "M", "G", "GG"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
 
@@ -569,7 +569,7 @@ const produtos = [
     {
         id: "calca-jogador-cinza-respingos",
         nome: "Calça Jeans Jogador - Cinza Respingos",
-        preco: "R$ 139,90", 
+        preco: "R$ 170,00", 
         categoria: "calcas-jogador",
         imgCapa: "calca-jogador-cinza.jpeg",
         imagens: ["calca-jogador-cinza.jpeg"], 
@@ -578,13 +578,13 @@ const produtos = [
             <p>Detalhes destroyed e patches de tecido.</p>
             <p>Modelagem jogger confortável e moderna.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     },
     {
         id: "calca-jogador-branca-rasgada",
         nome: "Calça Jeans Jogador - Branca Destroyed",
-        preco: "R$ 139,90", 
+        preco: "R$ 170,00", 
         categoria: "calcas-jogador",
         imgCapa: "calca-jogador-branca.jpeg",
         imagens: ["calca-jogador-branca.jpeg"], 
@@ -593,7 +593,7 @@ const produtos = [
             <p>Acabamento destroyed intenso e patches texturizados.</p>
             <p>Para quem quer marcar presença no rolê.</p>
         `,
-        tamanhos: ["38", "40", "42", "44", "46"],
+        tamanhos: ["38", "40", "42", "44", "48"],
         esgotados: [] 
     }
 ];
