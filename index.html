@@ -59,28 +59,60 @@
         .menu-subitem:hover { color: #d4af37; background: #111; }
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 1150; cursor: pointer; backdrop-filter: blur(3px); }
 
-        /* --- CARROSSEL --- */
-        .banner-carousel {
+        /* --- NOVO CARROSSEL DESLIZANTE --- */
+        .carousel-container {
             position: relative;
             width: 100%;
-            height: auto;
-            overflow: hidden;
+            /* Define uma altura máxima para desktop para não ficar gigante */
+            max-height: 600px; 
+            overflow: hidden; /* Esconde o que está fora da área visível */
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            line-height: 0;
-            display: block;
-            text-decoration: none;
         }
-        
-        .slide-item {
-            display: none; 
-            width: 100%;
-            position: relative;
-            animation: fadeEffect 1.5s; 
-        }
-        
-        .slide-item img { width: 100%; height: auto; display: block; }
 
-        /* TEXTO SOBRE O BANNER */
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.6s ease-in-out; /* Animação de deslizar */
+            width: 100%;
+            height: 100%;
+        }
+        
+        .carousel-slide {
+            min-width: 100%; /* Cada slide ocupa 100% da largura do container */
+            position: relative;
+            height: 100%;
+        }
+        
+        /* Garante que as imagens tenham o mesmo tamanho e não distorçam */
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            /* Altura fixa para desktop, no mobile ajusta auto */
+            height: 600px; 
+            object-fit: cover; /* Corta a imagem se necessário para preencher sem distorcer */
+            display: block;
+        }
+
+        .slide-clickable { cursor: pointer; }
+
+        /* Setas de Navegação */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #d4af37;
+            border: none;
+            font-size: 24px;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .carousel-btn:hover { background-color: rgba(0, 0, 0, 0.8); color: #fff; }
+        .prev-btn { left: 0; border-radius: 0 5px 5px 0; }
+        .next-btn { right: 0; border-radius: 5px 0 0 5px; }
+
+        /* Texto sobre o banner */
         .banner-texto {
             position: absolute;
             bottom: 20%;
@@ -99,9 +131,8 @@
             padding: 10px;
             border-radius: 4px;
             border-bottom: 2px solid #d4af37;
+            pointer-events: none; 
         }
-
-        @keyframes fadeEffect { from {opacity: .4} to {opacity: 1} }
 
         /* --- VITRINE --- */
         .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 800px; flex: 1; width: 100%; }
@@ -163,8 +194,13 @@
         .secao-escondida { display: none !important; }
         #msg-sem-resultado { text-align: center; margin-top: 50px; color: #777; display: none; font-style: italic; }
 
-        @media (max-width: 1100px) { .grade-produtos { grid-template-columns: repeat(3, 1fr); } }
+        /* Responsividade do Carrossel */
         @media (max-width: 850px) {
+            .carousel-container, .carousel-slide img {
+                height: auto; /* Altura automática no mobile */
+                max-height: 400px; /* Limite menor para mobile */
+            }
+            /* ... restante do CSS mobile ... */
             header h1 { font-size: 30px; }
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .capa-produto { height: 240px; }
@@ -221,15 +257,21 @@
         </div>
     </header>
 
-    <a href="#" class="banner-carousel" id="banner-home">
-        <div class="slide-item fade">
-            <img src="banner2025.jpg" alt="Banner Principal">
+    <div class="carousel-container" id="banner-home">
+        <div class="carousel-wrapper" id="carouselWrapper">
+            <div class="carousel-slide" onclick="filtrarLoja('todos')">
+                <img src="banner2025.jpg" alt="Banner Principal">
+            </div>
+            
+            <div class="carousel-slide slide-clickable" onclick="filtrarLoja('oversized')">
+                <img src="banner-oversized.jpg" alt="Banner Oversized">
+                <div class="banner-texto">AS MELHORES OVERSIZEDS DO MERCADO</div>
+            </div>
         </div>
-        <div class="slide-item fade">
-            <img src="banner-oversized.jpg" alt="Banner Oversized">
-            <div class="banner-texto">AS MELHORES OVERSIZEDS DO MERCADO</div>
-        </div>
-    </a>
+        
+        <button class="carousel-btn prev-btn" onclick="mudarSlide(-1)">&#10094;</button>
+        <button class="carousel-btn next-btn" onclick="mudarSlide(1)">&#10095;</button>
+    </div>
 
     <div class="container">
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
@@ -312,21 +354,40 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             carregarProdutosNaTela();
-            showSlides();
+            iniciarCarrossel(); // Inicia o novo carrossel
         });
 
+        // --- LÓGICA DO NOVO CARROSSEL DESLIZANTE ---
         let slideIndex = 0;
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide-item");
-            if (slides.length === 0) return;
-            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 4000);
+        const slides = document.querySelectorAll('.carousel-slide');
+        const wrapper = document.getElementById('carouselWrapper');
+        const totalSlides = slides.length;
+        let autoSlideInterval;
+
+        function mostrarSlide(index) {
+            if (index >= totalSlides) slideIndex = 0;
+            else if (index < 0) slideIndex = totalSlides - 1;
+            else slideIndex = index;
+
+            // Move o wrapper horizontalmente
+            const offset = -slideIndex * 100; 
+            wrapper.style.transform = `translateX(${offset}%)`;
         }
 
+        function mudarSlide(direcao) {
+            clearInterval(autoSlideInterval); // Para o automático se clicar
+            mostrarSlide(slideIndex + direcao);
+            iniciarCarrossel(); // Reinicia o automático
+        }
+
+        function iniciarCarrossel() {
+            // Muda a cada 6 segundos (6000ms)
+            autoSlideInterval = setInterval(() => {
+                mostrarSlide(slideIndex + 1);
+            }, 6000);
+        }
+
+        // --- OUTRAS FUNÇÕES (MENU, FILTRO, MODAL) ---
         function toggleMenu() {
             const sidebar = document.getElementById('sidebar-menu');
             const overlay = document.getElementById('overlay-menu');
