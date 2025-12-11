@@ -42,7 +42,7 @@
         .search-input:focus { border-color: #d4af37; background: #000; }
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 16px; pointer-events: none; }
 
-        /* --- MENU LATERAL --- */
+        /* --- MENU LATERAL (PREMIUM DARK) --- */
         .menu-btn { position: absolute; top: 30px; left: 20px; z-index: 1100; background: none; border: none; cursor: pointer; padding: 0; width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; }
         .menu-btn span { display: block; width: 100%; height: 2px; background-color: #d4af37; transition: all 0.3s ease; }
         .menu-btn:hover span:nth-child(1) { transform: translateY(-1px); }
@@ -59,14 +59,15 @@
         .menu-subitem:hover { color: #d4af37; background: #111; }
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 1150; cursor: pointer; backdrop-filter: blur(3px); }
 
-        /* --- CARROSSEL DESLIZANTE --- */
+        /* --- CARROSSEL ESTILO NIKE --- */
         .carousel-container {
             position: relative;
             width: 100%;
-            height: 500px; /* Altura fixa menor para desktop */
+            /* Altura fixa controlada para manter padrão */
+            height: 500px; 
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            background-color: #000; /* Fundo preto para preencher espaços laterais */
+            background-color: #111; /* Fundo escuro de segurança */
         }
 
         .carousel-wrapper {
@@ -80,59 +81,53 @@
             min-width: 100%;
             position: relative;
             height: 100%;
-            display: flex;
-            justify-content: center; /* Centraliza a imagem se sobrar espaço */
-            align-items: center;
         }
         
+        /* A MÁGICA: COVER + TOP CENTER */
         .carousel-slide img {
-            width: auto; /* Largura automática */
-            height: 100%; /* Altura total do container (500px) */
-            max-width: 100%; /* Não ultrapassa a largura da tela */
-            object-fit: contain; /* MOSTRA A IMAGEM INTEIRA SEM CORTAR */
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Preenche tudo, sem barras pretas */
+            object-position: top center; /* Foca no rosto/topo e corta só o excesso de baixo */
             display: block;
         }
 
         .slide-clickable { cursor: pointer; }
 
-        /* Setas de Navegação */
         .carousel-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.4);
-            color: #d4af37;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparente estiloso */
+            color: #fff;
             border: none;
-            font-size: 24px;
-            padding: 15px;
+            font-size: 20px;
+            padding: 20px 15px;
             cursor: pointer;
             z-index: 10;
-            transition: background-color 0.3s, color 0.3s;
+            transition: all 0.3s;
+            backdrop-filter: blur(2px);
         }
-        .carousel-btn:hover { background-color: rgba(0, 0, 0, 0.8); color: #fff; }
-        .prev-btn { left: 0; border-radius: 0 5px 5px 0; }
-        .next-btn { right: 0; border-radius: 5px 0 0 5px; }
+        .carousel-btn:hover { background-color: rgba(0, 0, 0, 0.7); color: #d4af37; }
+        .prev-btn { left: 0; }
+        .next-btn { right: 0; }
 
-        /* Texto sobre o banner */
         .banner-texto {
             position: absolute;
-            bottom: 15%; /* Ajustado para a nova altura */
+            bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
             text-align: center;
             font-family: 'Cinzel', serif;
             color: #fff;
-            font-size: 24px; /* Um pouco menor para caber melhor */
+            font-size: 26px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
-            background: rgba(0,0,0,0.5); /* Fundo um pouco mais escuro para contraste */
-            padding: 10px;
-            border-radius: 4px;
-            border-bottom: 2px solid #d4af37;
-            pointer-events: none; 
+            letter-spacing: 3px;
+            /* Sombra suave sem fundo box, estilo editorial */
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            pointer-events: none;
         }
 
         /* --- VITRINE --- */
@@ -195,15 +190,15 @@
         .secao-escondida { display: none !important; }
         #msg-sem-resultado { text-align: center; margin-top: 50px; color: #777; display: none; font-style: italic; }
 
-        /* Responsividade do Carrossel */
+        /* Responsividade do Carrossel (Estilo Nike Mobile) */
         @media (max-width: 850px) {
             .carousel-container {
-                height: 300px; /* Altura fixa menor para mobile */
+                height: 450px; /* Mais alto no mobile (quase quadrado) para caber fotos verticais */
             }
             .carousel-slide img {
-                height: 300px;
-                object-fit: contain; /* Garante que a imagem inteira apareça no mobile */
+                object-position: center top; /* Foca no topo da imagem vertical */
             }
+            
             /* ... restante do CSS mobile ... */
             header h1 { font-size: 30px; }
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 15px; }
@@ -215,7 +210,7 @@
             .grade-relacionados { gap: 10px; }
             .card-relacionado img { height: 80px; }
             .footer-instagrams { flex-direction: column; align-items: center; gap: 15px; }
-            .banner-texto { font-size: 15px; bottom: 10%; width: 95%; padding: 5px; }
+            .banner-texto { font-size: 18px; bottom: 30px; width: 90%; padding: 0; text-shadow: 0 2px 5px rgba(0,0,0,1); }
         }
     </style>
 </head>
