@@ -2,16 +2,32 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outfit Imperial - Loja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Outfit Imperial - Loja</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* --- RESET E GERAL --- */
         * { box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #e6e6e6; background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); color: #111; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
         
+        html, body {
+            margin: 0; 
+            padding: 0; 
+            width: 100%;
+            max-width: 100vw; /* Garante que não passe da largura da tela */
+            overflow-x: hidden; /* CORREÇÃO DE OVERFLOW: Bloqueia rolagem lateral */
+            background-color: #e6e6e6; 
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); 
+            color: #111; 
+            font-family: 'Inter', sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
+        
+        /* Previne imagens de estourarem o layout */
+        img { max-width: 100%; height: auto; display: block; }
+
         /* --- CABEÇALHO --- */
         header { 
             background-color: #000; 
@@ -31,13 +47,13 @@
         header p { color: #ccc; font-size: 12px; margin: 0 0 20px 0; letter-spacing: 4px; text-transform: uppercase; font-weight: 300; }
         
         /* Ícones Sociais */
-        .instagram-header { display: flex; justify-content: center; margin-bottom: 20px; }
-        .instagram-link { display: flex; align-items: center; gap: 6px; color: #d4af37; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.3s; }
+        .instagram-header { display: flex; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+        .instagram-link { display: flex; align-items: center; gap: 6px; color: #d4af37; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.3s; margin: 0 5px; }
         .instagram-link:hover { color: #fff; }
         .instagram-icon-svg { width: 16px; height: 16px; fill: currentColor; }
 
         /* Barra de Pesquisa */
-        .search-box { margin: 0 auto; max-width: 500px; position: relative; display: flex; }
+        .search-box { margin: 0 auto; max-width: 500px; width: 100%; position: relative; display: flex; }
         .search-input { width: 100%; padding: 12px 45px 12px 20px; border-radius: 50px; border: 1px solid #333; background: #1a1a1a; color: white; font-size: 14px; outline: none; }
         .search-input:focus { border-color: #d4af37; background: #000; }
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 16px; pointer-events: none; }
@@ -71,7 +87,7 @@
         .banner-full-width img { width: 100%; height: auto; display: block; }
 
         /* --- VITRINE --- */
-        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 800px; flex: 1; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 800px; flex: 1; width: 100%; }
         
         .secao-titulo { 
             font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; 
@@ -146,15 +162,32 @@
         .secao-escondida { display: none !important; }
         #msg-sem-resultado { text-align: center; margin-top: 50px; color: #777; display: none; font-style: italic; }
 
+        /* --- RESPONSIVIDADE (CORREÇÕES MOBILE) --- */
         @media (max-width: 1100px) { .grade-produtos { grid-template-columns: repeat(3, 1fr); } }
+        
         @media (max-width: 850px) {
             header h1 { font-size: 30px; }
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .capa-produto { height: 240px; }
-            .modal-content { flex-direction: column; height: auto; max-height: 95vh; }
-            .modal-galeria-container { padding: 15px; flex: none; height: 350px; }
+            
+            /* Correção do Modal Mobile */
+            .modal-content { 
+                flex-direction: column; 
+                height: 90vh; /* Altura fixa segura */
+                max-height: 90vh; 
+            }
+            .modal-galeria-container { 
+                padding: 15px; 
+                flex: none; 
+                height: 40%; /* 40% da tela para imagem */
+            }
             .modal-foto-principal img { max-height: 100%; }
-            .modal-info { padding: 20px; flex: none; }
+            .modal-info { 
+                padding: 20px; 
+                flex: 1; /* Ocupa o resto do espaço */
+                overflow-y: auto; /* Permite rolar o texto se for grande */
+            }
+            
             .grade-relacionados { gap: 10px; }
             .card-relacionado img { height: 80px; }
             .footer-instagrams { flex-direction: column; align-items: center; gap: 15px; }
@@ -321,7 +354,6 @@
                 boxes.forEach(box => box.classList.remove('secao-escondida'));
                 if(banner) banner.style.display = 'block';
             } else {
-                // Esconde tudo e o banner
                 boxes.forEach(box => box.classList.add('secao-escondida'));
                 if(banner) banner.style.display = 'none';
 
@@ -365,7 +397,6 @@
                     </div>
                 `;
 
-                // Distribui nas categorias corretas
                 if (prod.categoria === 'inverno') containers['inverno'].innerHTML += html;
                 else if (prod.categoria === 'oversized') containers['oversized'].innerHTML += html;
                 else if (prod.categoria === 'dryfit') containers['dryfit'].innerHTML += html;
@@ -384,7 +415,6 @@
             document.getElementById('m-preco').innerText = prod.preco;
             document.getElementById('m-descricao').innerHTML = prod.descricao;
             
-            // Tamanhos
             const divTamanhos = document.getElementById('m-tamanhos');
             divTamanhos.innerHTML = "";
             prod.tamanhos.forEach(tam => {
@@ -393,7 +423,6 @@
                 divTamanhos.innerHTML += `<div class="${classe}">${tam}</div>`;
             });
 
-            // Imagens
             const containerThumbs = document.getElementById('m-thumbnails');
             const imgPrincipal = document.getElementById('m-img-principal');
             containerThumbs.innerHTML = "";
@@ -411,12 +440,10 @@
                 containerThumbs.appendChild(thumb);
             });
 
-            // Links WhatsApp
             const textoZap = `Olá, tenho interesse no produto (Cód: ${prod.id}): ${prod.nome}`;
             document.getElementById('btn-zap1').href = "https://wa.me/5511994655832?text=" + encodeURIComponent(textoZap);
             document.getElementById('btn-zap2').href = "https://wa.me/5511917686011?text=" + encodeURIComponent(textoZap);
 
-            // CARREGAR RELACIONADOS
             carregarRelacionados(idProduto);
 
             document.getElementById('janela-modal').classList.add('aberto');
@@ -451,11 +478,10 @@
             }
         }
 
-        // --- PESQUISA (ATUALIZADA) ---
+        // --- PESQUISA ---
         function pesquisarProdutos() {
             const termo = document.getElementById('campo-pesquisa').value.toLowerCase();
             const msgErro = document.getElementById('msg-sem-resultado');
-            // IDs de TODAS as caixas de categoria
             const idsSecoes = [
                 'box-inverno',
                 'box-oversized',
@@ -486,7 +512,6 @@
                     }
                 });
 
-                // Se não tem busca, mostra a seção. Se tem busca, só mostra se tiver produto dentro.
                 if (termo === "") {
                     secao.style.display = 'block';
                     secao.classList.remove('secao-escondida');
@@ -500,7 +525,6 @@
                 }
             });
 
-            // Esconde o Banner se estiver pesquisando
             const banner = document.getElementById('banner-home');
             if(banner) {
                 if(termo !== "") banner.style.display = 'none';
