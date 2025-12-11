@@ -110,7 +110,7 @@
         .prev-btn { left: 0; }
         .next-btn { right: 0; }
 
-        /* TEXTO INFERIOR (LEGENDA PRINCIPAL) */
+        /* TEXTO INFERIOR */
         .banner-texto {
             position: absolute;
             bottom: 40px;
@@ -129,7 +129,7 @@
             pointer-events: none; 
         }
 
-        /* NOVA TAG SUPERIOR DIREITA (NOME DA COLEÇÃO) */
+        /* TAG SUPERIOR DIREITA */
         .banner-tag {
             position: absolute;
             top: 30px;
@@ -141,9 +141,9 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-            border: 1px solid rgba(255,255,255,0.5); /* Borda fina elegante */
+            border: 1px solid rgba(255,255,255,0.5);
             padding: 8px 15px;
-            background: rgba(0, 0, 0, 0.3); /* Fundo sutil */
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(2px);
             z-index: 5;
             pointer-events: none;
@@ -224,14 +224,7 @@
             .card-relacionado img { height: 80px; }
             .footer-instagrams { flex-direction: column; align-items: center; gap: 15px; }
             .banner-texto { font-size: 18px; bottom: 30px; width: 90%; padding: 0; text-shadow: 0 2px 5px rgba(0,0,0,1); }
-            
-            /* Ajuste da TAG no celular */
-            .banner-tag {
-                top: 20px;
-                right: 20px;
-                font-size: 11px;
-                padding: 5px 10px;
-            }
+            .banner-tag { top: 20px; right: 20px; font-size: 11px; padding: 5px 10px; }
         }
     </style>
 </head>
@@ -293,6 +286,12 @@
                 <img src="dryfit-novo.jpg" alt="Banner Dry Fit">
                 <div class="banner-tag">LINHA DRY FIT</div>
                 <div class="banner-texto">PERFORMANCE E ESTILO NO SEU TREINO</div>
+            </div>
+
+            <div class="carousel-slide slide-clickable" onclick="filtrarLoja('bermudas-jogador')">
+                <img src="banner-bermuda-jogador.jpg" alt="Banner Bermudas Jogador">
+                <div class="banner-tag">BERMUDAS JOGADOR</div>
+                <div class="banner-texto">ESTILO JOGADOR: CONFORTO E ATITUDE</div>
             </div>
         </div>
         
