@@ -178,7 +178,7 @@
         .produto h3 { color: #222; margin: 0 0 8px; font-size: 15px; font-weight: 600; line-height: 1.4; text-transform: capitalize; }
         .produto .preco { font-size: 18px; color: #000; font-weight: 700; margin: 0; }
 
-        /* --- RODAPÉ (RESTAURADO) --- */
+        /* --- RODAPÉ --- */
         footer { background-color: #000; color: #fff; margin-top: auto; border-top: 4px solid #d4af37; width: 100%; }
         .footer-banner { padding: 40px 20px; text-align: center; background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); }
         .footer-banner h3 { font-family: 'Cinzel', serif; color: #d4af37; margin: 0 0 25px 0; font-size: 22px; text-transform: uppercase; letter-spacing: 2px; }
@@ -256,7 +256,7 @@
         <a href="#" onclick="filtrarLoja('inverno'); toggleMenu()" class="menu-item">Coleção de Inverno</a>
         <a href="#" onclick="filtrarLoja('oversized'); toggleMenu()" class="menu-item">Camisetas Oversized</a>
         <a href="#" onclick="filtrarLoja('grife'); toggleMenu()" class="menu-item">Camisetas de Grife</a>
-        <a href="#" onclick="filtrarLoja('dryfit'); toggleMenu()" class="menu-item">Linha Dry Fit</a>
+        <a href="#" onclick="filtrarLoja('polo'); toggleMenu()" class="menu-item">Camisetas Polo</a> <a href="#" onclick="filtrarLoja('dryfit'); toggleMenu()" class="menu-item">Linha Dry Fit</a>
         <a href="#" onclick="filtrarLoja('bermudas-todas'); toggleMenu()" class="menu-item">Bermudas (Todas)</a>
         <a href="#" onclick="filtrarLoja('bermudas-jogador'); toggleMenu()" class="menu-subitem">• Bermudas Jogador</a>
         <a href="#" onclick="filtrarLoja('bermudas-dryfit'); toggleMenu()" class="menu-subitem">• Bermudas Dry Fit</a>
@@ -288,7 +288,7 @@
         <div class="carousel-wrapper" id="carouselWrapper">
             <div class="carousel-slide slide-clickable" onclick="window.location.href='quem-somos.html'">
                 <img src="banner2025.jpg" alt="Banner Quem Somos">
-            </div>
+                </div>
 
             <div class="carousel-slide slide-clickable" onclick="filtrarLoja('inverno')">
                 <img src="banner-zara.jpg" alt="Banner Coleção de Inverno Zara">
@@ -349,6 +349,11 @@
             <div id="grade-grife" class="grade-produtos"></div>
         </div>
 
+        <div id="box-polo">
+            <h2 class="secao-titulo">Camisetas Polo</h2>
+            <div id="grade-polo" class="grade-produtos"></div>
+        </div>
+
         <div id="box-dryfit">
             <h2 class="secao-titulo">Linha Dry Fit</h2>
             <div id="grade-dryfit" class="grade-produtos"></div>
@@ -374,8 +379,7 @@
         <div class="footer-banner">
             <h3>Siga-nos no Instagram</h3>
             <div class="footer-instagrams">
-                <a href="https://instagram.com/vvnasciment" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@vvnasciment</span></a>
-                <a href="https://instagram.com/trindadessss" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@trindadessss</span></a>
+                <a href="https://instagram.com/vvnasciment" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@trindadessss</span></a>
                 <a href="https://instagram.com/alexaandre_silva" target="_blank" class="instagram-link"><svg class="instagram-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-154.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><span>@alexaandre_silva</span></a>
             </div>
         </div>
@@ -467,6 +471,7 @@
                 document.getElementById('box-inverno'),
                 document.getElementById('box-oversized'),
                 document.getElementById('box-grife'),
+                document.getElementById('box-polo'),
                 document.getElementById('box-dryfit'),
                 document.getElementById('box-bermudas-dryfit'),
                 document.getElementById('box-bermudas-jogador'),
@@ -484,14 +489,15 @@
                 if (categoria === 'inverno') boxes[0].classList.remove('secao-escondida');
                 if (categoria === 'oversized') boxes[1].classList.remove('secao-escondida');
                 if (categoria === 'grife') boxes[2].classList.remove('secao-escondida');
-                if (categoria === 'dryfit') boxes[3].classList.remove('secao-escondida');
+                if (categoria === 'polo') boxes[3].classList.remove('secao-escondida');
+                if (categoria === 'dryfit') boxes[4].classList.remove('secao-escondida');
                 if (categoria === 'bermudas-todas') {
-                    boxes[4].classList.remove('secao-escondida');
                     boxes[5].classList.remove('secao-escondida');
+                    boxes[6].classList.remove('secao-escondida');
                 }
-                if (categoria === 'bermudas-dryfit') boxes[4].classList.remove('secao-escondida');
-                if (categoria === 'bermudas-jogador') boxes[5].classList.remove('secao-escondida');
-                if (categoria === 'calcas-jogador') boxes[6].classList.remove('secao-escondida');
+                if (categoria === 'bermudas-dryfit') boxes[5].classList.remove('secao-escondida');
+                if (categoria === 'bermudas-jogador') boxes[6].classList.remove('secao-escondida');
+                if (categoria === 'calcas-jogador') boxes[7].classList.remove('secao-escondida');
             }
         }
 
@@ -500,6 +506,7 @@
                 'inverno': document.getElementById('grade-inverno'),
                 'oversized': document.getElementById('grade-oversized'),
                 'grife': document.getElementById('grade-grife'),
+                'polo': document.getElementById('grade-polo'),
                 'dryfit': document.getElementById('grade-dryfit'),
                 'bermudas': document.getElementById('grade-bermudas'),
                 'bermudas-jogador': document.getElementById('grade-bermudas-jogador'),
@@ -525,6 +532,7 @@
                 if (prod.categoria === 'inverno') containers['inverno'].innerHTML += html;
                 else if (prod.categoria === 'oversized') containers['oversized'].innerHTML += html;
                 else if (prod.categoria === 'grife') containers['grife'].innerHTML += html;
+                else if (prod.categoria === 'polo') containers['polo'].innerHTML += html;
                 else if (prod.categoria === 'dryfit') containers['dryfit'].innerHTML += html;
                 else if (prod.categoria === 'bermudas') containers['bermudas'].innerHTML += html;
                 else if (prod.categoria === 'bermudas-jogador') containers['bermudas-jogador'].innerHTML += html;
@@ -601,7 +609,7 @@
         function pesquisarProdutos() {
             const termo = document.getElementById('campo-pesquisa').value.toLowerCase();
             const msgErro = document.getElementById('msg-sem-resultado');
-            const idsSecoes = ['box-inverno', 'box-oversized', 'box-grife', 'box-dryfit', 'box-bermudas-dryfit', 'box-bermudas-jogador', 'box-calcas-jogador'];
+            const idsSecoes = ['box-inverno', 'box-oversized', 'box-grife', 'box-polo', 'box-dryfit', 'box-bermudas-dryfit', 'box-bermudas-jogador', 'box-calcas-jogador'];
             let encontrouGeral = false;
 
             idsSecoes.forEach(id => {
