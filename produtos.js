@@ -6,8 +6,8 @@ const produtos = [
         nome: "Jaqueta Zara - Corta Vento Tech",
         preco: "R$ 260,00",
         categoria: "inverno",
-        imgCapa: "camisaZara.jpeg",
-        imagens: ["camisaZara.jpeg", "camisaZara (2).jpeg", "camisaZara (3).jpeg"],
+        imgCapa: "foto1.jpeg", // Atualizado para a nova foto principal
+        imagens: ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg"], // As 3 fotos novas
         descricao: `
             <p><strong>Material Premium:</strong> Confeccionada em tecido tecnológico corta-vento.</p>
             <p>Ideal para dias frios. Modelagem Slim Fit.</p>
