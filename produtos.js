@@ -33,6 +33,21 @@ const produtos = [
 
     // --- CAMISETAS OVERSIZED ---
     {
+        id: "oversized-nike-orange-box",
+        nome: "Camiseta Nike Oversized - Orange Box",
+        preco: "R$ 85,00", 
+        categoria: "oversized",
+        imgCapa: "nike-oversized-orange-1.jpeg",
+        imagens: ["nike-oversized-orange-1.jpeg", "nike-oversized-orange-2.jpeg"], 
+        descricao: `
+            <p><strong>Estilo Retro-Futurista:</strong> Camiseta preta com o logo Nike aplicado em um box laranja com efeito degradê/metálico.</p>
+            <p>Malha premium encorpada, caimento quadrado (box fit) e gola reforçada.</p>
+            <p>Uma peça de destaque para o seu visual.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: [] 
+    },
+    {
         id: "palm-angels-wings",
         nome: "Camiseta Oversized Palm Angels - Wings",
         preco: "R$ 85,00",
@@ -168,7 +183,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
     },
-    // --- NOVA BALMAIN RED ---
     {
         id: "grife-balmain-02",
         nome: "Camiseta Balmain Paris - Red Edition",
