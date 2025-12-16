@@ -152,7 +152,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- CAMISETAS DE GRIFE (BALMAIN) ---
+    // --- CAMISETAS DE GRIFE ---
     {
         id: "grife-balmain-01",
         nome: "Camiseta Balmain Paris - Gold Edition",
@@ -168,8 +168,24 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
     },
+    // --- NOVA BALMAIN RED ---
+    {
+        id: "grife-balmain-02",
+        nome: "Camiseta Balmain Paris - Red Edition",
+        preco: "R$ 139,90",
+        categoria: "grife",
+        imgCapa: "balmain-red-1.jpeg",
+        imagens: ["balmain-red-1.jpeg", "balmain-red-2.jpeg"],
+        descricao: `
+            <p><strong>Contraste de Poder:</strong> Camiseta Balmain preta com estampa do logo B clássico em vermelho.</p>
+            <p>Elegância moderna com a qualidade superior do algodão egípcio.</p>
+            <p>Uma peça que impõe presença e sofisticação.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
 
-    // --- CAMISETAS POLO (NOVO - ZARA) ---
+    // --- CAMISETAS POLO ---
     {
         id: "polo-zara-ribbed-black",
         nome: "Camiseta Polo Zara - Texture Black",
