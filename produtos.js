@@ -152,7 +152,7 @@ const produtos = [
         esgotados: [] 
     },
 
-    // --- CAMISETAS DE GRIFE (NOVO) ---
+    // --- CAMISETAS DE GRIFE (BALMAIN) ---
     {
         id: "grife-balmain-01",
         nome: "Camiseta Balmain Paris - Gold Edition",
@@ -169,9 +169,24 @@ const produtos = [
         esgotados: []
     },
 
+    // --- CAMISETAS POLO (NOVO - ZARA) ---
+    {
+        id: "polo-zara-ribbed-black",
+        nome: "Camiseta Polo Zara - Texture Black",
+        preco: "R$ 139,90",
+        categoria: "polo",
+        imgCapa: "polo-zara-1.jpeg",
+        imagens: ["polo-zara-1.jpeg", "polo-zara-2.jpeg"], 
+        descricao: `
+            <p><strong>Elegância Casual:</strong> Polo Zara confeccionada em malha canelada (texturizada) de alta elasticidade.</p>
+            <p>Modelagem Slim que valoriza o corpo e gola estruturada.</p>
+            <p>Perfeita para ocasiões que pedem um visual mais arrumado sem perder o conforto.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
+
     // --- LINHA DRY FIT (TODAS A R$ 75,00) ---
-    
-    // -- NOVIDADES: LINHA NOCTA --
     {
         id: "nocta-dryfit-cores",
         nome: "Camiseta Nocta Dry Fit - Cores Variadas",
@@ -243,8 +258,6 @@ const produtos = [
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: [] 
     },
-
-    // -- MODELOS ANTERIORES (PREÇO ATUALIZADO) --
     {
         id: "nike-dryfit-cores-variadas",
         nome: "Camiseta Nike Dry Fit Outline - Cores Variadas",
