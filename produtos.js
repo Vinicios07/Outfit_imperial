@@ -152,6 +152,23 @@ const produtos = [
         esgotados: [] 
     },
 
+    // --- CAMISETAS DE GRIFE (NOVO) ---
+    {
+        id: "grife-balmain-01",
+        nome: "Camiseta Balmain Paris - Gold Edition",
+        preco: "R$ 139,90",
+        categoria: "grife",
+        imgCapa: "balmain-gold-1.jpeg",
+        imagens: ["balmain-gold-1.jpeg", "balmain-gold-2.jpeg"],
+        descricao: `
+            <p><strong>Exclusividade Outfit Imperial:</strong> Camiseta Balmain na cor preta profunda com o icônico logo B em dourado metálico.</p>
+            <p>Malha premium de algodão egípcio com toque aveludado.</p>
+            <p>Caimento perfeito que alinha conforto e status. Peça indispensável para quem exige luxo nos detalhes.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
+
     // --- LINHA DRY FIT (TODAS A R$ 75,00) ---
     
     // -- NOVIDADES: LINHA NOCTA --
