@@ -220,7 +220,7 @@ const produtos = [
     {
         id: "nocta-dryfit-cores",
         nome: "Camiseta Nocta Dry Fit - Cores Variadas",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "dryfit-nocta-cores.jpeg",
         imagens: ["dryfit-nocta-cores.jpeg"], 
@@ -235,7 +235,7 @@ const produtos = [
     {
         id: "nocta-dryfit-preta",
         nome: "Camiseta Nocta Dry Fit - Preta",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "dryfit-nocta-preta.jpeg",
         imagens: ["dryfit-nocta-preta.jpeg"], 
@@ -249,7 +249,7 @@ const produtos = [
     {
         id: "nocta-dryfit-branca",
         nome: "Camiseta Nocta Dry Fit - Branca",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "dryfit-nocta-branca.jpeg",
         imagens: ["dryfit-nocta-branca.jpeg"], 
@@ -263,7 +263,7 @@ const produtos = [
     {
         id: "nocta-dryfit-vermelha",
         nome: "Camiseta Nocta Dry Fit - Vermelha",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "dryfit-nocta-vermelha.jpeg",
         imagens: ["dryfit-nocta-vermelha.jpeg"], 
@@ -277,7 +277,7 @@ const produtos = [
     {
         id: "nocta-dryfit-azul",
         nome: "Camiseta Nocta Dry Fit - Azul Bebê",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "dryfit-nocta-azul.jpeg",
         imagens: ["dryfit-nocta-azul.jpeg"], 
@@ -291,7 +291,7 @@ const produtos = [
     {
         id: "nike-dryfit-cores-variadas",
         nome: "Camiseta Nike Dry Fit Outline - Cores Variadas",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-cores.jpeg",
         imagens: ["nike-dryfit-cores.jpeg"], 
@@ -306,7 +306,7 @@ const produtos = [
     {
         id: "nike-dryfit-swoosh-cores",
         nome: "Camiseta Nike Dry Fit Swoosh - Cores",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-cores-swoosh.jpeg",
         imagens: ["nike-dryfit-cores-swoosh.jpeg"], 
@@ -320,7 +320,7 @@ const produtos = [
     {
         id: "nike-dryfit-costura-branca",
         nome: "Camiseta Nike Dry Fit - Preta Outline",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-costura-branca.jpeg",
         imagens: ["nike-dryfit-costura-branca.jpeg"], 
@@ -334,7 +334,7 @@ const produtos = [
     {
         id: "nike-dryfit-branca-swoosh",
         nome: "Camiseta Nike Dry Fit - Branca Big Swoosh",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-branca-swoosh.jpeg",
         imagens: ["nike-dryfit-branca-swoosh.jpeg"], 
@@ -348,7 +348,7 @@ const produtos = [
     {
         id: "dryfit-swoosh-vermelha",
         nome: "Camiseta Nike Dry Fit Classic - Vermelha",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "dryfit-swoosh-vermelha.jpeg",
         imagens: ["dryfit-swoosh-vermelha.jpeg"], 
@@ -362,7 +362,7 @@ const produtos = [
     {
         id: "dryfit-swoosh-cinza",
         nome: "Camiseta Nike Dry Fit Classic - Cinza",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "dryfit-swoosh-cinza.jpeg",
         imagens: ["dryfit-swoosh-cinza.jpeg"], 
@@ -376,7 +376,7 @@ const produtos = [
     {
         id: "dryfit-swoosh-preta",
         nome: "Camiseta Nike Dry Fit Classic - Preta",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "dryfit-swoosh-preta.jpeg",
         imagens: ["dryfit-swoosh-preta.jpeg"], 
@@ -390,7 +390,7 @@ const produtos = [
     {
         id: "dryfit-swoosh-branca",
         nome: "Camiseta Nike Dry Fit Classic - Branca",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "dryfit-swoosh-branca.jpeg",
         imagens: ["dryfit-swoosh-branca.jpeg"], 
@@ -404,7 +404,7 @@ const produtos = [
     {
         id: "nike-dryfit-azul-antiga",
         nome: "Camiseta Nike Dry Fit Performance - Azul Royal",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "camiseta-nike-dryfit-azul-rei.jpeg",
         imagens: ["camiseta-nike-dryfit-azul-rei.jpeg"], 
@@ -418,7 +418,7 @@ const produtos = [
     {
         id: "nike-dryfit-outline-preta-classica",
         nome: "Camiseta Nike Dry Fit Outline - Preta Clássica",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-preta1.jpeg",
         imagens: ["nike-dryfit-preta1.jpeg", "nike-dryfit-preta2.jpeg", "nike-dryfit-preta3.jpeg"], 
@@ -432,7 +432,7 @@ const produtos = [
     {
         id: "nike-dryfit-outline-branca",
         nome: "Camiseta Nike Dry Fit Outline - Branca",
-        preco: "R$ 75,00", 
+        preco: "R$ 80,00", 
         categoria: "dryfit",
         imgCapa: "nike-dryfit-branca1.jpeg",
         imagens: ["nike-dryfit-branca1.jpeg", "nike-dryfit-branca2.jpeg", "nike-dryfit-branca3.jpeg", "nike-dryfit-branca4.jpeg", "nike-dryfit-branca5.jpeg"], 
@@ -494,7 +494,7 @@ const produtos = [
     {
         id: "bermuda-jeans-jogador",
         nome: "Bermuda Jeans Jogador - Azul Distressed",
-        preco: "R$ 80,00", 
+        preco: "R$ 130,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jeans-jogador.jpeg",
         imagens: ["bermuda-jeans-jogador.jpeg"], 
@@ -509,7 +509,7 @@ const produtos = [
     {
         id: "bermuda-jogador-preta",
         nome: "Bermuda Jogador Premium - Preta (Corda Vermelha)",
-        preco: "R$ 80,0", 
+        preco: "R$ 130,0", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-preta.jpeg",
         imagens: ["bermuda-jogador-preta.jpeg"], 
@@ -524,7 +524,7 @@ const produtos = [
     {
         id: "bermuda-jogador-cinza",
         nome: "Bermuda Jogador Jeans - Lavagem Cinza",
-        preco: "R$ 80,00", 
+        preco: "R$ 130,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-cinza.jpeg",
         imagens: ["bermuda-jogador-cinza.jpeg"], 
@@ -539,7 +539,7 @@ const produtos = [
     {
         id: "bermuda-jogador-branca",
         nome: "Bermuda Jogador Jeans - Lavagem Branca",
-        preco: "R$ 80,00", 
+        preco: "R$ 130,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-branca.jpeg",
         imagens: ["bermuda-jogador-branca.jpeg"], 
@@ -554,7 +554,7 @@ const produtos = [
     {
         id: "bermuda-jogador-branca-acinzentada",
         nome: "Bermuda Jogador - Branca Acinzentada",
-        preco: "R$ 80,00", 
+        preco: "R$ 130,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-branca-acinzentada.jpeg",
         imagens: ["bermuda-jogador-branca-acinzentada.jpeg"], 
@@ -569,7 +569,7 @@ const produtos = [
     {
         id: "bermuda-jogador-degrade-amarelo",
         nome: "Bermuda Jogador - Degradê Cordão Amarelo",
-        preco: "R$ 80,00", 
+        preco: "R$ 130,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-degrade-amarelo.jpeg", 
         imagens: ["bermuda-jogador-degrade-amarelo.jpeg"], 
@@ -584,7 +584,7 @@ const produtos = [
     {
         id: "bermuda-jogador-botoes-azuis",
         nome: "Bermuda Jogador Jeans - Botões Azuis",
-        preco: "R$ 80,00", 
+        preco: "R$ 130,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-botoes-azuis.jpeg", 
         imagens: ["bermuda-jogador-botoes-azuis.jpeg"], 
@@ -598,7 +598,7 @@ const produtos = [
     {
         id: "bermuda-jogador-corda-azul",
         nome: "Bermuda Jogador Premium - Corda Azul",
-        preco: "R$ 80,00", 
+        preco: "R$ 130,00", 
         categoria: "bermudas-jogador",
         imgCapa: "bermuda-jogador-corda-azul.jpeg",
         imagens: ["bermuda-jogador-corda-azul.jpeg"], 
@@ -612,7 +612,7 @@ const produtos = [
     {
         id: "bermuda-nike-jogador-preta",
         nome: "Bermuda Nike Jogador - Preta",
-        preco: "R$ 80,00", 
+        preco: "R$ 130,00", 
         categoria: "bermudas-jogador", 
         imgCapa: "bermuda-nike-jogador.jpeg",
         imagens: ["bermuda-nike-jogador.jpeg"], 
