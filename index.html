@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outfit Imperial - Loja</title>
+    <title>Outfit Imperial - Loja Premium</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* --- RESET E GERAL --- */
         * { box-sizing: border-box; }
         
         body { 
-            font-family: 'Inter', sans-serif; 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
             margin: 0; 
             padding: 0; 
-            background-color: #e6e6e6; 
-            background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); 
-            color: #111; 
+            background-color: #fff; /* Fundo limpo padrão Apple */
+            color: #1d1d1f; 
             overflow-x: hidden; 
             display: flex; 
             flex-direction: column; 
@@ -26,44 +25,40 @@
         
         img { max-width: 100%; height: auto; display: block; }
 
-        /* --- CABEÇALHO --- */
+        /* --- CABEÇALHO DA MARCA --- */
         header { 
             background-color: #000; 
-            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-            padding: 20px; 
+            padding: 15px 20px; 
             text-align: center; 
-            border-bottom: 4px solid #d4af37;
+            border-bottom: 2px solid #d4af37;
             position: relative;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         header h1 {
-            font-family: 'Cinzel', serif; color: #d4af37; font-size: 38px; font-weight: 700; margin: 0 0 5px 0;
-            text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-family: 'Cinzel', serif; color: #d4af37; font-size: 32px; font-weight: 700; margin: 0 0 5px 0;
+            text-transform: uppercase; letter-spacing: 2px;
         }
-        header p { color: #ccc; font-size: 12px; margin: 0 0 20px 0; letter-spacing: 4px; text-transform: uppercase; font-weight: 300; }
+        header p { color: #ccc; font-size: 11px; margin: 0 0 15px 0; letter-spacing: 4px; text-transform: uppercase; font-weight: 400; }
         
-        .instagram-header { display: flex; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
-        .instagram-link { display: flex; align-items: center; gap: 6px; color: #d4af37; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.3s; margin: 0 5px; }
+        .instagram-header { display: flex; justify-content: center; margin-bottom: 15px; flex-wrap: wrap; }
+        .instagram-link { display: flex; align-items: center; gap: 6px; color: #d4af37; font-size: 12px; font-weight: 600; text-decoration: none; transition: color 0.3s; margin: 0 5px; }
         .instagram-link:hover { color: #fff; }
-        .instagram-icon-svg { width: 16px; height: 16px; fill: currentColor; }
+        .instagram-icon-svg { width: 14px; height: 14px; fill: currentColor; }
 
         .search-box { margin: 0 auto; max-width: 500px; width: 100%; position: relative; display: flex; }
-        .search-input { width: 100%; padding: 12px 45px 12px 20px; border-radius: 50px; border: 1px solid #333; background: #1a1a1a; color: white; font-size: 14px; outline: none; }
+        .search-input { width: 100%; padding: 10px 45px 10px 20px; border-radius: 50px; border: 1px solid #333; background: #1a1a1a; color: white; font-size: 14px; outline: none; }
         .search-input:focus { border-color: #d4af37; background: #000; }
         .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #d4af37; font-size: 16px; pointer-events: none; }
 
         /* --- MENU LATERAL --- */
-        .menu-btn { position: absolute; top: 30px; left: 20px; z-index: 1100; background: none; border: none; cursor: pointer; padding: 0; width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+        .menu-btn { position: absolute; top: 25px; left: 20px; z-index: 1100; background: none; border: none; cursor: pointer; padding: 0; width: 25px; height: 18px; display: flex; flex-direction: column; justify-content: space-between; }
         .menu-btn span { display: block; width: 100%; height: 2px; background-color: #d4af37; transition: all 0.3s ease; }
-        .menu-btn:hover span:nth-child(1) { transform: translateY(-1px); }
-        .menu-btn:hover span:nth-child(3) { transform: translateY(1px); }
-
+        
         .sidebar { height: 100%; width: 300px; position: fixed; z-index: 1200; top: 0; left: -320px; background-color: #0f0f0f; overflow-x: hidden; transition: 0.4s; box-shadow: 4px 0 20px rgba(0,0,0,0.8); display: flex; flex-direction: column; border-right: 1px solid #222; }
         .sidebar-header { background: #000; color: #d4af37; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Cinzel', serif; border-bottom: 1px solid #333; letter-spacing: 2px; }
         .sidebar .closebtn { background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; transition: 0.3s; }
-        .sidebar .closebtn:hover { color: #d4af37; transform: rotate(90deg); }
+        .sidebar .closebtn:hover { color: #d4af37; }
         .menu-group-title { padding: 20px 20px 10px; font-size: 11px; font-weight: 700; color: #d4af37; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; }
         .menu-item { padding: 16px 20px; text-decoration: none; font-size: 14px; color: #eee; border-bottom: 1px solid #1a1a1a; display: block; font-weight: 400; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
         .menu-item:hover { background-color: #1a1a1a; color: #fff; padding-left: 30px; border-left: 3px solid #d4af37; }
@@ -71,189 +66,139 @@
         .menu-subitem:hover { color: #d4af37; background: #111; }
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 1150; cursor: pointer; backdrop-filter: blur(3px); }
 
-        /* --- CARROSSEL --- */
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            height: 550px; 
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            background-color: #000;
-        }
-
-        .carousel-wrapper {
-            display: flex;
-            transition: transform 0.6s ease-in-out;
-            width: 100%;
-            height: 100%;
-        }
+        /* =========================================
+           ESTILO APPLE - DESTAQUES (BENTO BOX)
+           ========================================= */
+        .apple-destaques { display: flex; flex-direction: column; gap: 15px; padding: 15px; max-width: 1400px; margin: 0 auto; width: 100%; }
         
-        .carousel-slide {
-            min-width: 100%;
-            position: relative;
-            height: 100%;
-        }
+        .apple-banner-hero { width: 100%; height: 600px; background-color: #f5f5f7; border-radius: 20px; display: flex; flex-direction: column; align-items: center; padding-top: 55px; position: relative; overflow: hidden; text-align: center; cursor: pointer; transition: transform 0.3s ease; }
+        .apple-banner-hero:hover, .apple-card:hover { transform: scale(0.995); }
         
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            object-position: top center; 
-            display: block;
-        }
+        .apple-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+        .apple-card { height: 500px; background-color: #f5f5f7; border-radius: 20px; display: flex; flex-direction: column; align-items: center; padding-top: 45px; position: relative; overflow: hidden; text-align: center; cursor: pointer; transition: transform 0.3s ease; }
+        
+        /* Variantes de Fundo */
+        .bg-dark { background-color: #000; color: #f5f5f7; }
+        .bg-gray { background-color: #fafafa; }
 
-        .slide-clickable { cursor: pointer; }
+        /* Tipografia Apple */
+        .apple-titulo { font-size: 48px; font-weight: 600; margin: 0; letter-spacing: -0.02em; line-height: 1.1; color: inherit; }
+        .apple-sub { font-size: 24px; font-weight: 400; margin: 8px 0 18px; letter-spacing: 0.01em; color: #1d1d1f; }
+        .bg-dark .apple-sub { color: #86868b; }
+        
+        /* Botões Estilo Apple */
+        .apple-botoes { display: flex; gap: 15px; z-index: 10; margin-bottom: 20px; }
+        .btn-apple-azul { background: #0071e3; color: white; padding: 10px 22px; border-radius: 30px; text-decoration: none; font-size: 15px; font-weight: 500; transition: 0.3s; }
+        .btn-apple-azul:hover { background: #0077ed; }
+        .btn-apple-vazado { border: 1px solid #0071e3; color: #0071e3; padding: 10px 22px; border-radius: 30px; text-decoration: none; font-size: 15px; font-weight: 500; transition: 0.3s; }
+        .btn-apple-vazado:hover { background: #0071e3; color: white; }
 
-        /* Setas de Navegação */
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.2); 
-            color: #fff;
-            border: none;
-            font-size: 24px;
-            padding: 20px 15px;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s;
-        }
-        .carousel-btn:hover { background-color: rgba(0, 0, 0, 0.8); color: #d4af37; }
-        .prev-btn { left: 0; }
-        .next-btn { right: 0; }
+        /* Imagens dos banners */
+        .apple-img { position: absolute; bottom: 0; max-width: 90%; max-height: 65%; object-fit: contain; transition: transform 0.5s ease; }
+        .apple-card:hover .apple-img, .apple-banner-hero:hover .apple-img { transform: scale(1.03); }
 
-        /* TEXTO INFERIOR */
-        .banner-texto {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            color: #fff;
-            font-size: 28px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.9);
-            padding: 10px;
-            pointer-events: none; 
-        }
+        /* --- VITRINE DE PRODUTOS --- */
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px 20px 60px; min-height: 500px; flex: 1; width: 100%; }
+        .secao-titulo { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 600; color: #1d1d1f; margin: 50px 0 25px; padding-bottom: 10px; border-bottom: 1px solid #d2d2d7; letter-spacing: -0.5px; }
+        .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; margin-bottom: 40px; }
 
-        /* TAG SUPERIOR DIREITA */
-        .banner-tag {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            color: #fff;
-            font-family: 'Cinzel', serif;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-            border: 1px solid rgba(255,255,255,0.5);
-            padding: 8px 15px;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(2px);
-            z-index: 5;
-            pointer-events: none;
-        }
-
-        /* --- VITRINE --- */
-        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px 60px; min-height: 800px; flex: 1; width: 100%; }
-        .secao-titulo { font-family: 'Cinzel', serif; font-size: 24px; color: #000; margin: 40px 0 30px; padding-bottom: 8px; border-bottom: 3px solid #d4af37; display: inline-block; text-transform: uppercase; text-shadow: 1px 1px 0px rgba(255,255,255,0.5); }
-        .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; width: 100%; margin-bottom: 60px; }
-
-        .produto { background: #fff; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .produto:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .capa-produto { background-color: #f4f4f4; height: 320px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .capa-produto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .produto:hover .capa-produto img { transform: scale(1.08); }
-        .ver-detalhes-hover { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.8); color: #fff; padding: 10px 0; text-align: center; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
-        .produto:hover .ver-detalhes-hover { opacity: 1; }
-        .info-produto { padding: 15px; text-align: left; }
-        .produto h3 { color: #222; margin: 0 0 8px; font-size: 15px; font-weight: 600; line-height: 1.4; text-transform: capitalize; }
-        .produto .preco { font-size: 18px; color: #000; font-weight: 700; margin: 0; }
+        .produto { background: #fff; border-radius: 18px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid #f5f5f7; }
+        .produto:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.08); transform: translateY(-3px); }
+        .capa-produto { background-color: #f5f5f7; height: 320px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .capa-produto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .produto:hover .capa-produto img { transform: scale(1.05); }
+        .info-produto { padding: 18px; text-align: center; }
+        .produto h3 { color: #1d1d1f; margin: 0 0 6px; font-size: 15px; font-weight: 600; line-height: 1.3; }
+        .produto .preco { font-size: 17px; color: #1d1d1f; font-weight: 500; margin: 0; }
 
         /* --- RODAPÉ --- */
-        footer { background-color: #000; color: #fff; margin-top: auto; border-top: 4px solid #d4af37; width: 100%; }
-        .footer-banner { padding: 40px 20px; text-align: center; background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); }
-        .footer-banner h3 { font-family: 'Cinzel', serif; color: #d4af37; margin: 0 0 25px 0; font-size: 22px; text-transform: uppercase; letter-spacing: 2px; }
-        .footer-instagrams { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        .copyright { background-color: #111; padding: 15px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #222; }
+        footer { background-color: #f5f5f7; color: #1d1d1f; border-top: 1px solid #d2d2d7; padding: 40px 20px 20px; text-align: center; }
+        .footer-banner h3 { font-size: 20px; font-weight: 600; margin: 0 0 20px 0; color: #1d1d1f; letter-spacing: -0.5px; }
+        .footer-instagrams { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 30px; }
+        .footer-instagrams .instagram-link { color: #515154; font-size: 14px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+        .footer-instagrams .instagram-link:hover { color: #000; }
+        .copyright { font-size: 12px; color: #86868b; border-top: 1px solid #d2d2d7; padding-top: 20px; }
 
         /* --- MODAL --- */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
         .modal-overlay.aberto { display: flex; }
-        .modal-content { background: white; width: 100%; max-width: 1000px; height: 90vh; max-height: 800px; border-radius: 6px; display: flex; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .btn-fechar { position: absolute; top: 15px; right: 20px; font-size: 36px; cursor: pointer; color: #000; z-index: 10; line-height: 1; }
-        .modal-galeria-container { flex: 1.4; background: #f9f9f9; padding: 20px; display: flex; flex-direction: column; gap: 15px; justify-content: center; align-items: center; }
+        .modal-content { background: white; width: 100%; max-width: 1000px; height: 85vh; max-height: 800px; border-radius: 20px; display: flex; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+        .btn-fechar { position: absolute; top: 15px; right: 20px; font-size: 32px; cursor: pointer; color: #1d1d1f; z-index: 10; font-weight: 300; }
+        .modal-galeria-container { flex: 1.2; background: #f5f5f7; padding: 20px; display: flex; flex-direction: column; gap: 15px; justify-content: center; align-items: center; }
         .modal-foto-principal { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
         .modal-foto-principal img { max-width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: multiply; }
         .modal-thumbnails { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-        .thumb-img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; opacity: 0.7; }
-        .thumb-img:hover, .thumb-img.ativo { opacity: 1; border-color: #000; }
+        .thumb-img { width: 50px; height: 50px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: 0.2s; }
+        .thumb-img:hover, .thumb-img.ativo { opacity: 1; border-color: #0071e3; }
         .modal-info { flex: 1; padding: 40px; display: flex; flex-direction: column; overflow-y: auto; background: #fff; }
-        .modal-info h2 { font-family: 'Inter', sans-serif; font-size: 26px; margin: 0 0 10px; color: #000; font-weight: 700; line-height: 1.2; }
-        .modal-preco { font-size: 24px; font-weight: 700; color: #111; margin-bottom: 25px; }
-        .area-tamanhos { margin-bottom: 20px; }
-        .titulo-opcao { display: block; font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #555; }
+        .modal-info h2 { font-size: 28px; margin: 0 0 10px; color: #1d1d1f; font-weight: 600; line-height: 1.2; letter-spacing: -0.5px; }
+        .modal-preco { font-size: 22px; font-weight: 500; color: #1d1d1f; margin-bottom: 25px; }
+        .area-tamanhos { margin-bottom: 25px; }
+        .titulo-opcao { display: block; font-size: 13px; font-weight: 600; margin-bottom: 10px; color: #1d1d1f; text-transform: uppercase; }
         .grade-tamanhos { display: flex; gap: 10px; flex-wrap: wrap; }
-        .tamanho-btn { width: 45px; height: 45px; border: 1px solid #ddd; background: #fff; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; color: #333; }
-        .tamanho-btn:hover { border-color: #000; color: #000; background: #f0f0f0; }
-        .tamanho-btn.esgotado { background: #f5f5f5; color: #ccc; border-color: #eee; cursor: not-allowed; text-decoration: line-through; }
-        .modal-descricao { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+        .tamanho-btn { width: 45px; height: 45px; border: 1px solid #d2d2d7; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; color: #1d1d1f; }
+        .tamanho-btn:hover { border-color: #1d1d1f; }
+        .tamanho-btn.esgotado { background: #f5f5f7; color: #a1a1a6; border-color: #e5e5ea; cursor: not-allowed; position: relative; overflow: hidden; }
+        .tamanho-btn.esgotado::after { content: ''; position: absolute; width: 100%; height: 1px; background: #a1a1a6; transform: rotate(45deg); }
+        .modal-descricao { font-size: 15px; color: #515154; line-height: 1.5; margin-bottom: 30px; border-top: 1px solid #d2d2d7; padding-top: 20px; }
         .modal-botoes { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
-        .botao-modal { display: block; background: #000; color: white; text-align: center; padding: 16px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; font-size: 16px; }
-        .botao-modal:hover { background: #333; }
-        .botao-modal.vendedor2 { background: #fff; color: #000; border: 2px solid #eee; }
-        .botao-modal.vendedor2:hover { border-color: #000; }
-        .secao-relacionados { margin-top: auto; border-top: 2px solid #f0f0f0; padding-top: 25px; }
-        .titulo-relacionados { font-size: 14px; font-weight: 700; color: #000; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
-        .grade-relacionados { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .card-relacionado { cursor: pointer; transition: transform 0.2s; }
-        .card-relacionado:hover { transform: translateY(-3px); }
-        .card-relacionado img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; margin-bottom: 5px; border: 1px solid #eee; background: #fff; }
-        .card-relacionado h4 { font-size: 12px; margin: 0 0 3px; color: #333; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .card-relacionado p { font-size: 12px; color: #000; font-weight: 700; margin: 0; }
+        .botao-modal { display: block; background: #0071e3; color: white; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none; font-weight: 500; transition: background 0.3s; font-size: 16px; }
+        .botao-modal:hover { background: #0077ed; }
+        .botao-modal.vendedor2 { background: #f5f5f7; color: #1d1d1f; border: none; }
+        .botao-modal.vendedor2:hover { background: #e5e5ea; }
         .secao-escondida { display: none !important; }
-        #msg-sem-resultado { text-align: center; margin-top: 50px; color: #777; display: none; font-style: italic; }
+        #msg-sem-resultado { text-align: center; margin-top: 50px; color: #86868b; display: none; font-size: 17px; }
 
-        /* Responsividade Tablet e Laptops pequenos */
+        /* =========================================
+           RESPONSIVIDADE (TABLETS E PCS PEQUENOS)
+           ========================================= */
         @media (max-width: 850px) {
-            .carousel-container { height: 450px; }
-            .carousel-slide img { object-position: center top; }
-            header h1 { font-size: 30px; }
+            .apple-titulo { font-size: 40px; }
+            .apple-sub { font-size: 20px; }
+            .apple-banner-hero { height: 500px; padding-top: 40px; }
+            .apple-card { height: 450px; }
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-            .capa-produto { height: 240px; }
-            .modal-content { flex-direction: column; height: 90vh; max-height: 90vh; }
-            .modal-galeria-container { padding: 15px; flex: none; height: 40%; }
+            .modal-content { flex-direction: column; height: 95vh; max-height: 95vh; }
+            .modal-galeria-container { padding: 15px; flex: none; height: 45%; }
             .modal-foto-principal img { max-height: 100%; }
             .modal-info { padding: 20px; flex: 1; overflow-y: auto; }
-            .grade-relacionados { gap: 10px; }
-            .card-relacionado img { height: 80px; }
-            .footer-instagrams { flex-direction: column; align-items: center; gap: 15px; }
-            .banner-texto { font-size: 18px; bottom: 30px; width: 90%; padding: 0; text-shadow: 0 2px 5px rgba(0,0,0,1); }
-            .banner-tag { top: 20px; right: 20px; font-size: 11px; padding: 5px 10px; }
         }
 
-        /* Otimização Exclusiva para Celulares Grandes (6.9" e 7.0") */
+        /* =========================================
+           OTIMIZAÇÃO EXCLUSIVA PARA CELULARES GRANDES (6.9" / 7.0")
+           Isso garante que caiba perfeitamente na tela sem quebrar o desktop
+           ========================================= */
         @media (max-width: 480px) {
-            .carousel-container { height: 380px; } /* Ajuste fino de altura para não precisar rolar demais */
             header h1 { font-size: 26px; }
-            .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .capa-produto { height: 200px; } /* Ajuste de proporção das fotos na grade 2x2 */
-            .produto h3 { font-size: 13px; }
-            .produto .preco { font-size: 16px; }
-            .banner-texto { font-size: 15px; bottom: 20px; letter-spacing: 2px; }
-            .banner-tag { top: 15px; right: 15px; font-size: 10px; }
-            .modal-info h2 { font-size: 22px; }
-            .modal-preco { font-size: 20px; }
+            
+            /* Ajuste do Bento Box para mobile */
+            .apple-grid { grid-template-columns: 1fr; gap: 10px; }
+            .apple-destaques { padding: 10px; gap: 10px; }
+            .apple-banner-hero { height: 480px; border-radius: 15px; padding-top: 35px; }
+            .apple-card { height: 420px; border-radius: 15px; padding-top: 30px; }
+            
+            .apple-titulo { font-size: 32px; }
+            .apple-sub { font-size: 17px; margin-bottom: 12px; }
+            .apple-img { max-height: 60%; max-width: 85%; }
+            .btn-apple-azul, .btn-apple-vazado { padding: 8px 18px; font-size: 14px; }
+
+            /* Ajuste da Vitrine */
+            .container { padding: 15px 15px 40px; }
+            .secao-titulo { font-size: 22px; margin: 30px 0 15px; }
+            .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+            .capa-produto { height: 190px; border-radius: 12px 12px 0 0; }
+            .produto { border-radius: 12px; }
+            .info-produto { padding: 12px 8px; }
+            .produto h3 { font-size: 12px; }
+            .produto .preco { font-size: 14px; }
+
+            /* Ajuste do Modal no Mobile Grande */
+            .modal-content { border-radius: 15px; }
+            .btn-fechar { top: 10px; right: 15px; font-size: 28px; }
+            .modal-info h2 { font-size: 20px; }
+            .modal-preco { font-size: 18px; margin-bottom: 15px; }
+            .tamanho-btn { width: 38px; height: 38px; font-size: 12px; }
             .botao-modal { padding: 14px; font-size: 15px; }
-            .tamanho-btn { width: 40px; height: 40px; font-size: 13px; }
-            .container { padding: 20px 15px 40px; }
         }
     </style>
 </head>
@@ -276,8 +221,6 @@
         <a href="#" onclick="filtrarLoja('polo-zara'); toggleMenu()" class="menu-item">Polos Zara</a>
         <a href="#" onclick="filtrarLoja('dryfit'); toggleMenu()" class="menu-item">Linha Dry Fit</a>
         <a href="#" onclick="filtrarLoja('bermudas-todas'); toggleMenu()" class="menu-item">Bermudas (Todas)</a>
-        <a href="#" onclick="filtrarLoja('bermudas-jogador'); toggleMenu()" class="menu-subitem">• Bermudas Jogador</a>
-        <a href="#" onclick="filtrarLoja('bermudas-dryfit'); toggleMenu()" class="menu-subitem">• Bermudas Dry Fit</a>
         <a href="#" onclick="filtrarLoja('calcas-jogador'); toggleMenu()" class="menu-item">Calças Jogador</a>
 
         <div class="menu-group-title">Institucional</div>
@@ -297,52 +240,85 @@
         </div>
         
         <div class="search-box">
-            <input type="text" id="campo-pesquisa" class="search-input" placeholder="Busque por modelo, cor..." onkeyup="pesquisarProdutos()">
+            <input type="text" id="campo-pesquisa" class="search-input" placeholder="Busque por produtos..." onkeyup="pesquisarProdutos()">
             <span class="search-icon">🔍</span>
         </div>
     </header>
 
-    <div class="carousel-container" id="banner-home">
-        <div class="carousel-wrapper" id="carouselWrapper">
-            <div class="carousel-slide slide-clickable" onclick="window.location.href='quem-somos.html'">
-                <img src="banner2025.jpg" alt="Banner Quem Somos">
+    <div class="apple-destaques" id="secao-destaques">
+        
+        <div class="apple-banner-hero" onclick="irParaCategoria('inverno')">
+            <h2 class="apple-titulo">Jaqueta Zara</h2>
+            <p class="apple-sub">Efeito Couro. A revolução do seu estilo.</p>
+            <div class="apple-botoes">
+                <a href="#" class="btn-apple-azul" onclick="event.preventDefault(); irParaCategoria('inverno')">Saiba mais</a>
+                <a href="#" class="btn-apple-vazado" onclick="event.preventDefault(); irParaCategoria('inverno')">Comprar</a>
             </div>
-            <div class="carousel-slide slide-clickable" onclick="filtrarLoja('inverno')">
-                <img src="banner-zara.jpg" alt="Banner Coleção de Inverno Zara">
-                <div class="banner-tag">COLEÇÃO DE INVERNO</div>
-                <div class="banner-texto">ELEGÂNCIA E CONFORTO PARA OS DIAS FRIOS</div>
+            <img src="jaqueta-bomber.jpeg" alt="Jaqueta Zara Couro" class="apple-img">
+        </div>
+
+        <div class="apple-grid">
+            <div class="apple-card" onclick="irParaCategoria('polo-lacoste')">
+                <h2 class="apple-titulo">Lacoste</h2>
+                <p class="apple-sub">O clássico imbatível.</p>
+                <div class="apple-botoes">
+                    <a href="#" class="btn-apple-azul" onclick="event.preventDefault(); irParaCategoria('polo-lacoste')">Comprar</a>
+                </div>
+                <img src="pololala.jpg" alt="Polo Lacoste" class="apple-img">
             </div>
-            <div class="carousel-slide slide-clickable" onclick="filtrarLoja('oversized')">
-                <img src="novo-banner.jpg" alt="Banner Oversized">
-                <div class="banner-tag">CAMISAS OVERSIZED</div>
-                <div class="banner-texto">AS MELHORES OVERSIZEDS DO MERCADO</div>
-            </div>
-            <div class="carousel-slide slide-clickable" onclick="filtrarLoja('dryfit')">
-                <img src="dryfit-novo.jpg" alt="Banner Dry Fit">
-                <div class="banner-tag">LINHA DRY FIT</div>
-                <div class="banner-texto">PERFORMANCE E ESTILO NO SEU TREINO</div>
-            </div>
-            <div class="carousel-slide slide-clickable" onclick="filtrarLoja('bermudas-jogador')">
-                <img src="banner-bermuda-jogador.jpg" alt="Banner Bermudas Jogador">
-                <div class="banner-tag">BERMUDAS JOGADOR</div>
-                <div class="banner-texto">ESTILO JOGADOR: CONFORTO E ATITUDE</div>
-            </div>
-            <div class="carousel-slide slide-clickable" onclick="filtrarLoja('calcas-jogador')">
-                <img src="banner-calca-jogador.jpg" alt="Banner Calças Jogador">
-                <div class="banner-tag">CALÇAS JOGADOR</div>
-                <div class="banner-texto">JEANS PREMIUM: O DETALHE QUE FAZ A DIFERENÇA</div>
-            </div>
-            <div class="carousel-slide slide-clickable" onclick="filtrarLoja('todos')">
-                <img src="banner-mc-kevin.jpg" alt="Banner MC Kevin">
-                <div class="banner-tag">LIFESTYLE</div>
-                <div class="banner-texto">OUTFIT IMPERIAL, A VERDADEIRA MODA É AQUI</div>
+
+            <div class="apple-card bg-dark" onclick="irParaCategoria('oversized')">
+                <h2 class="apple-titulo">Oversized</h2>
+                <p class="apple-sub">Conforto em outra proporção.</p>
+                <div class="apple-botoes">
+                    <a href="#" class="btn-apple-vazado" style="border-color: #fff; color: #fff;" onclick="event.preventDefault(); irParaCategoria('oversized')">Comprar</a>
+                </div>
+                <img src="nike-oversized-orange-1.jpeg" alt="Oversized Nike" class="apple-img">
             </div>
         </div>
-        <button class="carousel-btn prev-btn" onclick="mudarSlide(-1)">&#10094;</button>
-        <button class="carousel-btn next-btn" onclick="mudarSlide(1)">&#10095;</button>
+
+        <div class="apple-grid">
+            <div class="apple-card bg-dark" onclick="irParaCategoria('grife')">
+                <h2 class="apple-titulo">Grife</h2>
+                <p class="apple-sub">Poder e Sofisticação.</p>
+                <div class="apple-botoes">
+                    <a href="#" class="btn-apple-azul" onclick="event.preventDefault(); irParaCategoria('grife')">Ver modelos</a>
+                </div>
+                <img src="balmain-gold-1.jpeg" alt="Camiseta Balmain" class="apple-img">
+            </div>
+
+            <div class="apple-card" onclick="irParaCategoria('bermudas-jogador')">
+                <h2 class="apple-titulo" style="font-size: 38px;">Estilo Jogador</h2>
+                <p class="apple-sub">Jeans premium com atitude.</p>
+                <div class="apple-botoes">
+                    <a href="#" class="btn-apple-azul" onclick="event.preventDefault(); irParaCategoria('bermudas-jogador')">Comprar</a>
+                </div>
+                <img src="bermuda-jeans-jogador.jpeg" alt="Bermuda Jogador" class="apple-img">
+            </div>
+        </div>
+
+        <div class="apple-grid">
+            <div class="apple-card" onclick="irParaCategoria('dryfit')">
+                <h2 class="apple-titulo">Dry Fit</h2>
+                <p class="apple-sub">Performance Máxima.</p>
+                <div class="apple-botoes">
+                    <a href="#" class="btn-apple-azul" onclick="event.preventDefault(); irParaCategoria('dryfit')">Linha Nocta</a>
+                </div>
+                <img src="dryfit-nocta-preta.jpeg" alt="Dry Fit Nocta" class="apple-img">
+            </div>
+
+            <div class="apple-card bg-dark" onclick="irParaCategoria('calcas-jogador')">
+                <h2 class="apple-titulo">Calças</h2>
+                <p class="apple-sub">O detalhe que faz a diferença.</p>
+                <div class="apple-botoes">
+                    <a href="#" class="btn-apple-vazado" style="border-color: #fff; color: #fff;" onclick="event.preventDefault(); irParaCategoria('calcas-jogador')">Ver todas</a>
+                </div>
+                <img src="calca-jogador-branca.jpeg" alt="Calça Jogador" class="apple-img">
+            </div>
+        </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="vitrine-container">
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
 
         <div id="box-inverno">
@@ -439,33 +415,14 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             carregarProdutosNaTela();
-            iniciarCarrossel(); 
         });
 
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const wrapper = document.getElementById('carouselWrapper');
-        const totalSlides = slides.length;
-        let autoSlideInterval;
-
-        function mostrarSlide(index) {
-            if (index >= totalSlides) slideIndex = 0;
-            else if (index < 0) slideIndex = totalSlides - 1;
-            else slideIndex = index;
-            const offset = -slideIndex * 100; 
-            wrapper.style.transform = `translateX(${offset}%)`;
-        }
-
-        function mudarSlide(direcao) {
-            clearInterval(autoSlideInterval); 
-            mostrarSlide(slideIndex + direcao);
-            iniciarCarrossel(); 
-        }
-
-        function iniciarCarrossel() {
-            autoSlideInterval = setInterval(() => {
-                mostrarSlide(slideIndex + 1);
-            }, 6000);
+        // Função para scroll suave ao clicar num banner estilo Apple
+        function irParaCategoria(categoria) {
+            filtrarLoja(categoria);
+            setTimeout(() => {
+                document.getElementById('vitrine-container').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
         }
 
         function toggleMenu() {
@@ -492,14 +449,14 @@
                 document.getElementById('box-bermudas-jogador'),
                 document.getElementById('box-calcas-jogador')
             ];
-            const banner = document.getElementById('banner-home');
+            const destaques = document.getElementById('secao-destaques');
 
             if (categoria === 'todos') {
                 boxes.forEach(box => { if(box) box.classList.remove('secao-escondida'); });
-                if(banner) banner.style.display = 'block';
+                if(destaques) destaques.style.display = 'flex';
             } else {
                 boxes.forEach(box => { if(box) box.classList.add('secao-escondida'); });
-                if(banner) banner.style.display = 'none';
+                if(destaques) destaques.style.display = 'none';
 
                 if (categoria === 'inverno') boxes[0].classList.remove('secao-escondida');
                 if (categoria === 'oversized') boxes[1].classList.remove('secao-escondida');
@@ -537,7 +494,6 @@
                     <div class="produto" onclick="abrirModal('${prod.id}')">
                         <div class="capa-produto">
                             <img src="${prod.imgCapa}" alt="${prod.nome}">
-                            <div class="ver-detalhes-hover">Ver Detalhes</div>
                         </div>
                         <div class="info-produto">
                             <h3>${prod.nome}</h3>
@@ -645,8 +601,8 @@
                 else { if (encontrouNaSecao) { secao.style.display = 'block'; secao.classList.remove('secao-escondida'); } else { secao.style.display = 'none'; } }
             });
 
-            const banner = document.getElementById('banner-home');
-            if(banner) { if(termo !== "") banner.style.display = 'none'; else banner.style.display = 'block'; }
+            const destaques = document.getElementById('secao-destaques');
+            if(destaques) { if(termo !== "") destaques.style.display = 'none'; else destaques.style.display = 'flex'; }
             if (termo !== "" && !encontrouGeral) { msgErro.style.display = 'block'; } else { msgErro.style.display = 'none'; }
         }
     </script>
