@@ -67,8 +67,8 @@
         .menu-item { padding: 14px 20px; text-decoration: none; font-size: 14px; color: #f5f5f7; border-bottom: 1px solid #1a1a1a; display: block; font-weight: 400; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .menu-item:hover { background-color: #1a1a1a; color: #fff; padding-left: 25px;}
         
-        .overlay-menu { position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.8); z-index: 1900; cursor: pointer; backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); visibility: hidden; opacity: 0; transition: 0.3s;}
-        .overlay-menu.aberto { visibility: visible; opacity: 1;}
+        .overlay-menu { position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.8); z-index: 1900; cursor: pointer; display: none;}
+        .overlay-menu.aberto { display: block; }
 
         /* --- BARRA DE PESQUISA --- */
         .search-box { margin: 15px auto 0; max-width: 400px; width: 90%; position: relative; display: flex; }
@@ -127,9 +127,9 @@
             display: flex; flex-direction: column; align-items: center; justify-content: flex-start; 
             padding-top: 70px; padding-bottom: 20px; text-align: center; color: #f5f5f7; 
             opacity: 0; transition: opacity 1s ease-in-out; 
-            z-index: 1; background-color: transparent !important; cursor: pointer;
+            z-index: 1; pointer-events: none; background-color: transparent !important; 
         } 
-        .apple-slide.active { opacity: 1; z-index: 2; pointer-events: auto; }
+        .apple-slide.active { opacity: 1; z-index: 2; pointer-events: auto; cursor: pointer; }
         
         .apple-controls-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 5px; margin-bottom: 25px; z-index: 10; position: relative; }
         .apple-play-btn { width: 36px; height: 36px; background-color: #1c1c1e; border-radius: 50%; border: 1px solid #333; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.3s; }
@@ -153,8 +153,8 @@
         .apple-sub { font-size: 24px; font-weight: 400; margin: 10px 0 20px; letter-spacing: 0.007em; color: #a1a1a6; max-width: 80%; line-height: 1.3; z-index: 10; pointer-events: none;} 
         
         .apple-links { display: flex; gap: 25px; z-index: 10; margin-bottom: 25px; font-size: 17px; pointer-events: none;}
-        .link-apple { color: #f5f5f7; text-decoration: none; font-weight: 500; transition: 0.3s; } 
-        .apple-card:hover .link-apple, .apple-slide:hover .link-apple { text-decoration: underline; color: #ffffff; }
+        .link-apple { color: #f5f5f7; text-decoration: none; font-weight: 500; transition: 0.3s; border-bottom: 1px solid transparent; } 
+        .apple-card:hover .link-apple, .apple-slide:hover .link-apple { border-color: #ffffff; color: #ffffff; }
 
         .apple-img { 
             position: relative; flex: 1; width: auto; max-width: 100%; max-height: calc(100% - 200px); object-fit: contain; margin: auto auto 0; 
@@ -170,9 +170,9 @@
         .produto { background: #fff; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #e5e5ea; box-shadow: 0 4px 10px rgba(0,0,0,0.03);}
         .produto:hover { box-shadow: 0 12px 30px rgba(0,0,0,0.08); transform: translateY(-4px); }
         .produto:active { transform: scale(0.98); }
-        .capa-produto { background-color: #f5f5f7; height: 320px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; pointer-events: none;}
+        .capa-produto { background-color: #f5f5f7; height: 320px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;}
         .capa-produto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .info-produto { padding: 18px 10px; text-align: center; pointer-events: none;}
+        .info-produto { padding: 18px 10px; text-align: center;}
         .produto h3 { color: #1d1d1f; margin: 0 0 6px; font-size: 15px; font-weight: 600; line-height: 1.3; }
         .produto .preco { font-size: 17px; color: #1d1d1f; font-weight: 400; margin: 0; }
 
@@ -184,72 +184,86 @@
         .footer-instagrams .instagram-link:hover { color: #0071e3; }
         .copyright { color: #86868b; border-top: 1px solid #d2d2d7; padding-top: 20px; max-width: 1360px; margin: 0 auto; text-align: left;}
 
-        /* --- MODAL IOS/MAC --- */
+        /* =========================================
+           JANELA MODAL (MÉTODO 100% SEGURO E À PROVA DE FALHAS)
+           ========================================= */
         .modal-overlay { 
-            display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            z-index: 3000; justify-content: center; align-items: center; padding: 40px; 
-            visibility: hidden; opacity: 0; pointer-events: none; transition: opacity 0.4s ease, visibility 0.4s ease;
+            display: none; /* Voltou para o Display: None seguro */
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0, 0, 0, 0.85); z-index: 3000; 
+            justify-content: center; align-items: center; padding: 20px; 
         }
-        .modal-overlay.aberto { visibility: visible; opacity: 1; pointer-events: auto; }
-        
-        .modal-content { 
-            background: white; width: 100%; max-width: 1100px; height: 85vh; max-height: 800px;
-            border-radius: 24px; display: flex; overflow: hidden; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.4); 
-            transform: scale(0.95) translateY(30px); transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+        .modal-overlay.aberto { 
+            display: flex; 
+            animation: fadeIn 0.3s ease;
         }
-        .modal-overlay.aberto .modal-content { transform: scale(1) translateY(0); }
 
-        .btn-fechar { position: absolute; top: 20px; right: 25px; font-size: 28px; cursor: pointer; color: #1d1d1f; z-index: 10; background: rgba(245,245,247,0.8); backdrop-filter: blur(5px); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.2s;}
-        .btn-fechar:hover { background: #e5e5ea; transform: scale(1.05);}
+        .modal-content { 
+            background: white; width: 100%; max-width: 1040px; height: 85vh; max-height: 800px;
+            border-radius: 16px; display: flex; overflow: hidden; position: relative; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .btn-fechar { position: absolute; top: 15px; right: 20px; font-size: 32px; cursor: pointer; color: #1d1d1f; z-index: 10; width: 40px; height: 40px; background: rgba(245,245,247,0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;}
+        .btn-fechar:hover { background: #e5e5ea;}
 
         .modal-galeria-container { flex: 1.2; background: #f9f9f9; padding: 40px 20px 20px; display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: center; border-right: 1px solid #e5e5ea;}
         .modal-foto-principal { width: 100%; flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .modal-foto-principal img { max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08)); transition: transform 0.3s;}
+        .modal-foto-principal img { max-width: 100%; max-height: 100%; object-fit: contain;}
         .modal-thumbnails { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; padding-bottom: 10px;}
-        .thumb-img { width: 65px; height: 65px; object-fit: cover; border-radius: 12px; cursor: pointer; border: 2px solid transparent; opacity: 0.5; transition: 0.3s; }
+        .thumb-img { width: 65px; height: 65px; object-fit: cover; border-radius: 10px; cursor: pointer; border: 2px solid transparent; opacity: 0.5; transition: 0.2s; }
         .thumb-img:hover, .thumb-img.ativo { opacity: 1; border-color: #0071e3; }
         
         .modal-info-wrapper { flex: 1; display: flex; flex-direction: column; background: #fff; position: relative;}
-        .modal-info { flex: 1; padding: 50px 40px; overflow-y: auto; padding-bottom: 150px; }
+        .modal-info { flex: 1; padding: 40px; overflow-y: auto; padding-bottom: 130px; }
         
-        .modal-info h2 { font-size: 36px; margin: 0 0 10px; color: #1d1d1f; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
-        .modal-preco { font-size: 26px; font-weight: 500; color: #1d1d1f; margin-bottom: 35px; }
+        .modal-info h2 { font-size: 32px; margin: 0 0 10px; color: #1d1d1f; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
+        .modal-preco { font-size: 24px; font-weight: 500; color: #1d1d1f; margin-bottom: 30px; }
         
-        .area-tamanhos { margin-bottom: 35px; }
-        .titulo-opcao { display: block; font-size: 13px; font-weight: 600; margin-bottom: 15px; color: #86868b; text-transform: uppercase; letter-spacing: 1px;}
-        .grade-tamanhos { display: flex; gap: 12px; flex-wrap: wrap; }
-        .tamanho-btn { width: 54px; height: 54px; border: 1px solid #d2d2d7; background: #fff; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; cursor: pointer; transition: all 0.2s; color: #1d1d1f; }
+        .area-tamanhos { margin-bottom: 30px; }
+        .titulo-opcao { display: block; font-size: 13px; font-weight: 600; margin-bottom: 12px; color: #86868b; text-transform: uppercase; letter-spacing: 1px;}
+        .grade-tamanhos { display: flex; gap: 10px; flex-wrap: wrap; }
+        
+        /* BOTÕES DE TAMANHO */
+        .tamanho-btn { 
+            width: 50px; height: 50px; border: 1px solid #d2d2d7; background: #fff; 
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; 
+            font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.2s; color: #1d1d1f; 
+        }
         .tamanho-btn:hover { border-color: #1d1d1f; }
         .tamanho-btn.esgotado { background: #f5f5f7; color: #a1a1a6; border-color: #e5e5ea; cursor: not-allowed; position: relative; overflow: hidden; }
         .tamanho-btn.esgotado::after { content: ''; position: absolute; width: 100%; height: 1px; background: #a1a1a6; transform: rotate(45deg); }
         
-        .modal-descricao { font-size: 16px; color: #515154; line-height: 1.6; margin-bottom: 45px; border-top: 1px solid #f5f5f7; padding-top: 30px; }
+        .modal-descricao { font-size: 15px; color: #515154; line-height: 1.6; margin-bottom: 40px; border-top: 1px solid #f5f5f7; padding-top: 25px; }
 
-        .secao-relacionados { border-top: 1px solid #f5f5f7; padding-top: 30px; }
-        .titulo-relacionados { font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 20px; letter-spacing: -0.01em; }
-        .grade-relacionados { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .card-relacionado { cursor: pointer; transition: transform 0.2s; background: #f9f9f9; border-radius: 14px; padding: 15px; text-align: center; border: 1px solid #f0f0f0;}
-        .card-relacionado:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); border-color: #e5e5ea;}
-        .card-relacionado img { width: 100%; height: 90px; object-fit: contain; margin-bottom: 12px; }
-        .card-relacionado h4 { font-size: 13px; margin: 0 0 5px; color: #1d1d1f; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .secao-relacionados { border-top: 1px solid #f5f5f7; padding-top: 25px; }
+        .titulo-relacionados { font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 15px; letter-spacing: -0.01em; }
+        .grade-relacionados { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .card-relacionado { cursor: pointer; transition: transform 0.2s; background: #f9f9f9; border-radius: 10px; padding: 12px; text-align: center; border: 1px solid #f0f0f0;}
+        .card-relacionado:hover { transform: translateY(-3px); border-color: #e5e5ea;}
+        .card-relacionado img { width: 100%; height: 80px; object-fit: contain; margin-bottom: 10px; }
+        .card-relacionado h4 { font-size: 12px; margin: 0 0 4px; color: #1d1d1f; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-        .modal-action-bar { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 25px 40px; border-top: 1px solid rgba(0,0,0,0.08); display: flex; gap: 15px; z-index: 10;}
-        .botao-modal { flex: 1; background: #0071e3; color: white; text-align: center; padding: 18px; border-radius: 14px; text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 16px; }
-        .botao-modal:hover { background: #0077ed; transform: scale(1.02); }
-        .botao-modal.vendedor2 { background: #f5f5f7; color: #1d1d1f; border: 1px solid transparent; }
-        .botao-modal.vendedor2:hover { background: #e5e5ea; transform: scale(1.02);}
+        .modal-action-bar { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); padding: 20px 40px; border-top: 1px solid rgba(0,0,0,0.08); display: flex; gap: 15px; z-index: 10;}
+        .botao-modal { flex: 1; background: #0071e3; color: white; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 15px; }
+        .botao-modal:hover { background: #0077ed;}
+        .botao-modal.vendedor2 { background: #f5f5f7; color: #1d1d1f; border: 1px solid #d2d2d7; }
+        .botao-modal.vendedor2:hover { background: #e5e5ea;}
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 1024px) {
             .feriado-titulo { font-size: 28px; }
             .grade-produtos { grid-template-columns: repeat(3, 1fr); }
-            .modal-content { max-width: 95%; height: 90vh; }
+            .modal-content { max-width: 95%; }
         }
 
         @media (max-width: 850px) {
             .nav-list { justify-content: flex-start; } 
-            
             .apple-super-titulo { font-size: 44px; }
             .apple-titulo { font-size: 32px; }
             .apple-sub { font-size: 20px; }
@@ -258,18 +272,18 @@
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .capa-produto { height: 260px; }
             
+            /* MODAL MOBILE */
             .modal-overlay { align-items: flex-end; padding: 0; }
-            .modal-content { flex-direction: column; height: 94vh; border-radius: 24px 24px 0 0; transform: translateY(100%); }
-            .modal-overlay.aberto .modal-content { transform: translateY(0); }
+            .modal-content { flex-direction: column; height: 90vh; border-radius: 20px 20px 0 0; animation: slideUp 0.3s ease;}
+            
+            @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
 
-            .modal-galeria-container { padding: 40px 15px 15px; flex: none; height: 42%; border-right: none; border-bottom: 1px solid #d2d2d7;}
+            .modal-galeria-container { padding: 40px 15px 15px; flex: none; height: 40%; border-right: none; border-bottom: 1px solid #d2d2d7;}
             .btn-fechar { top: 12px; right: 15px; width: 34px; height: 34px; background: rgba(0,0,0,0.05);}
-            .modal-info { padding: 25px 20px; padding-bottom: 160px;}
+            .modal-info { padding: 25px 20px; padding-bottom: 140px;}
             .modal-action-bar { padding: 15px 20px; flex-direction: column; gap: 10px;}
-            .botao-modal { padding: 15px; font-size: 15px; }
         }
 
-        /* 6.9" / 7.0" Mobile View */
         @media (max-width: 480px) {
             header { padding: 10px 0 0 0; }
             .header-top { padding: 0 15px; }
@@ -290,7 +304,6 @@
             .apple-titulo { font-size: 30px; max-width: 90%;}
             .apple-sub { font-size: 16px; margin-bottom: 15px; max-width: 85%;}
             .apple-img { max-height: calc(100% - 180px); max-width: 85%; }
-            .apple-links { font-size: 15px; gap: 15px;}
 
             .container { padding: 0 12px 40px; }
             .feriado-banner { width: 100%; padding: 30px 15px; margin-bottom: 25px;}
@@ -298,15 +311,13 @@
             .feriado-texto { font-size: 15px; }
             
             .secao-titulo { font-size: 24px; margin: 25px 0 15px; }
-            .grade-produtos { gap: 10px; margin-bottom: 30px; grid-template-columns: repeat(2, 1fr);}
+            .grade-produtos { gap: 10px; margin-bottom: 30px;}
             .capa-produto { height: 210px; border-radius: 10px 10px 0 0; }
             .info-produto { padding: 12px 6px; }
-
-            .modal-content { height: 96vh; border-radius: 20px 20px 0 0;}
-            .modal-galeria-container { height: 40%; }
+            
+            .modal-content { height: 95vh; }
             .modal-info h2 { font-size: 24px; }
             .modal-preco { font-size: 20px; }
-            .tamanho-btn { width: 44px; height: 44px; font-size: 13px; }
         }
     </style>
 </head>
@@ -378,14 +389,14 @@
             </div>
 
             <div class="apple-grid">
-                <div class="apple-card bg-dark" onclick="abrirModal('grife-balmain-01')" style="cursor: pointer;">
+                <div class="apple-card bg-dark" onclick="abrirModal('grife-balmain-01')">
                     <h2 class="apple-titulo">Grife Balmain Egypt</h2>
                     <p class="apple-sub">Ouro metálico. Edição Exclusiva.</p>
                     <div class="apple-links"><span class="link-apple">Ver Luxo ></span></div>
                     <img src="balmain-gold-1.jpeg" alt="Camiseta Balmain Paris" class="apple-img">
                 </div>
 
-                <div class="apple-card bg-gray-spotlight" onclick="abrirModal('bermuda-jeans-jogador')" style="cursor: pointer;">
+                <div class="apple-card bg-gray-spotlight" onclick="abrirModal('bermuda-jeans-jogador')">
                     <h2 class="apple-titulo" style="font-size: 38px;">Linha Jogador</h2>
                     <p class="apple-sub">Jeans distressed premium streetwear.</p>
                     <div class="apple-links"><span class="link-apple">Comprar Estilo ></span></div>
@@ -394,14 +405,14 @@
             </div>
 
             <div class="apple-grid">
-                <div class="apple-card bg-gray-spotlight" onclick="abrirModal('nocta-dryfit-preta')" style="cursor: pointer;">
+                <div class="apple-card bg-gray-spotlight" onclick="abrirModal('nocta-dryfit-preta')">
                     <h2 class="apple-titulo">Dry Fit Nocta</h2>
                     <p class="apple-sub">Estilo urbano que afasta o suor.</p>
                     <div class="apple-links"><span class="link-apple">Garantir Peça ></span></div>
                     <img src="dryfit-nocta-preta.jpeg" alt="Camiseta Dry Fit Nocta" class="apple-img">
                 </div>
 
-                <div class="apple-card bg-dark" onclick="abrirModal('calca-jogador-branca-rasgada')" style="cursor: pointer;">
+                <div class="apple-card bg-dark" onclick="abrirModal('calca-jogador-branca-rasgada')">
                     <h2 class="apple-titulo">Calças Jogador</h2>
                     <p class="apple-sub">Jeans premium destroyed intenso.</p>
                     <div class="apple-links"><span class="link-apple">Ver Detalhes ></span></div>
@@ -441,7 +452,7 @@
     </footer>
 
     <div id="janela-modal" class="modal-overlay" onclick="fecharModal(event)">
-        <div class="modal-content" id="modal-box" onclick="event.stopPropagation()">
+        <div class="modal-content" onclick="event.stopPropagation()">
             <span class="btn-fechar" onclick="fecharModal(event)">×</span>
             <div class="modal-galeria-container">
                 <div class="modal-foto-principal"><img id="m-img-principal" src="" alt="Produto"></div>
@@ -532,7 +543,7 @@
         }
 
         // =========================================
-        // CARROSSEL FADE COM SORTEIO ALEATÓRIO E CLIQUE DIRETO
+        // CARROSSEL FADE COM SORTEIO ALEATÓRIO
         // =========================================
         let slideAtualDOM = null;
         let intervaloCarrossel;
@@ -563,8 +574,6 @@
             const novoSlide = document.createElement('div');
             novoSlide.className = `apple-slide ${prod.bg}`;
             novoSlide.style.cursor = 'pointer'; 
-            
-            // Aqui faz o carrossel abrir o modal com o ID correto
             novoSlide.onclick = function(e) {
                 e.preventDefault();
                 abrirModal(prod.id);
@@ -625,17 +634,17 @@
         }
 
         // =========================================
-        // LÓGICA GERAL DA LOJA
+        // LÓGICA GERAL DA LOJA E MODAL FUNCIONAL
         // =========================================
         function toggleMenu() {
             const sidebar = document.getElementById('sidebar-menu');
             const overlay = document.getElementById('overlay-menu');
             if (sidebar.style.left === '0px') {
                 sidebar.style.left = '-320px';
-                overlay.classList.remove('aberto');
+                overlay.style.display = 'none';
             } else {
                 sidebar.style.left = '0px';
-                overlay.classList.add('aberto');
+                overlay.style.display = 'block';
             }
         }
 
@@ -654,25 +663,25 @@
             const destaques = document.getElementById('secao-destaques-wrapper');
 
             if (categoria === 'todos') {
-                boxes.forEach(box => { if(box) box.classList.remove('secao-escondida'); });
+                boxes.forEach(box => { if(box) box.style.display = 'block'; });
                 if(destaques) destaques.style.display = 'block';
             } else {
-                boxes.forEach(box => { if(box) box.classList.add('secao-escondida'); });
+                boxes.forEach(box => { if(box) box.style.display = 'none'; });
                 if(destaques) destaques.style.display = 'none';
 
-                if (categoria === 'inverno') boxes[0].classList.remove('secao-escondida');
-                if (categoria === 'oversized') boxes[1].classList.remove('secao-escondida');
-                if (categoria === 'grife') boxes[2].classList.remove('secao-escondida');
-                if (categoria === 'polo-lacoste') boxes[3].classList.remove('secao-escondida');
-                if (categoria === 'polo-zara') boxes[4].classList.remove('secao-escondida');
-                if (categoria === 'dryfit') boxes[5].classList.remove('secao-escondida');
+                if (categoria === 'inverno') boxes[0].style.display = 'block';
+                if (categoria === 'oversized') boxes[1].style.display = 'block';
+                if (categoria === 'grife') boxes[2].style.display = 'block';
+                if (categoria === 'polo-lacoste') boxes[3].style.display = 'block';
+                if (categoria === 'polo-zara') boxes[4].style.display = 'block';
+                if (categoria === 'dryfit') boxes[5].style.display = 'block';
                 if (categoria === 'bermudas-todas') {
-                    boxes[6].classList.remove('secao-escondida');
-                    boxes[7].classList.remove('secao-escondida');
+                    boxes[6].style.display = 'block';
+                    boxes[7].style.display = 'block';
                 }
-                if (categoria === 'bermudas-dryfit') boxes[6].classList.remove('secao-escondida');
-                if (categoria === 'bermudas-jogador') boxes[7].classList.remove('secao-escondida');
-                if (categoria === 'calcas-jogador') boxes[8].classList.remove('secao-escondida');
+                if (categoria === 'bermudas-dryfit') boxes[6].style.display = 'block';
+                if (categoria === 'bermudas-jogador') boxes[7].style.display = 'block';
+                if (categoria === 'calcas-jogador') boxes[8].style.display = 'block';
             }
             
             const sidebar = document.getElementById('sidebar-menu');
@@ -702,7 +711,7 @@
 
             produtos.forEach(prod => {
                 const html = `
-                    <div class="produto" onclick="abrirModal('${prod.id}')" style="cursor: pointer;">
+                    <div class="produto" onclick="abrirModal('${prod.id}')">
                         <div class="capa-produto">
                             <img src="${prod.imgCapa}" alt="${prod.nome}">
                         </div>
@@ -725,6 +734,19 @@
             });
         }
 
+        // --- SELEÇÃO DE TAMANHO (ANIMAÇÃO QUE FALTAVA) ---
+        function selecionarTamanho(elemento) {
+            const botoes = document.querySelectorAll('.tamanho-btn:not(.esgotado)');
+            botoes.forEach(btn => {
+                btn.style.backgroundColor = '#fff';
+                btn.style.color = '#1d1d1f';
+                btn.style.borderColor = '#d2d2d7';
+            });
+            elemento.style.backgroundColor = '#000';
+            elemento.style.color = '#fff';
+            elemento.style.borderColor = '#000';
+        }
+
         function abrirModal(idProduto) {
             const prod = produtos.find(p => p.id === idProduto);
             if (!prod) return;
@@ -737,8 +759,11 @@
             divTamanhos.innerHTML = "";
             prod.tamanhos.forEach(tam => {
                 const esgotado = prod.esgotados.includes(tam);
-                const classe = esgotado ? 'tamanho-btn esgotado' : 'tamanho-btn';
-                divTamanhos.innerHTML += `<div class="${classe}">${tam}</div>`;
+                if(esgotado) {
+                    divTamanhos.innerHTML += `<div class="tamanho-btn esgotado">${tam}</div>`;
+                } else {
+                    divTamanhos.innerHTML += `<div class="tamanho-btn" onclick="selecionarTamanho(this)">${tam}</div>`;
+                }
             });
 
             const containerThumbs = document.getElementById('m-thumbnails');
@@ -773,10 +798,7 @@
             if (event.target.classList.contains('modal-overlay') || event.target.classList.contains('btn-fechar')) {
                 const modalOverlay = document.getElementById('janela-modal');
                 modalOverlay.classList.remove('aberto');
-                
-                setTimeout(() => {
-                    document.body.style.overflow = 'auto'; 
-                }, 400); 
+                document.body.style.overflow = 'auto'; 
             }
         }
 
@@ -799,8 +821,8 @@
                     else { prod.style.display = 'none'; }
                 });
                 
-                if (termo === "") { secao.style.display = 'block'; secao.classList.remove('secao-escondida'); } 
-                else { if (encontrouNaSecao) { secao.style.display = 'block'; secao.classList.remove('secao-escondida'); } else { secao.style.display = 'none'; } }
+                if (termo === "") { secao.style.display = 'block'; } 
+                else { if (encontrouNaSecao) { secao.style.display = 'block'; } else { secao.style.display = 'none'; } }
             });
 
             const destaques = document.getElementById('secao-destaques-wrapper');
