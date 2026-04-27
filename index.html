@@ -76,8 +76,34 @@
             padding-bottom: 60px; 
         }
 
+        /* BANNER DO CALENDÁRIO INVISÍVEL (NOVO TOPO) */
+        .feriado-banner {
+            max-width: 1360px;
+            margin: 0 auto 30px;
+            width: 100%;
+            background: linear-gradient(135deg, #050505 0%, #0a0a0a 100%);
+            color: #fff; 
+            text-align: center; 
+            padding: 40px 25px; /* Preenchimento maior */
+            border-radius: 18px; 
+            border: 1px solid #333;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .feriado-banner::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 60%);
+            z-index: 0; pointer-events: none;
+        }
+        .feriado-titulo { font-family: 'Cinzel', serif; font-size: 32px; color: #d4af37; margin: 0 0 12px; position: relative; z-index: 1; letter-spacing: 1px;}
+        .feriado-texto { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 300; margin: 0; color: #e5e5ea; position: relative; z-index: 1; max-width: 800px; line-height: 1.6; }
+
         /* =========================================
-           DESTAQUES (BENTO BOX + CARROSSEL)
+           DESTAQUES (BENTO BOX + CARROSSEL FADE)
            ========================================= */
         .apple-destaques { display: flex; flex-direction: column; gap: 15px; padding: 12px; max-width: 1360px; margin: 0 auto; width: 100%; }
         .apple-link-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; cursor: pointer; }
@@ -116,7 +142,6 @@
         /* VARIANTES DE FUNDO COM SPOTLIGHT (LUZ DE DESTAQUE P/ PEÇAS PRETAS) */
         .bg-dark { 
             background-color: #050505; 
-            /* O "Spotlight": cria um feixe de luz radial suave no centro, destacando roupas pretas */
             background-image: radial-gradient(circle at center 65%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
         }
         .bg-gray-spotlight {
@@ -138,16 +163,14 @@
             position: relative; 
             flex: 1; 
             width: auto; 
-            max-width: 100%; /* Permite crescer mais no desktop */
-            max-height: calc(100% - 200px); /* Ocupa bem mais espaço do banner */
+            max-width: 100%; 
+            max-height: calc(100% - 200px); 
             object-fit: contain; 
             margin: auto auto 0; 
-            /* Sombra profunda no chão para dar volume, sem clarear a peça inteira */
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8)); 
             transition: transform 0.8s cubic-bezier(0.15, 1, 0.3, 1), filter 0.8s ease; 
             z-index: 5;
         } 
-        /* Efeito de zoom e flutuação extra ao passar o mouse */
         .apple-card:hover .apple-img, .apple-slide.active:hover .apple-img { 
             transform: scale(1.05) translateY(-10px); 
             filter: drop-shadow(0 30px 50px rgba(0,0,0,1));
@@ -155,27 +178,6 @@
 
         /* --- VITRINE DE PRODUTOS --- */
         .container { max-width: 1360px; margin: 0 auto; padding: 0 12px 60px; min-height: 500px; flex: 1; width: 100%; position: relative; z-index: 5;} 
-        
-        /* BANNER DO CALENDÁRIO INVISÍVEL */
-        .feriado-banner {
-            background: linear-gradient(135deg, #111, #222); /* Dark Mode Premium */
-            color: #fff; 
-            text-align: center; 
-            padding: 25px 20px; 
-            border-radius: 18px; 
-            margin-bottom: 40px; 
-            border: 1px solid #333;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        .feriado-banner::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
-            z-index: 0; pointer-events: none;
-        }
-        .feriado-titulo { font-family: 'Cinzel', serif; font-size: 26px; color: #d4af37; margin: 0 0 8px; position: relative; z-index: 1; letter-spacing: 1px;}
-        .feriado-texto { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 400; margin: 0; color: #e5e5ea; position: relative; z-index: 1; }
 
         .secao-titulo { font-size: 32px; font-weight: 600; color: #1d1d1f; margin: 40px 0 30px; padding-bottom: 12px; border-bottom: 1px solid #d2d2d7; letter-spacing: -0.01em; }
         .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%; margin-bottom: 50px; }
@@ -248,6 +250,7 @@
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 1024px) {
+            .feriado-titulo { font-size: 28px; }
             .grade-produtos { grid-template-columns: repeat(3, 1fr); }
             .modal-content { max-width: 100%; height: 95vh; border-radius: 20px 20px 0 0;}
         }
@@ -290,8 +293,9 @@
             .apple-links { font-size: 15px; gap: 15px;}
 
             .container { padding: 0 12px 40px; }
-            .feriado-titulo { font-size: 20px; }
-            .feriado-texto { font-size: 14px; }
+            .feriado-banner { padding: 30px 15px; margin-bottom: 25px;}
+            .feriado-titulo { font-size: 22px; }
+            .feriado-texto { font-size: 15px; }
             
             .secao-titulo { font-size: 24px; margin: 25px 0 15px; }
             .grade-produtos { gap: 10px; margin-bottom: 30px; grid-template-columns: repeat(2, 1fr);}
@@ -349,6 +353,8 @@
     <div class="fundo-degrade-preto" id="secao-destaques-wrapper">
         <div class="apple-destaques">
             
+            <div id="aviso-feriado-topo"></div>
+
             <div class="apple-carousel-wrapper" id="apple-carousel-container">
                 </div>
 
@@ -407,11 +413,7 @@
     </div> 
 
     <div class="container" id="vitrine-container">
-        
-        <div id="aviso-feriado"></div>
-
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
-
         <div id="box-inverno"><h2 class="secao-titulo">Coleção de Inverno</h2><div id="grade-inverno" class="grade-produtos"></div></div>
         <div id="box-oversized"><h2 class="secao-titulo">Camisetas Oversized</h2><div id="grade-oversized" class="grade-produtos"></div></div>
         <div id="box-grife"><h2 class="secao-titulo">Camisetas de Grife</h2><div id="grade-grife" class="grade-produtos"></div></div>
@@ -465,8 +467,8 @@
                 </div>
                 
                 <div class="modal-action-bar">
-                    <a href="#" id="btn-zap1" class="botao-modal" target="_blank">Falar com Vendedor 1</a>
-                    <a href="#" id="btn-zap2" class="botao-modal vendedor2" target="_blank">Falar com Vendedor 2</a>
+                    <a href="#" id="btn-zap1" class="botao-modal" target="_blank">WhatsApp Vendedor 1</a>
+                    <a href="#" id="btn-zap2" class="botao-modal vendedor2" target="_blank">WhatsApp Vendedor 2</a>
                 </div>
             </div>
         </div>
@@ -476,7 +478,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            verificarFeriados(); // Aciona o Calendário Invisível
+            verificarFeriados(); // Aciona o motor de feriados
             iniciarCarrosselSorteio();
             carregarProdutosNaTela();
         });
@@ -502,32 +504,29 @@
             const hoje = new Date();
             const ano = hoje.getFullYear();
             
-            // Meses em JS começam em 0 (Janeiro=0, Maio=4, Agosto=7, etc)
             const feriados = [
-                { nome: "Dia das Mães", data: getSegundoDomingo(ano, 4), msg: "Surpreenda neste Dia das Mães com o estilo e a elegância que ela merece." },
-                { nome: "Dia dos Namorados", data: new Date(ano, 5, 12), msg: "O amor está no ar. Garanta o presente perfeito com exclusividade." },
-                { nome: "Dia dos Pais", data: getSegundoDomingo(ano, 7), msg: "O seu herói merece o melhor. Vista ele com a Outfit Imperial." },
-                { nome: "Black Friday", data: getUltimaSexta(ano, 10), msg: "Prepare-se: as ofertas imperdíveis da Black Friday já começaram." },
-                { nome: "Natal", data: new Date(ano, 11, 25), msg: "A magia do Natal chegou. O seu look para as festas está aqui." },
-                { nome: "Ano Novo", data: new Date(ano, 11, 31), msg: "Entre no Ano Novo vestido de atitude e luxo." }
+                { nome: "Dia das Mães", data: getSegundoDomingo(ano, 4), msg: "Mães não são apenas a nossa origem, elas são o amor mais puro e a base essencial que sustenta quem nos tornamos. O Outfit Imperial celebra essa força vital com carinho e sofisticação. Convidamos todas as mães a aproveitarem com nossas coleções premium. Você merece viver essa essência." },
+                { nome: "Dia dos Namorados", data: new Date(ano, 5, 12), msg: "O amor merece ser celebrado com o máximo de estilo. Surpreenda quem você ama com presentes exclusivos da Outfit Imperial. Garanta o look perfeito para essa data especial." },
+                { nome: "Dia dos Pais", data: getSegundoDomingo(ano, 7), msg: "Para o homem que é sua referência e herói: presenteie com a elegância e a atitude que só a Outfit Imperial oferece. Ele merece esse reconhecimento." },
+                { nome: "Black Friday Imperial", data: getUltimaSexta(ano, 10), msg: "A espera acabou. As ofertas mais agressivas do ano em roupas e sneakers premium já estão ativas. Aproveite a Black Friday antes que acabe." },
+                { nome: "Natal de Luxo", data: new Date(ano, 11, 25), msg: "Celebre a magia do Natal com exclusividade. Encontre presentes marcantes e garanta o look perfeito para brilhar nas festas de final de ano." },
+                { nome: "New Year's Outfit", data: new Date(ano, 11, 31), msg: "Entre no novo ano com o pé direito e o visual renovado. Descubra nossas sugestões para um Réveillon inesquecível e cheio de estilo." }
             ];
 
-            const containerFeriado = document.getElementById('aviso-feriado');
+            const containerFeriadoTopo = document.getElementById('aviso-feriado-topo');
             
             for (let feriado of feriados) {
-                // Configura a data para disparar 14 dias antes do feriado
                 const dataAviso = new Date(feriado.data);
-                dataAviso.setDate(dataAviso.getDate() - 14);
+                dataAviso.setDate(dataAviso.getDate() - 14); // Começa a mostrar 14 dias antes
                 
-                // Se o dia de hoje estiver nas duas semanas antes (ou no dia exato) do feriado
                 if (hoje >= dataAviso && hoje <= feriado.data) {
-                    containerFeriado.innerHTML = `
+                    containerFeriadoTopo.innerHTML = `
                         <div class="feriado-banner">
                             <h2 class="feriado-titulo">Especial ${feriado.nome}</h2>
                             <p class="feriado-texto">${feriado.msg}</p>
                         </div>
                     `;
-                    break; // Mostra apenas o feriado mais próximo
+                    break; 
                 }
             }
         }
