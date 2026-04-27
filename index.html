@@ -221,7 +221,7 @@
         .secao-escondida { display: none !important; }
         #msg-sem-resultado { text-align: center; margin-top: 50px; color: #777; display: none; font-style: italic; }
 
-        /* Responsividade */
+        /* Responsividade Tablet e Laptops pequenos */
         @media (max-width: 850px) {
             .carousel-container { height: 450px; }
             .carousel-slide img { object-position: center top; }
@@ -237,6 +237,23 @@
             .footer-instagrams { flex-direction: column; align-items: center; gap: 15px; }
             .banner-texto { font-size: 18px; bottom: 30px; width: 90%; padding: 0; text-shadow: 0 2px 5px rgba(0,0,0,1); }
             .banner-tag { top: 20px; right: 20px; font-size: 11px; padding: 5px 10px; }
+        }
+
+        /* Otimização Exclusiva para Celulares Grandes (6.9" e 7.0") */
+        @media (max-width: 480px) {
+            .carousel-container { height: 380px; } /* Ajuste fino de altura para não precisar rolar demais */
+            header h1 { font-size: 26px; }
+            .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .capa-produto { height: 200px; } /* Ajuste de proporção das fotos na grade 2x2 */
+            .produto h3 { font-size: 13px; }
+            .produto .preco { font-size: 16px; }
+            .banner-texto { font-size: 15px; bottom: 20px; letter-spacing: 2px; }
+            .banner-tag { top: 15px; right: 15px; font-size: 10px; }
+            .modal-info h2 { font-size: 22px; }
+            .modal-preco { font-size: 20px; }
+            .botao-modal { padding: 14px; font-size: 15px; }
+            .tamanho-btn { width: 40px; height: 40px; font-size: 13px; }
+            .container { padding: 20px 15px 40px; }
         }
     </style>
 </head>
@@ -255,7 +272,9 @@
         <a href="#" onclick="filtrarLoja('inverno'); toggleMenu()" class="menu-item">Coleção de Inverno</a>
         <a href="#" onclick="filtrarLoja('oversized'); toggleMenu()" class="menu-item">Camisetas Oversized</a>
         <a href="#" onclick="filtrarLoja('grife'); toggleMenu()" class="menu-item">Camisetas de Grife</a>
-        <a href="#" onclick="filtrarLoja('polo-lacoste'); toggleMenu()" class="menu-item">Polos Lacoste</a> <a href="#" onclick="filtrarLoja('polo-zara'); toggleMenu()" class="menu-item">Polos Zara</a> <a href="#" onclick="filtrarLoja('dryfit'); toggleMenu()" class="menu-item">Linha Dry Fit</a>
+        <a href="#" onclick="filtrarLoja('polo-lacoste'); toggleMenu()" class="menu-item">Polos Lacoste</a>
+        <a href="#" onclick="filtrarLoja('polo-zara'); toggleMenu()" class="menu-item">Polos Zara</a>
+        <a href="#" onclick="filtrarLoja('dryfit'); toggleMenu()" class="menu-item">Linha Dry Fit</a>
         <a href="#" onclick="filtrarLoja('bermudas-todas'); toggleMenu()" class="menu-item">Bermudas (Todas)</a>
         <a href="#" onclick="filtrarLoja('bermudas-jogador'); toggleMenu()" class="menu-subitem">• Bermudas Jogador</a>
         <a href="#" onclick="filtrarLoja('bermudas-dryfit'); toggleMenu()" class="menu-subitem">• Bermudas Dry Fit</a>
