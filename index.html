@@ -15,7 +15,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; 
             padding: 0; 
-            background-color: #fff; /* Fundo da vitrine permanece limpo */
+            background-color: #fff; /* Fundo geral continua branco */
             color: #1d1d1f; 
             overflow-x: hidden; 
             display: flex; 
@@ -26,9 +26,9 @@
         
         img { max-width: 100%; height: auto; display: block; }
 
-        /* --- CABEÇALHO OUTFIT IMPERIAL (Fixo e Translúcido) --- */
+        /* --- CABEÇALHO (Imperial Black e Dourado) --- */
         header { 
-            background-color: rgba(0, 0, 0, 0.85); 
+            background-color: rgba(0, 0, 0, 0.98); 
             backdrop-filter: blur(15px); 
             padding: 12px 20px; 
             text-align: center; 
@@ -44,8 +44,10 @@
             text-transform: uppercase; letter-spacing: 2px;
         }
         header p { color: #a1a1a6; font-size: 10px; margin: 2px 0 0 0; letter-spacing: 3px; text-transform: uppercase; font-weight: 400; }
+        
+        body { padding-top: 85px; }
 
-        /* --- MENU LATERAL (Apple Style Dark) --- */
+        /* --- MENU LATERAL --- */
         .menu-btn { position: absolute; top: 25px; left: 20px; z-index: 1600; background: none; border: none; cursor: pointer; padding: 0; width: 22px; height: 16px; display: flex; flex-direction: column; justify-content: space-between; }
         .menu-btn span { display: block; width: 100%; height: 2px; background-color: #d4af37; transition: all 0.3s ease; }
         
@@ -83,9 +85,24 @@
         .apple-link-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; cursor: pointer; }
 
         /* --- CARROSSEL HERO APPLE STYLE --- */
-        .apple-carousel-wrapper { width: 100%; overflow: hidden; border-radius: 20px; position: relative; background-color: #0a0a0a; border: 1px solid #1f1f1f; } 
-        .apple-carousel-track { display: flex; transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); width: 100%; height: 680px; }
-        .apple-slide { min-width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; padding-top: 70px; position: relative; text-align: center; color: #f5f5f7; } 
+        .apple-carousel-wrapper { width: 100%; overflow: hidden; border-radius: 20px; position: relative; background-color: #050505; border: 1px solid #1f1f1f; } 
+        .apple-carousel-track { display: flex; transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); width: 100%; height: 720px; } /* Altura mantida para respiro mobile */
+        
+        /* CORREÇÃO DO SLIDE: Hierarquia Flex para evitar sobreposições */
+        .apple-slide { 
+            min-width: 100%; 
+            height: 100%; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; /* Texto no topo */
+            padding-top: 70px; 
+            padding-bottom: 20px;
+            position: relative; 
+            text-align: center; 
+            color: #f5f5f7; 
+            overflow: hidden;
+        } 
         
         /* Controles do Carrossel */
         .apple-controls-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 5px; margin-bottom: 25px; z-index: 10; position: relative; }
@@ -96,12 +113,11 @@
         .apple-play-btn:hover { background-color: #2c2c2e; }
         .apple-play-btn svg { width: 14px; height: 14px; fill: #d2d2d7; }
 
-        /* GRID DE PRODUTOS (Bento Box) */
+        /* GRID DE PRODUTOS Bento Box */
         .apple-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
-        /* Cartões com fundo carbono e borda, para não sumirem no fundo preto */
         .apple-card { height: 580px; background-color: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 20px; display: flex; flex-direction: column; align-items: center; padding-top: 60px; position: relative; overflow: hidden; text-align: center; color: #f5f5f7;}
         
-        /* Variantes de Fundo extra escuras */
+        /* Variantes de Fundo */
         .bg-dark { background-color: #050505; }
 
         /* Tipografia de ALTA FIDELIDADE Apple */
@@ -114,11 +130,24 @@
         .link-apple { color: #f5f5f7; text-decoration: none; font-weight: 500; transition: 0.3s; } 
         .link-apple:hover { text-decoration: underline; color: #ffffff; }
 
-        /* Imagens dos banners */
-        .apple-img { position: absolute; bottom: 0; max-width: 90%; max-height: 65%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(255,255,255,0.05)); transition: transform 0.6s cubic-bezier(0.15, 1, 0.3, 1); } 
+        /* CORREÇÃO DAS IMAGENS: Centralizadas abaixo do texto, SEM sobreposições */
+        .apple-img { 
+            position: relative; /* Mudado de absolute p/ relative */
+            flex: 1; /* Ocupa espaço disponível no flex flow */
+            width: auto;
+            max-width: 90%; 
+            max-height: calc(100% - 250px); /* Garante espaço para o texto acima */
+            object-fit: contain; 
+            margin: 0 auto; /* Centraliza horizontalmente */
+            margin-top: auto; /* Cola na base do slide flexivelmente */
+            filter: drop-shadow(0 10px 20px rgba(255,255,255,0.05)); 
+            transition: transform 0.6s cubic-bezier(0.15, 1, 0.3, 1); 
+            z-index: 5;
+        } 
+        
         .apple-card:hover .apple-img, .apple-slide:hover .apple-img { transform: scale(1.04) translateY(-5px); filter: drop-shadow(0 15px 30px rgba(255,255,255,0.1));}
 
-        /* --- VITRINE DE PRODUTOS PADRÃO (MANTIDA BRANCA) --- */
+        /* --- VITRINE DE PRODUTOS PADRÃO --- */
         .container { max-width: 1360px; margin: 0 auto; padding: 0 12px 60px; min-height: 500px; flex: 1; width: 100%; position: relative; z-index: 5;} 
         .secao-titulo { font-size: 32px; font-weight: 600; color: #1d1d1f; margin: 40px 0 30px; padding-bottom: 12px; border-bottom: 1px solid #d2d2d7; letter-spacing: -0.01em; }
         .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%; margin-bottom: 50px; }
@@ -190,7 +219,7 @@
             .apple-super-titulo { font-size: 44px; }
             .apple-titulo { font-size: 32px; }
             .apple-sub { font-size: 20px; }
-            .apple-carousel-track { height: 560px; }
+            .apple-carousel-track { height: 600px; }
             .apple-slide { padding-top: 50px; }
             .apple-card { height: 500px; }
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -222,7 +251,7 @@
             .apple-grid { grid-template-columns: 1fr; gap: 10px; }
             
             .apple-carousel-wrapper { border-radius: 16px; }
-            .apple-carousel-track { height: 500px; }
+            .apple-carousel-track { height: 540px; } /* Altura mobile p/ respiro flex */
             .apple-slide { padding-top: 40px; }
             
             .apple-card { height: 460px; border-radius: 16px; padding-top: 40px; }
@@ -230,7 +259,10 @@
             .apple-super-titulo { font-size: 34px; max-width: 90%;}
             .apple-titulo { font-size: 30px; max-width: 90%;}
             .apple-sub { font-size: 16px; margin-bottom: 15px; max-width: 85%;}
-            .apple-img { max-height: 60%; max-width: 85%; }
+            
+            /* Ajuste imagem mobile sem sobreposição */
+            .apple-img { max-height: calc(100% - 180px); max-width: 85%; object-fit: contain;}
+            
             .apple-links { font-size: 15px; gap: 15px;}
             .apple-controls-container { margin-top: 5px; margin-bottom: 15px;}
 
@@ -302,46 +334,12 @@
             
             <div class="apple-carousel-wrapper">
                 <div class="apple-carousel-track" id="apple-carousel-track">
-                    
-                    <div class="apple-slide">
-                        <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('inverno')"></a>
-                        <h2 class="apple-super-titulo">Jaqueta Zara Bomber</h2>
-                        <p class="apple-sub">A jaqueta que define a elegância casual. Conforto que impõe presença.</p>
-                        <div class="apple-links">
-                            <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('inverno')">Saiba mais ></a>
-                        </div>
-                        <img src="jaqueta-bomber.jpeg" alt="Jaqueta Zara Bomber Efeito Couro" class="apple-img">
                     </div>
-
-                    <div class="apple-slide">
-                        <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('polo-lacoste')"></a>
-                        <h2 class="apple-super-titulo">Polo Lacoste</h2>
-                        <p class="apple-sub">O clássico crocodilo. O toque de classe que nunca sai de moda.</p>
-                        <div class="apple-links">
-                            <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('polo-lacoste')">Comprar ></a>
-                        </div>
-                        <img src="pololala.png" alt="Camiseta Polo Lacoste Preta" class="apple-img">
-                    </div>
-
-                    <div class="apple-slide bg-dark">
-                        <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('oversized')"></a>
-                        <h2 class="apple-super-titulo">Oversized Premium</h2>
-                        <p class="apple-sub">Leve em estilo. Pesada em conforto. Redefina o seu shape.</p>
-                        <div class="apple-links">
-                            <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('oversized')">Ver modelos ></a>
-                        </div>
-                        <img src="nike-oversized-orange-1.jpeg" alt="Camiseta Oversized Nike" class="apple-img">
-                    </div>
-
-                </div>
             </div>
 
             <div class="apple-controls-container">
-                <div class="apple-dots-bg">
-                    <div class="apple-dot active" onclick="irParaSlide(0)"></div>
-                    <div class="apple-dot" onclick="irParaSlide(1)"></div>
-                    <div class="apple-dot" onclick="irParaSlide(2)"></div>
-                </div>
+                <div class="apple-dots-bg" id="apple-dots-container">
+                    </div>
                 <button class="apple-play-btn" id="btn-play-pause" onclick="alternarPlayPause()">
                     <svg id="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
                     <svg id="icon-play" viewBox="0 0 24 24" style="display: none; transform: translateX(1px);"><path d="M8 5v14l11-7z"/></svg>
@@ -351,10 +349,10 @@
             <div class="apple-grid">
                 <div class="apple-card bg-dark">
                     <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('grife')"></a>
-                    <h2 class="apple-titulo">Grife Balmain</h2>
-                    <p class="apple-sub">Ouro metálico. Edição Exclusiva. Sinta o poder do luxo egípcio.</p>
+                    <h2 class="apple-titulo">Grife Balmain Egypt</h2>
+                    <p class="apple-sub">Ouro metálico. Edição Exclusiva.</p>
                     <div class="apple-links">
-                        <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('grife')">Saiba mais ></a>
+                        <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('grife')">Ver Luxo ></a>
                     </div>
                     <img src="balmain-gold-1.jpeg" alt="Camiseta Balmain Paris" class="apple-img">
                 </div>
@@ -362,9 +360,9 @@
                 <div class="apple-card">
                     <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('bermudas-jogador')"></a>
                     <h2 class="apple-titulo" style="font-size: 38px;">Linha Jogador</h2>
-                    <p class="apple-sub">Jeans distressed premium. Atitude streetwear em cada detalhe.</p>
+                    <p class="apple-sub">Jeans distressed premium streetwear.</p>
                     <div class="apple-links">
-                        <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('bermudas-jogador')">Comprar ></a>
+                        <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('bermudas-jogador')">Comprar Estilo ></a>
                     </div>
                     <img src="bermuda-jeans-jogador.jpeg" alt="Bermuda Jeans Jogador Distressed" class="apple-img">
                 </div>
@@ -374,7 +372,7 @@
                 <div class="apple-card">
                     <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('dryfit')"></a>
                     <h2 class="apple-titulo">Dry Fit Nocta</h2>
-                    <p class="apple-sub">Performance Outline. Estilo urbano que afasta o suor.</p>
+                    <p class="apple-sub">Estilo urbano que afasta o suor.</p>
                     <div class="apple-links">
                         <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('dryfit')">Ver cores ></a>
                     </div>
@@ -384,7 +382,7 @@
                 <div class="apple-card bg-dark">
                     <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('calcas-jogador')"></a>
                     <h2 class="apple-titulo">Calças Jogador</h2>
-                    <p class="apple-sub">O detalhe que define o look. Jeans premium destroyed intenso.</p>
+                    <p class="apple-sub">Jeans premium destroyed intenso.</p>
                     <div class="apple-links">
                         <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('calcas-jogador')">Ver todas ></a>
                     </div>
@@ -457,14 +455,71 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // CORREÇÃO: Constrói o carrossel aleatório antes de carregar a vitrine
+            buildFeaturedCarousel();
             carregarProdutosNaTela();
             iniciarAutoPlay(); 
         });
 
+        // =========================================
+        // LÓGICA DO CARROSSEL ALEATÓRIO (Correção)
+        // =========================================
         let slideAtual = 0;
-        const totalSlides = 3;
+        let totalSlides = 0;
         let intervaloCarrossel;
         let estaTocando = true;
+
+        // Lista de produtos que devem aparecer no carrossel (todos os destaques)
+        const topFeaturedProducts = [
+            {id: 'zara1', name: "Jaqueta Zara Bomber", sub: "A elegância casual que impõe presença.", img: "jaqueta-bomber.jpeg", cat: "inverno", linkText: "Saiba mais >"},
+            {id: 'lacoste1', name: "Polo Lacoste", sub: "O clássico crocodilo. Toque de classe.", img: "pololala.png", cat: "polo-lacoste", linkText: "Comprar >"},
+            {id: 'oversized1', name: "Oversized Premium", sub: "Leve em estilo. Pesada em conforto.", img: "nike-oversized-orange-1.jpeg", cat: "oversized", linkText: "Ver modelos >"},
+            {id: 'balmain1', name: "Grife Balmain Egypt", sub: "Edição Exclusiva Ouro metálico egípcio.", img: "balmain-gold-1.jpeg", cat: "grife", linkText: "Ver Luxo >"},
+            {id: 'jeansdist1', name: "Bermuda Jeans Jogador", sub: "Distressed premium streetwear atitude.", img: "bermuda-jeans-jogador.jpeg", cat: "bermudas-jogador", linkText: "Comprar Estilo >"},
+            {id: 'nocta1', name: "Dry Fit Nocta", sub: "Estilo urbano Outline afasta suor.", img: "dryfit-nocta-preta.jpeg", cat: "dryfit", linkText: "Ver Cores >"},
+            {id: 'calcajog1', name: "Calças Jogador Destroyed", sub: "Jeans premium brutal destruído.", img: "calca-jogador-branca.jpeg", cat: "calcas-jogador", linkText: "Ver Detalhes >"}
+        ];
+
+        // Função para embaralhar array (Fisher-Yates)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Função para construir os slides do carrossel aleatoriamente
+        function buildFeaturedCarousel() {
+            shuffleArray(topFeaturedProducts); // Embaralha a ordem
+            totalSlides = topFeaturedProducts.length;
+
+            const track = document.getElementById('apple-carousel-track');
+            const dotsContainer = document.getElementById('apple-dots-container');
+            
+            track.innerHTML = ""; // Limpa slides antigos
+            dotsContainer.innerHTML = ""; // Limpa pontos antigos
+
+            topFeaturedProducts.forEach((prod, index) => {
+                // Cria o Slide HTML
+                const slideHTML = `
+                    <div class="apple-slide">
+                        <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('${prod.cat}')"></a>
+                        <h2 class="apple-super-titulo">${prod.name}</h2>
+                        <p class="apple-sub">${prod.sub}</p>
+                        <div class="apple-links">
+                            <a href="#" class="link-apple" onclick="event.preventDefault(); irParaCategoria('${prod.cat}')">${prod.linkText}</a>
+                        </div>
+                        <img src="${prod.img}" alt="${prod.name}" class="apple-img">
+                    </div>
+                `;
+                track.innerHTML += slideHTML;
+
+                // Cria o Ponto (Dot) HTML
+                const activeClass = index === 0 ? 'active' : '';
+                const dotHTML = `<div class="apple-dot ${activeClass}" onclick="irParaSlide(${index})"></div>`;
+                dotsContainer.innerHTML += dotHTML;
+            });
+        }
 
         function atualizarCarrossel() {
             const track = document.getElementById('apple-carousel-track');
@@ -497,7 +552,7 @@
 
         function iniciarAutoPlay() {
             if (!intervaloCarrossel) {
-                intervaloCarrossel = setInterval(proximoSlide, 4000); 
+                intervaloCarrossel = setInterval(proximoSlide, 4500); // 4.5 segundos por slide
             }
         }
 
