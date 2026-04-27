@@ -127,7 +127,7 @@
             display: flex; flex-direction: column; align-items: center; justify-content: flex-start; 
             padding-top: 70px; padding-bottom: 20px; text-align: center; color: #f5f5f7; 
             opacity: 0; transition: opacity 1s ease-in-out; 
-            z-index: 1; pointer-events: none; background-color: transparent !important; 
+            z-index: 1; background-color: transparent !important; cursor: pointer;
         } 
         .apple-slide.active { opacity: 1; z-index: 2; pointer-events: auto; }
         
@@ -143,7 +143,7 @@
             padding-top: 60px; position: relative; overflow: hidden; text-align: center; color: #f5f5f7;
             background: linear-gradient(180deg, #151515 0%, #050505 100%); cursor: pointer; transition: transform 0.3s ease;
         }
-        .apple-card:active { transform: scale(0.98); } /* Feedback de clique extra */
+        .apple-card:active { transform: scale(0.98); } 
         
         .bg-dark { background-color: #050505; background-image: radial-gradient(circle at center 65%, rgba(255, 255, 255, 0.08) 0%, transparent 60%); }
         .bg-gray-spotlight { background-color: #0a0a0a; background-image: radial-gradient(circle at center 65%, rgba(255, 255, 255, 0.06) 0%, transparent 60%); }
@@ -320,7 +320,6 @@
             <button class="closebtn" onclick="toggleMenu()">×</button>
         </div>
         <a href="#" onclick="filtrarLoja('todos'); toggleMenu()" class="menu-item">Início / Ver Tudo</a>
-        
         <div class="menu-group-title">Categorias</div>
         <a href="#" onclick="filtrarLoja('inverno'); toggleMenu()" class="menu-item">Coleção de Inverno</a>
         <a href="#" onclick="filtrarLoja('oversized'); toggleMenu()" class="menu-item">Camisetas Oversized</a>
@@ -382,7 +381,7 @@
                 <div class="apple-card bg-dark" onclick="abrirModal('grife-balmain-01')" style="cursor: pointer;">
                     <h2 class="apple-titulo">Grife Balmain Egypt</h2>
                     <p class="apple-sub">Ouro metálico. Edição Exclusiva.</p>
-                    <div class="apple-links"><span class="link-apple">Garantir Luxo ></span></div>
+                    <div class="apple-links"><span class="link-apple">Ver Luxo ></span></div>
                     <img src="balmain-gold-1.jpeg" alt="Camiseta Balmain Paris" class="apple-img">
                 </div>
 
@@ -485,7 +484,7 @@
         });
 
         // =========================================
-        // CALENDÁRIO INVISÍVEL (MOTOR DE FERIADOS)
+        // CALENDÁRIO INVISÍVEL
         // =========================================
         function getSegundoDomingo(ano, mes) {
             let primeiroDia = new Date(ano, mes, 1);
@@ -533,7 +532,7 @@
         }
 
         // =========================================
-        // CARROSSEL FADE COM SORTEIO ALEATÓRIO (IDS REAIS!)
+        // CARROSSEL FADE COM SORTEIO ALEATÓRIO E CLIQUE DIRETO
         // =========================================
         let slideAtualDOM = null;
         let intervaloCarrossel;
@@ -565,7 +564,7 @@
             novoSlide.className = `apple-slide ${prod.bg}`;
             novoSlide.style.cursor = 'pointer'; 
             
-            // O próprio slide clica no modal
+            // Aqui faz o carrossel abrir o modal com o ID correto
             novoSlide.onclick = function(e) {
                 e.preventDefault();
                 abrirModal(prod.id);
@@ -676,7 +675,6 @@
                 if (categoria === 'calcas-jogador') boxes[8].classList.remove('secao-escondida');
             }
             
-            // Se o menu de hambúrguer estiver aberto, fecha ele
             const sidebar = document.getElementById('sidebar-menu');
             if (sidebar.style.left === '0px') {
                 toggleMenu(); 
@@ -729,10 +727,7 @@
 
         function abrirModal(idProduto) {
             const prod = produtos.find(p => p.id === idProduto);
-            if (!prod) {
-                console.error("Produto não encontrado no catálogo:", idProduto);
-                return;
-            }
+            if (!prod) return;
 
             document.getElementById('m-titulo').innerText = prod.nome;
             document.getElementById('m-preco').innerText = prod.preco;
@@ -769,20 +764,18 @@
 
             carregarRelacionados(idProduto);
 
-            // Abri o Modal
             const modal = document.getElementById('janela-modal');
             modal.classList.add('aberto');
-            document.body.style.overflow = 'hidden'; // Trava o fundo da tela
+            document.body.style.overflow = 'hidden';
         }
 
         function fecharModal(event) {
-            // Fecha apenas se clicar fora da janela branca ou no botão de fechar
             if (event.target.classList.contains('modal-overlay') || event.target.classList.contains('btn-fechar')) {
                 const modalOverlay = document.getElementById('janela-modal');
                 modalOverlay.classList.remove('aberto');
                 
                 setTimeout(() => {
-                    document.body.style.overflow = 'auto'; // Libera a rolagem da página
+                    document.body.style.overflow = 'auto'; 
                 }, 400); 
             }
         }
