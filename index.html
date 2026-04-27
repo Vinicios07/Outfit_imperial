@@ -8,31 +8,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- RESET E GERAL (Padrão Apple de Limpeza) --- */
+        /* --- RESET E GERAL --- */
         * { box-sizing: border-box; outline: none; }
         
         body { 
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; 
             padding: 0; 
-            background-color: #fff; /* Fundo branco puro */
-            color: #1d1d1f; /* Preto Apple */
+            background-color: #fff; 
+            color: #1d1d1f; 
             overflow-x: hidden; 
             display: flex; 
             flex-direction: column; 
             min-height: 100vh; 
-            -webkit-font-smoothing: antialiased; /* Suavização de fonte */
+            -webkit-font-smoothing: antialiased;
         }
         
         img { max-width: 100%; height: auto; display: block; }
 
-        /* --- CABEÇALHO OUTFIT IMPERIAL (Premium e Discreto) --- */
+        /* --- CABEÇALHO --- */
         header { 
-            background-color: rgba(0, 0, 0, 0.95); /* Preto quase total com leve transparência */
-            backdrop-filter: blur(10px); /* Efeito de desfoque atrás do menu */
+            background-color: rgba(0, 0, 0, 0.95); 
+            backdrop-filter: blur(10px); 
             padding: 12px 20px; 
             text-align: center; 
-            position: fixed; /* Fixado no topo */
+            position: fixed; 
             top: 0;
             width: 100%;
             z-index: 1500;
@@ -45,10 +45,9 @@
         }
         header p { color: #a1a1a6; font-size: 10px; margin: 2px 0 0 0; letter-spacing: 3px; text-transform: uppercase; font-weight: 400; }
         
-        /* Ajuste do conteúdo para não ficar atrás do header fixo */
         body { padding-top: 85px; }
 
-        /* --- MENU LATERAL (Apple Style Dark) --- */
+        /* --- MENU LATERAL --- */
         .menu-btn { position: absolute; top: 25px; left: 20px; z-index: 1600; background: none; border: none; cursor: pointer; padding: 0; width: 22px; height: 16px; display: flex; flex-direction: column; justify-content: space-between; }
         .menu-btn span { display: block; width: 100%; height: 2px; background-color: #d4af37; transition: all 0.3s ease; }
         
@@ -61,31 +60,44 @@
         .menu-item:hover { background-color: #1a1a1a; color: #fff; padding-left: 25px;}
         .overlay-menu { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.8); z-index: 1900; cursor: pointer; backdrop-filter: blur(5px); }
 
-        /* --- BARRA DE PESQUISA (Discreta no Header) --- */
+        /* --- BARRA DE PESQUISA --- */
         .search-box { margin: 10px auto 0; max-width: 400px; width: 90%; position: relative; display: flex; }
         .search-input { width: 100%; padding: 8px 35px 8px 15px; border-radius: 8px; border: 1px solid #333; background: #1a1a1a; color: white; font-size: 13px; outline: none; }
         .search-input:focus { border-color: #d4af37; background: #000; }
         .search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #86868b; font-size: 14px; pointer-events: none; }
 
         /* =========================================
-           ESTILO APPLE HIGH-FIDELITY - DESTAQUES
+           ESTILO APPLE HIGH-FIDELITY - CARROSSEL E DESTAQUES
            ========================================= */
         .apple-destaques { display: flex; flex-direction: column; gap: 12px; padding: 12px; max-width: 1360px; margin: 0 auto; width: 100%; }
         
-        /* BANNER HERO (Massivo - Estilo Jaqueta Zara Bomber) */
-        .apple-banner-hero { width: 100%; height: 680px; background-color: #f5f5f7; border-radius: 18px; display: flex; flex-direction: column; align-items: center; padding-top: 70px; position: relative; overflow: hidden; text-align: center; cursor: pointer; }
+        .apple-link-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; cursor: pointer; }
+
+        /* --- CARROSSEL HERO APPLE STYLE --- */
+        .apple-carousel-wrapper { width: 100%; overflow: hidden; border-radius: 18px; position: relative; background-color: #f5f5f7; }
+        .apple-carousel-track { display: flex; transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); width: 100%; height: 680px; }
+        .apple-slide { min-width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; padding-top: 70px; position: relative; text-align: center; }
         
+        /* Controles do Carrossel (Pílula e Play/Pause) */
+        .apple-controls-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 5px; margin-bottom: 25px; }
+        .apple-dots-bg { background-color: #2c2c2e; border-radius: 20px; padding: 10px 14px; display: flex; align-items: center; gap: 8px; }
+        .apple-dot { width: 8px; height: 8px; background-color: #86868b; border-radius: 50%; cursor: pointer; transition: all 0.4s ease; }
+        .apple-dot.active { width: 24px; background-color: #d2d2d7; border-radius: 10px; }
+        .apple-play-btn { width: 36px; height: 36px; background-color: #2c2c2e; border-radius: 50%; border: none; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: background-color 0.3s ease; }
+        .apple-play-btn:hover { background-color: #3a3a3c; }
+        .apple-play-btn svg { width: 14px; height: 14px; fill: #d2d2d7; }
+
         /* GRID DE PRODUTOS (Bento Box) */
         .apple-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
-        .apple-card { height: 580px; background-color: #f5f5f7; border-radius: 18px; display: flex; flex-direction: column; align-items: center; padding-top: 60px; position: relative; overflow: hidden; text-align: center; cursor: pointer; }
+        .apple-card { height: 580px; background-color: #f5f5f7; border-radius: 18px; display: flex; flex-direction: column; align-items: center; padding-top: 60px; position: relative; overflow: hidden; text-align: center; }
         
         /* Variantes de Fundo */
         .bg-dark { background-color: #000; color: #f5f5f7; }
 
         /* Tipografia de ALTA FIDELIDADE Apple */
-        .apple-super-titulo { font-size: 56px; font-weight: 600; margin: 0; letter-spacing: -0.015em; line-height: 1.08; color: inherit; }
-        .apple-titulo { font-size: 40px; font-weight: 600; margin: 0; letter-spacing: -0.01em; line-height: 1.1; color: inherit; }
-        .apple-sub { font-size: 24px; font-weight: 400; margin: 10px 0 20px; letter-spacing: 0.007em; color: #1d1d1f; max-width: 80%; line-height: 1.3; }
+        .apple-super-titulo { font-size: 56px; font-weight: 600; margin: 0; letter-spacing: -0.015em; line-height: 1.08; color: inherit; z-index: 10;}
+        .apple-titulo { font-size: 40px; font-weight: 600; margin: 0; letter-spacing: -0.01em; line-height: 1.1; color: inherit; z-index: 10;}
+        .apple-sub { font-size: 24px; font-weight: 400; margin: 10px 0 20px; letter-spacing: 0.007em; color: #1d1d1f; max-width: 80%; line-height: 1.3; z-index: 10;}
         .bg-dark .apple-sub { color: #a1a1a6; }
         
         /* Links de Ação Estilo Apple (Com a Seta >) */
@@ -94,11 +106,11 @@
         .link-apple-azul:hover { text-decoration: underline; }
         .bg-dark .link-apple-azul { color: #2997ff; }
 
-        /* Imagens dos banners (ALTA FIDELIDADE - Efeito flutuante com sombra) */
+        /* Imagens dos banners */
         .apple-img { position: absolute; bottom: 0; max-width: 90%; max-height: 65%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); transition: transform 0.6s cubic-bezier(0.15, 1, 0.3, 1); }
-        .apple-card:hover .apple-img, .apple-banner-hero:hover .apple-img { transform: scale(1.04) translateY(-5px); filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15));}
+        .apple-card:hover .apple-img, .apple-slide:hover .apple-img { transform: scale(1.04) translateY(-5px); filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15));}
 
-        /* --- VITRINE DE PRODUTOS (Catálogo Completo) --- */
+        /* --- VITRINE DE PRODUTOS --- */
         .container { max-width: 1360px; margin: 0 auto; padding: 20px 12px 60px; min-height: 500px; flex: 1; width: 100%; }
         .secao-titulo { font-size: 32px; font-weight: 600; color: #1d1d1f; margin: 60px 0 30px; padding-bottom: 12px; border-bottom: 1px solid #d2d2d7; letter-spacing: -0.01em; }
         .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%; margin-bottom: 50px; }
@@ -106,12 +118,12 @@
         .produto { background: #fff; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #f5f5f7; }
         .produto:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.05); transform: translateY(-2px); }
         .capa-produto { background-color: #f5f5f7; height: 320px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .capa-produto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; mix-blend-mode: multiply; }
+        .capa-produto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .info-produto { padding: 18px 10px; text-align: center; }
         .produto h3 { color: #1d1d1f; margin: 0 0 6px; font-size: 15px; font-weight: 600; line-height: 1.3; }
         .produto .preco { font-size: 17px; color: #1d1d1f; font-weight: 400; margin: 0; }
 
-        /* --- RODAPÉ (Apple Clean Style) --- */
+        /* --- RODAPÉ --- */
         footer { background-color: #f5f5f7; color: #515154; border-top: 1px solid #d2d2d7; padding: 40px 20px 25px; text-align: center; font-size: 12px;}
         .footer-banner h3 { font-size: 16px; font-weight: 600; margin: 0 0 20px 0; color: #1d1d1f; letter-spacing: -0.01em; }
         .footer-instagrams { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
@@ -119,16 +131,16 @@
         .footer-instagrams .instagram-link:hover { color: #0071e3; }
         .copyright { color: #86868b; border-top: 1px solid #d2d2d7; padding-top: 20px; max-width: 1360px; margin: 0 auto; text-align: left;}
 
-        /* --- JANELA MODAL DO PRODUTO (ALTA FIDELIDADE) --- */
+        /* --- JANELA MODAL DO PRODUTO --- */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(15px); z-index: 3000; justify-content: center; align-items: center; padding: 20px; }
         .modal-overlay.aberto { display: flex; }
         .modal-content { background: white; width: 100%; max-width: 1040px; height: 90vh; max-height: 860px; border-radius: 18px; display: flex; overflow: hidden; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.3); }
         .btn-fechar { position: absolute; top: 15px; right: 20px; font-size: 30px; cursor: pointer; color: #1d1d1f; z-index: 10; font-weight: 300; }
         .modal-galeria-container { flex: 1.3; background: #f5f5f7; padding: 30px; display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: center; border-right: 1px solid #d2d2d7;}
         .modal-foto-principal { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-        .modal-foto-principal img { max-width: 100%; max-height: 540px; object-fit: contain; mix-blend-mode: multiply; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));}
+        .modal-foto-principal img { max-width: 100%; max-height: 540px; object-fit: contain; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));}
         .modal-thumbnails { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .thumb-img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; opacity: 0.5; transition: 0.2s; }
+        .thumb-img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; opacity: 0.7; transition: 0.2s; }
         .thumb-img:hover, .thumb-img.ativo { opacity: 1; border-color: #0071e3; }
         .modal-info { flex: 1; padding: 50px 40px; display: flex; flex-direction: column; overflow-y: auto; background: #fff; }
         .modal-info h2 { font-size: 32px; margin: 0 0 10px; color: #1d1d1f; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
@@ -140,13 +152,23 @@
         .tamanho-btn:hover { border-color: #1d1d1f; background-color: #f5f5f7;}
         .tamanho-btn.esgotado { background: #f5f5f7; color: #a1a1a6; border-color: #e5e5ea; cursor: not-allowed; text-decoration: line-through; }
         .modal-descricao { font-size: 16px; color: #515154; line-height: 1.5; margin-bottom: 40px; border-top: 1px solid #d2d2d7; padding-top: 25px; }
-        .modal-botoes { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+        .modal-botoes { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
         .botao-modal { display: block; background: #0071e3; color: white; text-align: center; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 500; transition: background 0.3s; font-size: 17px; }
         .botao-modal:hover { background: #0077ed; }
         .botao-modal.vendedor2 { background: #f5f5f7; color: #1d1d1f; border: none; }
         .botao-modal.vendedor2:hover { background: #e5e5ea; }
         .secao-escondida { display: none !important; }
         #msg-sem-resultado { text-align: center; margin-top: 50px; color: #86868b; display: none; font-size: 19px; font-weight: 400; }
+
+        /* SUGESTÕES DE COMPRA */
+        .secao-relacionados { margin-top: auto; border-top: 1px solid #d2d2d7; padding-top: 25px; }
+        .titulo-relacionados { font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 15px; letter-spacing: -0.01em; }
+        .grade-relacionados { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .card-relacionado { cursor: pointer; transition: transform 0.2s; background: #f5f5f7; border-radius: 10px; padding: 10px; text-align: center;}
+        .card-relacionado:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.05);}
+        .card-relacionado img { width: 100%; height: 90px; object-fit: contain; margin-bottom: 8px; }
+        .card-relacionado h4 { font-size: 12px; margin: 0 0 3px; color: #1d1d1f; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .card-relacionado p { font-size: 13px; color: #515154; font-weight: 400; margin: 0; }
 
         /* =========================================
            RESPONSIVIDADE (TABLETS E PCs PEQUENOS)
@@ -160,7 +182,8 @@
             .apple-super-titulo { font-size: 44px; }
             .apple-titulo { font-size: 32px; }
             .apple-sub { font-size: 20px; }
-            .apple-banner-hero { height: 560px; padding-top: 50px; }
+            .apple-carousel-track { height: 560px; }
+            .apple-slide { padding-top: 50px; }
             .apple-card { height: 500px; }
             .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .capa-produto { height: 260px; }
@@ -171,21 +194,22 @@
             .thumb-img { width: 48px; height: 48px; }
             .modal-info { padding: 30px 20px; flex: 1; overflow-y: auto; }
             .secao-titulo { font-size: 26px; margin: 40px 0 20px; }
+            .grade-relacionados { gap: 8px; }
         }
 
         /* =========================================
            OTIMIZAÇÃO EXCLUSIVA PARA CELULARES GRANDES (6.9" / 7.0")
-           Fidelidade Total em telas mobile premium
            ========================================= */
         @media (max-width: 480px) {
             header { padding: 10px 15px; }
             header h1 { font-size: 24px; }
             body { padding-top: 75px; }
             
-            /* Ajuste do Bento Box para mobile */
             .apple-grid { grid-template-columns: 1fr; gap: 8px; }
             .apple-destaques { padding: 8px; gap: 8px; }
-            .apple-banner-hero { height: 520px; border-radius: 15px; padding-top: 45px; }
+            .apple-carousel-wrapper { border-radius: 15px; }
+            .apple-carousel-track { height: 520px; }
+            .apple-slide { padding-top: 45px; }
             .apple-card { height: 480px; border-radius: 15px; padding-top: 40px; }
             
             .apple-super-titulo { font-size: 36px; max-width: 90%;}
@@ -194,7 +218,6 @@
             .apple-img { max-height: 60%; max-width: 85%; }
             .apple-links { font-size: 15px; gap: 15px;}
 
-            /* Ajuste da Vitrine */
             .container { padding: 10px 10px 40px; }
             .secao-titulo { font-size: 24px; margin: 35px 0 20px; }
             .grade-produtos { gap: 8px; margin-bottom: 30px; }
@@ -204,7 +227,6 @@
             .produto h3 { font-size: 12px; }
             .produto .preco { font-size: 14px; }
 
-            /* Ajuste do Modal no Mobile Grande */
             .modal-content { border-radius: 15px; height: 98vh; max-height: 98vh;}
             .btn-fechar { top: 10px; right: 15px; font-size: 26px; }
             .modal-info h2 { font-size: 24px; }
@@ -259,72 +281,82 @@
 
     <div class="apple-destaques" id="secao-destaques">
         
-        <div class="apple-banner-hero" onclick="irParaCategoria('inverno')">
-            <h2 class="apple-super-titulo">Jaqueta Zara Bomber</h2>
-            <p class="apple-sub">A jaqueta que define a elegância casual. Conforto que impõe presença.</p>
-            <div class="apple-links">
-                <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('inverno')">Saiba mais ></a>
-                <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('inverno')">Comprar ></a>
+        <div class="apple-carousel-wrapper">
+            <div class="apple-carousel-track" id="apple-carousel-track">
+                
+                <div class="apple-slide">
+                    <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('inverno')"></a>
+                    <h2 class="apple-super-titulo">Jaqueta Zara Bomber</h2>
+                    <p class="apple-sub">A jaqueta que define a elegância casual. Conforto que impõe presença.</p>
+                    <div class="apple-links">
+                        <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('inverno')">Saiba mais ></a>
+                    </div>
+                    <img src="jaqueta-bomber.jpeg" alt="Jaqueta Zara Bomber Efeito Couro" class="apple-img">
+                </div>
+
+                <div class="apple-slide">
+                    <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('polo-lacoste')"></a>
+                    <h2 class="apple-super-titulo">Polo Lacoste</h2>
+                    <p class="apple-sub">O clássico crocodilo. O toque de classe que nunca sai de moda.</p>
+                    <div class="apple-links">
+                        <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('polo-lacoste')">Comprar ></a>
+                    </div>
+                    <img src="pololala.png" alt="Camiseta Polo Lacoste Preta" class="apple-img">
+                </div>
+
+                <div class="apple-slide bg-dark">
+                    <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('oversized')"></a>
+                    <h2 class="apple-super-titulo">Oversized Premium</h2>
+                    <p class="apple-sub">Leve em estilo. Pesada em conforto. Redefina o seu shape.</p>
+                    <div class="apple-links">
+                        <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('oversized')">Ver modelos ></a>
+                    </div>
+                    <img src="nike-oversized-orange-1.jpeg" alt="Camiseta Oversized Nike" class="apple-img">
+                </div>
+
             </div>
-            <img src="jaqueta-bomber.jpeg" alt="Jaqueta Zara Bomber Efeito Couro" class="apple-img">
+        </div>
+
+        <div class="apple-controls-container">
+            <div class="apple-dots-bg">
+                <div class="apple-dot active" onclick="irParaSlide(0)"></div>
+                <div class="apple-dot" onclick="irParaSlide(1)"></div>
+                <div class="apple-dot" onclick="irParaSlide(2)"></div>
+            </div>
+            <button class="apple-play-btn" id="btn-play-pause" onclick="alternarPlayPause()">
+                <svg id="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                <svg id="icon-play" viewBox="0 0 24 24" style="display: none; transform: translateX(1px);"><path d="M8 5v14l11-7z"/></svg>
+            </button>
         </div>
 
         <div class="apple-grid">
-            <div class="apple-card" onclick="irParaCategoria('polo-lacoste')">
-                <h2 class="apple-titulo">Polo Lacoste</h2>
-                <p class="apple-sub">O clássico crocodilo. O toque de classe que nunca sai de moda.</p>
-                <div class="apple-links">
-                    <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('polo-lacoste')">Comprar ></a>
-                </div>
-                <img src="pololala.png" alt="Camiseta Polo Lacoste Preta" class="apple-img">
-            </div>
-
-            <div class="apple-card bg-dark" onclick="irParaCategoria('oversized')">
-                <h2 class="apple-titulo">Oversized</h2>
-                <p class="apple-sub">Leve em estilo. Pesada em conforto. Redefina o seu shape.</p>
-                <div class="apple-links">
-                    <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('oversized')">Ver modelos ></a>
-                </div>
-                <img src="nike-oversized-orange-1.jpeg" alt="Camiseta Oversized Nike" class="apple-img">
-            </div>
-        </div>
-
-        <div class="apple-grid">
-            <div class="apple-card bg-dark" onclick="irParaCategoria('grife')">
+            <div class="apple-card bg-dark">
+                <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('grife')"></a>
                 <h2 class="apple-titulo">Grife Balmain</h2>
                 <p class="apple-sub">Ouro metálico. Edição Exclusiva. Sinta o poder do luxo egípcio.</p>
-                <div class="apple-links">
-                    <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('grife')">Saiba mais ></a>
-                </div>
                 <img src="balmain-gold-1.jpeg" alt="Camiseta Balmain Paris" class="apple-img">
             </div>
 
-            <div class="apple-card" onclick="irParaCategoria('bermudas-jogador')">
+            <div class="apple-card">
+                <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('bermudas-jogador')"></a>
                 <h2 class="apple-titulo" style="font-size: 38px;">Linha Jogador</h2>
                 <p class="apple-sub">Jeans distressed premium. Atitude streetwear em cada detalhe.</p>
-                <div class="apple-links">
-                    <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('bermudas-jogador')">Comprar ></a>
-                </div>
                 <img src="bermuda-jeans-jogador.jpeg" alt="Bermuda Jeans Jogador Distressed" class="apple-img">
             </div>
         </div>
 
         <div class="apple-grid">
-            <div class="apple-card" onclick="irParaCategoria('dryfit')">
+            <div class="apple-card">
+                <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('dryfit')"></a>
                 <h2 class="apple-titulo">Dry Fit Nocta</h2>
                 <p class="apple-sub">Performance Outline. Estilo urbano que afasta o suor.</p>
-                <div class="apple-links">
-                    <a href="#" class="link-apple-azul" onclick="event.preventDefault(); irParaCategoria('dryfit')">Ver cores ></a>
-                </div>
                 <img src="dryfit-nocta-preta.jpeg" alt="Camiseta Dry Fit Nocta" class="apple-img">
             </div>
 
-            <div class="apple-card bg-dark" onclick="irParaCategoria('calcas-jogador')">
+            <div class="apple-card bg-dark">
+                <a href="#" class="apple-link-overlay" onclick="event.preventDefault(); irParaCategoria('calcas-jogador')"></a>
                 <h2 class="apple-titulo">Calças Jogador</h2>
                 <p class="apple-sub">O detalhe que define o look. Jeans premium destroyed intenso.</p>
-                <div class="apple-botoes">
-                    <a href="#" class="btn-apple-azul" onclick="event.preventDefault(); irParaCategoria('calcas-jogador')">Ver todas ></a>
-                </div>
                 <img src="calca-jogador-branca.jpeg" alt="Calça Jeans Jogador Branca Destroyed" class="apple-img">
             </div>
         </div>
@@ -333,50 +365,15 @@
     <div class="container" id="vitrine-container">
         <div id="msg-sem-resultado">Nenhum produto encontrado...</div>
 
-        <div id="box-inverno">
-            <h2 class="secao-titulo">Coleção de Inverno</h2>
-            <div id="grade-inverno" class="grade-produtos"></div>
-        </div>
-
-        <div id="box-oversized">
-            <h2 class="secao-titulo">Camisetas Oversized</h2>
-            <div id="grade-oversized" class="grade-produtos"></div>
-        </div>
-
-        <div id="box-grife">
-            <h2 class="secao-titulo">Camisetas de Grife</h2>
-            <div id="grade-grife" class="grade-produtos"></div>
-        </div>
-
-        <div id="box-polo-lacoste">
-            <h2 class="secao-titulo">Polos Lacoste</h2>
-            <div id="grade-polo-lacoste" class="grade-produtos"></div>
-        </div>
-
-        <div id="box-polo-zara">
-            <h2 class="secao-titulo">Polos Zara</h2>
-            <div id="grade-polo-zara" class="grade-produtos"></div>
-        </div>
-
-        <div id="box-dryfit">
-            <h2 class="secao-titulo">Linha Dry Fit</h2>
-            <div id="grade-dryfit" class="grade-produtos"></div>
-        </div>
-
-        <div id="box-bermudas-dryfit">
-            <h2 class="secao-titulo">Bermudas Dry Fit</h2>
-            <div id="grade-bermudas" class="grade-produtos"></div>
-        </div>
-
-        <div id="box-bermudas-jogador">
-            <h2 class="secao-titulo">Bermudas Jogador</h2>
-            <div id="grade-bermudas-jogador" class="grade-produtos"></div>
-        </div>
-
-        <div id="box-calcas-jogador">
-            <h2 class="secao-titulo">Calças Jogador</h2>
-            <div id="grade-calcas-jogador" class="grade-produtos"></div>
-        </div>
+        <div id="box-inverno"><h2 class="secao-titulo">Coleção de Inverno</h2><div id="grade-inverno" class="grade-produtos"></div></div>
+        <div id="box-oversized"><h2 class="secao-titulo">Camisetas Oversized</h2><div id="grade-oversized" class="grade-produtos"></div></div>
+        <div id="box-grife"><h2 class="secao-titulo">Camisetas de Grife</h2><div id="grade-grife" class="grade-produtos"></div></div>
+        <div id="box-polo-lacoste"><h2 class="secao-titulo">Polos Lacoste</h2><div id="grade-polo-lacoste" class="grade-produtos"></div></div>
+        <div id="box-polo-zara"><h2 class="secao-titulo">Polos Zara</h2><div id="grade-polo-zara" class="grade-produtos"></div></div>
+        <div id="box-dryfit"><h2 class="secao-titulo">Linha Dry Fit</h2><div id="grade-dryfit" class="grade-produtos"></div></div>
+        <div id="box-bermudas-dryfit"><h2 class="secao-titulo">Bermudas Dry Fit</h2><div id="grade-bermudas" class="grade-produtos"></div></div>
+        <div id="box-bermudas-jogador"><h2 class="secao-titulo">Bermudas Jogador</h2><div id="grade-bermudas-jogador" class="grade-produtos"></div></div>
+        <div id="box-calcas-jogador"><h2 class="secao-titulo">Calças Jogador</h2><div id="grade-calcas-jogador" class="grade-produtos"></div></div>
     </div>
 
     <footer>
@@ -398,7 +395,7 @@
         <div class="modal-content">
             <span class="btn-fechar" onclick="fecharModal(event)">×</span>
             <div class="modal-galeria-container">
-                <div class="modal-foto-principal"><img id="m-img-principal" src="" alt="Produto em Destaque"></div>
+                <div class="modal-foto-principal"><img id="m-img-principal" src="" alt="Produto"></div>
                 <div id="m-thumbnails" class="modal-thumbnails"></div>
             </div>
             <div class="modal-info">
@@ -416,6 +413,11 @@
                     <a href="#" id="btn-zap1" class="botao-modal" target="_blank">Falar com Vendedor 1</a>
                     <a href="#" id="btn-zap2" class="botao-modal vendedor2" target="_blank">Falar com Vendedor 2</a>
                 </div>
+
+                <div class="secao-relacionados">
+                    <div class="titulo-relacionados">Você também pode gostar:</div>
+                    <div id="lista-relacionados" class="grade-relacionados"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -425,14 +427,85 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             carregarProdutosNaTela();
+            iniciarAutoPlay(); // Inicia o carrossel Apple
         });
 
-        // Função para scroll suave ao clicar num destaque Apple
+        // =========================================
+        // LÓGICA DO CARROSSEL APPLE
+        // =========================================
+        let slideAtual = 0;
+        const totalSlides = 3;
+        let intervaloCarrossel;
+        let estaTocando = true;
+
+        function atualizarCarrossel() {
+            const track = document.getElementById('apple-carousel-track');
+            const dots = document.querySelectorAll('.apple-dot');
+            
+            // Move a trilha (track) para a esquerda com base no slide atual
+            track.style.transform = `translateX(-${slideAtual * 100}%)`;
+            
+            // Atualiza os pontos (pílula)
+            dots.forEach((dot, index) => {
+                if (index === slideAtual) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function proximoSlide() {
+            slideAtual = (slideAtual + 1) % totalSlides;
+            atualizarCarrossel();
+        }
+
+        function irParaSlide(index) {
+            slideAtual = index;
+            atualizarCarrossel();
+            // Se clicar no ponto, reinicia o timer para não passar logo em seguida
+            if (estaTocando) {
+                pararAutoPlay();
+                iniciarAutoPlay();
+            }
+        }
+
+        function iniciarAutoPlay() {
+            if (!intervaloCarrossel) {
+                intervaloCarrossel = setInterval(proximoSlide, 4000); // 4 segundos por slide
+            }
+        }
+
+        function pararAutoPlay() {
+            clearInterval(intervaloCarrossel);
+            intervaloCarrossel = null;
+        }
+
+        function alternarPlayPause() {
+            const iconPlay = document.getElementById('icon-play');
+            const iconPause = document.getElementById('icon-pause');
+            
+            estaTocando = !estaTocando;
+            
+            if (estaTocando) {
+                iconPlay.style.display = 'none';
+                iconPause.style.display = 'block';
+                iniciarAutoPlay();
+            } else {
+                iconPlay.style.display = 'block';
+                iconPause.style.display = 'none';
+                pararAutoPlay();
+            }
+        }
+
+        // =========================================
+        // LÓGICA GERAL DA LOJA
+        // =========================================
         function irParaCategoria(categoria) {
             filtrarLoja(categoria);
             setTimeout(() => {
                 document.getElementById('vitrine-container').scrollIntoView({ behavior: 'smooth' });
-            }, 150); // Leve delay para garantir a renderização antes do scroll
+            }, 150); 
         }
 
         function toggleMenu() {
@@ -561,8 +634,27 @@
             document.getElementById('btn-zap1').href = "https://wa.me/5511994655832?text=" + encodeURIComponent(textoZap);
             document.getElementById('btn-zap2').href = "https://wa.me/5511917686011?text=" + encodeURIComponent(textoZap);
 
+            carregarRelacionados(idProduto);
+
             document.getElementById('janela-modal').classList.add('aberto');
             document.body.style.overflow = 'hidden';
+        }
+
+        function carregarRelacionados(idAtual) {
+            const container = document.getElementById('lista-relacionados');
+            container.innerHTML = "";
+            const outros = produtos.filter(p => p.id !== idAtual);
+            const aleatorios = outros.sort(() => 0.5 - Math.random());
+            const selecionados = aleatorios.slice(0, 3);
+            selecionados.forEach(p => {
+                container.innerHTML += `
+                    <div class="card-relacionado" onclick="abrirModal('${p.id}')">
+                        <img src="${p.imgCapa}" alt="${p.nome}">
+                        <h4>${p.nome}</h4>
+                        <p>${p.preco}</p>
+                    </div>
+                `;
+            });
         }
 
         function fecharModal(event) {
