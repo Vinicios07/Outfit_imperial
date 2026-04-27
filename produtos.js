@@ -205,8 +205,8 @@ const produtos = [
         nome: "Camiseta Polo Lacoste - Preta Clássica",
         preco: "R$ 149,90",
         categoria: "polo-lacoste",
-        imgCapa: "pololala.jpg", // Trocado para jpg conforme o arquivo subido
-        imagens: ["pololala.jpg", "pololala2.jpg"],
+        imgCapa: "pololala.png", // Trocado para jpg conforme o arquivo subido
+        imagens: ["pololala.jpg", "pololala2.png"],
         descricao: `
             <p><strong>Clássico Atemporal:</strong> Camiseta Polo Lacoste na cor preta, confeccionada em piquet de algodão premium.</p>
             <p>Apresenta o icônico crocodilo bordado no peito e fecho de botões tradicional.</p>
