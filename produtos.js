@@ -6,8 +6,8 @@ const produtos = [
         nome: "Jaqueta Zara - Corta Vento Tech",
         preco: "R$ 260,00",
         categoria: "inverno",
-        imgCapa: "foto1.jpeg", // Atualizado para a nova foto principal
-        imagens: ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg"], // As 3 fotos novas
+        imgCapa: "foto1.jpeg", 
+        imagens: ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg"], 
         descricao: `
             <p><strong>Material Premium:</strong> Confeccionada em tecido tecnológico corta-vento.</p>
             <p>Ideal para dias frios. Modelagem Slim Fit.</p>
@@ -199,24 +199,39 @@ const produtos = [
         esgotados: []
     },
 
-    // --- CAMISETAS POLO ---
+    // --- CAMISETAS POLO (AGORA SEPARADAS) ---
     {
         id: "polo-lacoste-preta",
         nome: "Camiseta Polo Lacoste - Preta Clássica",
         preco: "R$ 149,90",
-        categoria: "polo",
-        imgCapa: "pololala.png",
-        imagens: ["pololala.png", "pololala2.png"],
+        categoria: "polo-lacoste",
+        imgCapa: "pololala.jpg", // Trocado para jpg conforme o arquivo subido
+        imagens: ["pololala.jpg", "pololala2.jpg"],
         descricao: `
-            <p><strong>Clássico Atemporal:</strong> Camiseta Polo Lacoste na cor preta, confeccionada em malha piquet premium.</p>
-            <p>Apresenta o icônico crocodilo bordado no peito e fecho tradicional de botões.</p>
+            <p><strong>Clássico Atemporal:</strong> Camiseta Polo Lacoste na cor preta, confeccionada em piquet de algodão premium.</p>
+            <p>Apresenta o icônico crocodilo bordado no peito e fecho de botões tradicional.</p>
             <p>Uma peça versátil e indispensável para um look casual e elegante.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
     },
+    {
+        id: "polo-zara-ribbed-black",
+        nome: "Camiseta Polo Zara - Texture Black",
+        preco: "R$ 139,90",
+        categoria: "polo-zara",
+        imgCapa: "polo-zara-1.jpeg",
+        imagens: ["polo-zara-1.jpeg", "polo-zara-2.jpeg"], 
+        descricao: `
+            <p><strong>Elegância Casual:</strong> Polo Zara confeccionada em malha canelada (texturizada) de alta elasticidade.</p>
+            <p>Modelagem Slim que valoriza o corpo e gola estruturada.</p>
+            <p>Perfeita para ocasiões que pedem um visual mais arrumado sem perder o conforto.</p>
+        `,
+        tamanhos: ["P", "M", "G", "GG"],
+        esgotados: []
+    },
 
-    // --- LINHA DRY FIT (TODAS A R$ 75,00) ---
+    // --- LINHA DRY FIT (TODAS A R$ 80,00) ---
     {
         id: "nocta-dryfit-cores",
         nome: "Camiseta Nocta Dry Fit - Cores Variadas",
