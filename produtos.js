@@ -201,16 +201,16 @@ const produtos = [
 
     // --- CAMISETAS POLO ---
     {
-        id: "polo-zara-ribbed-black",
-        nome: "Camiseta Polo Zara - Texture Black",
-        preco: "R$ 139,90",
+        id: "polo-lacoste-preta",
+        nome: "Camiseta Polo Lacoste - Preta Clássica",
+        preco: "R$ 149,90",
         categoria: "polo",
-        imgCapa: "polo-zara-1.jpeg",
-        imagens: ["polo-zara-1.jpeg", "polo-zara-2.jpeg"], 
+        imgCapa: "pololala.png",
+        imagens: ["pololala.png", "pololala2.png"],
         descricao: `
-            <p><strong>Elegância Casual:</strong> Polo Zara confeccionada em malha canelada (texturizada) de alta elasticidade.</p>
-            <p>Modelagem Slim que valoriza o corpo e gola estruturada.</p>
-            <p>Perfeita para ocasiões que pedem um visual mais arrumado sem perder o conforto.</p>
+            <p><strong>Clássico Atemporal:</strong> Camiseta Polo Lacoste na cor preta, confeccionada em malha piquet premium.</p>
+            <p>Apresenta o icônico crocodilo bordado no peito e fecho tradicional de botões.</p>
+            <p>Uma peça versátil e indispensável para um look casual e elegante.</p>
         `,
         tamanhos: ["P", "M", "G", "GG"],
         esgotados: []
